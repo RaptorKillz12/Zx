@@ -1,0 +1,91 @@
+
+name: Download Project Dream and Extract Game Data
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  download:
+    runs-on: windows-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Create folders
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force `
+            -Path installer, game, output | Out-Null
+
+      - name: Download Project Dream Installer
+        shell: pwsh
+        run: |
+          $url = "https://github.com/RaptorKillz12/Project-Dream-Release/releases/download/V1.0.0/Project_Dream.exe"
+
+          curl.exe -L --fail --retry 3 "$url" `
+            -o installer/Project_Dream.exe
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Installer download failed"
+          }
+
+      - name: Download Sonic Dream Team
+        shell: pwsh
+        run: |
+          $url = "https://archive.org/download/sonic-dream-team-1.10.1-mac-os-universal/Sonic-Dream-Team-1.10.1-macOS-universal.zip"
+
+          curl.exe -L --fail --retry 3 "$url" `
+            -o game.zip
+
+          if ($LASTEXITCODE -ne 0) {
+            throw "Game download failed"
+          }
+
+      - name: Extract game archive
+        shell: pwsh
+        run: |
+          Expand-Archive game.zip -DestinationPath game -Force
+
+      - name: Locate SonicDreamTeam.app
+        shell: pwsh
+        run: |
+          $app = Get-ChildItem game -Directory -Recurse |
+            Where-Object { $_.Name -eq "SonicDreamTeam.app" } |
+            Select-Object -First 1
+
+          if (-not $app) {
+            throw "SonicDreamTeam.app not found"
+          }
+
+          $contents = Join-Path $app.FullName "Contents"
+
+          if (-not (Test-Path $contents)) {
+            throw "Contents folder not found"
+          }
+
+          "GAME_CONTENTS=$contents" >> $env:GITHUB_ENV
+
+      - name: Extract game data
+        shell: pwsh
+        run: |
+          Copy-Item "$env:GAME_CONTENTS" `
+            "output/SonicDreamTeamData" -Recurse -Force
+
+      - name: Prepare final package
+        shell: pwsh
+        run: |
+          Copy-Item installer/Project_Dream.exe output/
+
+          Write-Host "Project Dream package:"
+          Get-ChildItem output -Recurse -File |
+            Select-Object FullName, Length
+
+      - name: Upload complete package
+        uses: actions/upload-artifact@v4
+        with:
+          name: Project-Dream-Installer-And-Game-Data
+          path: output/
+          compression-level: 0
+          retention-days: 7
