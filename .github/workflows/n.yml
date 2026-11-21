@@ -1,0 +1,81 @@
+
+name: Extract Artifact to Branch
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: "GitHub Actions Run ID containing the artifact"
+        required: true
+        type: string
+      artifact_name:
+        description: "Name of the artifact to download"
+        required: true
+        type: string
+      target_branch:
+        description: "Branch to move the files into"
+        required: true
+        default: "extracted-data"
+        type: string
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  extract-and-move:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: ${{ inputs.artifact_name }}
+          path: downloaded-artifact
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Extract ZIP files
+        shell: bash
+        run: |
+          set -e
+
+          mkdir -p extracted
+
+          find downloaded-artifact -type f -name "*.zip" \
+            -exec unzip -o {} -d extracted \;
+
+          find downloaded-artifact -type f ! -name "*.zip" \
+            -exec cp --parents {} extracted/ \;
+
+      - name: Checkout Target Branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.target_branch }}
+          fetch-depth: 0
+
+      - name: Move Extracted Files
+        shell: bash
+        run: |
+          set -e
+
+          mkdir -p extracted-data
+
+          cp -a extracted/. extracted-data/
+
+      - name: Commit and Push
+        shell: bash
+        run: |
+          set -e
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add extracted-data/
+
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Extract and move artifact"
+            git push origin HEAD:${{ inputs.target_branch }}
+          fi
