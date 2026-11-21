@@ -1,0 +1,104 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_Leaderboards",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionGameCenterLoginComplete",
+                    "Name": "GameCenterLoginComplete",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "60d761aa-214d-46ef-aa2e-bcdf712ffcbd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMState",
+                    "Name": "Start",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "GameCenterLoginComplete",
+                            "ToState": "TimeTrials",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "60d761aa-214d-46ef-aa2e-bcdf712ffcbd",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "28620c0c-0d3a-4d44-a38e-ea3dda52cb81",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateTimeTrials",
+                    "Name": "TimeTrials",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -300.0
+                        },
+                        "Guid": "a6bb46be-3efa-40fe-856f-10565aba7d8c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "c482ac4a-f183-45e0-b83f-2e31ef78b518",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": -43.0,
+                    "y": -18.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

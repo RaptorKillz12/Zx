@@ -1,0 +1,252 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_ControllerRequired",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionIsTvOs",
+                    "Name": "IsTvOS",
+                    "CtorArgs": "{\"TrueCausesTransition\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -200.0
+                        },
+                        "Guid": "cd90e494-71fc-4bf7-b7a3-1c76479d0239",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionIsTvOs",
+                    "Name": "IsNotTvOs",
+                    "CtorArgs": "{\"TrueCausesTransition\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "df6b58c5-5620-467a-9398-3391636d1456",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionNoController",
+                    "Name": "NoControllerConnected",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 0.0
+                        },
+                        "Guid": "5b97d43d-1391-46e4-a581-e48e030821da",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainer",
+                    "Name": "OnControllerRequiredClose",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventControllerRequiredClose\",\"Container\":\"uicontaineridentifier_controller_required\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 0.0
+                        },
+                        "Guid": "f1bbe63f-5188-497a-bdf0-f4a103e8eb62",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMState",
+                    "Name": "Start",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IsTvOS",
+                            "ToState": "CheckHasControllers",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "cd90e494-71fc-4bf7-b7a3-1c76479d0239",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "IsNotTvOs",
+                            "ToState": "DoesNotTransitionAnywhere",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "df6b58c5-5620-467a-9398-3391636d1456",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "28620c0c-0d3a-4d44-a38e-ea3dda52cb81",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "DoesNotTransitionAnywhere",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -300.0
+                        },
+                        "Guid": "ef884987-d41a-49ae-89cc-0bdd6e11a68f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenControllerRequired",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_controller_required\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnControllerRequiredClose",
+                            "ToState": "CheckHasControllers",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "f1bbe63f-5188-497a-bdf0-f4a103e8eb62",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -800.0,
+                                            "y": -40.0
+                                        },
+                                        "Guid": "7f39c4d3-970a-4bb1-bfa1-edc7ff4c3ad9",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 80.0,
+                                            "y": -40.0
+                                        },
+                                        "Guid": "63c78b37-7e49-4c3c-bb1c-7c8a52da9242",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 0.0
+                        },
+                        "Guid": "6d8039b0-171d-45b1-907d-056f4cb30c96",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "CheckHasControllers",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "NoControllerConnected",
+                            "ToState": "OpenControllerRequired",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 200.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "5b97d43d-1391-46e4-a581-e48e030821da",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -200.0
+                        },
+                        "Guid": "370ddc8f-0d64-4490-9cab-a4b790b39c09",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "c482ac4a-f183-45e0-b83f-2e31ef78b518",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": -43.0,
+                    "y": -18.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

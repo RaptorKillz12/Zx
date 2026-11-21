@@ -1,0 +1,128 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_Hub",
+            "DefaultState": "EnterHub",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "CheckExitingHub",
+                    "CtorArgs": "{\"Name\":\"IsInHub\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"FalseCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 600.0,
+                            "y": -300.0
+                        },
+                        "Guid": "8e290355-2630-4e28-bd87-585dd8120570"
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "HubTeleportInTimeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":1.0,\"VariableName\":\"HubTeleportInTimeout\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -400.0,
+                            "y": -300.0
+                        },
+                        "Guid": "79dd5ddd-d7a7-4026-b16c-bde48430187e"
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "EnterHub",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterTeleportOutAnimation\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HubTeleportInTimeout",
+                            "ToState": "WaitForExit",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -400.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "79dd5ddd-d7a7-4026-b16c-bde48430187e",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -900.0,
+                            "y": -300.0
+                        },
+                        "Guid": "8c38868d-f580-4b92-bfcc-891fa34eec8f"
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "WaitForExit",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CheckExitingHub",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 600.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "8e290355-2630-4e28-bd87-585dd8120570",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 100.0,
+                            "y": -300.0
+                        },
+                        "Guid": "6b1a3fe6-fe2b-482f-87e7-6ea8bafdaefb"
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "Finished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1100.0,
+                            "y": -300.0
+                        },
+                        "Guid": "ccec0879-35ec-450b-ab53-6ae8ae99fe15"
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "13d1e2a4-0997-49ec-a419-dff7c05084b5"
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

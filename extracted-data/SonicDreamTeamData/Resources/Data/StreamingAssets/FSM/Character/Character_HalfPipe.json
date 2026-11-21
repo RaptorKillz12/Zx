@@ -1,0 +1,578 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_HalfPipe",
+            "DefaultState": "Group_HalfPipeAirEnter",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "CharacterTransition_Form",
+                    "Name": "FormIsBall",
+                    "CtorArgs": "{\"ActiveFormType\":-1118283248,\"Inverse\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 40.0
+                        },
+                        "Guid": "32f70813-cef8-44a6-8f3a-5c28f0b1b239",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "NotFormIsBall",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"FormIsBall\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": -200.0
+                        },
+                        "Guid": "bb4d85bb-75e6-4d83-903a-0b6840b73522",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_HalfPipeTransfer",
+                    "Name": "ToHalfPipeTransferRunning",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": -200.0
+                        },
+                        "Guid": "c05062f7-9505-4fe7-aa00-93817005653e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_HalfPipeTransferExit",
+                    "Name": "HalfPipeTransferExit",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": -80.0
+                        },
+                        "Guid": "786e403c-d8c8-45e0-9d32-d565eedf8f0b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_HalfPipeTransfer",
+                    "Name": "ToHalfPipeTransferRolling",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 40.0
+                        },
+                        "Guid": "85d8cb54-a464-4a8b-8744-b7f4ab02cbfa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_HalfPipeAirEnter",
+                    "CtorArgs": "{\"States\":[\"TriggerDisableAbilities\",\"TriggerAbilityHomingAttackAirTarget\",\"TriggerAbilityHomingAttackAirLightspeedDash\",\"TriggerAbilityRailsTargeting\",\"TriggerAbilityRailsProximityAir\",\"TriggerAbilityTransportProximity\",\"TriggerScreenControls\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "FormIsBall",
+                            "ToState": "Group_HalfPipeAirRolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": 40.0
+                                },
+                                "Guid": "32f70813-cef8-44a6-8f3a-5c28f0b1b239",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "NotFormIsBall",
+                            "ToState": "Group_HalfPipeAirRunning",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "bb4d85bb-75e6-4d83-903a-0b6840b73522",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": -140.0
+                        },
+                        "Guid": "c72bc337-48cc-4b0f-b546-baf83cd4acc1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerDisableAbilities",
+                    "Name": "TriggerDisableAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ExceptionList\":[\"AbilityKnockback\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": -420.0
+                        },
+                        "Guid": "28c8f03c-44a6-4eff-bdf4-e460782eddcc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHalfPipeAirRunning",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHalfPipeAirRunning\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -560.0
+                        },
+                        "Guid": "0e81203e-c471-4892-ad7e-ebd69c1fbd8c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_HalfPipeAirRunning",
+                    "CtorArgs": "{\"States\":[\"TriggerAbilityHalfPipeAirRunning\",\"TriggerAbilityHalfPipeTransferRunning\",\"TriggerAbilitySpinDashCharge\",\"HalfPipeAirRunning\",\"HalfPipeSpinDash\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToHalfPipeTransferRunning",
+                            "ToState": "HalfPipeTransferRunning",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "c05062f7-9505-4fe7-aa00-93817005653e",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -200.0
+                        },
+                        "Guid": "29cea738-7db4-4c75-8550-9b7ff046bc30",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_HalfPipeAirRolling",
+                    "CtorArgs": "{\"States\":[\"TriggerAbilityHalfPipeAirRolling\",\"TriggerAbilityHalfPipeTransferRolling\",\"TriggerAbilitySpinDashCharge\",\"HalfPipeAirRolling\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToHalfPipeTransferRolling",
+                            "ToState": "HalfPipeTransferRolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": 40.0
+                                },
+                                "Guid": "85d8cb54-a464-4a8b-8744-b7f4ab02cbfa",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 40.0
+                        },
+                        "Guid": "2871f53b-8843-46b0-906f-19732191e281",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHalfPipeAirRolling",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHalfPipeAirRolling\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 240.0
+                        },
+                        "Guid": "7cb1eddf-ff74-49ba-b090-35ac0ab51d56",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_HalfPipeAir",
+                    "Name": "HalfPipeAirRolling",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterHalfPipeAirStateAnimation\",\"AbilityType\":-882038925,\"HalfPipeTransferAbilityType\":1920953420}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 480.0
+                        },
+                        "Guid": "e69c859a-3aa4-472f-8f62-17882841b367",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_HalfPipeAir",
+                    "Name": "HalfPipeAirRunning",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterHalfPipeAirStateAnimation\",\"AbilityType\":-1175872155,\"HalfPipeTransferAbilityType\":16504410}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -320.0
+                        },
+                        "Guid": "2ba1d3f2-c58d-419e-96bc-1b6895ff7ec9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_HalfPipeTransfer",
+                    "Name": "HalfPipeTransferRunning",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":16504410}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HalfPipeTransferExit",
+                            "ToState": "Group_HalfPipeAirEnter",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2300.0,
+                                    "y": -80.0
+                                },
+                                "Guid": "786e403c-d8c8-45e0-9d32-d565eedf8f0b",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2680.0,
+                                            "y": 150.0
+                                        },
+                                        "Guid": "3c59587f-a05f-40bf-9937-f2c8e4b9a8f1",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -200.0,
+                                            "y": 150.0
+                                        },
+                                        "Guid": "a64bacfe-c320-4ab0-845f-50d289d72362",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": -200.0
+                        },
+                        "Guid": "cf7d6b69-23e5-4e42-b143-4bf0f8d51ef8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHalfPipeTransferRunning",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHalfPipeTransferRunning\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -440.0
+                        },
+                        "Guid": "1e06de12-db10-4d09-bc8f-cf16a7b20e35",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_HalfPipeTransfer",
+                    "Name": "HalfPipeTransferRolling",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":1920953420}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HalfPipeTransferExit",
+                            "ToState": "Group_HalfPipeAirEnter",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2300.0,
+                                    "y": -80.0
+                                },
+                                "Guid": "786e403c-d8c8-45e0-9d32-d565eedf8f0b",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2680.0,
+                                            "y": 150.0
+                                        },
+                                        "Guid": "3c59587f-a05f-40bf-9937-f2c8e4b9a8f1",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -200.0,
+                                            "y": 150.0
+                                        },
+                                        "Guid": "a64bacfe-c320-4ab0-845f-50d289d72362",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 40.0
+                        },
+                        "Guid": "de206362-1c35-40b5-944f-f79d9645841a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHalfPipeTransferRolling",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHalfPipeTransferRolling\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 360.0
+                        },
+                        "Guid": "a866aa93-1662-4ace-9b61-d164c7209999",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHomingAttackAirTarget",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackAirTarget\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -220.0,
+                            "y": 160.0
+                        },
+                        "Guid": "d3fded91-167a-4ea0-8df7-50b40efced23",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHomingAttackAirLightspeedDash",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackAirLightspeedDash\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -220.0,
+                            "y": 280.0
+                        },
+                        "Guid": "3662b14a-39f4-457f-9091-8501ce52618c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailsProximityAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityRailsProximityAir\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -220.0,
+                            "y": 520.0
+                        },
+                        "Guid": "5051dfa1-5125-42c3-a504-0d072872aba9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailsTargeting",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityRailsTargeting\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -220.0,
+                            "y": 400.0
+                        },
+                        "Guid": "8f6c5cf9-ae2a-4b41-b952-1305b8e89f3c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityTransportProximity",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityTransporterProximity\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -220.0,
+                            "y": 640.0
+                        },
+                        "Guid": "b6494845-f7e4-490c-8291-8fbb29e10594",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilitySpinDashCharge",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilitySpinDashCharge\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": -420.0
+                        },
+                        "Guid": "64798109-ff76-49ca-8478-15644e2201c0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "HalfPipeSpinDash",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMCharacter_HalfPipeSpinDash\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"NotChargingSpinDash\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -760.0
+                        },
+                        "Guid": "602e9820-85b7-4597-bfee-ec02eea90160",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerScreenControls",
+                    "Name": "TriggerScreenControls",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ScreenControlsGroupOverride\":-1032634697}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -220.0,
+                            "y": 760.0
+                        },
+                        "Guid": "0c7c6666-0545-4d38-bacf-ad6090866d64",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -160.0,
+                    "y": -100.0
+                },
+                "Guid": "4e9dd8ed-7bfe-405b-9cc3-f82e1615aafe",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

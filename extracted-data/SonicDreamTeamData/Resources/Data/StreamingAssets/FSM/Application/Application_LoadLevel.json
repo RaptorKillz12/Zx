@@ -1,0 +1,312 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_LoadLevel",
+            "DefaultState": "EnsureOneLevel",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "ProcessLevelComplete",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventComplete\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1700.0,
+                            "y": -300.0
+                        },
+                        "Guid": "aa16568e-c02e-442a-8f35-01206356f962",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "LoadLevelSceneComplete",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventComplete\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -300.0
+                        },
+                        "Guid": "a606e95f-de3c-4f51-9af8-39bcbc094d38",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "EnsureOneLevelComplete",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventComplete\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "5a317442-7dcd-49a8-aa3b-b7e93a714a69",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "bf0efc22-d6f8-4a01-b181-793e8a4f6184",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "CleanupGroup",
+                    "CtorArgs": "{\"States\":[\"LevelCleanup\",\"PublishActivateLevelComplete\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2200.0,
+                            "y": -300.0
+                        },
+                        "Guid": "d5b9508c-6201-4a92-a509-f966ed891128",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateLoadLevelCleanup",
+                    "Name": "LevelCleanup",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2200.0,
+                            "y": -120.0
+                        },
+                        "Guid": "acff3d3c-88ad-4f52-9dc5-b978b85c51af",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStatePublishStateMessage",
+                    "Name": "PublishActivateLevelComplete",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventLoadLevelComplete\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2200.0,
+                            "y": -40.0
+                        },
+                        "Guid": "803d5a30-c900-4fe8-b823-c4d9dd27b6dd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateLoadLevelSetup",
+                    "Name": "LevelSetup",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "PrepareScene",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "bf0efc22-d6f8-4a01-b181-793e8a4f6184",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "c442aefe-8397-41cc-9e40-11de6eaaa350",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateLoadLevelProcess",
+                    "Name": "ProcessLevel",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventComplete\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ProcessLevelComplete",
+                            "ToState": "CleanupGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1700.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "aa16568e-c02e-442a-8f35-01206356f962",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": -300.0
+                        },
+                        "Guid": "bab22e88-1299-48b6-91f0-e2d17cf061be",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateLoadLevelScene",
+                    "Name": "LoadLevelScene",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventComplete\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -80.0
+                        },
+                        "Guid": "5c95335d-b6ce-473d-82bf-273017791cf4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateLoadLevelEnsureOneLevel",
+                    "Name": "EnsureOneLevel",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventComplete\",\"ForceUnloadAny\":false}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "EnsureOneLevelComplete",
+                            "ToState": "LevelSetup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1300.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "5a317442-7dcd-49a8-aa3b-b7e93a714a69",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "ad5cd5e3-ddca-4206-8d96-1dcb753baa35",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "PrepareScene",
+                    "CtorArgs": "{\"States\":[\"LoadLevelScene\",\"UnloadUIAtlases\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "LoadLevelSceneComplete",
+                            "ToState": "ProcessLevel",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "a606e95f-de3c-4f51-9af8-39bcbc094d38",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -300.0
+                        },
+                        "Guid": "eeb44be0-f3b5-4152-8559-13496553c6a4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateToggleMetaGameUIAtlases",
+                    "Name": "UnloadUIAtlases",
+                    "CtorArgs": "{\"AtlasesShouldBeLoaded\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 40.0
+                        },
+                        "Guid": "13aeeb92-f11d-4c5a-ab16-bf32cc62956d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -580.0,
+                    "y": -280.0
+                },
+                "Guid": "fdc1b56d-78f7-469f-9276-d77e2486cc48",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": -23.8267822265625,
+                    "y": 1.9198226928710938
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,501 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_RewardTracks",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "OnRewardTrackOpen",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventChallengesRewardTrackOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1500.0,
+                            "y": -880.0
+                        },
+                        "Guid": "c78cc42c-c0e1-4a68-858d-a54680938651",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "OnCollectRewardOpen",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventChallengesRewardTrackCollectOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2500.0,
+                            "y": -880.0
+                        },
+                        "Guid": "35dd4996-79c5-42f0-bf39-f0fb8b487c91",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainers",
+                    "Name": "ApplicationTransitionUIMessageCloseUIContainers",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventPlayerProgressionClose\",\"Containers\":[\"uicontaineridentifier_progression_music_track\",\"uicontaineridentifier_progression_ornament\",\"uicontaineridentifier_player_progression\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3500.0,
+                            "y": -880.0
+                        },
+                        "Guid": "4b074fff-8526-4724-9898-b31afc7c4b3a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainers",
+                    "Name": "ShadowCloseUIContainers",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventPlayerProgressionClose\",\"Containers\":[\"uicontaineridentifier_progression_music_track\",\"uicontaineridentifier_progression_ornament\",\"uicontaineridentifier_player_progression\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3500.0,
+                            "y": -1200.0
+                        },
+                        "Guid": "a58d2214-eb64-47e7-bb7c-0f3b6bd9d8fa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "OnShadowCollectRewardOpen",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventChallengesRewardTrackCollectOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2500.0,
+                            "y": -1200.0
+                        },
+                        "Guid": "2b5a10bf-a157-4a1f-88a2-8f2c296484d8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "OnShadowRewardTrackOpen",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventChallengesRewardTrackShadowOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1500.0,
+                            "y": -1200.0
+                        },
+                        "Guid": "ef0a8dd7-66c3-4dd6-84a8-e7b978f1d1ee",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "OnOutiftsRewardTrackOpen",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventChallengesRewardTrackOutfitsOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1500.0,
+                            "y": -1520.0
+                        },
+                        "Guid": "a66b993d-79c0-4118-a36c-0bcb087c048f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainers",
+                    "Name": "OutfitCloseUIContainers",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventPlayerProgressionClose\",\"Containers\":[\"uicontaineridentifier_progression_music_track\",\"uicontaineridentifier_progression_ornament\",\"uicontaineridentifier_player_progression\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3500.0,
+                            "y": -1520.0
+                        },
+                        "Guid": "78f0288a-9469-42e7-9729-45a2cab5db95",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "OnOutfitCollectRewardOpen",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventChallengesRewardTrackCollectOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2500.0,
+                            "y": -1520.0
+                        },
+                        "Guid": "0ea4219c-9e67-4106-9494-773abe5a4a83",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenRewardTrack",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_challenges_reward_track\",\"PlayScreenTransition\":true,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true,\"CloseContainers\":[\"uicontaineridentifier_challenges_overview\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnCollectRewardOpen",
+                            "ToState": "UnlockFlow",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2500.0,
+                                    "y": -880.0
+                                },
+                                "Guid": "35dd4996-79c5-42f0-bf39-f0fb8b487c91",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2000.0,
+                            "y": -880.0
+                        },
+                        "Guid": "b54b5254-4da3-4676-987b-85486bb96fab",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "UnlockFlow",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_UnlockFlow\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ApplicationTransitionUIMessageCloseUIContainers",
+                            "ToState": "OpenRewardTrack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3500.0,
+                                    "y": -880.0
+                                },
+                                "Guid": "4b074fff-8526-4724-9898-b31afc7c4b3a",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3870.0,
+                                            "y": -920.0
+                                        },
+                                        "Guid": "54332523-fed9-4baf-987e-c32b136a3e8e",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1990.0,
+                                            "y": -910.0
+                                        },
+                                        "Guid": "941684b4-9682-429a-a6ec-f3c2fb771133",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3000.0,
+                            "y": -880.0
+                        },
+                        "Guid": "e12e7888-131e-466c-92d4-ab219cfa83bb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "ShadowUnlockFlow",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_UnlockFlow\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ShadowCloseUIContainers",
+                            "ToState": "OpenShadowRewardTrack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3500.0,
+                                    "y": -1200.0
+                                },
+                                "Guid": "a58d2214-eb64-47e7-bb7c-0f3b6bd9d8fa",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3870.0,
+                                            "y": -1230.0
+                                        },
+                                        "Guid": "96bf006f-cfa8-4c11-93de-895d20aa6b11",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2000.0,
+                                            "y": -1230.0
+                                        },
+                                        "Guid": "226b64ae-74b9-42ff-999a-6a581d754161",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3000.0,
+                            "y": -1200.0
+                        },
+                        "Guid": "e10bc77a-0e91-4464-8ea5-ab16c0351580",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenShadowRewardTrack",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_challenges_reward_track_shadow\",\"PlayScreenTransition\":true,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true,\"CloseContainers\":[\"uicontaineridentifier_challenges_overview\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnShadowCollectRewardOpen",
+                            "ToState": "ShadowUnlockFlow",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2500.0,
+                                    "y": -1200.0
+                                },
+                                "Guid": "2b5a10bf-a157-4a1f-88a2-8f2c296484d8",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2000.0,
+                            "y": -1200.0
+                        },
+                        "Guid": "efbadc96-7c3b-4690-bea1-90d368ea77a1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenOutfitsRewardTrack",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_challenges_reward_track_outfits\",\"PlayScreenTransition\":true,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true,\"CloseContainers\":[\"uicontaineridentifier_challenges_overview\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnOutfitCollectRewardOpen",
+                            "ToState": "OutfitUnlockFlow",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2500.0,
+                                    "y": -1520.0
+                                },
+                                "Guid": "0ea4219c-9e67-4106-9494-773abe5a4a83",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2000.0,
+                            "y": -1520.0
+                        },
+                        "Guid": "e1cd891c-af3b-4d31-aad9-bd348c0d4ffc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "OutfitUnlockFlow",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_UnlockFlow\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OutfitCloseUIContainers",
+                            "ToState": "OpenOutfitsRewardTrack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3500.0,
+                                    "y": -1520.0
+                                },
+                                "Guid": "78f0288a-9469-42e7-9729-45a2cab5db95",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3880.0,
+                                            "y": -1560.0
+                                        },
+                                        "Guid": "f1d621ee-6cb1-4b1e-b88f-bc396193c2cc",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2000.0,
+                                            "y": -1560.0
+                                        },
+                                        "Guid": "bcba7430-7cd3-4486-ab25-5a5505e9d51b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3000.0,
+                            "y": -1520.0
+                        },
+                        "Guid": "879a0cc9-6425-4829-b57d-b97e13ac350d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "Start",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnOutiftsRewardTrackOpen",
+                            "ToState": "OpenOutfitsRewardTrack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1500.0,
+                                    "y": -1520.0
+                                },
+                                "Guid": "a66b993d-79c0-4118-a36c-0bcb087c048f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "OnRewardTrackOpen",
+                            "ToState": "OpenRewardTrack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1500.0,
+                                    "y": -880.0
+                                },
+                                "Guid": "c78cc42c-c0e1-4a68-858d-a54680938651",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "OnShadowRewardTrackOpen",
+                            "ToState": "OpenShadowRewardTrack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1500.0,
+                                    "y": -1200.0
+                                },
+                                "Guid": "ef0a8dd7-66c3-4dd6-84a8-e7b978f1d1ee",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1000.0,
+                            "y": -1200.0
+                        },
+                        "Guid": "2ed6d38b-f100-4df6-88e9-5448e37326bf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "425690c8-cb41-4732-9f42-987d38d08a36",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": -748.1364135742188,
+                    "y": -34.09634017944336
+                },
+                "Zoom": 0.7692818641662598
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

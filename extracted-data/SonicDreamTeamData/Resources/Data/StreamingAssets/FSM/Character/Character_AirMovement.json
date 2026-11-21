@@ -1,0 +1,621 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_AirMovement",
+            "DefaultState": "StateGroup_AirStart",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionCheckFloat",
+                    "Name": "IsSpinDashCharging",
+                    "CtorArgs": "{\"Name\":\"SpinDashChargeTime\",\"Node\":\"\",\"FSM\":\"\",\"TriggerPoint\":0.0,\"Tolerance\":0.0,\"Compare\":\"GreaterThan\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 40.0
+                        },
+                        "Guid": "62104375-4d65-4bac-830f-3842f3f75178",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 40.0
+                        },
+                        "Guid": "ff597c70-cd7a-4131-b3e3-0eb4a1af4091",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "StopChargingSpinDash",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"IsSpinDashCharging\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": 40.0
+                        },
+                        "Guid": "2e921bc5-90f9-4124-9fff-d967bf5127e2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "ToNotChargingSpinDash",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3300.0,
+                            "y": 40.0
+                        },
+                        "Guid": "79571263-851e-4490-8432-26e240413387",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_AirTriggers",
+                    "CtorArgs": "{\"States\":[\"TriggerDisableAbilitiesForAir\",\"TriggerAbilityRailsTargeting\",\"TriggerAbilityKnockback\",\"TriggerAbilityAirGlide\",\"TriggerAbilityAirDash\",\"TriggerAbilityAirFlight\",\"TriggerAbilityMovementAir\",\"TriggerAbilityHomingAttackAirTarget\",\"TriggerAbilityHomingAttackAirLightspeedDash\",\"TriggerAbilityHomingAttackAirOneShot\",\"TriggerAbilityRailsProximityAir\",\"TriggerAbilityClimbingDirectionOverride\",\"TriggerAbilityClimbingAir\",\"TriggerAbilityTransporterProximity\",\"TriggerAbilityBoost\",\"TriggerAbilityRailSwitch\",\"TriggerAbilityAirStompAttack\",\"TriggerAbilityAirChaosAim\",\"TriggerAbilitySpinDashCharge\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": 580.0
+                        },
+                        "Guid": "e683952c-6830-49dd-b89a-b7a7ea4fa57b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityAirDash",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityAirDash\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 580.0
+                        },
+                        "Guid": "48c5ba00-0c3f-46c9-a700-b452e26ed115",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHomingAttackAirTarget",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackAirTarget\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 940.0
+                        },
+                        "Guid": "ec82790c-f93c-4bce-bcf6-a5a847ff9275",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityAirGlide",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityAirGlide\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 1180.0
+                        },
+                        "Guid": "ce168eb9-08c3-412b-b18a-660c0f981454",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityMovementAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementAir\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 820.0
+                        },
+                        "Guid": "06d87bf7-ca18-4a96-994d-2aeb20c748b7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_AirStart",
+                    "CtorArgs": "{\"States\":[\"StateGroup_AirTriggers\",\"TriggerScreenControlsAir\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "Air_NotChargingSpinDash",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": 40.0
+                                },
+                                "Guid": "ff597c70-cd7a-4131-b3e3-0eb4a1af4091",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": 40.0
+                        },
+                        "Guid": "665eaaea-10b7-4cb9-9f58-1713238ed2a4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityAirFlight",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityAirFlight\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 700.0
+                        },
+                        "Guid": "863e63ab-1a50-413a-8c6f-371d558b7bb9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerDisableAbilities",
+                    "Name": "TriggerDisableAbilitiesForAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ExceptionList\":[\"AbilityRailsTargeting\",\"AbilityHomingAttackAirTarget\",\"AbilityHomingAttackAirLightspeedDash\",\"AbilityHomingAttackAirOneShot\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": 1100.0
+                        },
+                        "Guid": "e546df9d-7aa6-4be5-8a82-067db260f508",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailsProximityAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityRailsProximityAir\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 940.0
+                        },
+                        "Guid": "f3dc6349-5c2f-4656-bf29-67885b2d13ed",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailsTargeting",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityRailsTargeting\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 580.0
+                        },
+                        "Guid": "6ef97380-4066-44e4-b2db-cd4b90922039",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityClimbingDirectionOverride",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityClimbingDirectionOverrideKnuckles\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 1060.0
+                        },
+                        "Guid": "6fe14fbd-ac5e-4e49-acbe-0d56adfd9c38",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityClimbingAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityClimbingAirKnuckles\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 1180.0
+                        },
+                        "Guid": "8ca73946-e9c1-41ac-a548-ed2d3d00b946",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHomingAttackAirLightspeedDash",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackAirLightspeedDash\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 820.0
+                        },
+                        "Guid": "f8fb3fab-a5e3-42b8-b933-e4f2c098fbe3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityKnockback",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityKnockback\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 700.0
+                        },
+                        "Guid": "675c7643-0d26-48e5-8726-f8ad80942c8e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityTransporterProximity",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityTransporterProximity\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 580.0
+                        },
+                        "Guid": "eb476ac2-620f-4af3-8be9-da043fc1e981",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerScreenControls",
+                    "Name": "TriggerScreenControlsAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ScreenControlsGroupOverride\":-1032634697}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": 220.0
+                        },
+                        "Guid": "f54b2edc-96be-42f3-b00b-2a7858c99f54",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityBoost",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementGroundBoost\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 700.0
+                        },
+                        "Guid": "9b33ae42-52ca-45f7-aa1b-031ea30b4ca1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailSwitch",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityRailSwitch\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 820.0
+                        },
+                        "Guid": "45dd484c-8bcf-4f0d-95f1-0a6fe17a648f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityAirStompAttack",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityAirStompAttack\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 940.0
+                        },
+                        "Guid": "0d4788d7-63cf-4399-99c2-d01721c9bf94",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityAirChaosAim",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityAirChaosAim\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 1060.0
+                        },
+                        "Guid": "1479e1e9-a397-46ed-8511-40d1a574b247",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHomingAttackAirOneShot",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackAirOneShot\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 1060.0
+                        },
+                        "Guid": "980f27d6-1fe6-4c1b-b97b-0d1a8fef4341",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilitySpinDashCharge",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilitySpinDashCharge\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 1180.0
+                        },
+                        "Guid": "3e3f2ea0-ad4f-4543-8790-f59b454ee60c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerSetForm",
+                    "Name": "SpinDashAirTriggerBall",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"FormType\":-1118283248,\"FormIsLocked\":false,\"FormClearsLock\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 220.0
+                        },
+                        "Guid": "cd9b1a80-da32-41ea-ac25-3a2504588faa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "SpinDashChargeAir",
+                    "CtorArgs": "{\"States\":[\"SpinDashAirTriggerBall\",\"SpinDashAirChargeAnimation\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "StopChargingSpinDash",
+                            "ToState": "ExitSpinDashTriggerDefaultForm",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2300.0,
+                                    "y": 40.0
+                                },
+                                "Guid": "2e921bc5-90f9-4124-9fff-d967bf5127e2",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 40.0
+                        },
+                        "Guid": "b0cfcdc3-bde4-4a9a-838c-144bcadcfd69",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "SpinDashAirChargeAnimation",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterAirSpinDashChargeStateAnimation\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 380.0
+                        },
+                        "Guid": "da9d8662-034b-4759-b166-efd9adb15475",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "Air_NotChargingSpinDash",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IsSpinDashCharging",
+                            "ToState": "SpinDashChargeAir",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": 40.0
+                                },
+                                "Guid": "62104375-4d65-4bac-830f-3842f3f75178",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 40.0
+                        },
+                        "Guid": "d9f2aea2-6a32-4fe6-96c4-6209194f8f54",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerSetForm",
+                    "Name": "ExitSpinDashTriggerDefaultForm",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"FormType\":602145082,\"FormIsLocked\":false,\"FormClearsLock\":false}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToNotChargingSpinDash",
+                            "ToState": "Air_NotChargingSpinDash",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3300.0,
+                                    "y": 40.0
+                                },
+                                "Guid": "79571263-851e-4490-8432-26e240413387",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3680.0,
+                                            "y": -10.0
+                                        },
+                                        "Guid": "3dbf9017-bb01-4fef-8a8a-a86330cc37e4",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 800.0,
+                                            "y": -10.0
+                                        },
+                                        "Guid": "c8d408e5-d570-49c8-9dc5-8380dd4817c8",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2800.0,
+                            "y": 40.0
+                        },
+                        "Guid": "a2d88a6f-5392-4c8c-b415-86331c3207b6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -200.0,
+                    "y": -220.0
+                },
+                "Guid": "1133dc34-714b-4999-a8ba-15df1ca8efe4",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

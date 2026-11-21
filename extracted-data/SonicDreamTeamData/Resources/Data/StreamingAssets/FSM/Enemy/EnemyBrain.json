@@ -1,0 +1,995 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "EnemyBrain",
+            "DefaultState": "Idle",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": true,
+            "Transitions": [
+                {
+                    "Class": "EnemyBrainTransition_IdleToMove",
+                    "Name": "IdleToMove",
+                    "CtorArgs": "{}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 60.0
+                        },
+                        "Guid": "edb33051-35ee-42aa-a8e2-7549bea1726a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainTransition_DestinationReached",
+                    "Name": "DestinationReached",
+                    "CtorArgs": "{}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 620.0,
+                            "y": -140.0
+                        },
+                        "Guid": "152e8c28-7588-49e0-a30f-573db04884bc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainTransition_TargetSpotted",
+                    "Name": "TargetSpotted",
+                    "CtorArgs": "{}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -700.0
+                        },
+                        "Guid": "02aecd49-9607-483f-ae56-00121b7c4bb9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainTransition_TargetLost",
+                    "Name": "TargetLost",
+                    "CtorArgs": "{}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 680.0,
+                            "y": -260.0
+                        },
+                        "Guid": "c31e197a-9706-4d40-b41f-f499105181fb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": -260.0
+                        },
+                        "Guid": "337c28d5-39f2-4fd8-a88a-346f944e9561",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainTransition_TargetReached",
+                    "Name": "EnemyBrainTransition_TargetReached",
+                    "CtorArgs": "{}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 680.0,
+                            "y": -440.0
+                        },
+                        "Guid": "633e68ef-49ee-4bf4-9a36-3aa6681c9c6f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "TagetNotLost",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"TargetLost\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": -660.0
+                        },
+                        "Guid": "fabd6d45-990e-451a-9159-02e9b542da50",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "TargetNotLostWindUpComplete",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"TagetNotLost\",\"EnemyBrainTransition_WindUpCycleComplete\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": -440.0
+                        },
+                        "Guid": "0fac33e4-bbc2-4960-937e-6b26f0a37ad0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainTransition_AttackCycleComplete",
+                    "Name": "EnemyBrainTransition_AttackCycleComplete",
+                    "CtorArgs": "{}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2520.0,
+                            "y": -520.0
+                        },
+                        "Guid": "116fd1ec-b146-4fa8-b0da-976bc6ba42c7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainTransition_WindUpCycleComplete",
+                    "Name": "EnemyBrainTransition_WindUpCycleComplete",
+                    "CtorArgs": "{}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": -520.0
+                        },
+                        "Guid": "5b2e1ae5-eccf-4f9a-ab74-fa1f7f9a0bed",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "TargetNotLostAttackComplete",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"EnemyBrainTransition_AttackCycleComplete\",\"TagetNotLost\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2520.0,
+                            "y": -440.0
+                        },
+                        "Guid": "7fe6ed25-1e23-4742-b3e9-1b8e31d7519e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicOp",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"TargetSpotted\",\"EnemyBrainTransition_WatchToChaseTimeout\",\"Not_FireProjectileTriggered\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -500.0
+                        },
+                        "Guid": "a2d5340c-4361-4dee-a3cc-992c461cbecd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always3",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 160.0,
+                            "y": -280.0
+                        },
+                        "Guid": "83e2f68f-a67b-45a0-a773-3d25ade763e3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "IdleToMoveAndNoProjectileTarget",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"IdleToMove\",\"Not_FireProjectileTriggered\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -140.0
+                        },
+                        "Guid": "3b19921e-5aeb-425f-b6ca-b6418a910474",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "Not_FireProjectileTriggered",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"FireProjectileTriggered\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 120.0
+                        },
+                        "Guid": "4951b2f1-9ef3-49a1-ae58-5b435c7cc277",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainTransition_FireProjectileTriggered",
+                    "Name": "FireProjectileTriggered",
+                    "CtorArgs": "{\"AbilityType\":-918308433}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -460.0,
+                            "y": -840.0
+                        },
+                        "Guid": "e37a74d9-020e-4d18-83ac-e25b0786a0e5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "FireProjectileFinished",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"FireProjectileTriggered\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 620.0,
+                            "y": -840.0
+                        },
+                        "Guid": "fe6161cc-a8d0-4737-863c-40e11092e6fb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainTransition_WatchToChaseTimeout",
+                    "Name": "EnemyBrainTransition_WatchToChaseTimeout",
+                    "CtorArgs": "{}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -600.0
+                        },
+                        "Guid": "839dffce-6b6e-4495-a951-e756656eaad0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "EnemyBrainState_Idle",
+                    "Name": "Idle",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IdleToMoveAndNoProjectileTarget",
+                            "ToState": "MoveToDestination",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -140.0
+                                },
+                                "Guid": "3b19921e-5aeb-425f-b6ca-b6418a910474",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "LogicOp",
+                            "ToState": "EnemyBrainState_CueTargetSpottedReaction",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -500.0
+                                },
+                                "Guid": "a2d5340c-4361-4dee-a3cc-992c461cbecd",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 80.0,
+                                            "y": -320.0
+                                        },
+                                        "Guid": "d1f89e53-eec4-4e37-978d-029ce4cdea87",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -300.0,
+                                            "y": -320.0
+                                        },
+                                        "Guid": "ddbbca74-6f93-4b7f-b0e7-056a3cecc0df",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "FireProjectileTriggered",
+                            "ToState": "FireProjectile_TurnTowardsTarget",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -460.0,
+                                    "y": -840.0
+                                },
+                                "Guid": "e37a74d9-020e-4d18-83ac-e25b0786a0e5",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -460.0,
+                                            "y": -620.0
+                                        },
+                                        "Guid": "2722df80-2caf-4bd7-993e-49ddf21043da",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -940.0,
+                            "y": -320.0
+                        },
+                        "Guid": "9de71003-599b-4e4a-b8d3-d63a9b1c2bd2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainState_MoveToDestination",
+                    "Name": "MoveToDestination",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "DestinationReached",
+                            "ToState": "Idle",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 620.0,
+                                    "y": -140.0
+                                },
+                                "Guid": "152e8c28-7588-49e0-a30f-573db04884bc",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1000.0,
+                                            "y": 20.0
+                                        },
+                                        "Guid": "fc669001-2a00-4a2b-a6d1-89ece1d12fca",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -940.0,
+                                            "y": 20.0
+                                        },
+                                        "Guid": "776d208c-d9df-4a3f-b809-8237f12081a9",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "LogicOp",
+                            "ToState": "EnemyBrainState_CueTargetSpottedReaction",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -500.0
+                                },
+                                "Guid": "a2d5340c-4361-4dee-a3cc-992c461cbecd",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 540.0,
+                                            "y": -180.0
+                                        },
+                                        "Guid": "b6a5b4e8-013e-4669-ab6f-7216bf7640fc",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -260.0,
+                                            "y": -180.0
+                                        },
+                                        "Guid": "195c840e-79d3-4603-947b-55a757074c95",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 80.0,
+                                            "y": -320.0
+                                        },
+                                        "Guid": "d1f89e53-eec4-4e37-978d-029ce4cdea87",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -300.0,
+                                            "y": -320.0
+                                        },
+                                        "Guid": "ddbbca74-6f93-4b7f-b0e7-056a3cecc0df",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "FireProjectileTriggered",
+                            "ToState": "FireProjectile_TurnTowardsTarget",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -460.0,
+                                    "y": -840.0
+                                },
+                                "Guid": "e37a74d9-020e-4d18-83ac-e25b0786a0e5",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 540.0,
+                                            "y": -180.0
+                                        },
+                                        "Guid": "b6a5b4e8-013e-4669-ab6f-7216bf7640fc",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -260.0,
+                                            "y": -180.0
+                                        },
+                                        "Guid": "195c840e-79d3-4603-947b-55a757074c95",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -460.0,
+                                            "y": -620.0
+                                        },
+                                        "Guid": "2722df80-2caf-4bd7-993e-49ddf21043da",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 160.0,
+                            "y": -140.0
+                        },
+                        "Guid": "1fa70200-6c4d-48d4-8ba7-b7b928bf8f4a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainState_ResetHome",
+                    "Name": "ResetHome",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "Idle",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1600.0,
+                                    "y": -260.0
+                                },
+                                "Guid": "337c28d5-39f2-4fd8-a88a-346f944e9561",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1980.0,
+                                            "y": 20.0
+                                        },
+                                        "Guid": "d3a8092f-360d-4a88-b01e-4cadc634360c",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1000.0,
+                                            "y": 20.0
+                                        },
+                                        "Guid": "fc669001-2a00-4a2b-a6d1-89ece1d12fca",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -940.0,
+                                            "y": 20.0
+                                        },
+                                        "Guid": "776d208c-d9df-4a3f-b809-8237f12081a9",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1140.0,
+                            "y": -260.0
+                        },
+                        "Guid": "d9539048-563b-4a15-a093-8cde83a6a1c5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainState_MoveToTarget",
+                    "Name": "MoveToTarget",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "EnemyBrainTransition_TargetReached",
+                            "ToState": "EnemyBrainState_WindUp_Attack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 680.0,
+                                    "y": -440.0
+                                },
+                                "Guid": "633e68ef-49ee-4bf4-9a36-3aa6681c9c6f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "TargetLost",
+                            "ToState": "ResetHome",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 680.0,
+                                    "y": -260.0
+                                },
+                                "Guid": "c31e197a-9706-4d40-b41f-f499105181fb",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "FireProjectileTriggered",
+                            "ToState": "FireProjectile_TurnTowardsTarget",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -460.0,
+                                    "y": -840.0
+                                },
+                                "Guid": "e37a74d9-020e-4d18-83ac-e25b0786a0e5",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 600.0,
+                                            "y": -620.0
+                                        },
+                                        "Guid": "4e636fc5-61f0-447d-89e5-6754772ea323",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -460.0,
+                                            "y": -620.0
+                                        },
+                                        "Guid": "2722df80-2caf-4bd7-993e-49ddf21043da",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 220.0,
+                            "y": -440.0
+                        },
+                        "Guid": "ace9d01f-80ea-4af9-8a15-f8d7c63a71ba",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainState_Attack",
+                    "Name": "EnemyBrainState_Attack",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "TargetNotLostAttackComplete",
+                            "ToState": "MoveToTarget",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2520.0,
+                                    "y": -440.0
+                                },
+                                "Guid": "7fe6ed25-1e23-4742-b3e9-1b8e31d7519e",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2900.0,
+                                            "y": -700.0
+                                        },
+                                        "Guid": "a56c28d7-0de3-4edf-be23-b5c57d089e94",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 220.0,
+                                            "y": -700.0
+                                        },
+                                        "Guid": "d8fd56c8-7179-4564-a655-740c1764077f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "TargetLost",
+                            "ToState": "ResetHome",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 680.0,
+                                    "y": -260.0
+                                },
+                                "Guid": "c31e197a-9706-4d40-b41f-f499105181fb",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2440.0,
+                                            "y": -280.0
+                                        },
+                                        "Guid": "cd6b0801-9fbd-41d0-9752-4daeb3805534",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1520.0,
+                                            "y": -280.0
+                                        },
+                                        "Guid": "158ef6f7-d0b3-4c32-8c66-e6ba8532dfa7",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 680.0,
+                                            "y": -280.0
+                                        },
+                                        "Guid": "715a1e8b-6772-4180-b24a-a1e159a093f4",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2060.0,
+                            "y": -440.0
+                        },
+                        "Guid": "204e0aad-c99d-44b0-b6c9-f8677e625a3c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainState_WindUp_Attack",
+                    "Name": "EnemyBrainState_WindUp_Attack",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "TargetNotLostWindUpComplete",
+                            "ToState": "EnemyBrainState_Attack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1600.0,
+                                    "y": -440.0
+                                },
+                                "Guid": "0fac33e4-bbc2-4960-937e-6b26f0a37ad0",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "TargetLost",
+                            "ToState": "ResetHome",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 680.0,
+                                    "y": -260.0
+                                },
+                                "Guid": "c31e197a-9706-4d40-b41f-f499105181fb",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1520.0,
+                                            "y": -280.0
+                                        },
+                                        "Guid": "158ef6f7-d0b3-4c32-8c66-e6ba8532dfa7",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 680.0,
+                                            "y": -280.0
+                                        },
+                                        "Guid": "715a1e8b-6772-4180-b24a-a1e159a093f4",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1140.0,
+                            "y": -440.0
+                        },
+                        "Guid": "b387a5d2-28d6-453e-bee7-66883494adf4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainState_CueTargetSpottedReaction",
+                    "Name": "EnemyBrainState_CueTargetSpottedReaction",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always3",
+                            "ToState": "MoveToTarget",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 160.0,
+                                    "y": -280.0
+                                },
+                                "Guid": "83e2f68f-a67b-45a0-a773-3d25ade763e3",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 540.0,
+                                            "y": -320.0
+                                        },
+                                        "Guid": "2c50ecff-1d16-496f-bd09-8953909f85dc",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 220.0,
+                                            "y": -320.0
+                                        },
+                                        "Guid": "2a0bbe7f-b558-4322-bc0d-86804338d37b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -280.0
+                        },
+                        "Guid": "4f9fb49d-1753-4897-8213-3cc9a72745d6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyBrainState_TurnTowardsPosition",
+                    "Name": "FireProjectile_TurnTowardsTarget",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"PositionFSMVariableName\":\"FireProjectileTargetPosition\",\"RemoveWhenComplete\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "FireProjectileFinished",
+                            "ToState": "Idle",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 620.0,
+                                    "y": -840.0
+                                },
+                                "Guid": "fe6161cc-a8d0-4737-863c-40e11092e6fb",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1000.0,
+                                            "y": 20.0
+                                        },
+                                        "Guid": "fc669001-2a00-4a2b-a6d1-89ece1d12fca",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -940.0,
+                                            "y": 20.0
+                                        },
+                                        "Guid": "776d208c-d9df-4a3f-b809-8237f12081a9",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 80.0,
+                            "y": -840.0
+                        },
+                        "Guid": "0c172dc2-d21f-41c2-b3f0-7b53c1eb1524",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -200.0,
+                    "y": -40.0
+                },
+                "Guid": "60d4687d-f656-4067-94e7-dd9ee5d0747c",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

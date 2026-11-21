@@ -1,0 +1,131 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_LeaderboardsMenu",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "OnLeaderboardsOpen",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventLeaderboardsOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -200.0
+                        },
+                        "Guid": "45ad69c5-c7a5-47ef-85ff-643034aebe75"
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainer",
+                    "Name": "OnLoaderboardsClose",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventLeaderboardsClose\",\"Container\":\"uicontaineridentifier_leaderboards\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -200.0
+                        },
+                        "Guid": "48c7e7ed-ecc7-4808-8085-378ff857ca50"
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMState",
+                    "Name": "Start",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnLeaderboardsOpen",
+                            "ToState": "OpenLoaderboards",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "45ad69c5-c7a5-47ef-85ff-643034aebe75",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -200.0
+                        },
+                        "Guid": "3aef8b02-f4da-4332-92df-3dd3491f1b7d"
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenLoaderboards",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_leaderboards\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnLoaderboardsClose",
+                            "ToState": "Start",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "48c7e7ed-ecc7-4808-8085-378ff857ca50",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1080.0,
+                                            "y": -240.0
+                                        },
+                                        "Guid": "8fcfc018-3ed0-42c9-a0e5-e597e0c2aee8",
+                                        "Flipped": true
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -800.0,
+                                            "y": -240.0
+                                        },
+                                        "Guid": "05e16475-9d52-4c50-8ebd-5e736c86aee0",
+                                        "Flipped": true
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -200.0
+                        },
+                        "Guid": "105e3927-a483-40c0-b0ce-050d1eab6047"
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "6a18061e-bf29-4c04-a77c-7763c2685962"
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            }
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

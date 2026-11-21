@@ -1,0 +1,205 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_AnalyticsChangeAccount",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "GameCenterAccountChanged",
+                    "CtorArgs": "{\"Name\":\"GameCenterAccountChanged\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "a05e9962-a654-4344-874b-194711b5feb4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainer",
+                    "Name": "OnAccountChangedClosed",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventGameCenterAccountChanged\",\"Container\":\"uicontaineridentifier_gamecenter_account_changed\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -300.0
+                        },
+                        "Guid": "22a4a669-5426-406a-9199-15d42f50d173",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1700.0,
+                            "y": -300.0
+                        },
+                        "Guid": "951dd4f4-cc3e-4871-8339-af657c55bc01",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMState",
+                    "Name": "Start",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "GameCenterAccountChanged",
+                            "ToState": "OpenAccountChangedContainer",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "a05e9962-a654-4344-874b-194711b5feb4",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "28620c0c-0d3a-4d44-a38e-ea3dda52cb81",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenAccountChangedContainer",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_gamecenter_account_changed\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnAccountChangedClosed",
+                            "ToState": "PublishExitEvent",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "22a4a669-5426-406a-9199-15d42f50d173",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -300.0
+                        },
+                        "Guid": "4397bc98-9535-49a0-a637-1c7b68a6bd24",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStatePublishUIEvent",
+                    "Name": "PublishExitEvent",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventExit\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "Start",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1700.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "951dd4f4-cc3e-4871-8339-af657c55bc01",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2080.0,
+                                            "y": -340.0
+                                        },
+                                        "Guid": "bf8a9419-3471-4efa-9dab-f277c3cb7cf6",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -800.0,
+                                            "y": -340.0
+                                        },
+                                        "Guid": "1317b7df-57a2-45a3-a868-77d51ab2f390",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": -300.0
+                        },
+                        "Guid": "03cabc8c-9c31-40f9-b4ed-9355125ae198",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -700.0,
+                    "y": -300.0
+                },
+                "Guid": "c482ac4a-f183-45e0-b83f-2e31ef78b518",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": -18.0,
+                    "y": 7.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,422 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_HomingAttack",
+            "DefaultState": "Group_Entry",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "CharacterTransition_HomingAttackExit",
+                    "Name": "HomingAttackExit",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -520.0,
+                            "y": 0.0
+                        },
+                        "Guid": "9e73eb0b-9440-49c9-9fb7-1e39d51bfa70",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_HomingAttack",
+                    "Name": "ToHomingAttackTarget",
+                    "CtorArgs": "{\"HomingTargetTypes\":[-214669338,1186391869,1681468432,1172797550,-141265807,2112396014]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1540.0,
+                            "y": -260.0
+                        },
+                        "Guid": "f459f906-d4b4-4728-97a1-8e74c2fd62fa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 400.0,
+                            "y": 0.0
+                        },
+                        "Guid": "928cca52-32de-48c3-9412-ffe835bf394c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "ToHomingAttackAirOneShot",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityHomingAttackAirOneShot\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1540.0,
+                            "y": 260.0
+                        },
+                        "Guid": "4da5208a-bba0-4806-80ac-587466a5a10a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicToHomingAttackTarget",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"ToHomingAttackTarget\",\"LogicExitHomingAttackAirOneShot\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1540.0,
+                            "y": 0.0
+                        },
+                        "Guid": "6db3a727-78a9-4477-b70a-c75b5ef02d15",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicExitHomingAttackAirOneShot",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"ToHomingAttackAirOneShot\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1540.0,
+                            "y": 380.0
+                        },
+                        "Guid": "3d44556f-3d09-4270-afd4-96d48c05b0a7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_HomingAttackTarget",
+                    "CtorArgs": "{\"States\":[\"TriggerResetAirBuffers\",\"TriggerResetAirAbilities\",\"TriggerGamePlayControl\",\"HomingAttackAirTarget\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HomingAttackExit",
+                            "ToState": "TriggerSetFormDefault",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -520.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "9e73eb0b-9440-49c9-9fb7-1e39d51bfa70",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1060.0,
+                            "y": 0.0
+                        },
+                        "Guid": "05888907-5c8d-4f7c-be7d-1e067868f260",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_HomingAttackAirTarget",
+                    "Name": "HomingAttackAirTarget",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterHomingAttackStateAnimation\",\"AbilityType\":-1780388798,\"IgnoreForceTriggerAbilityTypes\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1060.0,
+                            "y": -200.0
+                        },
+                        "Guid": "8f8bf870-642d-4bdb-90df-6eeb3e817451",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "Finished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 860.0,
+                            "y": 0.0
+                        },
+                        "Guid": "05366882-98ad-481a-b21c-2650d2dc6f13",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerResetAirAbilities",
+                    "Name": "TriggerResetAirAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -520.0,
+                            "y": 200.0
+                        },
+                        "Guid": "1be8bc2d-a5d2-42e2-b393-02c7b03e95d9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "Entry",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2080.0,
+                            "y": 220.0
+                        },
+                        "Guid": "248194c6-d221-4c96-ab1a-61cfecf2c362",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_Entry",
+                    "CtorArgs": "{\"States\":[\"Entry\",\"DisableAbilityRailsProximityAir\",\"DisableAbilityRailsTargeting\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToHomingAttackAirOneShot",
+                            "ToState": "Group_HomingAttackAirOneShot",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1540.0,
+                                    "y": 260.0
+                                },
+                                "Guid": "4da5208a-bba0-4806-80ac-587466a5a10a",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "LogicToHomingAttackTarget",
+                            "ToState": "Group_HomingAttackTarget",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1540.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "6db3a727-78a9-4477-b70a-c75b5ef02d15",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2080.0,
+                            "y": 0.0
+                        },
+                        "Guid": "d80d1838-90c3-446d-ba6e-6f33ff9fd99a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerResetAirBuffers",
+                    "Name": "TriggerResetAirBuffers",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -520.0,
+                            "y": 120.0
+                        },
+                        "Guid": "975033ea-ae35-4ec4-be8c-44653b2dbcba",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerGamePlayControl",
+                    "Name": "TriggerGamePlayControl",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ControlLockTime\":0.0,\"TimeCategory\":1739680676}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -520.0,
+                            "y": 280.0
+                        },
+                        "Guid": "e7f8deb9-b331-4c18-90ce-62bccca8e411",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityRailsTargeting",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityRailsTargeting\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2080.0,
+                            "y": 300.0
+                        },
+                        "Guid": "a7f59dec-93a4-4721-b98e-ea1ac6f8c373",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityRailsProximityAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityRailsProximityAir\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2080.0,
+                            "y": 420.0
+                        },
+                        "Guid": "f53ce71a-3d8b-4f03-ade6-570cd08fbba5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerSetForm",
+                    "Name": "TriggerSetFormDefault",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"FormType\":602145082}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 400.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "928cca52-32de-48c3-9412-ffe835bf394c",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -60.0,
+                            "y": 0.0
+                        },
+                        "Guid": "590ac905-90e1-46f9-8254-2dad92fd741b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_HomingAttackAirOneShot",
+                    "CtorArgs": "{\"States\":[\"TriggerResetAirBuffers\",\"TriggerResetAirAbilities\",\"TriggerGamePlayControl\",\"HomingAttackAirOneShot\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HomingAttackExit",
+                            "ToState": "TriggerSetFormDefault",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -520.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "9e73eb0b-9440-49c9-9fb7-1e39d51bfa70",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1060.0,
+                            "y": 260.0
+                        },
+                        "Guid": "30871a33-352d-45d9-8100-6ba72e4895a8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_HomingAttackAirOneShot",
+                    "Name": "HomingAttackAirOneShot",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterHomingAttackStateAnimation\",\"AbilityType\":-862192305,\"IgnoreForceTriggerAbilityTypes\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1060.0,
+                            "y": 480.0
+                        },
+                        "Guid": "91bcb6a4-5fb1-4f87-93ad-67f5bbfe9916",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": 40.0,
+                    "y": -140.0
+                },
+                "Guid": "dbcfd727-3b6b-401b-8abf-f56275f7b4c2",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

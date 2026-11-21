@@ -1,0 +1,487 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_MainMenu",
+            "DefaultState": "CheckGameSave",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionGameSaveLoaded",
+                    "Name": "GameSaveNotLoaded",
+                    "CtorArgs": "{\"Inverse\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -100.0,
+                            "y": -500.0
+                        },
+                        "Guid": "2ab41608-33da-4c00-a10c-57daa16e7369",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionGameSaveLoaded",
+                    "Name": "GameStateLoaded",
+                    "CtorArgs": "{\"Inverse\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 400.0,
+                            "y": -300.0
+                        },
+                        "Guid": "08696230-a3a7-4791-9150-9cf944aa366f",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainer",
+                    "Name": "OnStartMenuStart",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventStart\",\"Container\":\"uicontaineridentifier_start_menu\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -100.0,
+                            "y": -200.0
+                        },
+                        "Guid": "04bf0b1f-9383-4be4-a9b1-bbeac086a2b2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": -300.0
+                        },
+                        "Guid": "5986a5e9-a169-4a3c-b801-33d629a6c208",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "OnCollectionsOpen",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventCollectionsOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -100.0,
+                            "y": -80.0
+                        },
+                        "Guid": "53e6f581-37d9-44e4-936a-cfb259d25c43",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "OnCollectionsBack",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventBack\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 400.0,
+                            "y": 120.0
+                        },
+                        "Guid": "d0ec0590-0561-4f2b-ba6f-4a392762b3a2",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "ApplicationStateLoadGameSave",
+                    "Name": "LoadGameSave",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "GameStateLoaded",
+                            "ToState": "EnableMenuRenderScale",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 400.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "08696230-a3a7-4791-9150-9cf944aa366f",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 400.0,
+                            "y": -500.0
+                        },
+                        "Guid": "f5fe5641-dd41-43c6-9c4f-b520fc37926f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenStartMenu",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_start_menu\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":false,\"CloseContainers\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 200.0
+                        },
+                        "Guid": "324d7cdb-ce19-45df-9f31-801069797f4d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStatePublishStateMessage",
+                    "Name": "PublishMetaGameComplete",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventMainMenuComplete\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 400.0,
+                            "y": -200.0
+                        },
+                        "Guid": "cb292f1e-1b99-40f2-ae60-646ebbb21bb5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStatePlayAudio",
+                    "Name": "StartUIBackgroundAudio",
+                    "CtorArgs": "{\"Clip\":\"menu_music\",\"Source\":\"UiBackground\",\"OneShot\":false,\"Replay\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 360.0
+                        },
+                        "Guid": "30471a1f-c6c9-45e3-b821-787ff866324f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "SettingsMenuFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_SettingsMenu\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 1080.0
+                        },
+                        "Guid": "6d17bba8-2277-44f7-91fa-c3b8d2250512",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StartMenuGroup",
+                    "CtorArgs": "{\"States\":[\"OpenStartMenu\",\"SettingsMenuFSM\",\"QuitGameDialogFSM\",\"SaveSlotsFSM\",\"StartUIBackgroundAudio\",\"OpenGameCenterAccessPoint\",\"WhatsNewFSM\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnStartMenuStart",
+                            "ToState": "PublishMetaGameComplete",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -100.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "04bf0b1f-9383-4be4-a9b1-bbeac086a2b2",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "OnCollectionsOpen",
+                            "ToState": "CollectionsFSM",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -100.0,
+                                    "y": -80.0
+                                },
+                                "Guid": "53e6f581-37d9-44e4-936a-cfb259d25c43",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": -200.0
+                        },
+                        "Guid": "c6b085ec-7635-4077-95a8-64a23fb51f73",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "QuitGameDialogFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_QuitGameDialog\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 880.0
+                        },
+                        "Guid": "82ae4195-907f-4846-972e-372b62be59b3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "SaveSlotsFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_SaveSlots\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 680.0
+                        },
+                        "Guid": "ddcbb4d3-a3e6-4735-8d0f-854673006642",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "CheckGameSave",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "GameStateLoaded",
+                            "ToState": "EnableMenuRenderScale",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 400.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "08696230-a3a7-4791-9150-9cf944aa366f",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -100.0,
+                                            "y": -400.0
+                                        },
+                                        "Guid": "bcef0e9b-8974-461e-bf05-8c10621597ac",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 780.0,
+                                            "y": -400.0
+                                        },
+                                        "Guid": "3a558bde-8d49-4c8b-abf2-87a3bcc777f4",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "GameSaveNotLoaded",
+                            "ToState": "LoadGameSave",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -100.0,
+                                    "y": -500.0
+                                },
+                                "Guid": "2ab41608-33da-4c00-a10c-57daa16e7369",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": -500.0
+                        },
+                        "Guid": "88424ef2-0f2c-4b39-88c9-8cdc542bc1be",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenGameCenterAccessPoint",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_game_center_access_point\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true,\"CloseContainers\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 520.0
+                        },
+                        "Guid": "695aadf5-ac56-44d3-acb2-cc159fae058a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateEnableMenuRenderScale",
+                    "Name": "EnableMenuRenderScale",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "StartMenuGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -600.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "5986a5e9-a169-4a3c-b801-33d629a6c208",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -100.0,
+                            "y": -300.0
+                        },
+                        "Guid": "cf2b0318-7478-47d8-be86-2e49cf9bb98d",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "WhatsNewFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_WhatsNew\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 1280.0
+                        },
+                        "Guid": "1327cdd7-05ef-4ff4-8f66-c2511eba104f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "CollectionsFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_Collections\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnCollectionsBack",
+                            "ToState": "StartMenuGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 400.0,
+                                    "y": 120.0
+                                },
+                                "Guid": "d0ec0590-0561-4f2b-ba6f-4a392762b3a2",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -600.0,
+                                            "y": 140.0
+                                        },
+                                        "Guid": "ca226148-ce8f-46b6-ad66-0036caadd8cb",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 400.0,
+                            "y": -80.0
+                        },
+                        "Guid": "6d3924e3-1266-450a-9485-ce6a17f4a0ff",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "9df8f9a0-ee09-4ee6-a5b3-3684ab4e4836",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": -203.944580078125,
+                    "y": 125.44412231445313
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

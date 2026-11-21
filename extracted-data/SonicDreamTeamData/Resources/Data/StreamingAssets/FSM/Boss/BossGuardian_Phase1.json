@@ -1,0 +1,807 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossGuardian_Phase1",
+            "DefaultState": "IntroAnimation",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "BossTransition_WasHit",
+                    "Name": "WasHit",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -60.0
+                        },
+                        "Guid": "8298e121-4340-4460-a666-20467dceb06c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_GuardianWIthinRange",
+                    "Name": "GuardianWithinRangeFar",
+                    "CtorArgs": "{\"AbilityType\":-1928200245}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2020.0,
+                            "y": 300.0
+                        },
+                        "Guid": "a1276481-38ab-42ef-843d-dd50fb91594a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "TimeoutAndFar",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"GuardianWithinRangeFar\",\"WaitForSwipeAttack\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2020.0,
+                            "y": 140.0
+                        },
+                        "Guid": "6aeae714-aec4-4eee-b98b-a5ec5568bde6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "Not Far Range",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"GuardianWithinRangeFar\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2000.0,
+                            "y": -400.0
+                        },
+                        "Guid": "ebb46ceb-bc09-46d0-bd06-2ee0eb0aa363",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "TimeoutAndNotFar",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"WaitForSwipeAttack\",\"Not Far Range\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2020.0,
+                            "y": -60.0
+                        },
+                        "Guid": "8e1c7290-b421-4aa4-8996-47524fc0a776",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_GuardianWIthinRange",
+                    "Name": "GuardianWithinRangeNear",
+                    "CtorArgs": "{\"AbilityType\":705493950}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3060.0,
+                            "y": -60.0
+                        },
+                        "Guid": "8c837575-4325-47ab-bdbf-03dd78c36f6f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "WaitForSwipeAttack",
+                    "CtorArgs": "{\"TimeoutSeconds\":7.0,\"VariableName\":\"WaitForSwipeAttack\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2000.0,
+                            "y": -240.0
+                        },
+                        "Guid": "62ec96b3-6eef-4aeb-b843-0a3c4174bdd3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_VulnerableTimeOut",
+                    "Name": "VulnerableTimedOut",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1140.0,
+                            "y": -60.0
+                        },
+                        "Guid": "5eb487a6-9579-4c39-94d8-f13fe6783e0a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "WaitForWall",
+                    "CtorArgs": "{\"TimeoutSeconds\":2.0,\"VariableName\":\"\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1560.0,
+                            "y": 40.0
+                        },
+                        "Guid": "7eb7ee01-16fc-40bf-a8b2-3ee69ec128e8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckCutscenePlaying",
+                    "Name": "FSMTransitionCheckCutscenePlaying",
+                    "CtorArgs": "{\"Compare\":\"FalseCausesTransition\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -200.0
+                        },
+                        "Guid": "c07e4f0c-60dd-4ecd-85da-8658c7eae19b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_GuardianMaxRange",
+                    "Name": "AtFarMovementPosition",
+                    "CtorArgs": "{\"AbilityType\":-1157663940}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -60.0
+                        },
+                        "Guid": "d72f697b-34f7-4b60-94bf-17b5ea5d56c7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "IntroAnimation",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "FSMTransitionCheckCutscenePlaying",
+                            "ToState": "RushToFarMovementPosition",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "c07e4f0c-60dd-4ecd-85da-8658c7eae19b",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -420.0,
+                                            "y": -100.0
+                                        },
+                                        "Guid": "bbee0710-5e6f-4838-87c0-08bb39ef3cfb",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1300.0,
+                                            "y": -100.0
+                                        },
+                                        "Guid": "83fc97ca-ad67-4a08-8eed-dff447128f3e",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": -200.0
+                        },
+                        "Guid": "8e920664-0c33-45b7-aa95-bb51a91d81cf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "MovementWhileShooting",
+                    "CtorArgs": "{\"States\":[\"RunAndGunPhase1\",\"ProjectileFlow\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "WasHit",
+                            "ToState": "StaggeredMovement",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 200.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "8298e121-4340-4460-a666-20467dceb06c",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -60.0
+                        },
+                        "Guid": "c18ee26f-0611-4e83-9bab-4a3b190dccef",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_Vulnerable_Target",
+                    "Name": "Vulnerable",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossGHEnableInjuredAnimation\",\"VulnerableTime\":4.5,\"VulnerableTarget\":-2025675950,\"TargetActivateDelaySeconds\":0.0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -740.0
+                        },
+                        "Guid": "2ca0bade-e927-403f-95e6-4083beadce13",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "ProjectileFlow",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossGuardian_ProjectileFlow_Phase1_Rows\",\"ResetStateOnEnter\":true,\"DefaultState\":\"ResetGuardianProjectileCount\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 120.0
+                        },
+                        "Guid": "03cd546d-39fb-472b-a80c-892c2ee5b277",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StaggeredMovement",
+                    "CtorArgs": "{\"States\":[\"EnableStaggered\",\"DisableStaggered\",\"MoveStaggered\",\"TurnStaggered\",\"Vulnerable\",\"CoolDownKillerProjectiles\",\"CoolDownReturnableProjectiles\",\"TriggerSwipeDelay\",\"TriggerVulnerableEffects\",\"FSMState_TriggerCutscene\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "VulnerableTimedOut",
+                            "ToState": "EndStaggeredMovement",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1140.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "5eb487a6-9579-4c39-94d8-f13fe6783e0a",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -60.0
+                        },
+                        "Guid": "40adf183-ac37-4e58-92e3-9e4b18037479",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableStaggered",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_StayAheadOfPlayer_Phase1_Staggered\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -600.0
+                        },
+                        "Guid": "98bcd267-fb92-4bcb-a820-bae23f4a2bf1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveStaggered",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossGHMovingAnimation\",\"AbilityType\":-201654939}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -380.0
+                        },
+                        "Guid": "c395d369-a1d0-40af-82ef-aa7ff439aa2c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TurnAwayFromTarget",
+                    "Name": "TurnStaggered",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-201654939}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -480.0
+                        },
+                        "Guid": "18022a95-820d-47d8-ba65-0f6d7714d309",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableStaggered",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_StayAheadOfPlayer_Phase1_Staggered\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -280.0
+                        },
+                        "Guid": "123c9f3f-ff92-4303-aa43-17e66a90140b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_CoolDownProjectilesOfType",
+                    "Name": "CoolDownReturnableProjectiles",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"CoolDownAllOnEntry\":true,\"CoolDownAllOnLeave\":false,\"AllowExceptions\":false,\"ProjectileType\":729954528}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 220.0
+                        },
+                        "Guid": "67a76c03-690a-4d93-83f7-4cc235b5cc9b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_CoolDownProjectilesOfType",
+                    "Name": "CoolDownKillerProjectiles",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"CoolDownAllOnEntry\":true,\"CoolDownAllOnLeave\":false,\"AllowExceptions\":false,\"ProjectileType\":-64358761}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 360.0
+                        },
+                        "Guid": "033007c1-ba6e-4f5b-b58c-b6557d28081e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "NearestMovement",
+                    "CtorArgs": "{\"States\":[\"EnableStayAheadNearest\",\"TurnNearest\",\"MoveNearest\",\"DisableStayAheadNearest\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "GuardianWithinRangeNear",
+                            "ToState": "MovementWhileShooting",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3060.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "8c837575-4325-47ab-bdbf-03dd78c36f6f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3440.0,
+                                            "y": -120.0
+                                        },
+                                        "Guid": "c344dbbe-acbe-4074-984f-5243c0c66484",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -300.0,
+                                            "y": -120.0
+                                        },
+                                        "Guid": "899b103b-beb4-407b-9c43-bf3b24294337",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2600.0,
+                            "y": -60.0
+                        },
+                        "Guid": "627f9e92-b442-48bf-92e2-85faab1c65c0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableStayAheadNearest",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_StayAheadOfPlayer_Phase1_Nearest\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2600.0,
+                            "y": -560.0
+                        },
+                        "Guid": "9fa3bae9-39b8-4ba2-8c4e-627edb20349d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveNearest",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossGHMovingAnimation\",\"AbilityType\":-1157663940}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2600.0,
+                            "y": -340.0
+                        },
+                        "Guid": "573ed892-4d8d-4842-9e83-efb100823e60",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableStayAheadNearest",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_StayAheadOfPlayer_Phase1_Nearest\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2600.0,
+                            "y": -240.0
+                        },
+                        "Guid": "f5bc2664-0670-48de-b3ff-c34765f89fac",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "RunAndGunPhase1",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossGuardian_Phase1_Movements_While_Shooting\",\"ResetStateOnEnter\":true,\"DefaultState\":\"EntryState\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 300.0
+                        },
+                        "Guid": "7a584b1e-a0bb-41f8-829c-8db61dfae544",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "TriggerSwipeDelay",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossGuardian_Phase1_Delay_Trigger_Swipe\",\"ResetStateOnEnter\":true,\"DefaultState\":\"Wait\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 500.0
+                        },
+                        "Guid": "930cee86-39bf-4872-a352-8b289d84bda1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerVulnerableEffects",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-315201363}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 680.0
+                        },
+                        "Guid": "11ac276f-d6fb-4d2b-a35f-a005b7f4e205",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "EndStaggeredMovement",
+                    "CtorArgs": "{\"States\":[\"EnableStaggered\",\"DisableStaggered\",\"MoveStaggeredNoAnim\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "WaitForWall",
+                            "ToState": "PauseForWall",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1560.0,
+                                    "y": 40.0
+                                },
+                                "Guid": "7eb7ee01-16fc-40bf-a8b2-3ee69ec128e8",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1560.0,
+                            "y": -60.0
+                        },
+                        "Guid": "dd9a53ff-3eb8-4f57-a067-51eb882267ac",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveStaggeredNoAnim",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-201654939}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1560.0,
+                            "y": -400.0
+                        },
+                        "Guid": "2bf38eaf-f667-412a-bb33-8638f60d6b35",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "PauseForWall",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "TimeoutAndFar",
+                            "ToState": "MovementWhileShooting",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2020.0,
+                                    "y": 140.0
+                                },
+                                "Guid": "6aeae714-aec4-4eee-b98b-a5ec5568bde6",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2580.0,
+                                            "y": 160.0
+                                        },
+                                        "Guid": "f2e3a44b-3023-4c1c-801a-73e49abbfa41",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 3440.0,
+                                            "y": 160.0
+                                        },
+                                        "Guid": "9e07b57a-e404-470a-b815-6abc5f8d4ea7",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 3440.0,
+                                            "y": -120.0
+                                        },
+                                        "Guid": "c344dbbe-acbe-4074-984f-5243c0c66484",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -300.0,
+                                            "y": -120.0
+                                        },
+                                        "Guid": "899b103b-beb4-407b-9c43-bf3b24294337",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "TimeoutAndNotFar",
+                            "ToState": "NearestMovement",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2020.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "8e1c7290-b421-4aa4-8996-47524fc0a776",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1560.0,
+                            "y": 140.0
+                        },
+                        "Guid": "e9b8d12e-a3a1-44f9-b3f8-f17c5c1a7cdf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "RushToFarMovementPosition",
+                    "CtorArgs": "{\"States\":[\"EnableStayAheadNearest\",\"TurnNearest\",\"MoveNearest\",\"DisableStayAheadNearest\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AtFarMovementPosition",
+                            "ToState": "MovementWhileShooting",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "d72f697b-34f7-4b60-94bf-17b5ea5d56c7",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": -60.0
+                        },
+                        "Guid": "68690730-6d29-4aba-ac85-4a6661af24dc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCutscene",
+                    "Name": "FSMState_TriggerCutscene",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"CutsceneTriggerType\":\"OnTriggerVolumeEnteredA\",\"PreloadOnly\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 780.0
+                        },
+                        "Guid": "7a060587-9578-4020-b401-d42b60bba0b5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TurnAwayFromTarget",
+                    "Name": "TurnNearest",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-1157663940}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2600.0,
+                            "y": -440.0
+                        },
+                        "Guid": "7c189f75-8589-43ab-891a-f8b946097770",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,1102 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_MainGameLoop",
+            "DefaultState": "GameLoadingFSM",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionDataProgress",
+                    "Name": "ApplicationTransitionDataProgress",
+                    "CtorArgs": "{\"Threshold\":1.0}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2300.0,
+                            "y": 0.0
+                        },
+                        "Guid": "f7fccd1b-beee-472c-8c7a-014138de2c3b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "UIMessageExit",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventExit\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "9179612b-290a-4e3c-a369-f0113df95650",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "UIMessageRestart",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventRestart\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 0.0
+                        },
+                        "Guid": "e8bec200-5a2d-47c6-9d99-3db141409a2d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "GameLoadingLogicOp",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"ApplicationTransitionDataProgress\",\"OnGameLoadingComplete\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "75c15494-29a0-40d8-a390-1f74e22cf8d4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "OnGameLoadingComplete",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventGameLoadingComplete\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2300.0,
+                            "y": -100.0
+                        },
+                        "Guid": "6419eeb0-2f58-473d-a08d-9669c440cb13",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "IsNotFastLoading",
+                    "CtorArgs": "{\"Name\":\"IsFastLoading\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"FalseCausesTransition\",\"RemoveValueOnLeave\":false,\"OnlyIfExists\":false,\"RemoveValueOnFire\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "fbd1002c-60b5-4ccf-a1e8-991a86a83956",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "IsFastLoading",
+                    "CtorArgs": "{\"Name\":\"IsFastLoading\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false,\"OnlyIfExists\":false,\"RemoveValueOnFire\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -100.0
+                        },
+                        "Guid": "8ea9e973-e114-4c43-9495-88c637e10328",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "RestartCompleted",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventRestartComplete\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2800.0,
+                            "y": 0.0
+                        },
+                        "Guid": "ebb94c16-4dae-49f7-98a7-3ec51d6a6f70",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "OnFastLoadingComplete",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventFastLoadingComplete\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -100.0
+                        },
+                        "Guid": "8bde2d4b-1fb7-4dce-b0b4-35f1b4c2abb6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "OnFTUEComplete",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventFTUEComplete\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -300.0
+                        },
+                        "Guid": "2265737b-9fb3-43d5-8456-9d0e0f7aa102",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "UnloadComplete",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventComplete\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "bc5324f0-e0bf-4df3-a78a-43cddc14457a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "ExitTransitionAtMidpoint",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventUITransitionMidPointReached\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "9ff9164d-c3a4-44dd-9423-61095b123b15",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "93efa9b8-553b-4d21-a97b-2a5d0e6cb9cc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionAnyValidCutscene",
+                    "Name": "HasValidCutscene",
+                    "CtorArgs": "{\"TriggerType\":\"PreMainMenu\",\"Compare\":\"TrueCausesTransition\",\"OnlyCheckQueue\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": 200.0
+                        },
+                        "Guid": "0ba7ba5f-c3d7-4041-a5bd-568866fd0954",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionAnyValidCutscene",
+                    "Name": "NoAnyValidCutscene",
+                    "CtorArgs": "{\"TriggerType\":\"PreMainMenu\",\"Compare\":\"FalseCausesTransition\",\"OnlyCheckQueue\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "fdceea52-fc41-42ff-91f0-dda9b80ce114",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "MenuCutsceneAvailable",
+                    "CtorArgs": "{\"Name\":\"MenuCutscene\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":true,\"OnlyIfExists\":false,\"RemoveValueOnFire\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 500.0
+                        },
+                        "Guid": "5ad37f4d-e088-4663-a9f0-9fd234e5d2e3",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "GamePlayingFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_GamePlaying\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": -500.0
+                        },
+                        "Guid": "1c38a983-a109-4598-8c0b-48f53cc1e6a3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "GameplayActive",
+                    "CtorArgs": "{\"States\":[\"GamePlaying\",\"GamePlayingFSM\",\"MetaGameFlowFSM\",\"StopUIBackgroundAudio\",\"QuitGameDialogFSM\",\"AccountChangedFSM\",\"CutscenePlayingFSM\",\"CloudSaveChangedFSM\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "MenuCutsceneAvailable",
+                            "ToState": "ApplicationStateOpenUIContainer",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": 500.0
+                                },
+                                "Guid": "5ad37f4d-e088-4663-a9f0-9fd234e5d2e3",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "UIMessageExit",
+                            "ToState": "StartUITransitionForExit",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1800.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "9179612b-290a-4e3c-a369-f0113df95650",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "UIMessageRestart",
+                            "ToState": "RestartFSM",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1800.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "e8bec200-5a2d-47c6-9d99-3db141409a2d",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1760.0,
+                                            "y": -70.0
+                                        },
+                                        "Guid": "3eb687e8-efbc-41db-b251-60c1f2949ac7",
+                                        "InDirection": 3,
+                                        "OutDirection": 4,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "79c4121c-44a4-4d37-a12f-34745bf6f8e4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateGamePlaying",
+                    "Name": "GamePlaying",
+                    "CtorArgs": "{\"FrameDebugInfoContainer\":\"uicontaineridentifier_frame_debug_info\",\"CollectableDebugContainer\":\"uicontaineridentifier_debug_collectables\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 0.0
+                        },
+                        "Guid": "7dd23571-98d3-48b4-954f-2dafc626b9e6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "GameExitGroup",
+                    "CtorArgs": "{\"States\":[\"CloseAllUIContainers\",\"ResumeTime\",\"UnloadAnyLevel\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "UnloadComplete",
+                            "ToState": "EndGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3800.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "bc5324f0-e0bf-4df3-a78a-43cddc14457a",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "5acf4f9d-b9ec-4d2b-8f3e-b16cb0254e38",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "GameplayFinished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 5300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "13f8229c-7e26-4e54-a84d-7c3d00953d12",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateGameExit",
+                    "Name": "GameExit",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4300.0,
+                            "y": -120.0
+                        },
+                        "Guid": "36404845-5685-494d-b458-08182287d38f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "GameLoadingFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_GameLoading\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"CheckSaveLoaded\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "GameLoadingLogicOp",
+                            "ToState": "CheckForCutscene",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -2300.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "75c15494-29a0-40d8-a390-1f74e22cf8d4",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "965da8f5-37e5-4e4b-afcb-a58060f6d27c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "MetaGameFlowFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_MetaGameFlow\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": -700.0
+                        },
+                        "Guid": "2d997de0-2e61-4556-b1c9-d21fed850afe",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateResumeTime",
+                    "Name": "ResumeTime",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3300.0,
+                            "y": -380.0
+                        },
+                        "Guid": "a4159dae-baed-4a5c-8705-e93e8abfb76b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "CheckIsFastLoading",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IsFastLoading",
+                            "ToState": "FastLoadFSM",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -100.0
+                                },
+                                "Guid": "8ea9e973-e114-4c43-9495-88c637e10328",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "IsNotFastLoading",
+                            "ToState": "FTUEFSM",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "fbd1002c-60b5-4ccf-a1e8-991a86a83956",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "50ce284e-2832-4659-ae20-24d12f16822f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "FastLoadFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_FastLoad\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"CheckIsFastLoading\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnFastLoadingComplete",
+                            "ToState": "GameplayActive",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -100.0
+                                },
+                                "Guid": "8bde2d4b-1fb7-4dce-b0b4-35f1b4c2abb6",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1120.0,
+                                            "y": -120.0
+                                        },
+                                        "Guid": "82c4161a-1dc3-4cb9-ba6e-508d391c650c",
+                                        "InDirection": 4,
+                                        "OutDirection": 3,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -100.0
+                        },
+                        "Guid": "3ff427a8-9c0d-473a-af9c-436b6bac4fe5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStatePlayAudio",
+                    "Name": "StopUIBackgroundAudio",
+                    "CtorArgs": "{\"Clip\":\"None\",\"Source\":\"UiBackground\",\"OneShot\":false,\"Replay\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": -840.0
+                        },
+                        "Guid": "ab9ae54b-0a18-4bdd-bff8-fdaeac65203d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "RestartFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_Restart\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "RestartCompleted",
+                            "ToState": "GameplayActive",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2800.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "ebb94c16-4dae-49f7-98a7-3ec51d6a6f70",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3180.0,
+                                            "y": 280.0
+                                        },
+                                        "Guid": "db487f38-6eb2-40e5-8144-251e562fb3a5",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2280.0,
+                                            "y": 280.0
+                                        },
+                                        "Guid": "d6eb74d7-80ab-4d7a-9134-09c4a0f19179",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1320.0,
+                                            "y": 280.0
+                                        },
+                                        "Guid": "c33d4f57-0a94-4ad4-b3b3-2feb2329b166",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": 0.0
+                        },
+                        "Guid": "cc5b8a53-eb8e-4639-bebd-9eb169612283",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "FTUEFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_FTUE\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"CheckIsFirstTimePlaying\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnFTUEComplete",
+                            "ToState": "GameplayActive",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "2265737b-9fb3-43d5-8456-9d0e0f7aa102",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -300.0
+                        },
+                        "Guid": "4ac6ff99-8144-4a0a-817e-6eb4ba425565",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "QuitGameDialogFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_QuitGameDialog\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1720.0,
+                            "y": -700.0
+                        },
+                        "Guid": "9e9d7d8b-8baf-4055-8764-2d453a9097ee",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateCloseAllUIContainers",
+                    "Name": "CloseAllUIContainers",
+                    "CtorArgs": "{\"DoNotCloseContainers\":[\"uicontaineridentifier_full_screen_wipe\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3300.0,
+                            "y": -540.0
+                        },
+                        "Guid": "a1040893-4a63-467d-b1cc-38c6c685940f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateUnloadAllLevels",
+                    "Name": "UnloadAnyLevel",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventComplete\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3300.0,
+                            "y": -640.0
+                        },
+                        "Guid": "51b83ed8-a108-4a44-ac4e-3a46ae99c4cb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "AccountChangedFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_AnalyticsChangeAccount\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1720.0,
+                            "y": -500.0
+                        },
+                        "Guid": "d35aec81-95a7-480f-9d92-a8f95ca73f87",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "CutscenePlayingFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_CutscenePlaying\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 880.0,
+                            "y": -500.0
+                        },
+                        "Guid": "7089979e-a8a1-4ce9-bd03-3b6ce6049eee",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "CloudSaveChangedFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_CloudSaveChange\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 880.0,
+                            "y": -700.0
+                        },
+                        "Guid": "2a32f680-63e6-438d-a8cd-fa1b840a3549",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateStartUITransition",
+                    "Name": "StartUITransitionForExit",
+                    "CtorArgs": "{\"TransitionContainer\":\"\",\"EventOnMidpoint\":\"ApplicationStateEventUITransitionMidPointReached\",\"WaitAtMidpoint\":true,\"QueueIfTransitionInProgress\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ExitTransitionAtMidpoint",
+                            "ToState": "GameExitGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2800.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "9ff9164d-c3a4-44dd-9423-61095b123b15",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "64cd5955-258f-4bc9-b280-8d3e2f8b7953",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "EndGroup",
+                    "CtorArgs": "{\"States\":[\"GameExit\",\"ReleaseExitTransition\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "GameplayFinished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 4800.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "93efa9b8-553b-4d21-a97b-2a5d0e6cb9cc",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "2dd7e18c-3863-42d0-81d1-28b99449c09c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateReleaseTransitionHandle",
+                    "Name": "ReleaseExitTransition",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4300.0,
+                            "y": -40.0
+                        },
+                        "Guid": "8cd6b94a-dbe0-4636-9a70-18cf286340cd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "PlayStandaloneCutscene3D",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_Standalone3DCutscene\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnFTUEComplete",
+                            "ToState": "GameplayActive",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "2265737b-9fb3-43d5-8456-9d0e0f7aa102",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "OnFastLoadingComplete",
+                            "ToState": "GameplayActive",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -100.0
+                                },
+                                "Guid": "8bde2d4b-1fb7-4dce-b0b4-35f1b4c2abb6",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1120.0,
+                                            "y": -120.0
+                                        },
+                                        "Guid": "82c4161a-1dc3-4cb9-ba6e-508d391c650c",
+                                        "InDirection": 4,
+                                        "OutDirection": 3,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "UIMessageExit",
+                            "ToState": "StartUITransitionForExit",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1800.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "9179612b-290a-4e3c-a369-f0113df95650",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1730.0,
+                                            "y": 220.0
+                                        },
+                                        "Guid": "4de0f726-29e5-45ad-ba2d-536302718559",
+                                        "InDirection": 1,
+                                        "OutDirection": 3,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1730.0,
+                                            "y": -70.0
+                                        },
+                                        "Guid": "159b958e-5e79-4e60-ad75-d1905afc9ec2",
+                                        "InDirection": 4,
+                                        "OutDirection": 3,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 200.0
+                        },
+                        "Guid": "8524961b-5529-4056-afce-2efaab324e42",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "CheckForCutscene",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HasValidCutscene",
+                            "ToState": "PlayStandaloneCutscene3D",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1300.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "0ba7ba5f-c3d7-4041-a5bd-568866fd0954",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -1360.0,
+                                            "y": -200.0
+                                        },
+                                        "Guid": "c2b65cc3-8f64-4c27-b01b-467bd7f6eeb2",
+                                        "InDirection": 3,
+                                        "OutDirection": 4,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1360.0,
+                                            "y": 180.0
+                                        },
+                                        "Guid": "583424ae-4545-4939-ab11-4dd65a70420b",
+                                        "InDirection": 3,
+                                        "OutDirection": 4,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "NoAnyValidCutscene",
+                            "ToState": "CheckIsFastLoading",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1300.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "fdceea52-fc41-42ff-91f0-dda9b80ce114",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "1513b2c2-28ad-4fb6-8993-10b8b114097c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "ApplicationStateOpenUIContainer",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_loading\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":false,\"CloseContainers\":[]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HasValidCutscene",
+                            "ToState": "PlayStandaloneCutscene3D",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1300.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "0ba7ba5f-c3d7-4041-a5bd-568866fd0954",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": 500.0
+                        },
+                        "Guid": "267dd746-b288-4bf1-9de6-9973aef80bff",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "98355af7-9ae6-443a-b9cc-b27162607d56",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 959.7158203125,
+                    "y": -80.66558837890625
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

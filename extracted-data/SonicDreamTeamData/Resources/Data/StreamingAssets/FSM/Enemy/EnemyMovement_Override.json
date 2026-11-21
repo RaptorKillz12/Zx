@@ -1,0 +1,136 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "EnemyMovement_Override",
+            "DefaultState": "FSMMovement",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": true,
+            "Transitions": [
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "ToDead",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"EnemyAbility_Dead\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -60.0,
+                            "y": -40.0
+                        },
+                        "Guid": "8309b9ac-085b-476b-b1e7-e5b2f1808662",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "FSMMovement",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"EnemyMovement\",\"ResetStateOnEnter\":true,\"DefaultState\":\"Group_AbilityTriggers\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToDead",
+                            "ToState": "Group_Dead",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -60.0,
+                                    "y": -40.0
+                                },
+                                "Guid": "8309b9ac-085b-476b-b1e7-e5b2f1808662",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -520.0,
+                            "y": -40.0
+                        },
+                        "Guid": "eb93ad35-7365-4ac6-91d3-d0204cb33860",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "Effect_Dead",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"EnemyDeathBool\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 400.0,
+                            "y": 120.0
+                        },
+                        "Guid": "d6793af6-5ac2-4f2a-8300-cf5ba4a1b87d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_Dead",
+                    "CtorArgs": "{\"States\":[\"Effect_Dead\",\"State_Dead\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 400.0,
+                            "y": -40.0
+                        },
+                        "Guid": "958bc73a-120f-4e22-8df8-7237ade6b09d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "EnemyMovementState",
+                    "Name": "State_Dead",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":1562452321}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 400.0,
+                            "y": 220.0
+                        },
+                        "Guid": "dc144bba-dcf6-4db5-b31a-ef75fc32e7b7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Guid": "0b4120b7-0e61-47f7-b9b7-97c484de8fa5",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 262.0,
+                    "y": 154.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

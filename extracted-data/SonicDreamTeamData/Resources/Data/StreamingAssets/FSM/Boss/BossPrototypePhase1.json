@@ -1,0 +1,757 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossPrototypePhase1",
+            "DefaultState": "DiceRoll",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "BossTransition_InRange",
+                    "Name": "InRange",
+                    "CtorArgs": "{\"AnimationDefinitionName\":\"\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 380.0
+                        },
+                        "Guid": "3c372143-0391-4d31-9f7e-4026e645ee96"
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "AbilityFinished",
+                    "CtorArgs": "{\"AnimationDefinitionName\":\"\",\"AbilityType\":-665371971}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2320.0,
+                            "y": 200.0
+                        },
+                        "Guid": "43aedf32-bc99-4c18-946c-0fe7e8204b83"
+                    }
+                },
+                {
+                    "Class": "BossTransition_NotInRange",
+                    "Name": "BossTransition_NotInRange",
+                    "CtorArgs": "{\"AnimationDefinitionName\":\"\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2320.0,
+                            "y": 300.0
+                        },
+                        "Guid": "31012144-a304-45b9-8d11-6d37927ac334"
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicOp",
+                    "CtorArgs": "{\"LogicOp\":\"LogicOR\",\"ChildTransitionNames\":[\"AbilityFinished\",\"BossTransition_NotInRange\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2320.0,
+                            "y": 380.0
+                        },
+                        "Guid": "82f76681-e49d-4934-988a-7414ab1c2452"
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 380.0
+                        },
+                        "Guid": "396e8c2f-a7ec-4784-8b21-cbfa31ecfda9"
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always2",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3740.0,
+                            "y": 240.0
+                        },
+                        "Guid": "4a3c0fee-1351-4430-a281-fc5f786a27a2"
+                    }
+                },
+                {
+                    "Class": "BossTransition_InRange",
+                    "Name": "IsInRange",
+                    "CtorArgs": "{\"AnimationDefinitionName\":\"\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 720.0
+                        },
+                        "Guid": "515e50b4-8dc0-451b-8b01-bc1604e85dd1"
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always3",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1280.0,
+                            "y": 720.0
+                        },
+                        "Guid": "f508fc55-daf3-4b2a-ac44-ab5f4547be25"
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "MeleeAttackFinished",
+                    "CtorArgs": "{\"AnimationDefinitionName\":\"\",\"AbilityType\":108086788}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": 720.0
+                        },
+                        "Guid": "59847340-c164-461b-9c28-2ce0394eacef"
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckFloatInRange",
+                    "Name": "MeleePathCheck",
+                    "CtorArgs": "{\"Name\":\"AttackChoice\",\"Node\":\"DiceRoll\",\"FSM\":\"Boss\",\"Low\":2.0,\"High\":5.0}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": 600.0
+                        },
+                        "Guid": "bb7f722a-eab9-4a65-8f44-1eddda71f0c3"
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckFloatInRange",
+                    "Name": "RangedPathCheck",
+                    "CtorArgs": "{\"Name\":\"AttackChoice\",\"Node\":\"DiceRoll\",\"FSM\":\"Boss\",\"Low\":0.0,\"High\":1.9900000095367432}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": 380.0
+                        },
+                        "Guid": "d74e6cec-31cc-4fe4-b992-8b7e0b02bfd9"
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always4",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3260.0,
+                            "y": 300.0
+                        },
+                        "Guid": "8ea21b82-4a50-44be-b247-45a36dc871a8"
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckFloatInRange",
+                    "Name": "ToNotVulnerable",
+                    "CtorArgs": "{\"Name\":\"VulnerableChoice\",\"Node\":\"Vulnerable\",\"FSM\":\"Boss\",\"Low\":0.0,\"High\":1.9989999532699586}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3280.0,
+                            "y": 720.0
+                        },
+                        "Guid": "a144f947-3180-40b0-9614-ba5276a6160a"
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckFloatInRange",
+                    "Name": "CheckFloatInRange",
+                    "CtorArgs": "{\"Name\":\"VulnerableChoice\",\"Node\":\"Vulnerable\",\"FSM\":\"Boss\",\"Low\":2.0,\"High\":3.0}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3280.0,
+                            "y": 880.0
+                        },
+                        "Guid": "21192c4f-9e7b-45a4-8da2-8ce157047022"
+                    }
+                },
+                {
+                    "Class": "BossTransition_VulnerableTimeOut",
+                    "Name": "VulnerableTimedOut",
+                    "CtorArgs": "{\"AnimationDefinitionName\":\"\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3860.0,
+                            "y": 740.0
+                        },
+                        "Guid": "b4829239-6022-47a2-b100-429c8459139c"
+                    }
+                },
+                {
+                    "Class": "BossTransition_WasHit",
+                    "Name": "WasHit",
+                    "CtorArgs": "{\"AnimationDefinitionName\":\"\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4360.0,
+                            "y": 880.0
+                        },
+                        "Guid": "3865faab-b401-497f-a2ce-9b90860083ff"
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always5",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 5380.0,
+                            "y": 820.0
+                        },
+                        "Guid": "aa03064e-231f-4480-b699-87dbd0088c2c"
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_MoveToRange",
+                    "Name": "MoveToFiringRange",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-665371971}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -180.0,
+                            "y": 140.0
+                        },
+                        "Guid": "13ddb780-173d-4e08-821e-95de6171ad3d"
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "Boss_Shoot_Sub_FSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"Boss_Shoot\",\"ResetStateOnEnter\":false,\"DefaultState\":\"TurnToTarget\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "LogicOp",
+                            "ToState": "PowerDownRangedWeapon",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2320.0,
+                                    "y": 380.0
+                                },
+                                "Guid": "82f76681-e49d-4934-988a-7414ab1c2452",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1760.0,
+                            "y": 380.0
+                        },
+                        "Guid": "6baf1829-c01a-4b06-89c7-876533f6cc5d"
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbility_Ranged",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbilityRangedAttack\",\"Enable\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "Boss_Shoot_Sub_FSM",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": 380.0
+                                },
+                                "Guid": "396e8c2f-a7ec-4784-8b21-cbfa31ecfda9",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 780.0,
+                            "y": 380.0
+                        },
+                        "Guid": "a9ac2886-f786-4bef-ab30-0f2a410e5fec"
+                    }
+                },
+                {
+                    "Class": "FSMStateDiceRoll",
+                    "Name": "DiceRoll",
+                    "CtorArgs": "{\"Name\":\"AttackChoice\",\"Node\":\"DiceRoll\",\"FSM\":\"Boss\",\"Low\":0.0,\"High\":5.0}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "MeleePathCheck",
+                            "ToState": "MeleePath",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -700.0,
+                                    "y": 600.0
+                                },
+                                "Guid": "bb7f722a-eab9-4a65-8f44-1eddda71f0c3",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "RangedPathCheck",
+                            "ToState": "RangedPath",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -700.0,
+                                    "y": 380.0
+                                },
+                                "Guid": "d74e6cec-31cc-4fe4-b992-8b7e0b02bfd9",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1240.0,
+                            "y": 380.0
+                        },
+                        "Guid": "9b5350f5-f893-4cf9-88bd-c60638486a84"
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "MeleePath",
+                    "CtorArgs": "{\"States\":[\"WindUpAttack\",\"MoveToMeleeRange\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IsInRange",
+                            "ToState": "TriggerAbility_Melee",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": 720.0
+                                },
+                                "Guid": "515e50b4-8dc0-451b-8b01-bc1604e85dd1",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -180.0,
+                            "y": 720.0
+                        },
+                        "Guid": "40f093c3-0082-44b3-8b1f-67d5a3a7bbf2"
+                    }
+                },
+                {
+                    "Class": "BossState_MoveToRange",
+                    "Name": "MoveToMeleeRange",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":108086788}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -180.0,
+                            "y": 500.0
+                        },
+                        "Guid": "e5663ad4-9865-4308-8b2c-2f09497bb24b"
+                    }
+                },
+                {
+                    "Class": "BossState_WindUpAttack",
+                    "Name": "WindUpAttack",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossWindUpAttackAnimation\",\"AbilityType\":108086788}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -180.0,
+                            "y": 620.0
+                        },
+                        "Guid": "6b99c237-0734-4add-a5ec-dbed803e934a"
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbility_Melee",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"\",\"Enable\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always3",
+                            "ToState": "Boss_Slam_Sub_FSM",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1280.0,
+                                    "y": 720.0
+                                },
+                                "Guid": "f508fc55-daf3-4b2a-ac44-ab5f4547be25",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 780.0,
+                            "y": 720.0
+                        },
+                        "Guid": "37c0734f-6c3c-4a28-b884-be18a690f14e"
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "Boss_Slam_Sub_FSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"Boss_Slam\",\"ResetStateOnEnter\":false,\"DefaultState\":\"TurnToTarget\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "MeleeAttackFinished",
+                            "ToState": "DiceRollVulnerable",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2300.0,
+                                    "y": 720.0
+                                },
+                                "Guid": "59847340-c164-461b-9c28-2ce0394eacef",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1760.0,
+                            "y": 720.0
+                        },
+                        "Guid": "98423cad-b5d9-441d-9a13-da68f703a556"
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerDisableAbilities",
+                    "Name": "TriggerDisableAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ExceptionList\":[]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always2",
+                            "ToState": "DiceRoll",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3740.0,
+                                    "y": 240.0
+                                },
+                                "Guid": "4a3c0fee-1351-4430-a281-fc5f786a27a2",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 4120.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "6829fe23-61ad-40a3-bfa1-1603df01310a",
+                                        "Flipped": true
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1240.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "df0e7517-771d-4d10-bf7c-a1ce623f52ad",
+                                        "Flipped": true
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3260.0,
+                            "y": 440.0
+                        },
+                        "Guid": "7d0b0012-c296-4893-a8b0-a8bfb85230a0"
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "RangedPath",
+                    "CtorArgs": "{\"States\":[\"MoveToFiringRange\",\"PowerUpRangedWeapon\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "InRange",
+                            "ToState": "TriggerAbility_Ranged",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": 380.0
+                                },
+                                "Guid": "3c372143-0391-4d31-9f7e-4026e645ee96",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -180.0,
+                            "y": 340.0
+                        },
+                        "Guid": "772b235f-3b77-4c04-9c76-a0238020e976"
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "PowerUpRangedWeapon",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossPowerUpRangedWeaponAnimation\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -180.0,
+                            "y": 240.0
+                        },
+                        "Guid": "45609929-0829-4b42-8322-d957b680d10e"
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "PowerDownRangedWeapon",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossPowerDownRangedWeaponAnimation\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always4",
+                            "ToState": "TriggerDisableAbilities",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3260.0,
+                                    "y": 300.0
+                                },
+                                "Guid": "8ea21b82-4a50-44be-b247-45a36dc871a8",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3640.0,
+                                            "y": 400.0
+                                        },
+                                        "Guid": "f1b01ecf-8768-4f23-b88e-1219bc38e41b",
+                                        "Flipped": true
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 3260.0,
+                                            "y": 400.0
+                                        },
+                                        "Guid": "a67d72b8-d436-4fad-b45e-96f4e3c57bda",
+                                        "Flipped": true
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2800.0,
+                            "y": 300.0
+                        },
+                        "Guid": "ee530c2d-22f6-44a1-9969-57d4a954a238"
+                    }
+                },
+                {
+                    "Class": "FSMStateDiceRoll",
+                    "Name": "DiceRollVulnerable",
+                    "CtorArgs": "{\"Name\":\"VulnerableChoice\",\"Node\":\"Vulnerable\",\"FSM\":\"Boss\",\"Low\":0.0,\"High\":3.0}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CheckFloatInRange",
+                            "ToState": "Vulnerable",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3280.0,
+                                    "y": 880.0
+                                },
+                                "Guid": "21192c4f-9e7b-45a4-8da2-8ce157047022",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToNotVulnerable",
+                            "ToState": "TriggerDisableAbilities",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3280.0,
+                                    "y": 720.0
+                                },
+                                "Guid": "a144f947-3180-40b0-9614-ba5276a6160a",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3660.0,
+                                            "y": 680.0
+                                        },
+                                        "Guid": "b62e770a-0f75-425f-8005-2ef71f2e37a5",
+                                        "Flipped": true
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 3260.0,
+                                            "y": 680.0
+                                        },
+                                        "Guid": "32332968-4a63-4320-93e0-277543bce6ac",
+                                        "Flipped": true
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2760.0,
+                            "y": 720.0
+                        },
+                        "Guid": "5096d274-e9ab-40a2-a059-edc635605e36"
+                    }
+                },
+                {
+                    "Class": "BossState_Vulnerable",
+                    "Name": "Vulnerable",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossVulnerableAnimation\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "WasHit",
+                            "ToState": "PlayHitEffects",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 4360.0,
+                                    "y": 880.0
+                                },
+                                "Guid": "3865faab-b401-497f-a2ce-9b90860083ff",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "VulnerableTimedOut",
+                            "ToState": "TriggerDisableAbilities",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3860.0,
+                                    "y": 740.0
+                                },
+                                "Guid": "b4829239-6022-47a2-b100-429c8459139c",
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 4240.0,
+                                            "y": 840.0
+                                        },
+                                        "Guid": "72d1254b-a1e3-4347-a0a0-07fb287e3753",
+                                        "Flipped": true
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 3860.0,
+                                            "y": 840.0
+                                        },
+                                        "Guid": "793f7835-69af-47fe-ae1a-46803b6c4af1",
+                                        "Flipped": true
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 4240.0,
+                                            "y": 640.0
+                                        },
+                                        "Guid": "002e22cc-71e8-4cb2-af25-1b52a6e21276",
+                                        "Flipped": true
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 3260.0,
+                                            "y": 640.0
+                                        },
+                                        "Guid": "0c6cd4bc-2b28-46c7-baf4-b2e8806ec885",
+                                        "Flipped": true
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3860.0,
+                            "y": 880.0
+                        },
+                        "Guid": "94e28177-a601-422e-9174-10372cfdadd9"
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "PlayHitEffects",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always5",
+                            "ToState": "TriggerDisableAbilities",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 5380.0,
+                                    "y": 820.0
+                                },
+                                "Guid": "aa03064e-231f-4480-b699-87dbd0088c2c",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 5760.0,
+                                            "y": 600.0
+                                        },
+                                        "Guid": "1a393c89-40fe-47a8-bf02-0da717690c2e",
+                                        "Flipped": true
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 3260.0,
+                                            "y": 600.0
+                                        },
+                                        "Guid": "8db0211b-ce10-4cfa-b2c3-cd438ed91efc",
+                                        "Flipped": true
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4860.0,
+                            "y": 880.0
+                        },
+                        "Guid": "4a6dbb02-3b3d-45eb-9273-d6eabc1866bd"
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "046637cb-524f-490a-96f2-48a945593ce6"
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            }
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

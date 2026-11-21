@@ -1,0 +1,55 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossCorruptionMiniboss_OverallFlow",
+            "DefaultState": "DoNothing",
+            "DoMultipleTransitions": false,
+            "UpdateTransientStates": true,
+            "Transitions": [],
+            "States": [
+                {
+                    "Class": "FSMState",
+                    "Name": "DoNothing",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -160.0,
+                            "y": -40.0
+                        },
+                        "Guid": "f27839d3-7796-4f2e-8ec4-796da38c79d6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -400.0,
+                    "y": -260.0
+                },
+                "Guid": "4cf1539f-9e2f-49c4-a46a-e899da1ec7f2",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

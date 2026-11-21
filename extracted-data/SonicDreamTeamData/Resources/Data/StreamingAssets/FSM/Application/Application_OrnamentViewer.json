@@ -1,0 +1,104 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_OrnamentViewer",
+            "DefaultState": "UnloadAnyLevelScenes",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "ScenesUnloaded",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventScenesUnloaded\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "d5a3f3f5-0c36-4d84-8c6f-0dd28489e49c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "ApplicationStateLoadLevelEnsureOneLevel",
+                    "Name": "UnloadAnyLevelScenes",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventScenesUnloaded\",\"ForceUnloadAny\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ScenesUnloaded",
+                            "ToState": "LoadViewerScene",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "d5a3f3f5-0c36-4d84-8c6f-0dd28489e49c",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": -300.0
+                        },
+                        "Guid": "d27283b5-be28-46cf-b1b3-68e5b4303740",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateLoadOrUnloadScene",
+                    "Name": "LoadViewerScene",
+                    "CtorArgs": "{\"SceneName\":\"s_ornament_viewer\",\"Command\":\"Load\",\"Additive\":true,\"SetActiveOnLoad\":true,\"EventId\":\"ApplicationStateEventSceneLoaded\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -300.0
+                        },
+                        "Guid": "bcddddf2-9c67-4970-81be-cd813561afef",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "3dc98285-2e8f-4748-bacb-2d8b65fcb8ad",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": -646.0,
+                    "y": -114.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

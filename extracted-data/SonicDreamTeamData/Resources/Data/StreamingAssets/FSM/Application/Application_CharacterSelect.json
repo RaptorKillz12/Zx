@@ -1,0 +1,686 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_CharacterSelect",
+            "DefaultState": "OpenCharacterSelect",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "OnOpenDreamPowerStore",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventDreamPowerStoreSelectOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 500.0,
+                            "y": 0.0
+                        },
+                        "Guid": "d2d14938-1507-45fb-87d3-ddeba49101a0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "OnCloseDreamPowerStore",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventDreamPowerStoreClose\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1000.0,
+                            "y": 900.0
+                        },
+                        "Guid": "0868befd-7866-48f6-9264-a3013f9d4a3b",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "ExitTransitionAtMidpoint",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventUITransitionMidPointReached\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 0.0,
+                            "y": 900.0
+                        },
+                        "Guid": "70be9602-b886-4dfc-96a4-cbcb48164c30",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -500.0,
+                            "y": 0.0
+                        },
+                        "Guid": "7730b894-19df-4b82-8378-1e473d17e05f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionTriggerDreamPowerStoreInfo",
+                    "Name": "TriggerDreamPowerStoreInfo",
+                    "CtorArgs": "{\"TrueCausesTransition\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 0.0,
+                            "y": 200.0
+                        },
+                        "Guid": "016398f5-9598-48fd-9479-2b1542733980",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionTriggerDreamPowerStoreInfo",
+                    "Name": "DoNotTriggerDreamPowerStoreInfo2",
+                    "CtorArgs": "{\"TrueCausesTransition\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 500.0,
+                            "y": 420.0
+                        },
+                        "Guid": "8408e15f-87e6-449b-beea-3305b2d5240a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainer",
+                    "Name": "OnCloseInfo",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventDreamPowerStoreInfoClose\",\"Container\":\"uicontaineridentifier_dream_power_store_info\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 500.0,
+                            "y": 500.0
+                        },
+                        "Guid": "99971d70-c117-4947-986b-bac1e175236e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "TransitionAtMidpoint",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventComplete\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1000.0,
+                            "y": 200.0
+                        },
+                        "Guid": "3f031fed-84a3-4f5f-9295-fc895794d8a3",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionProgressionUnlocked",
+                    "Name": "DreamPowerUnlocked",
+                    "CtorArgs": "{\"TrueWhenUnlocked\":true,\"Progressions\":[\"DreamPowerStoreItem\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": 500.0
+                        },
+                        "Guid": "1b3d4bbb-53c1-4036-a7d5-dd8669f00b2f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "UnlockCompleted",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventPlayerProgressionClose\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2100.0,
+                            "y": 300.0
+                        },
+                        "Guid": "751bda5c-26e9-45a9-bc73-c18471c21e34",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "OpenSkinSelection",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventSkinSelectionOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 500.0,
+                            "y": -140.0
+                        },
+                        "Guid": "bc38093e-a41d-4244-bd78-08948021253c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainer",
+                    "Name": "CloseSkinSelection",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventSkinSelectionClose\",\"Container\":\"uicontaineridentifier_character_skin_select\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -500.0,
+                            "y": -160.0
+                        },
+                        "Guid": "7d8e0dc2-3757-4682-8093-71f18cae2aae",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "ApplicationTransitionUIMessage",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventDreamPowerStoreInfoOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 0.0,
+                            "y": 340.0
+                        },
+                        "Guid": "5903aca9-fdab-47da-89b4-0c2c62a82779",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenDreamPowerStore",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_dream_power_store\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true,\"CloseContainers\":[]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "TriggerDreamPowerStoreInfo",
+                            "ToState": "InfoGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 0.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "016398f5-9598-48fd-9479-2b1542733980",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "DoNotTriggerDreamPowerStoreInfo2",
+                            "ToState": "WaitForCloseGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 500.0,
+                                    "y": 420.0
+                                },
+                                "Guid": "8408e15f-87e6-449b-beea-3305b2d5240a",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 500.0,
+                            "y": 200.0
+                        },
+                        "Guid": "18762dbe-3d41-46d6-a0e1-2dc5057b33c2",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateStartUITransition",
+                    "Name": "StartExitTransition",
+                    "CtorArgs": "{\"TransitionContainer\":\"\",\"EventOnMidpoint\":\"ApplicationStateEventUITransitionMidPointReached\",\"WaitAtMidpoint\":true,\"QueueIfTransitionInProgress\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ExitTransitionAtMidpoint",
+                            "ToState": "ExitGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 0.0,
+                                    "y": 900.0
+                                },
+                                "Guid": "70be9602-b886-4dfc-96a4-cbcb48164c30",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 500.0,
+                            "y": 900.0
+                        },
+                        "Guid": "25aa4cb8-c894-4bc2-9fec-e4c10b318889",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateCloseUIContainer",
+                    "Name": "CloseDreamPowerStore",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_dream_power_store\",\"DoNotCloseIfOpen\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 1080.0
+                        },
+                        "Guid": "c02fe435-f5d3-4a76-8d05-62447f0a53d2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "ExitGroup",
+                    "CtorArgs": "{\"States\":[\"CloseDreamPowerStore\",\"ReleaseTransitionHandle\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "OpenCharacterSelect",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -500.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "7730b894-19df-4b82-8378-1e473d17e05f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 900.0
+                        },
+                        "Guid": "20a3ce67-2ae3-4f72-a8d5-060eff191105",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateReleaseTransitionHandle",
+                    "Name": "ReleaseTransitionHandle",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 1260.0
+                        },
+                        "Guid": "d40b95ba-8aa9-474b-a880-f5250b9c41f6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenCharacterSelect",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_character_select_main\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true,\"CloseContainers\":[]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OpenSkinSelection",
+                            "ToState": "SkinSelectionScreen",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 500.0,
+                                    "y": -140.0
+                                },
+                                "Guid": "bc38093e-a41d-4244-bd78-08948021253c",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "OnOpenDreamPowerStore",
+                            "ToState": "StartUITransition",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 500.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "d2d14938-1507-45fb-87d3-ddeba49101a0",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 0.0,
+                            "y": 0.0
+                        },
+                        "Guid": "c6a83e17-c66c-4bce-8521-fad36527c71b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenInfoContainer",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_dream_power_store_info\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true,\"CloseContainers\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 0.0,
+                            "y": 680.0
+                        },
+                        "Guid": "7f1bdb51-d8b6-4e17-a941-e68857ffa0b9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateStartUITransition",
+                    "Name": "StartUITransition",
+                    "CtorArgs": "{\"TransitionContainer\":\"\",\"EventOnMidpoint\":\"ApplicationStateEventComplete\",\"WaitAtMidpoint\":true,\"QueueIfTransitionInProgress\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "TransitionAtMidpoint",
+                            "ToState": "OpenDreamPowerStore",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1000.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "3f031fed-84a3-4f5f-9295-fc895794d8a3",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1000.0,
+                            "y": 0.0
+                        },
+                        "Guid": "1a30cf26-6603-45ed-b2fc-754f79fa5424",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "InfoGroup",
+                    "CtorArgs": "{\"States\":[\"OpenInfoContainer\",\"ReleaseTransitionHandle\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnCloseInfo",
+                            "ToState": "WaitForCloseGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 500.0,
+                                    "y": 500.0
+                                },
+                                "Guid": "99971d70-c117-4947-986b-bac1e175236e",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 0.0,
+                            "y": 500.0
+                        },
+                        "Guid": "0f9fb356-248a-46a1-ac7e-fd48580c02e2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "WaitForCloseGroup",
+                    "CtorArgs": "{\"States\":[\"ReleaseTransitionHandle\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnCloseDreamPowerStore",
+                            "ToState": "StartExitTransition",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1000.0,
+                                    "y": 900.0
+                                },
+                                "Guid": "0868befd-7866-48f6-9264-a3013f9d4a3b",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "DreamPowerUnlocked",
+                            "ToState": "UnlockFlow",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1600.0,
+                                    "y": 500.0
+                                },
+                                "Guid": "1b3d4bbb-53c1-4036-a7d5-dd8669f00b2f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ApplicationTransitionUIMessage",
+                            "ToState": "InfoGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 0.0,
+                                    "y": 340.0
+                                },
+                                "Guid": "5903aca9-fdab-47da-89b4-0c2c62a82779",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1380.0,
+                                            "y": 650.0
+                                        },
+                                        "Guid": "cafe382e-c4da-41a2-baa0-a96e9f99442d",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 420.0,
+                                            "y": 650.0
+                                        },
+                                        "Guid": "ce615072-2180-4115-9789-0ab6c9fda3df",
+                                        "InDirection": 2,
+                                        "OutDirection": 3,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 420.0,
+                                            "y": 400.0
+                                        },
+                                        "Guid": "b170418b-9cf8-4152-a78d-35a264272c84",
+                                        "InDirection": 4,
+                                        "OutDirection": 3,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1000.0,
+                            "y": 500.0
+                        },
+                        "Guid": "e55fd1fc-b44c-4831-8140-63077a994107",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "UnlockFlow",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_UnlockFlow\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "UnlockCompleted",
+                            "ToState": "OpenDreamPowerStore",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2100.0,
+                                    "y": 300.0
+                                },
+                                "Guid": "751bda5c-26e9-45a9-bc73-c18471c21e34",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1000.0,
+                                            "y": 320.0
+                                        },
+                                        "Guid": "50309fe2-a7aa-4ebd-b092-a38908dee547",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2100.0,
+                            "y": 500.0
+                        },
+                        "Guid": "28b4b6be-03bb-4f3a-9bef-44c8f92a7907",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "SkinSelectionScreen",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_character_skin_select\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true,\"CloseContainers\":[]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CloseSkinSelection",
+                            "ToState": "OpenCharacterSelect",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -500.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "7d8e0dc2-3757-4682-8093-71f18cae2aae",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 0.0,
+                            "y": -400.0
+                        },
+                        "Guid": "d07f1000-c294-4e3a-b0b7-912669307350",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "3dc98285-2e8f-4748-bacb-2d8b65fcb8ad",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": -690.0,
+                    "y": -423.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

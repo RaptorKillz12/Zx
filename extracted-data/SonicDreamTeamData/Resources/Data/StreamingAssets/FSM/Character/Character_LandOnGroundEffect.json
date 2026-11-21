@@ -1,0 +1,183 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_LandOnGroundEffect",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ActorTransition_VelocityMagnitudeThreshold",
+                    "Name": "VelocityMagnitudeThreshold",
+                    "CtorArgs": "{\"VelocityMagnitude\":1.0,\"ComparisonType\":803474623}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 80.0,
+                            "y": -60.0
+                        },
+                        "Guid": "cf6699b6-47b8-4413-8f10-7365d8c10c44",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicOp",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"VelocityMagnitudeThreshold\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 80.0,
+                            "y": 60.0
+                        },
+                        "Guid": "1f448b8f-22d0-4902-b4fc-f766588dac97",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1000.0,
+                            "y": -60.0
+                        },
+                        "Guid": "4c26bc67-98c2-446c-973d-aedf88f53ce8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMState",
+                    "Name": "Start",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "LogicOp",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 80.0,
+                                    "y": 60.0
+                                },
+                                "Guid": "1f448b8f-22d0-4902-b4fc-f766588dac97",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "VelocityMagnitudeThreshold",
+                            "ToState": "Effect_Land",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 80.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "cf6699b6-47b8-4413-8f10-7365d8c10c44",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -380.0,
+                            "y": -60.0
+                        },
+                        "Guid": "730f43cb-ceef-4dfa-b557-8a2e84a1665c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "Effect_Land",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterLandAnimation\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1000.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "4c26bc67-98c2-446c-973d-aedf88f53ce8",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 540.0,
+                            "y": -60.0
+                        },
+                        "Guid": "0673f4e2-0689-45de-8916-60d14fb16a78",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "Finished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1460.0,
+                            "y": 60.0
+                        },
+                        "Guid": "c513e5bf-7c62-468e-93c7-062831600a79",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -80.0,
+                    "y": -20.0
+                },
+                "Guid": "8a747e54-e1e0-412f-9a2d-8d3bcf51d03c",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

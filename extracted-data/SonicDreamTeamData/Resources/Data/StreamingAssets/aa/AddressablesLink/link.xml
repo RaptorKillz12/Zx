@@ -1,0 +1,1789 @@
+<linker>
+  <assembly fullname="Apple.Arcade.SplashScreen, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Apple.Arcade.SplashScreen.SplashScreenPlayer" preserve="all" />
+  </assembly>
+  <assembly fullname="Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="HardlightProject.prototype_destructable_wall" preserve="all" />
+    <type fullname="HardlightProject.prototype_power_line" preserve="all" />
+  </assembly>
+  <assembly fullname="Assembly-CSharp-firstpass, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.UIWidgetRetainLastSelected" preserve="all" />
+  </assembly>
+  <assembly fullname="Cinemachine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Cinemachine.Cinemachine3rdPersonFollow" preserve="all" />
+    <type fullname="Cinemachine.CinemachineBasicMultiChannelPerlin" preserve="all" />
+    <type fullname="Cinemachine.CinemachineBlenderSettings" preserve="all" />
+    <type fullname="Cinemachine.CinemachineBrain" preserve="all" />
+    <type fullname="Cinemachine.CinemachineCollider" preserve="all" />
+    <type fullname="Cinemachine.CinemachineComposer" preserve="all" />
+    <type fullname="Cinemachine.CinemachineFramingTransposer" preserve="all" />
+    <type fullname="Cinemachine.CinemachineFreeLook" preserve="all" />
+    <type fullname="Cinemachine.CinemachineGroupComposer" preserve="all" />
+    <type fullname="Cinemachine.CinemachineHardLockToTarget" preserve="all" />
+    <type fullname="Cinemachine.CinemachineHardLookAt" preserve="all" />
+    <type fullname="Cinemachine.CinemachineImpulseListener" preserve="all" />
+    <type fullname="Cinemachine.CinemachineImpulseSource" preserve="all" />
+    <type fullname="Cinemachine.CinemachineOrbitalTransposer" preserve="all" />
+    <type fullname="Cinemachine.CinemachinePipeline" preserve="all" />
+    <type fullname="Cinemachine.CinemachineSameAsFollowTarget" preserve="all" />
+    <type fullname="Cinemachine.CinemachineTargetGroup" preserve="all" />
+    <type fullname="Cinemachine.CinemachineTransposer" preserve="all" />
+    <type fullname="Cinemachine.CinemachineVirtualCamera" preserve="all" />
+    <type fullname="Cinemachine.NoiseSettings" preserve="all" />
+    <type fullname="Cinemachine.PostFX.CinemachineVolumeSettings" preserve="all" />
+    <type fullname="Cinemachine.CinemachineBrain/VcamActivatedEvent" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.CinemachineVirtualCameraBase/TransitionParams" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.LensSettings" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.AxisState" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.AxisState/Recentering" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.CinemachineBlendDefinition" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.CinemachineBlenderSettings/CustomBlend" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.CinemachineBrain/BrainEvent" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.CinemachineFreeLook/Orbit" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.CinemachineImpulseDefinition" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.CinemachineImpulseListener/ImpulseReaction" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.CinemachineImpulseManager/EnvelopeDefinition" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.CinemachineOrbitalTransposer/Heading" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.NoiseSettings/NoiseParams" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.NoiseSettings/TransformNoiseParams" preserve="nothing" serialized="true" />
+    <type fullname="Cinemachine.CinemachineTargetGroup/Target" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="com.olegknyazev.softmask, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="SoftMasking.SoftMask" preserve="all" />
+    <type fullname="SoftMasking.SoftMaskable" preserve="all" />
+    <type fullname="SoftMasking.SoftMask/BorderMode" preserve="nothing" serialized="true" />
+    <type fullname="SoftMasking.SoftMask/MaskSource" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Dreamteck.Splines, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Dreamteck.Splines.ObjectController" preserve="all" />
+    <type fullname="Dreamteck.Splines.SplineComputer" preserve="all" />
+    <type fullname="Dreamteck.Splines.SplineMesh" preserve="all" />
+    <type fullname="Dreamteck.Splines.SplinePositioner" preserve="all" />
+    <type fullname="Dreamteck.Splines.TubeGenerator" preserve="all" />
+    <type fullname="Dreamteck.Splines.ColorModifier" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.ColorModifier/ColorKey" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.MeshScaleModifier" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.OffsetModifier" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.RotationModifier" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.SizeModifier" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.Spline" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.SplineMesh/Channel" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.SplineMesh/Channel/BoundsSpacing" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.SplineMesh/Channel/MeshDefinition" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.SplineMesh/Channel/MeshDefinition/Submesh" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.SplineMesh/Channel/MeshDefinition/VertexGroup" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.SplinePoint" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.SplineSample" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.ObjectController/ObjectControl" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.TransformModule" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.SizeModifier/SizeKey" preserve="nothing" serialized="true" />
+    <type fullname="Dreamteck.Splines.TriggerGroup" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Game.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="AppleTVRemoteSetter" preserve="all" />
+    <type fullname="Hardlight.AutoPlay.AutoPlayManager" preserve="all" />
+    <type fullname="Hardlight.UIWidgetButtonDreamPowerSlot" preserve="all" />
+    <type fullname="Hardlight.UIWidgetButtonMusic" preserve="all" />
+    <type fullname="Hardlight.UIWidgetImageDreamPowerSlot" preserve="all" />
+    <type fullname="HardlightProject.AchievementDefinition" preserve="all" />
+    <type fullname="HardlightProject.AchievementDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.ActorAbilityDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.ActorAnimationDefinition" preserve="all" />
+    <type fullname="HardlightProject.ActorAnimationDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.ActorAnimationSettingsDefinition" preserve="all" />
+    <type fullname="HardlightProject.ActorAttachPoints" preserve="all" />
+    <type fullname="HardlightProject.ActorAudio" preserve="all" />
+    <type fullname="HardlightProject.ActorAudioDefinition" preserve="all" />
+    <type fullname="HardlightProject.ActorAudioHelper" preserve="all" />
+    <type fullname="HardlightProject.ActorComponentLookup" preserve="all" />
+    <type fullname="HardlightProject.ActorFootsteps" preserve="all" />
+    <type fullname="HardlightProject.ActorFormHandler" preserve="all" />
+    <type fullname="HardlightProject.ActorParticleEffectDefinition" preserve="all" />
+    <type fullname="HardlightProject.ActorParticleEffectLookup" preserve="all" />
+    <type fullname="HardlightProject.ActorPFXController" preserve="all" />
+    <type fullname="HardlightProject.ActorTerrainEffectsDefinition" preserve="all" />
+    <type fullname="HardlightProject.ActorTerrainEffectsDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.AddressableManager" preserve="all" />
+    <type fullname="HardlightProject.AirRechargePickup" preserve="all" />
+    <type fullname="HardlightProject.AnalyticsConfiguration" preserve="all" />
+    <type fullname="HardlightProject.AnalyticsConfigurationGroup" preserve="all" />
+    <type fullname="HardlightProject.AnimatedTargetIndicator" preserve="all" />
+    <type fullname="HardlightProject.AnimationCustomDataCamera" preserve="all" />
+    <type fullname="HardlightProject.AnimationCustomDataCharacter" preserve="all" />
+    <type fullname="HardlightProject.AnimationCustomDataToMaterialProperty" preserve="all" />
+    <type fullname="HardlightProject.AnimationEventListener" preserve="all" />
+    <type fullname="HardlightProject.AnimationSampler" preserve="all" />
+    <type fullname="HardlightProject.AnimationStartDelay" preserve="all" />
+    <type fullname="HardlightProject.AnimatorBoolSetter" preserve="all" />
+    <type fullname="HardlightProject.AnimatorCompleteAbilitySetter" preserve="all" />
+    <type fullname="HardlightProject.AnimatorDrivenLifetimeObject" preserve="all" />
+    <type fullname="HardlightProject.AnimatorEnteredAttackStateAbilitySetter" preserve="all" />
+    <type fullname="HardlightProject.AnimatorGetBoolEvent" preserve="all" />
+    <type fullname="HardlightProject.AnimatorNormaliseFloat" preserve="all" />
+    <type fullname="HardlightProject.AnimatorParameterBindableFloat" preserve="all" />
+    <type fullname="HardlightProject.AnimatorRandomTrigger" preserve="all" />
+    <type fullname="HardlightProject.AnimatorSampler" preserve="all" />
+    <type fullname="HardlightProject.AnimatorSetBoolEvent" preserve="all" />
+    <type fullname="HardlightProject.AnimatorSetBossStorageBool" preserve="all" />
+    <type fullname="HardlightProject.AnimatorSetFloatCurve" preserve="all" />
+    <type fullname="HardlightProject.AnimatorSmoothFloat" preserve="all" />
+    <type fullname="HardlightProject.AnimatorSuppressWarnings" preserve="all" />
+    <type fullname="HardlightProject.AnimatorToCinemachineVirtualCamera" preserve="all" />
+    <type fullname="HardlightProject.AnimatorToMaterialProperty" preserve="all" />
+    <type fullname="HardlightProject.AnimatorToMaterialPropertyData" preserve="all" />
+    <type fullname="HardlightProject.AnimatorToRendererEnabled" preserve="all" />
+    <type fullname="HardlightProject.AnimatorTriggeredAbilitySetter" preserve="all" />
+    <type fullname="HardlightProject.AnimatorWindUpAbilitySetter" preserve="all" />
+    <type fullname="HardlightProject.AnimParameterSetter" preserve="all" />
+    <type fullname="HardlightProject.App" preserve="all" />
+    <type fullname="HardlightProject.ApplicationFSMBoolEventTrigger" preserve="all" />
+    <type fullname="HardlightProject.ApplicationInfoView" preserve="all" />
+    <type fullname="HardlightProject.ApplicationQuitButton" preserve="all" />
+    <type fullname="HardlightProject.ApplicationStateEvent" preserve="all" />
+    <type fullname="HardlightProject.ApplicationStateEventDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.ApplicationVersionDefinition" preserve="all" />
+    <type fullname="HardlightProject.ApplicationVersionDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.ApplySafeArea" preserve="all" />
+    <type fullname="HardlightProject.AppRatingRequesterBoss" preserve="all" />
+    <type fullname="HardlightProject.AppRatingRequesterDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.AudioLowPassActivator" preserve="all" />
+    <type fullname="HardlightProject.AudioManager" preserve="all" />
+    <type fullname="HardlightProject.AudioSourceMixerAssigner" preserve="all" />
+    <type fullname="HardlightProject.AutoRegisterHashedComponentGroup" preserve="all" />
+    <type fullname="HardlightProject.BlobShadowModifier" preserve="all" />
+    <type fullname="HardlightProject.BlobShadowRaycaster" preserve="all" />
+    <type fullname="HardlightProject.Boss" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_BodySlam" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_BossCrabClawAttack" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_ChargeAttack" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_DeathFlight" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_LaserFence" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_MoveBigCircleWithCounterSpin" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_MoveBigCircleWithDecayingRadius" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_MovementRetreatingJump" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_MovementScuttle" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_MovementTurnTowardTarget" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_MoveRandom" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_MoveToArenaEdge" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_MoveToBigCircleWithCounterSpin" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_MoveToTarget" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_MoveToTriangleFormation" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_ProjectileSpawnAndShootInRows" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_ProjectileSpawnAndShootOneAtATime" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_RegrowClaw" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_SpinOnSpot" preserve="all" />
+    <type fullname="HardlightProject.BossAbilityDefinition_StayAheadOfPlayer" preserve="all" />
+    <type fullname="HardlightProject.BossBurstableComponent" preserve="all" />
+    <type fullname="HardlightProject.BossCrabManager" preserve="all" />
+    <type fullname="HardlightProject.BossDefinition" preserve="all" />
+    <type fullname="HardlightProject.BossHazard" preserve="all" />
+    <type fullname="HardlightProject.BossHomingTarget" preserve="all" />
+    <type fullname="HardlightProject.BossManager" preserve="all" />
+    <type fullname="HardlightProject.BossManagerTrigger" preserve="all" />
+    <type fullname="HardlightProject.BossTimedObjectPool" preserve="all" />
+    <type fullname="HardlightProject.BossVisualProxyModifier" preserve="all" />
+    <type fullname="HardlightProject.CameraAbilityOverrideDefinition" preserve="all" />
+    <type fullname="HardlightProject.CameraAbilitySlopeDefinition" preserve="all" />
+    <type fullname="HardlightProject.CameraAversionWithLimit" preserve="all" />
+    <type fullname="HardlightProject.CameraAxisStateDefinition" preserve="all" />
+    <type fullname="HardlightProject.CameraAxisStateOverrides" preserve="all" />
+    <type fullname="HardlightProject.CameraFacingListener" preserve="all" />
+    <type fullname="HardlightProject.CameraHeadingTrigger" preserve="all" />
+    <type fullname="HardlightProject.CameraProxyAssignTrigger" preserve="all" />
+    <type fullname="HardlightProject.CameraProxySettingsOverrideTrigger" preserve="all" />
+    <type fullname="HardlightProject.CameraProxyTarget" preserve="all" />
+    <type fullname="HardlightProject.CameraProxyTarget_Recentering" preserve="all" />
+    <type fullname="HardlightProject.CameraProxyTargetSettingsData" preserve="all" />
+    <type fullname="HardlightProject.CameraProxyTargetSettingsDataGroup" preserve="all" />
+    <type fullname="HardlightProject.CameraRecenterHeadingDefinition_Basic" preserve="all" />
+    <type fullname="HardlightProject.CameraRecenterHeadingDefinition_FreeLook" preserve="all" />
+    <type fullname="HardlightProject.CameraRecenterHeadingOverrides" preserve="all" />
+    <type fullname="HardlightProject.CameraTypeManipulator" preserve="all" />
+    <type fullname="HardlightProject.CameraTypeTriggerVolume" preserve="all" />
+    <type fullname="HardlightProject.CameraYAxisProxyManager" preserve="all" />
+    <type fullname="HardlightProject.CascadeObjectDefinition" preserve="all" />
+    <type fullname="HardlightProject.CascadeObjectDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.CascadeObjectPool" preserve="all" />
+    <type fullname="HardlightProject.CatchConnector" preserve="all" />
+    <type fullname="HardlightProject.CatchReleaseTrigger" preserve="all" />
+    <type fullname="HardlightProject.ChallengeCycleDefinition" preserve="all" />
+    <type fullname="HardlightProject.ChallengeCyclePeriodDefinition" preserve="all" />
+    <type fullname="HardlightProject.ChallengeDefinition" preserve="all" />
+    <type fullname="HardlightProject.ChallengeMaintenance" preserve="all" />
+    <type fullname="HardlightProject.ChallengeManager" preserve="all" />
+    <type fullname="HardlightProject.ChallengeManagerBinders" preserve="all" />
+    <type fullname="HardlightProject.ChallengeRankDefinition" preserve="all" />
+    <type fullname="HardlightProject.ChallengeRewardBlueCoins" preserve="all" />
+    <type fullname="HardlightProject.ChallengeRewardChallengeMode" preserve="all" />
+    <type fullname="HardlightProject.ChallengeRewardCharacterArchetype" preserve="all" />
+    <type fullname="HardlightProject.ChallengeRewardDreamPowers" preserve="all" />
+    <type fullname="HardlightProject.ChallengeRewardDreamStoreBand" preserve="all" />
+    <type fullname="HardlightProject.ChallengeRewardGameplayLevel" preserve="all" />
+    <type fullname="HardlightProject.ChallengeRewardMusicTrack" preserve="all" />
+    <type fullname="HardlightProject.ChallengeRewardOrnament" preserve="all" />
+    <type fullname="HardlightProject.ChallengeRewardRewardTrack" preserve="all" />
+    <type fullname="HardlightProject.ChallengeRewardSkin" preserve="all" />
+    <type fullname="HardlightProject.ChallengeZoneMaterialDefinition" preserve="all" />
+    <type fullname="HardlightProject.ChallengeZoneMaterialDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.ChallengeZoneMaterialSwapper" preserve="all" />
+    <type fullname="HardlightProject.Character" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Air" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_AirChaosAim" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_AirChaosDash" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_AirStompAttack" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Braking" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_BurstAttackAir" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_BurstAttackChaosAir" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_BurstAttackChaosGround" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_BurstAttackGround" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_CatchRelease" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_ClimbingAir" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_ClimbingDirectionOverride" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_ClimbingGround" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_DetectorArchetype" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_DetectorLightspeedDash" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HalfPipeAir" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HalfPipeTransfer" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HomingAttackAirLightspeedDash" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HomingAttackAirOneShot" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HomingAttackAirTarget" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HomingAttackGroundRolling" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HomingAttackGroundRunning" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Idle" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_InHub" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Invulnerability" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Jump" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_JumpOneShot" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Knockback" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_LedgeMount" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_LightspeedDash" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_ModifierCollectableAttract" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_ModifierCollectableBoost" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_ModifierCollectableDamage" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_ModifierCollectableRevive" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_ModifierCollectableStart" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_ModifierRingSpeed" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_ModifierSwitchAvailable" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_MovementAir" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_MovementClimbing" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_MovementClimbingBoost" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_MovementGroundBoost" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_MovementGroundBoostOneShot" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_MovementGroundSpinDashCharge" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_MovementRailBoost" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_MovementRailBoostOneShot" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_MovementRailStanding" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_MovementTransporter" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_RailsProximityAir" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_RailsProximityGround" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_RailsTargeting" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_RailSwitch" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Rolling" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Running" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Shield" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Stumble" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_TransporterProximity" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityEvent" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityTypeGroup" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityUIDefinition" preserve="all" />
+    <type fullname="HardlightProject.CharacterAbilityUIDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.CharacterActionGlyphMapGroup" preserve="all" />
+    <type fullname="HardlightProject.CharacterAnimationTrigger" preserve="all" />
+    <type fullname="HardlightProject.CharacterArchetypeDefinition" preserve="all" />
+    <type fullname="HardlightProject.CharacterArchetypeDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.CharacterAutoRailTrigger" preserve="all" />
+    <type fullname="HardlightProject.CharacterBoostTrigger" preserve="all" />
+    <type fullname="HardlightProject.CharacterChaosStaminaTrigger" preserve="all" />
+    <type fullname="HardlightProject.CharacterColliderSingleSided" preserve="all" />
+    <type fullname="HardlightProject.CharacterCollisionData" preserve="all" />
+    <type fullname="HardlightProject.CharacterComponentLookup" preserve="all" />
+    <type fullname="HardlightProject.CharacterConditionalTriggerCutscene" preserve="all" />
+    <type fullname="HardlightProject.CharacterConditionalTriggerEvent" preserve="all" />
+    <type fullname="HardlightProject.CharacterControlsMappingDefinition" preserve="all" />
+    <type fullname="HardlightProject.CharacterCutscene" preserve="all" />
+    <type fullname="HardlightProject.CharacterDefinition" preserve="all" />
+    <type fullname="HardlightProject.CharacterDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.CharacterDirectionInfluencer" preserve="all" />
+    <type fullname="HardlightProject.CharacterEvents" preserve="all" />
+    <type fullname="HardlightProject.CharacterEventTrigger" preserve="all" />
+    <type fullname="HardlightProject.CharacterFootsteps" preserve="all" />
+    <type fullname="HardlightProject.CharacterMagnetismModifier" preserve="all" />
+    <type fullname="HardlightProject.CharacterPause" preserve="all" />
+    <type fullname="HardlightProject.CharacterProxyAssignTrigger" preserve="all" />
+    <type fullname="HardlightProject.CharacterRailAttachTrigger" preserve="all" />
+    <type fullname="HardlightProject.CharacterRigLookup" preserve="all" />
+    <type fullname="HardlightProject.CharacterSideMuzzle" preserve="all" />
+    <type fullname="HardlightProject.CharacterSkinDefinition" preserve="all" />
+    <type fullname="HardlightProject.CharacterStickyControlsDefinition" preserve="all" />
+    <type fullname="HardlightProject.CharacterStickyControlsDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.CharacterTargetingModifier" preserve="all" />
+    <type fullname="HardlightProject.CharacterTeleportLocal" preserve="all" />
+    <type fullname="HardlightProject.CharacterTransporterAttachTrigger" preserve="all" />
+    <type fullname="HardlightProject.CharacterTriggerSurfaceTeleport" preserve="all" />
+    <type fullname="HardlightProject.CharacterTypeCollisionTrigger" preserve="all" />
+    <type fullname="HardlightProject.CharacterUiModifier" preserve="all" />
+    <type fullname="HardlightProject.CharacterVisualProxyModifier" preserve="all" />
+    <type fullname="HardlightProject.CinemachineAddTransformToTargetGroup" preserve="all" />
+    <type fullname="HardlightProject.CinemachineAssignTargetToCameraType" preserve="all" />
+    <type fullname="HardlightProject.CinemachineCameraManager" preserve="all" />
+    <type fullname="HardlightProject.CinemachineCameraResetYRecenter" preserve="all" />
+    <type fullname="HardlightProject.CinemachineCameraYAxisOverride" preserve="all" />
+    <type fullname="HardlightProject.CinemachineClipPlaneCollisionExtension" preserve="all" />
+    <type fullname="HardlightProject.CinemachineClipPlaneCollisionExtension_Character" preserve="all" />
+    <type fullname="HardlightProject.CinemachineControllerMovementProvider" preserve="all" />
+    <type fullname="HardlightProject.CinemachineParametersBlender_FreeLook" preserve="all" />
+    <type fullname="HardlightProject.CinemachineParametersBlender_FreeLookBoost" preserve="all" />
+    <type fullname="HardlightProject.CinemachineParametersBlenderSource_CameraInput" preserve="all" />
+    <type fullname="HardlightProject.CinemachineParametersBlenderSource_IsGrounded" preserve="all" />
+    <type fullname="HardlightProject.CinemachineParametersBlenderSource_LateralMovement" preserve="all" />
+    <type fullname="HardlightProject.CinemachineParametersBlenderSource_Speed" preserve="all" />
+    <type fullname="HardlightProject.CinemachinePlayerCharacterAssign" preserve="all" />
+    <type fullname="HardlightProject.CinemachineRecenterHeadingExtension_Basic" preserve="all" />
+    <type fullname="HardlightProject.CinemachineRecenterHeadingExtension_FreeLookManualXAxis" preserve="all" />
+    <type fullname="HardlightProject.CinemachineRegisterForGimbalLock" preserve="all" />
+    <type fullname="HardlightProject.CinemachineRelativeOffsetExtension" preserve="all" />
+    <type fullname="HardlightProject.CinemachineSceneTriggerCamera" preserve="all" />
+    <type fullname="HardlightProject.CinemachineSlopeAngleClamp" preserve="all" />
+    <type fullname="HardlightProject.CinemachineTargetGroupAssigner_Boss" preserve="all" />
+    <type fullname="HardlightProject.CinemachineTargetGroupAssigner_CameraProxy" preserve="all" />
+    <type fullname="HardlightProject.CinemachineTargetGroupAssigner_PlayerCharacter" preserve="all" />
+    <type fullname="HardlightProject.CinemachineYUpOverrideTrigger" preserve="all" />
+    <type fullname="HardlightProject.Collectable" preserve="all" />
+    <type fullname="HardlightProject.CollectableDefinition" preserve="all" />
+    <type fullname="HardlightProject.CollectableDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.CollectablePrefabPool" preserve="all" />
+    <type fullname="HardlightProject.CollisionPlaneDefinition" preserve="all" />
+    <type fullname="HardlightProject.ComicCutscene" preserve="all" />
+    <type fullname="HardlightProject.ComicPanel" preserve="all" />
+    <type fullname="HardlightProject.ComicPanelClip" preserve="all" />
+    <type fullname="HardlightProject.ComicPanelTrack" preserve="all" />
+    <type fullname="HardlightProject.ConditionalTriggerEvent" preserve="all" />
+    <type fullname="HardlightProject.ConditionalTriggerEventPersistentObjectBooleans" preserve="all" />
+    <type fullname="HardlightProject.CrossPromoLaunchButtonSDT" preserve="all" />
+    <type fullname="HardlightProject.CustomGravity" preserve="all" />
+    <type fullname="HardlightProject.Cutscene" preserve="all" />
+    <type fullname="HardlightProject.CutsceneDefinition" preserve="all" />
+    <type fullname="HardlightProject.CutsceneDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.CycleGameObjectList" preserve="all" />
+    <type fullname="HardlightProject.DataDefinitions" preserve="all" />
+    <type fullname="HardlightProject.DataManager" preserve="all" />
+    <type fullname="HardlightProject.DebugMenu" preserve="all" />
+    <type fullname="HardlightProject.DebugMenuPerformanceProfiles" preserve="all" />
+    <type fullname="HardlightProject.DebugUIUtilities" preserve="all" />
+    <type fullname="HardlightProject.DelayedActivator" preserve="all" />
+    <type fullname="HardlightProject.DeleteChildren" preserve="all" />
+    <type fullname="HardlightProject.DestroyObject" preserve="all" />
+    <type fullname="HardlightProject.DevicePerformance_iOS" preserve="all" />
+    <type fullname="HardlightProject.DevicePerformance_macOS" preserve="all" />
+    <type fullname="HardlightProject.DevicePerformance_tvOS" preserve="all" />
+    <type fullname="HardlightProject.DevicePerformanceGroup" preserve="all" />
+    <type fullname="HardlightProject.DreamPowerDefinition" preserve="all" />
+    <type fullname="HardlightProject.DreamPowerDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.DreamPowerStoreBandDefinition" preserve="all" />
+    <type fullname="HardlightProject.DreamPowerStoreBandDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.DreamPowerStoreDefinition" preserve="all" />
+    <type fullname="HardlightProject.DreamPowerStoreManager" preserve="all" />
+    <type fullname="HardlightProject.DreamteckSplineToHLSpline" preserve="all" />
+    <type fullname="HardlightProject.EffectSequence" preserve="all" />
+    <type fullname="HardlightProject.Enemy" preserve="all" />
+    <type fullname="HardlightProject.EnemyAbilityDefinition_AirMovement" preserve="all" />
+    <type fullname="HardlightProject.EnemyAbilityDefinition_Dead" preserve="all" />
+    <type fullname="HardlightProject.EnemyAbilityDefinition_FireProjectile" preserve="all" />
+    <type fullname="HardlightProject.EnemyAbilityDefinition_GroundAttack" preserve="all" />
+    <type fullname="HardlightProject.EnemyAbilityDefinition_GroundMovement" preserve="all" />
+    <type fullname="HardlightProject.EnemyAbilityDefinition_GroundMovement_WithTarget" preserve="all" />
+    <type fullname="HardlightProject.EnemyAbilityDefinition_Idle" preserve="all" />
+    <type fullname="HardlightProject.EnemyAbilityDefinition_Taunt" preserve="all" />
+    <type fullname="HardlightProject.EnemyDefinition" preserve="all" />
+    <type fullname="HardlightProject.EnemyDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.EnemyNavigationHomeRadius" preserve="all" />
+    <type fullname="HardlightProject.EnemyNavigationSpline" preserve="all" />
+    <type fullname="HardlightProject.EnemyNavigationStaticAndReturnAfterChase" preserve="all" />
+    <type fullname="HardlightProject.EntityActivationDefinition" preserve="all" />
+    <type fullname="HardlightProject.EntityActivationLevelVisibilityEntity" preserve="all" />
+    <type fullname="HardlightProject.EntityActivationLogicCharacterRespawnDefinition" preserve="all" />
+    <type fullname="HardlightProject.EntityActivationLogicDistanceDefinition" preserve="all" />
+    <type fullname="HardlightProject.EntityActivationLogicLevelActivateDefinition" preserve="all" />
+    <type fullname="HardlightProject.EntityActivationLogicMissionActivateDefinition" preserve="all" />
+    <type fullname="HardlightProject.EntityActivationLogicPlatformResetDefinition" preserve="all" />
+    <type fullname="HardlightProject.EntityActivationLogicTimeDefinition" preserve="all" />
+    <type fullname="HardlightProject.EntityActivationLogicWaitForCutsceneDefinition" preserve="all" />
+    <type fullname="HardlightProject.EntityActivationMissionVisibilityEntity" preserve="all" />
+    <type fullname="HardlightProject.EventCollisionTrigger" preserve="all" />
+    <type fullname="HardlightProject.EventOnVisibility" preserve="all" />
+    <type fullname="HardlightProject.FadeTransitionDefinition" preserve="all" />
+    <type fullname="HardlightProject.FadeTransitionDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.FlashRenderers" preserve="all" />
+    <type fullname="HardlightProject.FlightStaminaGizmoDisplay" preserve="all" />
+    <type fullname="HardlightProject.FollowPlayerCharacterPosition" preserve="all" />
+    <type fullname="HardlightProject.FontAssetAndFallbacks" preserve="all" />
+    <type fullname="HardlightProject.FontAssetLanguageSetter" preserve="all" />
+    <type fullname="HardlightProject.FourmenManager" preserve="all" />
+    <type fullname="HardlightProject.FourmenVisuals" preserve="all" />
+    <type fullname="HardlightProject.FTUECameraSection" preserve="all" />
+    <type fullname="HardlightProject.Full3DCutscene" preserve="all" />
+    <type fullname="HardlightProject.FullscreenShaderEffectTrigger" preserve="all" />
+    <type fullname="HardlightProject.FullscreenShaderManager" preserve="all" />
+    <type fullname="HardlightProject.FullscreenShaderParametersDefinition" preserve="all" />
+    <type fullname="HardlightProject.FullscreenShaderParametersDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.FullscreenShaderUIBlur" preserve="all" />
+    <type fullname="HardlightProject.GameActionButtonClick" preserve="all" />
+    <type fullname="HardlightProject.GameActionGlyphMap" preserve="all" />
+    <type fullname="HardlightProject.GameCenterView" preserve="all" />
+    <type fullname="HardlightProject.GameControlsMappingDefinition" preserve="all" />
+    <type fullname="HardlightProject.GameInputButtonClick" preserve="all" />
+    <type fullname="HardlightProject.GameInputDisabledListener" preserve="all" />
+    <type fullname="HardlightProject.GameInputDisabler" preserve="all" />
+    <type fullname="HardlightProject.GameInputGlyphView" preserve="all" />
+    <type fullname="HardlightProject.GameInputSupplier" preserve="all" />
+    <type fullname="HardlightProject.GameplayIslandDefinition" preserve="all" />
+    <type fullname="HardlightProject.GameplayIslandDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.GameplayLevelCategory" preserve="all" />
+    <type fullname="HardlightProject.GameplayLevelDefinition" preserve="all" />
+    <type fullname="HardlightProject.GameplaySection" preserve="all" />
+    <type fullname="HardlightProject.GameTipsDefinition" preserve="all" />
+    <type fullname="HardlightProject.GlobalConstantDefinition_Character" preserve="all" />
+    <type fullname="HardlightProject.GlobalConstantDefinition_Input" preserve="all" />
+    <type fullname="HardlightProject.GlobalConstantDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.GlobalSignal" preserve="all" />
+    <type fullname="HardlightProject.GlobalSignalPublisher" preserve="all" />
+    <type fullname="HardlightProject.GlobalSignalReceiver" preserve="all" />
+    <type fullname="HardlightProject.GravityCapsuleArc" preserve="all" />
+    <type fullname="HardlightProject.GravityCylinder" preserve="all" />
+    <type fullname="HardlightProject.GravityPlane" preserve="all" />
+    <type fullname="HardlightProject.GravitySphere" preserve="all" />
+    <type fullname="HardlightProject.GravitySurfaceDefinition" preserve="all" />
+    <type fullname="HardlightProject.GravitySurfaceDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.GuardianManager" preserve="all" />
+    <type fullname="HardlightProject.GuardianProjectile" preserve="all" />
+    <type fullname="HardlightProject.HalfPipeDefinition" preserve="all" />
+    <type fullname="HardlightProject.HalfPipeDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.HalfPipeIgnoreDefinition" preserve="all" />
+    <type fullname="HardlightProject.HalfPipeTrajectoryDefinition" preserve="all" />
+    <type fullname="HardlightProject.HashedColliderGroup" preserve="all" />
+    <type fullname="HardlightProject.HashedColliderRoot" preserve="all" />
+    <type fullname="HardlightProject.HashedComponent" preserve="all" />
+    <type fullname="HardlightProject.HashedComponentGroup" preserve="all" />
+    <type fullname="HardlightProject.HashedTrackGroup" preserve="all" />
+    <type fullname="HardlightProject.Hazard" preserve="all" />
+    <type fullname="HardlightProject.HazardDefinition" preserve="all" />
+    <type fullname="HardlightProject.HazardDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.HideOnAwake" preserve="all" />
+    <type fullname="HardlightProject.HLAudioAmbientComponent" preserve="all" />
+    <type fullname="HardlightProject.HLAudioChangeMusic" preserve="all" />
+    <type fullname="HardlightProject.HLAudioChangeMusicOnCharacterTrigger" preserve="all" />
+    <type fullname="HardlightProject.HLAudioClipGroup" preserve="all" />
+    <type fullname="HardlightProject.HLAudioFilterComponent" preserve="all" />
+    <type fullname="HardlightProject.HLAudioMixerDefinition" preserve="all" />
+    <type fullname="HardlightProject.HLAudioMixerGroup" preserve="all" />
+    <type fullname="HardlightProject.HLAudioOneShotAmbient" preserve="all" />
+    <type fullname="HardlightProject.HLAudioOneShotOnSource" preserve="all" />
+    <type fullname="HardlightProject.HLAudioOneShotShuffledLoop" preserve="all" />
+    <type fullname="HardlightProject.HLAudioRandomLoop" preserve="all" />
+    <type fullname="HardlightProject.HLAudioSfxComponent" preserve="all" />
+    <type fullname="HardlightProject.HLAudioSfxComponentButton" preserve="all" />
+    <type fullname="HardlightProject.HLAudioSfxComponentToggle" preserve="all" />
+    <type fullname="HardlightProject.HLAudioSfxRandomisedComponent" preserve="all" />
+    <type fullname="HardlightProject.HLAudioSfxRandomisedComponentToggle" preserve="all" />
+    <type fullname="HardlightProject.HLAudioSnapshot" preserve="all" />
+    <type fullname="HardlightProject.HLAudioSourceHandler" preserve="all" />
+    <type fullname="HardlightProject.HLAudioSourceRegisterComponent" preserve="all" />
+    <type fullname="HardlightProject.HLCrossPromo" preserve="all" />
+    <type fullname="HardlightProject.HLInputDebugMenu" preserve="all" />
+    <type fullname="HardlightProject.HLMusicClipDefinition" preserve="all" />
+    <type fullname="HardlightProject.HLProfilerDebugMenu" preserve="all" />
+    <type fullname="HardlightProject.HLSfxClipDefinition" preserve="all" />
+    <type fullname="HardlightProject.HoldToSkipInput" preserve="all" />
+    <type fullname="HardlightProject.HomingAttack" preserve="all" />
+    <type fullname="HardlightProject.HomingTarget" preserve="all" />
+    <type fullname="HardlightProject.HoverFan" preserve="all" />
+    <type fullname="HardlightProject.InGameAudioListener" preserve="all" />
+    <type fullname="HardlightProject.InputEvent" preserve="all" />
+    <type fullname="HardlightProject.InputEventSelectedOnly" preserve="all" />
+    <type fullname="HardlightProject.InputSystem" preserve="all" />
+    <type fullname="HardlightProject.InstancedObjectPoolManager" preserve="all" />
+    <type fullname="HardlightProject.InstancePrefabDependency" preserve="all" />
+    <type fullname="HardlightProject.InstancePrefabGroup" preserve="all" />
+    <type fullname="HardlightProject.InstancePrefabProxy" preserve="all" />
+    <type fullname="HardlightProject.IntroSequence" preserve="all" />
+    <type fullname="HardlightProject.IntroSequenceDefinition" preserve="all" />
+    <type fullname="HardlightProject.IntroSequenceDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.LanguageDebug" preserve="all" />
+    <type fullname="HardlightProject.LerpColour" preserve="all" />
+    <type fullname="HardlightProject.LevelData" preserve="all" />
+    <type fullname="HardlightProject.LevelDefinition" preserve="all" />
+    <type fullname="HardlightProject.LevelManager" preserve="all" />
+    <type fullname="HardlightProject.LevelSetupDefinition" preserve="all" />
+    <type fullname="HardlightProject.LevelSetupDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.LevelStartPositionDefinition" preserve="all" />
+    <type fullname="HardlightProject.LevelStartPositionDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.LightspeedDashDefinition" preserve="all" />
+    <type fullname="HardlightProject.LightspeedDashDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.LookAtTarget" preserve="all" />
+    <type fullname="HardlightProject.MaterialManipulationTrigger" preserve="all" />
+    <type fullname="HardlightProject.MaterialManipulator" preserve="all" />
+    <type fullname="HardlightProject.MetaGameUnlockDefinition" preserve="all" />
+    <type fullname="HardlightProject.MetaGameUnlockDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.MissionBossTracker" preserve="all" />
+    <type fullname="HardlightProject.MissionCollectableRewardTracker" preserve="all" />
+    <type fullname="HardlightProject.MissionCollectableTracker" preserve="all" />
+    <type fullname="HardlightProject.MissionDefinition" preserve="all" />
+    <type fullname="HardlightProject.MissionInstancedTracker" preserve="all" />
+    <type fullname="HardlightProject.MissionList" preserve="all" />
+    <type fullname="HardlightProject.MissionObjective" preserve="all" />
+    <type fullname="HardlightProject.MissionRankDefinition" preserve="all" />
+    <type fullname="HardlightProject.MissionReachGoalTracker" preserve="all" />
+    <type fullname="HardlightProject.MissionRingRewardDefinition" preserve="all" />
+    <type fullname="HardlightProject.MissionScorer" preserve="all" />
+    <type fullname="HardlightProject.MissionScorerInstance" preserve="all" />
+    <type fullname="HardlightProject.MissionScorerObjective" preserve="all" />
+    <type fullname="HardlightProject.MissionScorerPrefabPool" preserve="all" />
+    <type fullname="HardlightProject.MissionScorerProximityEvaluator" preserve="all" />
+    <type fullname="HardlightProject.MissionScorerStreakDefinition" preserve="all" />
+    <type fullname="HardlightProject.MissionScorerStreakDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.MissionScorerStreakObjective" preserve="all" />
+    <type fullname="HardlightProject.MissionSequencedInstancedTracker" preserve="all" />
+    <type fullname="HardlightProject.MissionTimer" preserve="all" />
+    <type fullname="HardlightProject.ModifierDelayUntil" preserve="all" />
+    <type fullname="HardlightProject.MusicTrackDefinition" preserve="all" />
+    <type fullname="HardlightProject.MusicTrackDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.NightmareEggmanProjectile" preserve="all" />
+    <type fullname="HardlightProject.NightmareEggmanProjectileVisualBehaviour" preserve="all" />
+    <type fullname="HardlightProject.NotificationManager" preserve="all" />
+    <type fullname="HardlightProject.ObjectLeaveChecker" preserve="all" />
+    <type fullname="HardlightProject.OnControllerConnectedButton" preserve="all" />
+    <type fullname="HardlightProject.OnScreenBurstAttackButton" preserve="all" />
+    <type fullname="HardlightProject.OnScreenButton" preserve="all" />
+    <type fullname="HardlightProject.OnScreenControlDebugging" preserve="all" />
+    <type fullname="HardlightProject.OnScreenControlGroupListener" preserve="all" />
+    <type fullname="HardlightProject.OnScreenControlGroupListenerButton" preserve="all" />
+    <type fullname="HardlightProject.OnScreenControlInputHandler" preserve="all" />
+    <type fullname="HardlightProject.OnScreenControlStickMovement" preserve="all" />
+    <type fullname="HardlightProject.OnScreenControlZoneCamera" preserve="all" />
+    <type fullname="HardlightProject.OnScreenTargetingButton" preserve="all" />
+    <type fullname="HardlightProject.OnScreenTertiaryButton" preserve="all" />
+    <type fullname="HardlightProject.OnScreenTouchZoneEditableUI" preserve="all" />
+    <type fullname="HardlightProject.OnScreenTouchZoneOrnament" preserve="all" />
+    <type fullname="HardlightProject.OpenLocalisedURL" preserve="all" />
+    <type fullname="HardlightProject.OrbDetectorUI" preserve="all" />
+    <type fullname="HardlightProject.OrnamentAdvanced" preserve="all" />
+    <type fullname="HardlightProject.OrnamentDefinition" preserve="all" />
+    <type fullname="HardlightProject.OrnamentDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.OrnamentRoot" preserve="all" />
+    <type fullname="HardlightProject.OrnamentSimple" preserve="all" />
+    <type fullname="HardlightProject.OrnamentViewer" preserve="all" />
+    <type fullname="HardlightProject.OutOfBoundsArea" preserve="all" />
+    <type fullname="HardlightProject.OutOfBoundsBox" preserve="all" />
+    <type fullname="HardlightProject.OutroSequence" preserve="all" />
+    <type fullname="HardlightProject.OutroSequenceDefinition" preserve="all" />
+    <type fullname="HardlightProject.OutroSequenceDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.OutroSequenceFadeMainDirectionalLight" preserve="all" />
+    <type fullname="HardlightProject.ParticleEffectBinderTarget" preserve="all" />
+    <type fullname="HardlightProject.ParticleEffectDefinition" preserve="all" />
+    <type fullname="HardlightProject.ParticleEffectDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.ParticleEffectManager" preserve="all" />
+    <type fullname="HardlightProject.ParticleEffectSpawner" preserve="all" />
+    <type fullname="HardlightProject.ParticleEffectWrapper" preserve="all" />
+    <type fullname="HardlightProject.ParticleSystemInstancePrefabPool" preserve="all" />
+    <type fullname="HardlightProject.ParticleSystemPrefabPool" preserve="all" />
+    <type fullname="HardlightProject.PersistentLevelObjectBoolean" preserve="all" />
+    <type fullname="HardlightProject.PFXQualitySwitcher" preserve="all" />
+    <type fullname="HardlightProject.PitchRepeatedAudio" preserve="all" />
+    <type fullname="HardlightProject.PlatformBindings" preserve="all" />
+    <type fullname="HardlightProject.PlatformComponent" preserve="all" />
+    <type fullname="HardlightProject.PlatformVariant" preserve="all" />
+    <type fullname="HardlightProject.PlatformVariantDefinition" preserve="all" />
+    <type fullname="HardlightProject.PlatformVariantDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.PlayerDamageableObject" preserve="all" />
+    <type fullname="HardlightProject.PlayParticleSystemOnEnable" preserve="all" />
+    <type fullname="HardlightProject.PooledCascadeObject" preserve="all" />
+    <type fullname="HardlightProject.PrefabPoolActivation" preserve="all" />
+    <type fullname="HardlightProject.ProjectConsole" preserve="all" />
+    <type fullname="HardlightProject.ProjectileDefinition" preserve="all" />
+    <type fullname="HardlightProject.ProjectileDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.ProjectileManager" preserve="all" />
+    <type fullname="HardlightProject.PromptDefinition" preserve="all" />
+    <type fullname="HardlightProject.PromptManager" preserve="all" />
+    <type fullname="HardlightProject.PromptSlot" preserve="all" />
+    <type fullname="HardlightProject.PromptSlotInUse" preserve="all" />
+    <type fullname="HardlightProject.PromptTrigger" preserve="all" />
+    <type fullname="HardlightProject.PromptTriggerHideAll" preserve="all" />
+    <type fullname="HardlightProject.RailDefinition" preserve="all" />
+    <type fullname="HardlightProject.RailDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.RankDefinition" preserve="all" />
+    <type fullname="HardlightProject.RankDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.RateOfChangeBindable" preserve="all" />
+    <type fullname="HardlightProject.RawInput" preserve="all" />
+    <type fullname="HardlightProject.RealWorldScale" preserve="all" />
+    <type fullname="HardlightProject.RegisterLevelRenderer" preserve="all" />
+    <type fullname="HardlightProject.RequirementAppFSMValueBool" preserve="all" />
+    <type fullname="HardlightProject.RequirementAtLeastOneMissionComplete" preserve="all" />
+    <type fullname="HardlightProject.RequirementCategoryAlwaysHidden" preserve="all" />
+    <type fullname="HardlightProject.RequirementChallengeRewardCollected" preserve="all" />
+    <type fullname="HardlightProject.RequirementChallengesFeatureSeen" preserve="all" />
+    <type fullname="HardlightProject.RequirementChallengesFeatureUnlocked" preserve="all" />
+    <type fullname="HardlightProject.RequirementChallengesOpen" preserve="all" />
+    <type fullname="HardlightProject.RequirementLevelAlwaysLocked" preserve="all" />
+    <type fullname="HardlightProject.RequirementLockCategoryByBoss" preserve="all" />
+    <type fullname="HardlightProject.RequirementMissionGroupAlwaysHidden" preserve="all" />
+    <type fullname="HardlightProject.RequirementMissionGroupGatedByPlayerOrbs" preserve="all" />
+    <type fullname="HardlightProject.RequirementMissionGroupShadowFTUEAvailable" preserve="all" />
+    <type fullname="HardlightProject.RequirementMissionGroupShadowFTUEChallenge" preserve="all" />
+    <type fullname="HardlightProject.RequirementMissionsCompleted" preserve="all" />
+    <type fullname="HardlightProject.RequirementPlayerHasEnoughRewards" preserve="all" />
+    <type fullname="HardlightProject.RequirementPreviousActFirstMissionCompleted" preserve="all" />
+    <type fullname="HardlightProject.RequirementPreviousMissionGroupsAreComplete" preserve="all" />
+    <type fullname="HardlightProject.RequirementPreviousZoneBossDefeated" preserve="all" />
+    <type fullname="HardlightProject.RequirementRewardLevelUnlocked" preserve="all" />
+    <type fullname="HardlightProject.RequirementRewardTrackUnlocked" preserve="all" />
+    <type fullname="HardlightProject.RequirementSpecificMissionComplete" preserve="all" />
+    <type fullname="HardlightProject.RespawnPoint" preserve="all" />
+    <type fullname="HardlightProject.RewardTrackDefinition" preserve="all" />
+    <type fullname="HardlightProject.RewardTrackDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.RewardUnlockStringPicker" preserve="all" />
+    <type fullname="HardlightProject.RigidbodyForceTrigger" preserve="all" />
+    <type fullname="HardlightProject.RigidbodyGravity" preserve="all" />
+    <type fullname="HardlightProject.RuntimeIssueTracker" preserve="all" />
+    <type fullname="HardlightProject.SameSpaceObjectAvoidance" preserve="all" />
+    <type fullname="HardlightProject.SaveGameUIActions" preserve="all" />
+    <type fullname="HardlightProject.ScaleToTarget" preserve="all" />
+    <type fullname="HardlightProject.SceneMaterialManipulator" preserve="all" />
+    <type fullname="HardlightProject.SceneSelectionBase" preserve="all" />
+    <type fullname="HardlightProject.ScreenWidthHorizontalScrollGroup" preserve="all" />
+    <type fullname="HardlightProject.SequencedAnimation" preserve="all" />
+    <type fullname="HardlightProject.SequencedCamera" preserve="all" />
+    <type fullname="HardlightProject.SequencedCharacterAnimation" preserve="all" />
+    <type fullname="HardlightProject.SequencedCharacterFSMBoolSetter" preserve="all" />
+    <type fullname="HardlightProject.SequencedCharacterFSMIntSetter" preserve="all" />
+    <type fullname="HardlightProject.SequencedFollower" preserve="all" />
+    <type fullname="HardlightProject.SequencedMagnetism" preserve="all" />
+    <type fullname="HardlightProject.SequencedMaterialProperty" preserve="all" />
+    <type fullname="HardlightProject.SequencedParticleEffectSpawner" preserve="all" />
+    <type fullname="HardlightProject.SequencedParticles" preserve="all" />
+    <type fullname="HardlightProject.SequencedPostProcessing" preserve="all" />
+    <type fullname="HardlightProject.SequencedPromptTrigger" preserve="all" />
+    <type fullname="HardlightProject.SequencedTimeEvent" preserve="all" />
+    <type fullname="HardlightProject.SequencedTransformSurfaceFollower" preserve="all" />
+    <type fullname="HardlightProject.SequencedUnityEvent" preserve="all" />
+    <type fullname="HardlightProject.SequentialActivator" preserve="all" />
+    <type fullname="HardlightProject.ShaderParameterBinderTarget" preserve="all" />
+    <type fullname="HardlightProject.ShaderPrewarmer" preserve="all" />
+    <type fullname="HardlightProject.SiblingOrderEvent" preserve="all" />
+    <type fullname="HardlightProject.SimplifiedBody" preserve="all" />
+    <type fullname="HardlightProject.SmoothedTransformProxy" preserve="all" />
+    <type fullname="HardlightProject.SmoothedTransformProxy_CameraWorldSpace" preserve="all" />
+    <type fullname="HardlightProject.SmoothedTransformRotator" preserve="all" />
+    <type fullname="HardlightProject.SnapCameraToCharacterHeadingTrigger" preserve="all" />
+    <type fullname="HardlightProject.SplashScreen" preserve="all" />
+    <type fullname="HardlightProject.SplineObjectFollower" preserve="all" />
+    <type fullname="HardlightProject.SplineProjectileSpawner" preserve="all" />
+    <type fullname="HardlightProject.StackedCamera" preserve="all" />
+    <type fullname="HardlightProject.StateMachinesGroup" preserve="all" />
+    <type fullname="HardlightProject.StickyControlsTrigger" preserve="all" />
+    <type fullname="HardlightProject.StraightLineProjectile" preserve="all" />
+    <type fullname="HardlightProject.SubstituteObjectBoss" preserve="all" />
+    <type fullname="HardlightProject.SubstituteObjectBossFourman" preserve="all" />
+    <type fullname="HardlightProject.SubstituteObjectBossFourmen" preserve="all" />
+    <type fullname="HardlightProject.SubstituteObjectCharacter" preserve="all" />
+    <type fullname="HardlightProject.SubtitleCharacterDefinition" preserve="all" />
+    <type fullname="HardlightProject.SubtitleCharacterDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.SubtitleClip" preserve="all" />
+    <type fullname="HardlightProject.SubtitleTrack" preserve="all" />
+    <type fullname="HardlightProject.SurfaceAnimator" preserve="all" />
+    <type fullname="HardlightProject.SurfaceMeshPipeGenerator" preserve="all" />
+    <type fullname="HardlightProject.SurfaceMeshPlaneGenerator" preserve="all" />
+    <type fullname="HardlightProject.TargetingTypePriorityDefinition" preserve="all" />
+    <type fullname="HardlightProject.TargetingTypePriorityDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.TerrainDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.TerrainEffectsMetadataKeyLookupDefinition" preserve="all" />
+    <type fullname="HardlightProject.TerrainEffectTypeMetadataValue" preserve="all" />
+    <type fullname="HardlightProject.TerrainMetadataDefinition" preserve="all" />
+    <type fullname="HardlightProject.TerrainMovementDefinition" preserve="all" />
+    <type fullname="HardlightProject.TerrainTrackerDefinition" preserve="all" />
+    <type fullname="HardlightProject.TerrainTrackerGroup" preserve="all" />
+    <type fullname="HardlightProject.TerrainTrackerMetadataKeyLookupDefinition" preserve="all" />
+    <type fullname="HardlightProject.TerrainTrackerTypeMetadataValue" preserve="all" />
+    <type fullname="HardlightProject.TimedBossCameraTarget" preserve="all" />
+    <type fullname="HardlightProject.TimedEventActivator" preserve="all" />
+    <type fullname="HardlightProject.TimelineHooks" preserve="all" />
+    <type fullname="HardlightProject.TimeMachineClip" preserve="all" />
+    <type fullname="HardlightProject.TimeMachineSkipClip" preserve="all" />
+    <type fullname="HardlightProject.TimeMachineTrack" preserve="all" />
+    <type fullname="HardlightProject.TimeManagerDebugUtilities" preserve="all" />
+    <type fullname="HardlightProject.TimeManagerSaveIntegration" preserve="all" />
+    <type fullname="HardlightProject.TimeManipulator" preserve="all" />
+    <type fullname="HardlightProject.TimeScaledAnimation" preserve="all" />
+    <type fullname="HardlightProject.TimeScaledAnimator" preserve="all" />
+    <type fullname="HardlightProject.TimeScaledBlendShape" preserve="all" />
+    <type fullname="HardlightProject.TimeScaledCategoryAnimation" preserve="all" />
+    <type fullname="HardlightProject.TimeScaledCinemachineCore" preserve="all" />
+    <type fullname="HardlightProject.TimeScaleDefinition" preserve="all" />
+    <type fullname="HardlightProject.TimeScaleDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.TimeScaledParticleSystem" preserve="all" />
+    <type fullname="HardlightProject.TimeScaledPlayableDirector" preserve="all" />
+    <type fullname="HardlightProject.TimeScaledShader" preserve="all" />
+    <type fullname="HardlightProject.ToggleCursorVisibility" preserve="all" />
+    <type fullname="HardlightProject.TouchLayoutConfiguration" preserve="all" />
+    <type fullname="HardlightProject.TouchLayoutConfigurationGroup" preserve="all" />
+    <type fullname="HardlightProject.TrackerCameraDefinition" preserve="all" />
+    <type fullname="HardlightProject.TrackerEnterDefinition" preserve="all" />
+    <type fullname="HardlightProject.TrackerExitDefinition" preserve="all" />
+    <type fullname="HardlightProject.TrackerMotionDefinition" preserve="all" />
+    <type fullname="HardlightProject.TrackManager" preserve="all" />
+    <type fullname="HardlightProject.TransformAssignEventTrigger" preserve="all" />
+    <type fullname="HardlightProject.TransformFaceCamera" preserve="all" />
+    <type fullname="HardlightProject.TransformFacePlayer" preserve="all" />
+    <type fullname="HardlightProject.TransformFakeParent" preserve="all" />
+    <type fullname="HardlightProject.TransformMultiAxisRotator" preserve="all" />
+    <type fullname="HardlightProject.TransformOscillator" preserve="all" />
+    <type fullname="HardlightProject.TransformRotator" preserve="all" />
+    <type fullname="HardlightProject.TransformRotatorRandom" preserve="all" />
+    <type fullname="HardlightProject.TransformScaler" preserve="all" />
+    <type fullname="HardlightProject.TransformSurfaceFollower" preserve="all" />
+    <type fullname="HardlightProject.TransporterDefinition" preserve="all" />
+    <type fullname="HardlightProject.TransporterDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_AbilityInUse" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_CachedAbilityGroupInUse" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_CachedAbilityInUse" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_CachedCharacterFSMValueBool" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_CharacterArchetype" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_CharacterControlsEnabled" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_CharacterFSMValueBool" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_CharacterFSMValueInt" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_CharacterId" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_Nested" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_PersistentLevelObjectBoolean" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_ScriptableObject" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_ValueBool" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_ValueInteger" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_ValueTime" preserve="all" />
+    <type fullname="HardlightProject.TriggerCondition_VelocityMagnitude" preserve="all" />
+    <type fullname="HardlightProject.TriggerUITransition" preserve="all" />
+    <type fullname="HardlightProject.UIAnimatingCounter" preserve="all" />
+    <type fullname="HardlightProject.UIBlurRenderFeature" preserve="all" />
+    <type fullname="HardlightProject.UIContainerActiveMission" preserve="all" />
+    <type fullname="HardlightProject.UIContainerActTransitionIntro" preserve="all" />
+    <type fullname="HardlightProject.UIContainerAnalyticsConsent" preserve="all" />
+    <type fullname="HardlightProject.UIContainerBonusZone" preserve="all" />
+    <type fullname="HardlightProject.UIContainerBossHealth" preserve="all" />
+    <type fullname="HardlightProject.UIContainerChallenge" preserve="all" />
+    <type fullname="HardlightProject.UIContainerChallengeBonus" preserve="all" />
+    <type fullname="HardlightProject.UIContainerChallengeBonusAwarded" preserve="all" />
+    <type fullname="HardlightProject.UIContainerChallengeLeaderboard" preserve="all" />
+    <type fullname="HardlightProject.UIContainerChallengeResults" preserve="all" />
+    <type fullname="HardlightProject.UIContainerChallengeRewardTrack" preserve="all" />
+    <type fullname="HardlightProject.UIContainerChallengesOverview" preserve="all" />
+    <type fullname="HardlightProject.UIContainerChallengeXPReward" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCharacterAbilityAir" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCharacterAbilityBoostStamina" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCharacterAbilityChaos" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCharacterAbilityChaosStamina" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCharacterAbilitySpinDash" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCharacterSelect" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCharacterSelectEquipDreamPower" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCharacterSelectMain" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCharacterSkinSelection" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCollectableCounter" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCollections" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCollectionsDreamPowerStore" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCollectionsMusic" preserve="all" />
+    <type fullname="HardlightProject.UIContainerConditionalTriggerSetter" preserve="all" />
+    <type fullname="HardlightProject.UIContainerControllerRequired" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCorruption" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCredits" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCrossPromo" preserve="all" />
+    <type fullname="HardlightProject.UIContainerCutsceneTheatre" preserve="all" />
+    <type fullname="HardlightProject.UIContainerDebug" preserve="all" />
+    <type fullname="HardlightProject.UIContainerDebugCollectableModifier" preserve="all" />
+    <type fullname="HardlightProject.UIContainerDebugCollectables" preserve="all" />
+    <type fullname="HardlightProject.UIContainerDreamPowerList" preserve="all" />
+    <type fullname="HardlightProject.UIContainerDreamPowerStore" preserve="all" />
+    <type fullname="HardlightProject.UIContainerDreamPowerStoreBlueCoinCost" preserve="all" />
+    <type fullname="HardlightProject.UIContainerDreamPowerStoreInfo" preserve="all" />
+    <type fullname="HardlightProject.UIContainerEmailSupport" preserve="all" />
+    <type fullname="HardlightProject.UIContainerFastLoad" preserve="all" />
+    <type fullname="HardlightProject.UIContainerFPSDebug" preserve="all" />
+    <type fullname="HardlightProject.UIContainerGameCenterAccessPoint" preserve="all" />
+    <type fullname="HardlightProject.UIContainerGameHUD" preserve="all" />
+    <type fullname="HardlightProject.UIContainerGameHUDMissionProgress" preserve="all" />
+    <type fullname="HardlightProject.UIContainerGameplayControl" preserve="all" />
+    <type fullname="HardlightProject.UIContainerGameplayIsland" preserve="all" />
+    <type fullname="HardlightProject.UIContainerGameTips" preserve="all" />
+    <type fullname="HardlightProject.UIContainerIdentifierGroup" preserve="all" />
+    <type fullname="HardlightProject.UIContainerLeaderboards" preserve="all" />
+    <type fullname="HardlightProject.UIContainerLevelDefinition" preserve="all" />
+    <type fullname="HardlightProject.UIContainerLevelResults" preserve="all" />
+    <type fullname="HardlightProject.UIContainerLevelSelect" preserve="all" />
+    <type fullname="HardlightProject.UIContainerLevelSelectZone" preserve="all" />
+    <type fullname="HardlightProject.UIContainerLevelSelectZones" preserve="all" />
+    <type fullname="HardlightProject.UIContainerLoading" preserve="all" />
+    <type fullname="HardlightProject.UIContainerLoadingSimple" preserve="all" />
+    <type fullname="HardlightProject.UIContainerMissionFailure" preserve="all" />
+    <type fullname="HardlightProject.UIContainerMissionInstancedProgress" preserve="all" />
+    <type fullname="HardlightProject.UIContainerMissionMusicPlayer" preserve="all" />
+    <type fullname="HardlightProject.UIContainerMissionProgress" preserve="all" />
+    <type fullname="HardlightProject.UIContainerMissionRanks" preserve="all" />
+    <type fullname="HardlightProject.UIContainerMissionResults" preserve="all" />
+    <type fullname="HardlightProject.UIContainerMissionScorer" preserve="all" />
+    <type fullname="HardlightProject.UIContainerMissionSelect" preserve="all" />
+    <type fullname="HardlightProject.UIContainerMissionTimer" preserve="all" />
+    <type fullname="HardlightProject.UIContainerMissionXpRewards" preserve="all" />
+    <type fullname="HardlightProject.UIContainerMusicPlayer" preserve="all" />
+    <type fullname="HardlightProject.UIContainerNotificationRequest" preserve="all" />
+    <type fullname="HardlightProject.UIContainerOnScreenControls" preserve="all" />
+    <type fullname="HardlightProject.UIContainerOrbCollectableCounter" preserve="all" />
+    <type fullname="HardlightProject.UIContainerOrnamentGallery" preserve="all" />
+    <type fullname="HardlightProject.UIContainerPause" preserve="all" />
+    <type fullname="HardlightProject.UIContainerPauseBackground" preserve="all" />
+    <type fullname="HardlightProject.UIContainerPlayerProgression" preserve="all" />
+    <type fullname="HardlightProject.UIContainerProgressionAnticipation" preserve="all" />
+    <type fullname="HardlightProject.UIContainerProgressionBlueCoins" preserve="all" />
+    <type fullname="HardlightProject.UIContainerProgressionCharacterSkin" preserve="all" />
+    <type fullname="HardlightProject.UIContainerProgressionDreamPower" preserve="all" />
+    <type fullname="HardlightProject.UIContainerProgressionDreamPowerStoreBand" preserve="all" />
+    <type fullname="HardlightProject.UIContainerProgressionMusicTrack" preserve="all" />
+    <type fullname="HardlightProject.UIContainerProgressionOrnament" preserve="all" />
+    <type fullname="HardlightProject.UIContainerProgressionRewardTrack" preserve="all" />
+    <type fullname="HardlightProject.UIContainerProgressionTask" preserve="all" />
+    <type fullname="HardlightProject.UIContainerPrompt" preserve="all" />
+    <type fullname="HardlightProject.UIContainerPromptChoice" preserve="all" />
+    <type fullname="HardlightProject.UIContainerPromptDisplayInput" preserve="all" />
+    <type fullname="HardlightProject.UIContainerQRCode" preserve="all" />
+    <type fullname="HardlightProject.UIContainerResetGameData" preserve="all" />
+    <type fullname="HardlightProject.UIContainerRewardRestriction" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSaveSlots" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSequenceProgressSetter" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSettings" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSettingsAccessibility" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSettingsCamera" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSettingsControls" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSettingsLanguage" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSettingsLegal" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSettingsNotifications" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSettingsQuality" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSimple" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSkipCutscene" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSkipMissionIntro" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSoundLevels" preserve="all" />
+    <type fullname="HardlightProject.UIContainerSoundLevelsOptions" preserve="all" />
+    <type fullname="HardlightProject.UIContainerStart" preserve="all" />
+    <type fullname="HardlightProject.UIContainerValueProgressSetter" preserve="all" />
+    <type fullname="HardlightProject.UIContainerWaypointMarkersCompass" preserve="all" />
+    <type fullname="HardlightProject.UIContainerWaypointMarkersScreenSpace" preserve="all" />
+    <type fullname="HardlightProject.UIContainerWhatsNew" preserve="all" />
+    <type fullname="HardlightProject.UIContainerWithCloseEvent" preserve="all" />
+    <type fullname="HardlightProject.UIEventFromInput" preserve="all" />
+    <type fullname="HardlightProject.UIInputTypeVisibilityController" preserve="all" />
+    <type fullname="HardlightProject.UIMenuNavigationActions" preserve="all" />
+    <type fullname="HardlightProject.UIModernEventDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.UIPlatformVisibilityController" preserve="all" />
+    <type fullname="HardlightProject.UIPointToTarget" preserve="all" />
+    <type fullname="HardlightProject.UIReparentUtility" preserve="all" />
+    <type fullname="HardlightProject.UISettingsBackgroundImage" preserve="all" />
+    <type fullname="HardlightProject.UISpawner" preserve="all" />
+    <type fullname="HardlightProject.UITargetingListener" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetActiveCharacterImage" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetAddressableSprite" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetArchetypeImageSpawner" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetButtonChallengeReward" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetButtonImageCharacter" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetButtonImageTexture" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetButtonStart" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetButtonSupport" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetCategoryToggle" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetChallengesSlider" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetChallengesSliderMini" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetCharacterHeadsSpawner" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetCrossPromoPageSDT" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetCutscene" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetDreamPowerDescription" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetImageArchetype" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetMusicSeeker" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetOrnamentEntryRow" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetOrnamentEntryRowComposer" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetOrnamentToggle" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetProgression" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSDTAlertBadge" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSDTCharacterSelect" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSDTLanguageSelect" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSDTLevel" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSDTLoadingBar" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSDTSimple" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSDTSkinToggle" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSDTSlider" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSDTSlot" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSDTToggleChallenge" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSDTWaypointMarker" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetSliderPip" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetToggleCollections" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetToggleDreamPower" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetToggleMission" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetToggleMusicPlayer" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetToggleMusicTrack" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetTogglePagination" preserve="all" />
+    <type fullname="HardlightProject.UIWidgetToggleSaveData" preserve="all" />
+    <type fullname="HardlightProject.UnityEventTrigger" preserve="all" />
+    <type fullname="HardlightProject.UnloadSceneAfterFirstBoot" preserve="all" />
+    <type fullname="HardlightProject.UserEditableUIComponentController" preserve="all" />
+    <type fullname="HardlightProject.UserEditableUIFlipper" preserve="all" />
+    <type fullname="HardlightProject.VanishingPlatformEffects" preserve="all" />
+    <type fullname="HardlightProject.VariableLengthLasers" preserve="all" />
+    <type fullname="HardlightProject.VideoPlayerWrapper" preserve="all" />
+    <type fullname="HardlightProject.ViewBossInformation" preserve="all" />
+    <type fullname="HardlightProject.ViewCameraInformation" preserve="all" />
+    <type fullname="HardlightProject.ViewCharacterInformation" preserve="all" />
+    <type fullname="HardlightProject.ViewEnemyInformation" preserve="all" />
+    <type fullname="HardlightProject.ViewFrameInformation" preserve="all" />
+    <type fullname="HardlightProject.ViewTargetIndicator" preserve="all" />
+    <type fullname="HardlightProject.ViewTrackInformation" preserve="all" />
+    <type fullname="HardlightProject.VisibilityEventGroup" preserve="all" />
+    <type fullname="HardlightProject.VisualQualityManager_SDT" preserve="all" />
+    <type fullname="HardlightProject.WaypointDefinition" preserve="all" />
+    <type fullname="HardlightProject.WaypointDefinitionGroup" preserve="all" />
+    <type fullname="HardlightProject.WaypointTarget" preserve="all" />
+    <type fullname="HardlightProject.XPCounterBufferedIncrease" preserve="all" />
+    <type fullname="HardlightProject.ZoneThemeOverride" preserve="all" />
+    <type fullname="TimelineEventClip" preserve="all" />
+    <type fullname="TimelineEventTrack" preserve="all" />
+    <type fullname="HardlightProject.CameraHeadingOverride" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CameraHeadingOverride/CameraHeadingOverrideSettings" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CollectableChangeMetadata" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.EffectList" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.MissionTracker/MissionCompleteEvent" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TimeSettings_SDT" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UnityEventTrigger/UnityEventParameters" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CatchReleaseDefinition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CatchReleaseDefinition_Attach" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CatchReleaseDefinition_Catch" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CatchReleaseDefinition_Catch/CatchPoint" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CatchReleaseDefinition_Catch/Events" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CatchReleaseDefinition_Release" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CatchReleasePoints" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ObjectSerializable`1[Hardlight.ISpline]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ObjectSerializable`1[Hardlight.ISurface]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.SnapToAxis" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.SurfaceSplineSection" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TransformSurfaceCircleDescription" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TransformSurfaceDescription/SurfaceEvents" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TransformSurfaceLineDescription" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TransformSurfacePointDescription" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TransformSurfaceSplineDescription" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TransformSurfaceTarget" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TransformSurfaceTargetStop" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.AnimationEventListener/AnimationEventAction" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.AnimationParameterWrapper" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TimeMachineBehaviour" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorFormHandler/FormModifier" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorAttachNode" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorAttachNode/AttachNodeForm" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterRigLookup/MaterialList" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.AbilityTiersDefinition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorAnimationDefinition/AnimationParameter" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorAnimationDefinition/AudioParameter" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorAnimationDefinition/FullscreenEffectParameter" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorAnimationDefinition/PFXParameter" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorAnimationDefinition/PFXParameterCondition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorAnimationDefinition/PFXParameterLeaveState" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorAudioReference" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorAudioReference/ClipWithWeight" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorAudioReference/LevelSpecificOverride" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ActorParticleEffectLookup/ActorParticleEffectLookupElement" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.AnalyticsConfiguration/AnalyticsBand" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.AnimatorToMaterialPropertyData/ParameterToPropertyPair" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.AudioFadeTransitionSettings" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.BossAbilityDefinition_ProjectileSpawnAndShootInRows/SpawnData" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.BossTraits" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CameraProxyTargetSettings" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CameraYAxisProxyManager/TransformStackLayerDefinition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ChallengeDefinition/ChallengeSeededData" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ChallengeRank" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ChallengeZoneMaterialDefinition/ChallengeZoneMaterial" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition/InputModifierLookups" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition/Motion" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition/ThrottleScaling" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Air/AirComponent" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_AirChaosAim/ChaosAimTarget" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_AirChaosAim/HomingTargetAimDefinition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_AirStompAttack/AirStompSlopeSetting" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_BurstAttackChaos/ChaosTimeDilation" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Climbing/ClimbingLateralMotion" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Climbing/ClimbingVerticalMotion" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HalfPipe/HalfPipeGravity" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HalfPipe/HalfPipeGravityOverride" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HalfPipe/HalfPipeMotion" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HalfPipeAir/HalfPipeMotionExclude" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_HalfPipeAir/HalfPipeMotionOverride" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_ModifierRingSpeed/TierDefinition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityDefinition_Movement/SlopeMotion" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterAbilityTypeGroup/AbilityTypeDefinition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterControlsMappingDefinition/CameraControlsMapping" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterControlsMappingDefinition/CharacterControlsMapping" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterSettings" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterSettings/ColliderSettings" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterSettings/SurfaceSettings" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterStamina/Definition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterStickyControls" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterTraits" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CharacterTraits/TurnTraits" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CinemachineCameraManager/VirtualCameraByType" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CinemachineCameraManager/VirtualCamerasBySetting" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CinemachineParametersBlender/Parameter`1[Cinemachine.CinemachineFreeLook/Orbit]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CinemachineParametersBlender/Parameter`1[System.Single]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CinemachineParametersBlender/Parameter`1[UnityEngine.Vector3]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CinemachineParametersBlender_FreeLook/FreeLookBlendParameters" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CollectableChangeData" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CollisionPlaneDefinition/CollisionMotion" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CutsceneDefinition/CharacterPrefabMetadata" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CutsceneDefinition/CutsceneRequirements" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[Hardlight.InputType,HardlightProject.GameActionGlyphMap,HardlightProject.GameActionGlyphMap]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.AchievementIdentifier,HardlightProject.AchievementDefinition,HardlightProject.AchievementDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.CascadeObjectType,HardlightProject.CascadeObjectDefinition,HardlightProject.CascadeObjectDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.ChallengeZoneIdentifier,HardlightProject.ChallengeZoneMaterialDefinition,HardlightProject.ChallengeZoneMaterialDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.CharacterAbilityUIType,HardlightProject.CharacterAbilityUIDefinition,HardlightProject.CharacterAbilityUIDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.CharacterArchetype,HardlightProject.CharacterArchetypeDefinition,HardlightProject.CharacterArchetypeDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.CharacterId,HardlightProject.CharacterDefinition,HardlightProject.CharacterDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.CollectableType,HardlightProject.CollectableDefinition,HardlightProject.CollectableDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.DreamPowerStoreBandType,HardlightProject.DreamPowerStoreBandDefinition,HardlightProject.DreamPowerStoreBandDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.EnemyType,HardlightProject.EnemyDefinition,HardlightProject.EnemyDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.FadeTransitionType,HardlightProject.FadeTransitionDefinition,HardlightProject.FadeTransitionDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.FullscreenShaderParametersType,HardlightProject.FullscreenShaderParametersDefinition,HardlightProject.FullscreenShaderParametersDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.GlobalConstantType,HardlightProject.GlobalConstantDefinition,HardlightProject.GlobalConstantDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.GravitySurfaceType,HardlightProject.GravitySurfaceDefinition,HardlightProject.GravitySurfaceDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.HLAudioClipIdentifier,HardlightProject.HLAudioClipDefinition,HardlightProject.HLAudioClipDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.HLAudioClipIdentifier,HardlightProject.MusicTrackDefinition,HardlightProject.MusicTrackDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.HLAudioMixerIdentifier,HardlightProject.HLAudioMixerDefinition,HardlightProject.HLAudioMixerDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.HLCutsceneIdentifier,HardlightProject.CutsceneDefinition,HardlightProject.CutsceneDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.HalfPipeType,HardlightProject.HalfPipeDefinition,HardlightProject.HalfPipeDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.HazardType,HardlightProject.HazardDefinition,HardlightProject.HazardDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.HomingTargetType,HardlightProject.TargetingTypePriorityDefinition,HardlightProject.TargetingTypePriorityDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.IntroSequenceIdentifier,HardlightProject.IntroSequenceDefinition,HardlightProject.IntroSequenceDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.LevelSetupTypes,HardlightProject.LevelSetupDefinition,HardlightProject.LevelSetupDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.LightspeedDashType,HardlightProject.LightspeedDashDefinition,HardlightProject.LightspeedDashDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.MissionScorerStreakIdentifier,HardlightProject.MissionScorerStreakDefinition,HardlightProject.MissionScorerStreakDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.OrnamentIdentifier,HardlightProject.OrnamentDefinition,HardlightProject.OrnamentDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.OutroSequenceIdentifier,HardlightProject.OutroSequenceDefinition,HardlightProject.OutroSequenceDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.ParticleEffectType,HardlightProject.ParticleEffectDefinition,HardlightProject.ParticleEffectDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.PlatformAssetTypes,HardlightProject.PlatformVariantDefinition,HardlightProject.PlatformVariantDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.PlayerProgressionTypes,HardlightProject.MetaGameUnlockDefinition,HardlightProject.MetaGameUnlockDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.ProjectileType,HardlightProject.ProjectileDefinition,HardlightProject.ProjectileDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.RailType,HardlightProject.RailDefinition,HardlightProject.RailDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.RankType,HardlightProject.RankDefinition,HardlightProject.RankDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.RewardTrackType,HardlightProject.RewardTrackDefinition,HardlightProject.RewardTrackDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.TerrainEffectType,HardlightProject.ActorTerrainEffectsDefinition,HardlightProject.ActorTerrainEffectsDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.TerrainMetadataType,HardlightProject.TerrainMetadataDefinition,HardlightProject.TerrainMetadataDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.TerrainTrackerType,HardlightProject.TerrainTrackerDefinition,HardlightProject.TerrainTrackerDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.TransporterType,HardlightProject.TransporterDefinition,HardlightProject.TransporterDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[HardlightProject.WaypointType,HardlightProject.WaypointDefinition,HardlightProject.WaypointDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,Hardlight.FiniteStateMachineScriptableObject,Hardlight.FiniteStateMachineScriptableObject]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,Hardlight.UIContainerIdentifier,Hardlight.UIContainerIdentifier]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,Hardlight.UIModernEvent,Hardlight.UIModernEvent]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.AbilityDefinition,HardlightProject.AbilityDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.ActorAnimationDefinition,HardlightProject.ActorAnimationDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.AnalyticsConfiguration,HardlightProject.AnalyticsConfiguration]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.AppRatingRequesterBase,HardlightProject.AppRatingRequesterBase]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.ApplicationStateEvent,HardlightProject.ApplicationStateEvent]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.ApplicationVersionDefinition,HardlightProject.ApplicationVersionDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.CameraProxyTargetSettingsData,HardlightProject.CameraProxyTargetSettingsData]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.CharacterStickyControlsDefinition,HardlightProject.CharacterStickyControlsDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.DreamPowerDefinition,HardlightProject.DreamPowerDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.GameplayIslandDefinition,HardlightProject.GameplayIslandDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.LevelStartPositionDefinition,HardlightProject.LevelStartPositionDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.SubtitleCharacterDefinition,HardlightProject.SubtitleCharacterDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.TimeScaleDefinition,HardlightProject.TimeScaleDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[System.String,HardlightProject.TouchLayoutConfiguration,HardlightProject.TouchLayoutConfiguration]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DefinitionDataType`2/DefinitionElement`1[UnityEngine.RuntimePlatform,HardlightProject.DevicePerformance,HardlightProject.DevicePerformance]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DevicePerformanceMatch_iOS" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DevicePerformanceMatch_macOS" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.DevicePerformanceMatch_tvOS" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.EnemyTraits" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.FormTraits" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.FullscreenShaderParametersDefinition/FullscreenShaderParameterColour" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.FullscreenShaderParametersDefinition/FullscreenShaderParameterFloat" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.FullscreenShaderParametersDefinition/FullscreenShaderParameterHDRColour" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.FullscreenShaderParametersDefinition/FullscreenShaderParameterTexture" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.GameControlsBinding" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.InGameAudioListener/LowFilterType" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.InGameAudioListener/LowPassFilterSettings" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.LedgeBrakeParameters" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.MissionGroup" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.MissionRank" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.MissionRingRewardDefinition/RewardData" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.MissionScorerStreakDefinition/ScoreThreshold" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.NightmareEggmanProjectileVisualBehaviour/MovementPhaseSettings" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.PlatformPiece" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.PlatformVariantDefinition/PlatformComponentDefinition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.PromptDefinition/PromptDefinitionChoice" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.PromptDefinition/PromptDefinitionDisplayInput" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.RewardRequirement" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.RuntimeType" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TouchLayoutConfiguration/TouchControlDefault" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.VelocityRestoreParameters" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.WaypointSettings" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CameraYAxisProxyManager/TargetData" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.GravityDescription" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.InstancePrefabPool`1/InstancePrefabPoolProxies[UnityEngine.ParticleSystem]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.PlatformVariantInstance" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.StartingPosition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TimedEventActivator/TimedEvent" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.AnimatorSetBoolEvent/AnimationBoolEvent" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.EnemyNavigation/ConstrainType" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.SurfaceAnimatedKnot" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TransformMultiAxisRotator/AnimationSettings" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TransformSurfaceTransformDescription" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.MissionScorerComboStage" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.MissionScorerPrefabPool/QualityAttributes" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.MissionScorerProximityEvaluator/TargetDistanceDefinition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.MissionScorerStreak" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.HoverData" preserve="nothing" serialized="true" />
+    <type fullname="TimelineEventBehaviour" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.Boss/BossBodyComponents" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.Boss/BossGeneralEventTriggers" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ProjectileSpawnerBase/ProjectilesAndCount" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.SceneMaterialManipulator/MaterialColourConfig" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.GuardianManager/EggpawnRestPoints" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.SplashScreen/AspectRatioSplashScreenData" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ChallengeMaintenance/ChallengeMaintenanceData" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.CutsceneRenderScale" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.NotificationManager/SDTNotification" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.RenderScaleConfiguration" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ScreenResolutionSetting" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ScriptableRenderFeaturesConfiguration" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIBlurRenderFeature/KawaseBlurSettings" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.MaterialManipulator/MaterialManipulatorSetting" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.FontAssetAndFallbacks/FontAssetFallbackPairing" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.EnumValuePair`2[HardlightProject.CameraSensitivityType,Hardlight.Enums.Strings]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.EnumValuePair`2[HardlightProject.InputModifierType,Hardlight.Enums.Strings]" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.LineRendererContainer" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.OnScreenControlZoneCamera/GameInputCharacter" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.OrbDetectorUI/OrbDetectorLevel" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.ProjectionPlacement" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.RewardUnlockStringPicker/RewardUnlockStringPickerElement" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIContainerDreamPowerStore/CombinedArchetypeIcon" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIContainerLevelSelectZones/PaginationAnimation" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIContainerLevelSelectZones/UIContainerForZone" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIContainerLevelSelectZones/UIToggleForZone" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIContainerNotificationRequest/NotificationPermissionConfig" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIContainerPauseBackground/QualityBackground" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIContainerPrompt/PromptDirectionalElements" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIContainerQRCode/LanguageToSpritePair" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIContainerQRCode/QRCodeSpriteLookUp" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIContainerSettingsQuality/MSAASetting" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIContainerSettingsQuality/QualityLevel" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UITargetIndicatorController" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UITextString" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.UIWidgetForGameplayLevelDefinition" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.XPCounterBufferedIncrease/EffectThresholds" preserve="nothing" serialized="true" />
+    <type fullname="HardlightProject.TimeScaledCategoryAnimation/CategoryAnimation" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="HLAppleInput.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.ActiveApplePluginControllerInputBindings" preserve="all" />
+    <type fullname="Hardlight.ApplePluginControllerGlyphMap" preserve="all" />
+    <type fullname="Hardlight.ApplePluginControllerInputBinding" preserve="all" />
+    <type fullname="Hardlight.ApplePluginControllerInputMonitor" preserve="all" />
+    <type fullname="Hardlight.ApplePluginControllerProviderScriptableObject" preserve="all" />
+    <type fullname="Hardlight.ApplePluginControllerBinding" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.ApplePluginControllerBindingData" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.ApplePluginControllerInputAxis" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.ApplePluginControllerInputButton" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.ApplePluginControllerInputVectorised" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="HLAutoPlay.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.AutoPlay.HLAutoPlay" preserve="all" />
+    <type fullname="Hardlight.AutoPlay.ProfilingConfiguration" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.AutoPlay.ProfilingDataReference" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="HLBinders.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.UI.Binding.AdvancedBinder" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.BinderInput" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.BinderOutput" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.ConstantEnum" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.AnimationCurve" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.ConditionalColour" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.ConditionalEnum" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.ConditionalFloat" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.ConditionalString" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.ConstantBool" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.ConstantColour" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.ConstantFloat" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.ConstantInt" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.ConstantString" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.Equality" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.IntToString" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.IsNull" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.IsStringNullOrEmpty" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.LogicalAnd" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.LogicalGreaterOrEqual" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.LogicalGreaterThan" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.LogicalNot" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.LogicalOr" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.LogicalSwitchColour" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.LogicalToggle3" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.MathMax" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.MathMin" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.MathMultiplyFloat" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.MathSubtractFloat" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.NumberOrdinalFormatter" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.SingleToString" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.StringFormatter" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.StringFormatter_6Args" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.Nodes.VectorBuilder" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.SimpleBinder" preserve="all" />
+    <type fullname="Hardlight.UI.Binding.BindReference" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.UI.Binding.BindTarget" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="HLCrashReport.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.HLCrashReport" preserve="all" />
+  </assembly>
+  <assembly fullname="HLCrossPromo.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.CrossPromoFullScreenView" preserve="all" />
+  </assembly>
+  <assembly fullname="HLHaptics.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.VibrationManager" preserve="all" />
+    <type fullname="VibrationEventData" preserve="all" />
+    <type fullname="VibrationEventData/Vibrations" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="HLInput.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.ActiveGameInputBindings" preserve="all" />
+    <type fullname="Hardlight.ControlMapping" preserve="all" />
+    <type fullname="Hardlight.DirectionGlyphMap" preserve="all" />
+    <type fullname="Hardlight.FixedBindingsGlyphMap" preserve="all" />
+    <type fullname="Hardlight.GameInputBinding" preserve="all" />
+    <type fullname="Hardlight.GameInputGlyphMap" preserve="all" />
+    <type fullname="Hardlight.GameInputTrigger" preserve="all" />
+    <type fullname="Hardlight.GlyphMappingDebugDisplay" preserve="all" />
+    <type fullname="Hardlight.HLInputModule" preserve="all" />
+    <type fullname="Hardlight.InputMonitor" preserve="all" />
+    <type fullname="Hardlight.KeyCodeGlyphMap" preserve="all" />
+    <type fullname="Hardlight.ModifierAngleCurveNorthSouth" preserve="all" />
+    <type fullname="Hardlight.ModifierClampGreaterThan" preserve="all" />
+    <type fullname="Hardlight.ModifierClampLessThan" preserve="all" />
+    <type fullname="Hardlight.ModifierDeadZone" preserve="all" />
+    <type fullname="Hardlight.ModifierMultiplier" preserve="all" />
+    <type fullname="Hardlight.ModifierRepeat" preserve="all" />
+    <type fullname="Hardlight.StandaloneOSXControllerNameProviderScriptableObject" preserve="all" />
+    <type fullname="Hardlight.StringGlyphMap" preserve="all" />
+    <type fullname="Hardlight.UnityControllerNameProviderScriptableObject" preserve="all" />
+    <type fullname="ModifierCurve" preserve="all" />
+    <type fullname="Hardlight.BaseGlyphMap`1/KeyGlyphMap[HardlightProject.GameAction]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.GameInputTrigger/InputEvent" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.AxisBinding" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BindingData" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BindingIdentifier" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.ButtonBinding" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.FixedBindings" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.VectorisedBinding" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.InputAxis" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.InputButton" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.InputOnScreen" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.InputPointer" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.InputSwipe" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.InputTilt" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.InputTouch" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.InputVectorised" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BaseGlyphMap`1/KeyGlyphMap[Hardlight.FixedBindingsGlyphMap/FixedBindingsData]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BaseGlyphMap`1/MappedGlyphs[Hardlight.FixedBindingsGlyphMap/FixedBindingsData]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.FixedBindingsGlyphMap/FixedBindingsData" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SwipeBinding" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BaseGlyphMap`1/KeyGlyphMap[Hardlight.InputSwipe/Direction]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BaseGlyphMap`1/MappedGlyphs[Hardlight.InputSwipe/Direction]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BaseGlyphMap`1/KeyGlyphMap[Hardlight.GameInput]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BaseGlyphMap`1/KeyGlyphMap[Apple.GameController.Controller.GCControllerInputName]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BaseGlyphMap`1/MappedGlyphs[Apple.GameController.Controller.GCControllerInputName]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BaseGlyphMap`1/KeyGlyphMap[System.String]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BaseGlyphMap`1/MappedGlyphs[System.String]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BaseGlyphMap`1/KeyGlyphMap[UnityEngine.KeyCode]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.BaseGlyphMap`1/MappedGlyphs[UnityEngine.KeyCode]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.ControlMap/PlatformsWithBlockedInputTypes" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="HLLocalisation.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.Localisation.Language" preserve="all" />
+    <type fullname="Hardlight.Localisation.LanguageUtils" preserve="all" />
+    <type fullname="Hardlight.Localisation.LocalisedUIString" preserve="all" />
+    <type fullname="Hardlight.Localisation.ReverseOrderOnLanguage" preserve="all" />
+    <type fullname="Hardlight.Localisation.StringTable" preserve="all" />
+  </assembly>
+  <assembly fullname="HLModernUI.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.InputControlledSlider" preserve="all" />
+    <type fullname="Hardlight.InputControlledSliderSeeker" preserve="all" />
+    <type fullname="Hardlight.UIAnimatedScreenTransition" preserve="all" />
+    <type fullname="Hardlight.UIContainerIdentifier" preserve="all" />
+    <type fullname="Hardlight.UIContainerNavigation" preserve="all" />
+    <type fullname="Hardlight.UIHighlight" preserve="all" />
+    <type fullname="Hardlight.UIHighlightDefinition" preserve="all" />
+    <type fullname="Hardlight.UIManager" preserve="all" />
+    <type fullname="Hardlight.UIModernEvent" preserve="all" />
+    <type fullname="Hardlight.UIScreenTransitionManager" preserve="all" />
+    <type fullname="Hardlight.UIToggle" preserve="all" />
+    <type fullname="Hardlight.UIToggleGroup" preserve="all" />
+    <type fullname="Hardlight.UIToggleGroupElement" preserve="all" />
+    <type fullname="Hardlight.UITransitionAnimation" preserve="all" />
+    <type fullname="Hardlight.UIVisibilityGroupDefinition" preserve="all" />
+    <type fullname="Hardlight.UIVisibilityGroupMember" preserve="all" />
+    <type fullname="Hardlight.UIVisibilityGroupOverrider" preserve="all" />
+    <type fullname="Hardlight.UIWidgetButton" preserve="all" />
+    <type fullname="Hardlight.UIWidgetButtonDebounce" preserve="all" />
+    <type fullname="Hardlight.UIWidgetNavigation" preserve="all" />
+    <type fullname="Hardlight.UIWidgetNavigationHotButton" preserve="all" />
+    <type fullname="Hardlight.UIWidgetToggle" preserve="all" />
+    <type fullname="Hardlight.UIVisibilityGroupOverrider/UIVisibilityGroupOverride" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.UIToggleEvent" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.UITransitionAnimationSetting" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="HLNotifications.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.HLNotifications" preserve="all" />
+  </assembly>
+  <assembly fullname="HLRTLTextMeshPro.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="RTLTMPro.RTLTextMeshPro" preserve="all" />
+  </assembly>
+  <assembly fullname="HLSplines.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.EditableRibbon" preserve="all" />
+    <type fullname="Hardlight.EditableSpline" preserve="all" />
+    <type fullname="Hardlight.InertSpline" preserve="all" />
+    <type fullname="Hardlight.MetadataFixedGroup" preserve="all" />
+    <type fullname="Hardlight.MetadataFixedGroupDefinition" preserve="all" />
+    <type fullname="Hardlight.MetadataGroupKey" preserve="all" />
+    <type fullname="Hardlight.MetadataKeyType" preserve="all" />
+    <type fullname="Hardlight.MetadataValueTypeBool" preserve="all" />
+    <type fullname="Hardlight.MetadataValueTypeFloat" preserve="all" />
+    <type fullname="Hardlight.MetadataValueTypeObject" preserve="all" />
+    <type fullname="Hardlight.MetadataValueTypeScriptableObject" preserve="all" />
+    <type fullname="Hardlight.ProceduralMesh" preserve="all" />
+    <type fullname="Hardlight.ProceduralMesh_PlacementOnRibbonRandom" preserve="all" />
+    <type fullname="Hardlight.ProceduralMesh_PlacementSetup" preserve="all" />
+    <type fullname="Hardlight.ProceduralMesh_Pool" preserve="all" />
+    <type fullname="Hardlight.ProceduralMesh_SetupTypeGrid" preserve="all" />
+    <type fullname="Hardlight.ProceduralMesh_SetupTypeRandom" preserve="all" />
+    <type fullname="Hardlight.ProceduralMesh_SystemConfig" preserve="all" />
+    <type fullname="Hardlight.Ribbon" preserve="all" />
+    <type fullname="Hardlight.RibbonKnot" preserve="all" />
+    <type fullname="Hardlight.SegmentedRibbon" preserve="all" />
+    <type fullname="Hardlight.SegmentedSpline" preserve="all" />
+    <type fullname="Hardlight.Spline" preserve="all" />
+    <type fullname="Hardlight.SplineKnot" preserve="all" />
+    <type fullname="Hardlight.MetadataGroups" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.MetadataKeyGroupPair" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SegmentSplinePoint" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SegmentedSplineKnot" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.MetadataFixed" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.MetadataFixedGroupData" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.ProceduralMesh_PlacementSetup/PerformanceSetup" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.ProceduralMesh_TypeRibbonRandom" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.RibbonSubKnot" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.RibbonSubSpline" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SegmentedRibbonKnot" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SegmentedRibbonSubKnot" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SegmentedRibbonSubSpline" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.InertSplineKnot" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="HLUnityCore.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="Hardlight.FiniteStateMachineBehaviour" preserve="all" />
+    <type fullname="Hardlight.FiniteStateMachineScriptableObject" preserve="all" />
+    <type fullname="Hardlight.HLLogConsoleScriptableObject" preserve="all" />
+    <type fullname="Hardlight.HLLogHandler" preserve="all" />
+    <type fullname="Hardlight.HLLogHandlerSettingScriptableObject" preserve="all" />
+    <type fullname="Hardlight.HLProfilerConsole" preserve="all" />
+    <type fullname="Hardlight.HLProfilerDataManager" preserve="all" />
+    <type fullname="Hardlight.HLProfilerGroupDefinition" preserve="all" />
+    <type fullname="Hardlight.HLUnityCore" preserve="all" />
+    <type fullname="Hardlight.PerformanceDependency" preserve="all" />
+    <type fullname="Hardlight.PerformanceProfile" preserve="all" />
+    <type fullname="Hardlight.PrefabPoolManager" preserve="all" />
+    <type fullname="Hardlight.PrefabPoolType" preserve="all" />
+    <type fullname="Hardlight.ScalableFeature" preserve="all" />
+    <type fullname="Hardlight.ScalablePerformance" preserve="all" />
+    <type fullname="Hardlight.TimeCategoryObject" preserve="all" />
+    <type fullname="Hardlight.TimeManager" preserve="all" />
+    <type fullname="Hardlight.Utils.CoroutineUtils" preserve="all" />
+    <type fullname="HLCloud.Cloud" preserve="all" />
+    <type fullname="Hardlight.SerializableDictionaryKvpList`4[Hardlight.ISurface,UnityEngine.Object,Hardlight.ISurface,UnityEngine.Object]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[UnityEngine.Collider,HardlightProject.CharacterCollisionData]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[UnityEngine.Collider,HardlightProject.GravityTrigger]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`3[Hardlight.ISurface,UnityEngine.Object,System.Collections.Generic.List`1[HardlightProject.SurfaceSplineSection]]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`4[UnityEngine.Collider,UnityEngine.Collider,HardlightProject.ITriggerCollider,UnityEngine.Object]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.PerformanceAttribute" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[Hardlight.TimeCategoryObject,System.Single]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.TimeCategory,System.Single]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.TimeCategory,System.Single]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[UnityEngine.Collider,HardlightProject.CharacterCollisionData]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[UnityEngine.Collider,UnityEngine.Object]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.LightweightTransform" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValueListPair`2[UnityEngine.Object,UnityEngine.Object]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[UnityEngine.Object,System.Collections.Generic.List`1[HardlightProject.SurfaceSplineSection]]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.IntervalList`2/IntervalType[System.Single,HardlightProject.ActorAnimationDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.IntervalList`2/IntervalType[System.Single,HardlightProject.CameraType]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.IntervalList`2[System.Single,HardlightProject.ActorAnimationDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.IntervalList`2[System.Single,HardlightProject.CameraType]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[Hardlight.UIInputType,Hardlight.GameInput]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[Hardlight.UIInputType,HardlightProject.GameAction]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.AbilityAimTargetType,HardlightProject.CharacterAbilityDefinition_AirChaosAim/ChaosAimTarget]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.CameraConfigurationType,HardlightProject.CinemachineCameraManager/VirtualCamerasBySetting]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.CameraRecenterHeadingType,HardlightProject.CameraRecenterHeadingDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.CameraSensitivityType,HardlightProject.CameraAxisStateDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.CharacterId,UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.GameObject]]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.GameAction,Hardlight.GameInput]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.GameAction,UnityEngine.Texture2D]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.HLAudioMixerGroupIdentifier,UnityEngine.Audio.AudioMixerGroup]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.HomingTargetType,HardlightProject.AbilityAimTargetType]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.InputModifierType,System.Collections.Generic.List`1[Hardlight.InputModifier]]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.RankType,HardlightProject.ChallengeRank]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.RankType,HardlightProject.MissionRank]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.WaypointContainerType,HardlightProject.WaypointSettings]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[Hardlight.UIInputType,Hardlight.GameInput]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.AbilityAimTargetType,HardlightProject.CharacterAbilityDefinition_AirChaosAim/ChaosAimTarget]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.CameraConfigurationType,HardlightProject.CinemachineCameraManager/VirtualCamerasBySetting]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.CameraRecenterHeadingType,HardlightProject.CameraRecenterHeadingDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.CameraSensitivityType,HardlightProject.CameraAxisStateDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.CharacterId,UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.GameObject]]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.GameAction,Hardlight.GameInput]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.GameAction,UnityEngine.Texture2D]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.HLAudioMixerGroupIdentifier,UnityEngine.Audio.AudioMixerGroup]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.HomingTargetType,HardlightProject.AbilityAimTargetType]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.InputModifierType,System.Collections.Generic.List`1[Hardlight.InputModifier]]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.RankType,HardlightProject.ChallengeRank]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.RankType,HardlightProject.MissionRank]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.WaypointContainerType,HardlightProject.WaypointSettings]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.Utils.Version" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[UnityEngine.ParticleSystem,HardlightProject.InstancePrefabPool`1/InstancePrefabPoolProxies[UnityEngine.ParticleSystem]]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[UnityEngine.Collider,HardlightProject.GravityTrigger]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[UnityEngine.ParticleSystem,HardlightProject.InstancePrefabPool`1/InstancePrefabPoolProxies[UnityEngine.ParticleSystem]]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.ActorAbilityType,HardlightProject.EffectSequence]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.ActorAbilityType,HardlightProject.EffectSequence]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.ExclusionList" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.FramerateConfiguration" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.HLLogHandlerSetting" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.HLProfilerDataDefinition" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.HLProfilerLayoutDefinition" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.ResolutionScaleConfiguration" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.UnityQualityConfiguration" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.PerformanceFeature`1/QualityAttributes[HardlightProject.UIContainerPauseBackground/QualityBackground]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.PerformanceFeature`1[HardlightProject.UIContainerPauseBackground/QualityBackground]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[Hardlight.Enums.Strings,HardlightProject.UIContainerQRCode/QRCodeSpriteLookUp]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.CameraConfigurationType,Hardlight.Enums.Strings]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.CharacterId,Hardlight.UIWidgetToggle]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.CharacterId,UnityEngine.GameObject]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.UIContainerPromptDisplayInput/DecoratorType,UnityEngine.Texture2D]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.UIWidgetButtonChallengeRewardSize,HardlightProject.UIWidgetButtonChallengeReward]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[Hardlight.Enums.Strings,HardlightProject.UIContainerQRCode/QRCodeSpriteLookUp]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.CameraConfigurationType,Hardlight.Enums.Strings]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.CharacterId,Hardlight.UIWidgetToggle]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.CharacterId,UnityEngine.GameObject]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.UIContainerPromptDisplayInput/DecoratorType,UnityEngine.Texture2D]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.UIWidgetButtonChallengeRewardSize,HardlightProject.UIWidgetButtonChallengeReward]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableDictionary`2[HardlightProject.CharacterId,HardlightProject.ParticleEffectSpawner]" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.SerializableKeyValuePair`2[HardlightProject.CharacterId,HardlightProject.ParticleEffectSpawner]" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="HLUnityUI.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="GUICameraManager" preserve="all" />
+    <type fullname="Hardlight.AnimatableEvent" preserve="all" />
+    <type fullname="Hardlight.Flip" preserve="all" />
+    <type fullname="Hardlight.Gradient" preserve="all" />
+    <type fullname="Hardlight.HLAlphaInOut" preserve="all" />
+    <type fullname="Hardlight.HLButton" preserve="all" />
+    <type fullname="Hardlight.HLCurve" preserve="all" />
+    <type fullname="Hardlight.HLCurveAnimatedGraphicCurveCollection" preserve="all" />
+    <type fullname="Hardlight.HLInputBridge" preserve="all" />
+    <type fullname="Hardlight.HLInputSupplier" preserve="all" />
+    <type fullname="Hardlight.HLScrollRect" preserve="all" />
+    <type fullname="Hardlight.HLScrollRectSelection" preserve="all" />
+    <type fullname="Hardlight.HLUIEffectManager" preserve="all" />
+    <type fullname="Hardlight.RaycastMask" preserve="all" />
+    <type fullname="Hardlight.UIButton" preserve="all" />
+    <type fullname="Hardlight.UIRuntimeConfiguration" preserve="all" />
+    <type fullname="HLButtonHighlightCustomisations" preserve="all" />
+    <type fullname="SonicDash.UI.Touchable" preserve="all" />
+    <type fullname="UISoundEffectManager" preserve="all" />
+    <type fullname="HLButtonHighlightCustomisations/ButtonHighlightChangeSource" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.HLNavigation" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.HLSelectable/ClickableEvent" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.HLSelectable/UnclickableEvent" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.NamedUnityEvent" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.UINavigation" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.UISelectable/UIEventInfo" preserve="nothing" serialized="true" />
+    <type fullname="Hardlight.ViewParameters" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="MeshCombineStudio.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="MeshCombineStudio.CachedComponents" preserve="all" />
+    <type fullname="MeshCombineStudio.GarbageCollectMesh" preserve="all" />
+    <type fullname="MeshCombineStudio.LODGroupSetup" preserve="all" />
+    <type fullname="MeshCombineStudio.MeshCombiner" preserve="all" />
+    <type fullname="MeshCombineStudio.MeshCombinerData" preserve="all" />
+    <type fullname="MeshCombineStudio.CombineCondition" preserve="nothing" serialized="true" />
+    <type fullname="MeshCombineStudio.CombineConditionSettings" preserve="nothing" serialized="true" />
+    <type fullname="MeshCombineStudio.FastList`1[MeshCombineStudio.MeshColliderAdd]" preserve="nothing" serialized="true" />
+    <type fullname="MeshCombineStudio.FoundCombineConditions" preserve="nothing" serialized="true" />
+    <type fullname="MeshCombineStudio.MeshCombineJobManager/JobSettings" preserve="nothing" serialized="true" />
+    <type fullname="MeshCombineStudio.MeshCombiner/LODGroupSettings" preserve="nothing" serialized="true" />
+    <type fullname="MeshCombineStudio.MeshCombiner/LODSettings" preserve="nothing" serialized="true" />
+    <type fullname="MeshCombineStudio.MeshCombiner/LodParentHolder" preserve="nothing" serialized="true" />
+    <type fullname="MeshCombineStudio.MeshCombiner/SearchOptions" preserve="nothing" serialized="true" />
+    <type fullname="MeshCombineStudio.CachedGameObject" preserve="nothing" serialized="true" />
+    <type fullname="MeshCombineStudio.CachedLodGameObject" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.Addressables, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.AddressableAssets.Addressables" preserve="all" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceAtlasedSprite" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceSprite" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.AudioClip]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.GameObject]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.Material]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.Sprite]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceT`1[UnityEngine.Texture]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceTexture" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceT`1[HardlightProject.FontAssetAndFallbacks]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.AddressableAssets.AssetReferenceT`1[TMPro.TMP_FontAsset]" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.Polybrush, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Polybrush.PolybrushMesh" preserve="all" />
+    <type fullname="UnityEngine.Polybrush.PolyMesh" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Polybrush.SubMesh" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.ProBuilder, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.ProBuilder.ProBuilderMesh" preserve="all" />
+    <type fullname="UnityEngine.ProBuilder.Shapes.ProBuilderShape" preserve="all" />
+    <type fullname="UnityEngine.ProBuilder.AutoUnwrapSettings" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.ProBuilder.Face" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.ProBuilder.Shapes.Cube" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.ProBuilder.SharedVertex" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.ProBuilder.UnwrapParameters" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.ProBuilder.Shapes.Cylinder" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.ProBuilder.Shapes.Sphere" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.ProBuilder.Shapes.Pipe" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.ProBuilder.Shapes.Plane" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.ProBuilder.Shapes.Cone" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Rendering.Volume" preserve="all" />
+    <type fullname="UnityEngine.Rendering.VolumeProfile" preserve="all" />
+    <type fullname="UnityEngine.Rendering.BoolParameter" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.ClampedFloatParameter" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.ColorParameter" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.Vector2Parameter" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.TextureParameter" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.ClampedIntParameter" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.MinFloatParameter" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="FullScreenPassRendererFeature" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.Bloom" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.ChromaticAberration" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.ColorLookup" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.DecalProjector" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.DecalRendererFeature" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.DepthOfField" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.MotionBlur" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.UniversalAdditionalCameraData" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.UniversalAdditionalLightData" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.Vignette" preserve="all" />
+    <type fullname="UnityEngine.Rendering.Universal.TemporalAA/Settings" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.Universal.DownscaleParameter" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.Universal.MotionBlurModeParameter" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.Universal.MotionBlurQualityParameter" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.Universal.DBufferSettings" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.Universal.DecalScreenSpaceSettings" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.Universal.DecalSettings" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Rendering.Universal.DepthOfFieldModeParameter" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" preserve="all">
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.AtlasSpriteProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.InstanceProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.LegacyResourcesProvider" preserve="all" />
+    <type fullname="UnityEngine.ResourceManagement.ResourceProviders.SceneProvider" preserve="all" />
+  </assembly>
+  <assembly fullname="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="TMPro.TextMeshPro" preserve="all" />
+    <type fullname="TMPro.TextMeshProUGUI" preserve="all" />
+    <type fullname="TMPro.TMP_FontAsset" preserve="all" />
+    <type fullname="TMPro.VertexGradient" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.FaceInfo_Legacy" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.FontAssetCreationSettings" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.KerningTable" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_FontFeatureTable" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_FontWeightPair" preserve="nothing" serialized="true" />
+    <type fullname="TMPro.TMP_Character" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="Unity.Timeline, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Timeline.ActivationPlayableAsset" preserve="all" />
+    <type fullname="UnityEngine.Timeline.ActivationTrack" preserve="all" />
+    <type fullname="UnityEngine.Timeline.AnimationPlayableAsset" preserve="all" />
+    <type fullname="UnityEngine.Timeline.AnimationTrack" preserve="all" />
+    <type fullname="UnityEngine.Timeline.AudioPlayableAsset" preserve="all" />
+    <type fullname="UnityEngine.Timeline.AudioTrack" preserve="all" />
+    <type fullname="UnityEngine.Timeline.ControlPlayableAsset" preserve="all" />
+    <type fullname="UnityEngine.Timeline.ControlTrack" preserve="all" />
+    <type fullname="UnityEngine.Timeline.GroupTrack" preserve="all" />
+    <type fullname="UnityEngine.Timeline.MarkerTrack" preserve="all" />
+    <type fullname="UnityEngine.Timeline.SignalAsset" preserve="all" />
+    <type fullname="UnityEngine.Timeline.SignalEmitter" preserve="all" />
+    <type fullname="UnityEngine.Timeline.SignalReceiver" preserve="all" />
+    <type fullname="UnityEngine.Timeline.SignalTrack" preserve="all" />
+    <type fullname="UnityEngine.Timeline.TimelineAsset" preserve="all" />
+    <type fullname="UnityEngine.Timeline.MarkerList" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Timeline.TimelineAsset/EditorSettings" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Timeline.TimelineClip" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Timeline.AudioClipProperties" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Timeline.AudioMixerProperties" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Timeline.SignalReceiver/EventKeyValue" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEditor.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEditor.Audio.AudioMixerSnapshotController" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Animation" preserve="all" />
+    <type fullname="UnityEngine.AnimationClip" preserve="all" />
+    <type fullname="UnityEngine.Animator" preserve="all" />
+    <type fullname="UnityEngine.AnimatorOverrideController" preserve="all" />
+    <type fullname="UnityEngine.Avatar" preserve="all" />
+    <type fullname="UnityEngine.RuntimeAnimatorController" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Audio.AudioMixer" preserve="all" />
+    <type fullname="UnityEngine.Audio.AudioMixerGroup" preserve="all" />
+    <type fullname="UnityEngine.AudioClip" preserve="all" />
+    <type fullname="UnityEngine.AudioListener" preserve="all" />
+    <type fullname="UnityEngine.AudioLowPassFilter" preserve="all" />
+    <type fullname="UnityEngine.AudioReverbZone" preserve="all" />
+    <type fullname="UnityEngine.AudioSource" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Camera" preserve="all" />
+    <type fullname="UnityEngine.Cubemap" preserve="all" />
+    <type fullname="UnityEngine.CustomRenderTexture" preserve="all" />
+    <type fullname="UnityEngine.GameObject" preserve="all" />
+    <type fullname="UnityEngine.Light" preserve="all" />
+    <type fullname="UnityEngine.LightingSettings" preserve="all" />
+    <type fullname="UnityEngine.LightmapSettings" preserve="all" />
+    <type fullname="UnityEngine.LightProbeGroup" preserve="all" />
+    <type fullname="UnityEngine.LightProbes" preserve="all" />
+    <type fullname="UnityEngine.LineRenderer" preserve="all" />
+    <type fullname="UnityEngine.LODGroup" preserve="all" />
+    <type fullname="UnityEngine.Material" preserve="all" />
+    <type fullname="UnityEngine.Mesh" preserve="all" />
+    <type fullname="UnityEngine.MeshFilter" preserve="all" />
+    <type fullname="UnityEngine.MeshRenderer" preserve="all" />
+    <type fullname="UnityEngine.MonoBehaviour" preserve="all" />
+    <type fullname="UnityEngine.Object" preserve="all" />
+    <type fullname="UnityEngine.RectTransform" preserve="all" />
+    <type fullname="UnityEngine.ReflectionProbe" preserve="all" />
+    <type fullname="UnityEngine.RenderSettings" preserve="all" />
+    <type fullname="UnityEngine.RenderTexture" preserve="all" />
+    <type fullname="UnityEngine.Shader" preserve="all" />
+    <type fullname="UnityEngine.ShaderVariantCollection" preserve="all" />
+    <type fullname="UnityEngine.SkinnedMeshRenderer" preserve="all" />
+    <type fullname="UnityEngine.Sprite" preserve="all" />
+    <type fullname="UnityEngine.SpriteRenderer" preserve="all" />
+    <type fullname="UnityEngine.Texture2D" preserve="all" />
+    <type fullname="UnityEngine.Texture2DArray" preserve="all" />
+    <type fullname="UnityEngine.TrailRenderer" preserve="all" />
+    <type fullname="UnityEngine.Transform" preserve="all" />
+    <type fullname="UnityEngine.U2D.SpriteAtlas" preserve="all" />
+    <type fullname="UnityEngine.Events.ArgumentCache" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.PersistentCallGroup" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.PersistentListenerMode" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[HardlightProject.Character]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[System.Single]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[UnityEngine.Collider]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[HardlightProject.ISequencedEffectWithCallback]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[UnityEngine.Transform]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.ExposedReference`1[UnityEngine.GameObject]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.RectOffset" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[HardlightProject.SaveDataGame]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[HardlightProject.CharacterDefinition]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[System.Boolean]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[System.Int32]" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.Events.UnityEvent`1[UnityEngine.Vector3]" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.DirectorModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Playables.PlayableDirector" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.GUISkin" preserve="all" />
+    <type fullname="UnityEngine.GUISettings" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.GUIStyle" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.ParticleSystem" preserve="all" />
+    <type fullname="UnityEngine.ParticleSystemForceField" preserve="all" />
+    <type fullname="UnityEngine.ParticleSystemRenderer" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.BoxCollider" preserve="all" />
+    <type fullname="UnityEngine.CapsuleCollider" preserve="all" />
+    <type fullname="UnityEngine.MeshCollider" preserve="all" />
+    <type fullname="UnityEngine.PhysicMaterial" preserve="all" />
+    <type fullname="UnityEngine.Rigidbody" preserve="all" />
+    <type fullname="UnityEngine.SphereCollider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TerrainModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Terrain" preserve="all" />
+    <type fullname="UnityEngine.TerrainData" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TerrainPhysicsModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.TerrainCollider" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Font" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.EventSystems.EventSystem" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger" preserve="all" />
+    <type fullname="UnityEngine.EventSystems.StandaloneInputModule" preserve="all" />
+    <type fullname="UnityEngine.UI.AspectRatioFitter" preserve="all" />
+    <type fullname="UnityEngine.UI.Button" preserve="all" />
+    <type fullname="UnityEngine.UI.CanvasScaler" preserve="all" />
+    <type fullname="UnityEngine.UI.ContentSizeFitter" preserve="all" />
+    <type fullname="UnityEngine.UI.GraphicRaycaster" preserve="all" />
+    <type fullname="UnityEngine.UI.GridLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.HorizontalLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.Image" preserve="all" />
+    <type fullname="UnityEngine.UI.LayoutElement" preserve="all" />
+    <type fullname="UnityEngine.UI.Mask" preserve="all" />
+    <type fullname="UnityEngine.UI.Outline" preserve="all" />
+    <type fullname="UnityEngine.UI.RawImage" preserve="all" />
+    <type fullname="UnityEngine.UI.RectMask2D" preserve="all" />
+    <type fullname="UnityEngine.UI.Scrollbar" preserve="all" />
+    <type fullname="UnityEngine.UI.ScrollRect" preserve="all" />
+    <type fullname="UnityEngine.UI.Shadow" preserve="all" />
+    <type fullname="UnityEngine.UI.Slider" preserve="all" />
+    <type fullname="UnityEngine.UI.Text" preserve="all" />
+    <type fullname="UnityEngine.UI.Toggle" preserve="all" />
+    <type fullname="UnityEngine.UI.ToggleGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.VerticalLayoutGroup" preserve="all" />
+    <type fullname="UnityEngine.UI.MaskableGraphic/CullStateChangedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.FontData" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.AnimationTriggers" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Button/ButtonClickedEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.ColorBlock" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Navigation" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Slider/SliderEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.SpriteState" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/Entry" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.EventSystems.EventTrigger/TriggerEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.ScrollRect/ScrollRectEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Scrollbar/ScrollEvent" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.UI.Toggle/ToggleEvent" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Canvas" preserve="all" />
+    <type fullname="UnityEngine.CanvasGroup" preserve="all" />
+    <type fullname="UnityEngine.CanvasRenderer" preserve="all" />
+  </assembly>
+  <assembly fullname="UnityEngine.VideoModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+    <type fullname="UnityEngine.Video.VideoClip" preserve="all" />
+    <type fullname="UnityEngine.Video.VideoPlayer" preserve="all" />
+  </assembly>
+  <assembly fullname="Dreamteck.Utilities">
+    <type fullname="Dreamteck.TS_Bounds" preserve="nothing" serialized="true" />
+  </assembly>
+  <assembly fullname="UnityEngine.TextCoreFontEngineModule">
+    <type fullname="UnityEngine.TextCore.FaceInfo" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.Glyph" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.GlyphMetrics" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.GlyphRect" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.LowLevel.GlyphAdjustmentRecord" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.LowLevel.GlyphPairAdjustmentRecord" preserve="nothing" serialized="true" />
+    <type fullname="UnityEngine.TextCore.LowLevel.GlyphValueRecord" preserve="nothing" serialized="true" />
+  </assembly>
+</linker>

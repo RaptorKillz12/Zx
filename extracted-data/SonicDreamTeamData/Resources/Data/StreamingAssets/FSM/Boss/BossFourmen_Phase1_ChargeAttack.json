@@ -1,0 +1,333 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourmen_Phase1_ChargeAttack",
+            "DefaultState": "StartAttackFlow",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "BossTransition_AttackWindUpComplete",
+                    "Name": "WindUpComplete",
+                    "CtorArgs": "{\"AbilityType\":526974294}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -180.0,
+                            "y": -80.0
+                        },
+                        "Guid": "53872bf6-c76a-4640-98ec-a5dcd6e2dea9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "AbilityFinished",
+                    "CtorArgs": "{\"AbilityType\":526974294}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -80.0
+                        },
+                        "Guid": "affd49be-4d1b-43ca-82d9-b1d9974a800d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_StartWindUp",
+                    "Name": "StartWindUp",
+                    "CtorArgs": "{\"AbilityType\":526974294}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1060.0,
+                            "y": -80.0
+                        },
+                        "Guid": "800c9037-352f-400e-9f17-27fead04233f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_WindUpAttack",
+                    "Name": "WindingUpAttack",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":526974294}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1500.0,
+                            "y": -200.0
+                        },
+                        "Guid": "6159e814-b6fd-4efb-a338-bf99db15cc6d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveToTarget",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenBullRushMoving\",\"AbilityType\":526974294}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 260.0,
+                            "y": -180.0
+                        },
+                        "Guid": "16f06b8d-3632-4bda-be32-c58dd81836f7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StartAttackFlow",
+                    "CtorArgs": "{\"States\":[\"SetAttackFlow\",\"WindingUpAttack\",\"Turn Towards Target\",\"SetTargetingEffect\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "StartWindUp",
+                            "ToState": "TurnToTarget",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1060.0,
+                                    "y": -80.0
+                                },
+                                "Guid": "800c9037-352f-400e-9f17-27fead04233f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1500.0,
+                            "y": -80.0
+                        },
+                        "Guid": "187890c2-b722-46f0-9fc6-9d0070a567fb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetAttackFlow",
+                    "Name": "SetAttackFlow",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":526974294}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1500.0,
+                            "y": -340.0
+                        },
+                        "Guid": "eaae5fc8-8b69-42b8-89df-ffada01279fe",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TurnToTarget",
+                    "Name": "Turn Towards Target",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":526974294}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -620.0,
+                            "y": -360.0
+                        },
+                        "Guid": "849cf3a4-2ef6-4108-b8d6-6ef95f9ce572",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "ChargingPlayer",
+                    "CtorArgs": "{\"States\":[\"MoveToTarget\",\"TriggerToggleSSOA\",\"TriggerBossEffectWindUp\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AbilityFinished",
+                            "ToState": "StartAttackFlow",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -80.0
+                                },
+                                "Guid": "affd49be-4d1b-43ca-82d9-b1d9974a800d",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1080.0,
+                                            "y": 140.0
+                                        },
+                                        "Guid": "5bf9d385-1eb0-4bda-9761-46a33613c4ed",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1500.0,
+                                            "y": 140.0
+                                        },
+                                        "Guid": "ae5373b1-cb48-4a5d-8a85-1fccc4daeb19",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 260.0,
+                            "y": -80.0
+                        },
+                        "Guid": "f234b083-a207-47e9-a0b0-0d95e212867c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerToggleSSOA",
+                    "Name": "TriggerToggleSSOA",
+                    "CtorArgs": "{\"ActiveEventType\":2,\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 260.0,
+                            "y": -280.0
+                        },
+                        "Guid": "e2553211-796b-485e-a540-617db42454dd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerBossEffectWindUp",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-1431654692}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 260.0,
+                            "y": -380.0
+                        },
+                        "Guid": "d85b0c5c-263d-43e2-9904-7a77f16a06e8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "SetTargetingEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":1143687086}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1500.0,
+                            "y": -460.0
+                        },
+                        "Guid": "eed301d0-09d2-489a-83c1-776e97fab921",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "TurnToTarget",
+                    "CtorArgs": "{\"States\":[\"Turn Towards Target\",\"TriggerBossEffect_EndChargePfx\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "WindUpComplete",
+                            "ToState": "ChargingPlayer",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -180.0,
+                                    "y": -80.0
+                                },
+                                "Guid": "53872bf6-c76a-4640-98ec-a5dcd6e2dea9",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -620.0,
+                            "y": -80.0
+                        },
+                        "Guid": "b5472e3a-61b4-48a8-b395-cba5e2de2810",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnLeave",
+                    "Name": "TriggerBossEffect_EndChargePfx",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-1451689851}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -620.0,
+                            "y": -260.0
+                        },
+                        "Guid": "b9300373-7dba-40f4-ab43-150f7329ca0e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

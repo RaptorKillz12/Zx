@@ -1,0 +1,120 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_GroundSpinDash",
+            "DefaultState": "Group_GroundSpinDash",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "ChargeReleased",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilitySpinDashCharge\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": -40.0
+                        },
+                        "Guid": "58431ebb-1c46-435e-8afd-b5d0e7c45500",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_GroundSpinDash",
+                    "CtorArgs": "{\"States\":[\"GroundSpinDashCharge\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ChargeReleased",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": -40.0
+                                },
+                                "Guid": "58431ebb-1c46-435e-8afd-b5d0e7c45500",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": -40.0
+                        },
+                        "Guid": "31ba9df3-a25a-4986-9993-4a57a9ea9db5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_GroundSpinDashCharge",
+                    "Name": "GroundSpinDashCharge",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterSpinDashChargeStateAnimation\",\"AbilityType\":568309575}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": -160.0
+                        },
+                        "Guid": "5c551a21-cc56-4283-a9a7-94646a93c500",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "Finished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -40.0
+                        },
+                        "Guid": "08813887-e193-47d4-ba19-cea996436623",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -160.0,
+                    "y": -100.0
+                },
+                "Guid": "b5171738-dfc7-4690-b819-8412ae7e2837",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

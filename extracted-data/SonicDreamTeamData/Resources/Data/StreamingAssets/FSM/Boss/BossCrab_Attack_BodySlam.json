@@ -1,0 +1,55 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossCrab_Attack_BodySlam",
+            "DefaultState": "BodySlam",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [],
+            "States": [
+                {
+                    "Class": "BossState_BodySlam",
+                    "Name": "BodySlam",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":1212092308}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 520.0,
+                            "y": -120.0
+                        },
+                        "Guid": "a971c9fd-376e-49cb-8f8e-b791db04b8cf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

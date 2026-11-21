@@ -1,0 +1,167 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_QuitGameDialog",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "QuitTransitionUIMessage",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventQuitGame\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": -140.0
+                        },
+                        "Guid": "bfd84146-050c-472d-a3cf-71066f931c70",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainer",
+                    "Name": "CloseTransitionUIMessage",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventQuitGameCancel\",\"Container\":\"uicontaineridentifier_quit_game\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 720.0,
+                            "y": -140.0
+                        },
+                        "Guid": "44179df6-f360-41b8-8c7c-4d611fb458f8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenDialog",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_quit_game\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CloseTransitionUIMessage",
+                            "ToState": "Start",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 720.0,
+                                    "y": -140.0
+                                },
+                                "Guid": "44179df6-f360-41b8-8c7c-4d611fb458f8",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1160.0,
+                                            "y": -120.0
+                                        },
+                                        "Guid": "6dd6b714-5cee-4c0b-8eb3-1621ab88c3a9",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1160.0,
+                                            "y": -200.0
+                                        },
+                                        "Guid": "258e1a8f-6c72-4f97-8001-cf36c6ed4503",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -660.0,
+                                            "y": -200.0
+                                        },
+                                        "Guid": "c1bc6d79-2d60-403b-8043-c5e1726c572e",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 260.0,
+                            "y": -140.0
+                        },
+                        "Guid": "04a897b0-f6ed-4e22-904c-1fd80856eaa3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "Start",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "QuitTransitionUIMessage",
+                            "ToState": "OpenDialog",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -200.0,
+                                    "y": -140.0
+                                },
+                                "Guid": "bfd84146-050c-472d-a3cf-71066f931c70",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -660.0,
+                            "y": -140.0
+                        },
+                        "Guid": "69941971-61c5-4768-ba13-f8be761eefbf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "3dc98285-2e8f-4748-bacb-2d8b65fcb8ad",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

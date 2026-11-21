@@ -1,0 +1,168 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossGuardian_Phase4_BulletHell",
+            "DefaultState": "IntroAnimation",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "IntroTimer",
+                    "CtorArgs": "{\"TimeoutSeconds\":3.0,\"VariableName\":\"IntroTimer\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -60.0
+                        },
+                        "Guid": "d05e33a5-6678-4cba-ba62-47c245501c22",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "IntroAnimation",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IntroTimer",
+                            "ToState": "FarMovement",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "d05e33a5-6678-4cba-ba62-47c245501c22",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": -60.0
+                        },
+                        "Guid": "8e920664-0c33-45b7-aa95-bb51a91d81cf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "FarMovement",
+                    "CtorArgs": "{\"States\":[\"SetProjectileCount4\",\"ProjectileFlow\",\"Vulnerable\",\"BeInTheMiddle\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -60.0
+                        },
+                        "Guid": "c18ee26f-0611-4e83-9bab-4a3b190dccef",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetProjectileCount",
+                    "Name": "SetProjectileCount4",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":1190555156,\"ProjectileCount\":50}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 360.0
+                        },
+                        "Guid": "0e07e97c-c4da-4082-b2be-ba9d62392b7f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "ProjectileFlow",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossGuardian_ProjectileFlow_Phase4_BulletHell\",\"ResetStateOnEnter\":true,\"DefaultState\":\"SetAttackFlowGroup\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 180.0
+                        },
+                        "Guid": "03cd546d-39fb-472b-a80c-892c2ee5b277",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_Vulnerable_Target",
+                    "Name": "Vulnerable",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"VulnerableTime\":1000000000.0,\"VulnerableTarget\":-2025675950,\"TargetActivateDelaySeconds\":0.0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 500.0
+                        },
+                        "Guid": "61c051e0-3f9c-48d0-8b85-41ffcdab69e3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "BeInTheMiddle",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-2065398103}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 640.0
+                        },
+                        "Guid": "eb630d70-abac-4742-aea7-0187ccf5f98e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -260.0,
+                    "y": -100.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

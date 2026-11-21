@@ -1,0 +1,633 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourman_Phase1_Time_Delayed_Spinning_And_Decaying",
+            "DefaultState": "Entry",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "Timeout3",
+                    "CtorArgs": "{\"TimeoutSeconds\":2.0,\"VariableName\":\"WaitForSpinning\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": -500.0
+                        },
+                        "Guid": "1d9d9d6f-0931-48d9-8fc2-f0e5752fff06",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_HealthCheck",
+                    "Name": "OverHalfHP",
+                    "CtorArgs": "{\"Value\":3,\"Evaluation\":0}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": -700.0
+                        },
+                        "Guid": "012d6c73-f468-431e-9dc0-720ae6bdcf92",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "Check1stCycle",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"Timeout3\",\"OverHalfHP\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": -360.0
+                        },
+                        "Guid": "7e9e8682-b076-4697-bd03-33fb10f2c0eb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_HealthCheck",
+                    "Name": "HalfHP",
+                    "CtorArgs": "{\"Value\":3,\"Evaluation\":3}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": -600.0
+                        },
+                        "Guid": "bb2a988c-1aa0-4dea-b5c5-51af15ac1e79",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "Check2ndCycle",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"Timeout3\",\"HalfHP\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": 40.0
+                        },
+                        "Guid": "23a61f9e-157c-48bc-ad13-43117fe13102",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "SlowSpinFinished",
+                    "CtorArgs": "{\"AbilityType\":-1571628655}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -360.0
+                        },
+                        "Guid": "f427632e-10f8-44fb-960a-5fc38b4b4901",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "FastSpinFinished",
+                    "CtorArgs": "{\"AbilityType\":290510966}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 40.0
+                        },
+                        "Guid": "02b1800f-a73e-48e3-85ca-d2f5757b57bb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_WasHit",
+                    "Name": "WasHit",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 0.0,
+                            "y": -160.0
+                        },
+                        "Guid": "5632f733-866c-4861-b137-6ef8990ed1d3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionHasFinished",
+                    "Name": "FinishedHitInterrupt",
+                    "CtorArgs": "{\"State\":\"HitInterrupt\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1000.0,
+                            "y": -160.0
+                        },
+                        "Guid": "5e96a98b-afb3-4582-8870-6cc2b1495143",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "AbilityFinished",
+                    "CtorArgs": "{\"AbilityType\":-2065398103}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2000.0,
+                            "y": -160.0
+                        },
+                        "Guid": "b5252cd0-db7e-43cd-83ac-0f6071c85e11",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Spin2ndCycle",
+                    "CtorArgs": "{\"States\":[\"ForceCounterRotationFast\",\"EnableFastCounterSpin\",\"DisableFastCounterSpin\",\"DecayingOrbitThenMoveToCharge\",\"TriggerEaseInMotion\",\"RecoveryEffect\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "FastSpinFinished",
+                            "ToState": "StateGroup_MoveToCharge",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": 40.0
+                                },
+                                "Guid": "02b1800f-a73e-48e3-85ca-d2f5757b57bb",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1380.0,
+                                            "y": 60.0
+                                        },
+                                        "Guid": "14ae4757-1f4e-4f26-9d2f-649ac791ac30",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "WasHit",
+                            "ToState": "HitInterrupt",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 0.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "5632f733-866c-4861-b137-6ef8990ed1d3",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 40.0
+                        },
+                        "Guid": "a951d550-af30-4acc-95a9-dc926e55c41c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableFastCounterSpin",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_SpinOnSpot_Faster\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -1060.0
+                        },
+                        "Guid": "f948149a-3e93-43cd-acc3-fec58df61c44",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableFastCounterSpin",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_SpinOnSpot_Faster\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -940.0
+                        },
+                        "Guid": "d0bf6c9c-1c8e-44b4-a272-2f893d77ab96",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_ForcedRotation",
+                    "Name": "ForceCounterRotationFast",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":290510966}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -1160.0
+                        },
+                        "Guid": "b1efcc6f-f03d-46ec-914f-e79809c67a8f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "Entry",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Check2ndCycle",
+                            "ToState": "Spin2ndCycle",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1300.0,
+                                    "y": 40.0
+                                },
+                                "Guid": "23a61f9e-157c-48bc-ad13-43117fe13102",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "Check1stCycle",
+                            "ToState": "Spin1stCycle",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1300.0,
+                                    "y": -360.0
+                                },
+                                "Guid": "7e9e8682-b076-4697-bd03-33fb10f2c0eb",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1800.0,
+                            "y": -160.0
+                        },
+                        "Guid": "e85001cb-c502-4d95-92d5-0596eb50d8f1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "DecayingOrbitThenMoveToCharge",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossFourman_Phase1_Decaying_Spiral\",\"ResetStateOnEnter\":true,\"DefaultState\":\"Entry\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -1440.0
+                        },
+                        "Guid": "061ea0df-a254-4d1c-98f1-7fede7bb04a7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerEaseInMotion",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":1797805171}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -1260.0
+                        },
+                        "Guid": "1e0b1d5c-f925-4a1c-b1c7-2631b8b162e9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Spin1stCycle",
+                    "CtorArgs": "{\"States\":[\"ForceRotationSlow\",\"EnableSlowSpin\",\"DisableSlowSpin\",\"DecayingOrbitThenMoveToCharge\",\"TriggerEaseInMotion\",\"RecoveryEffect\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "WasHit",
+                            "ToState": "HitInterrupt",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 0.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "5632f733-866c-4861-b137-6ef8990ed1d3",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "SlowSpinFinished",
+                            "ToState": "StateGroup_MoveToCharge",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -360.0
+                                },
+                                "Guid": "f427632e-10f8-44fb-960a-5fc38b4b4901",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1380.0,
+                                            "y": -340.0
+                                        },
+                                        "Guid": "df7a8d2c-7394-47d1-bbd3-41e0f26d1986",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -360.0
+                        },
+                        "Guid": "554f0277-c6eb-40f9-85ce-a0b3134b5a9d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableSlowSpin",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_SpinOnSpot_Slower\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -620.0
+                        },
+                        "Guid": "3549cab5-ae73-489f-8915-256973cdb987",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableSlowSpin",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_SpinOnSpot_Slower\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -500.0
+                        },
+                        "Guid": "ce7627b2-46a7-4de2-892b-8b257c96cdf7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_ForcedRotation",
+                    "Name": "ForceRotationSlow",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-1571628655}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -720.0
+                        },
+                        "Guid": "8a7a7352-d70d-473b-90f9-94eaeb5340da",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "Finished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2500.0,
+                            "y": -160.0
+                        },
+                        "Guid": "345851bd-9d1a-456b-8445-1e84b6e4a08e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "HitInterrupt",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossFourman_Phase1_HitInterrupt\",\"ResetStateOnEnter\":true,\"DefaultState\":\"StateGroup_InterruptAttacks\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "FinishedHitInterrupt",
+                            "ToState": "StateGroup_MoveToCharge",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1000.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "5e96a98b-afb3-4582-8870-6cc2b1495143",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 500.0,
+                            "y": -160.0
+                        },
+                        "Guid": "f6679663-42cb-48dd-a864-1883b259f469",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_MoveToCharge",
+                    "CtorArgs": "{\"States\":[\"EnableMoveToCentre\",\"DisableMoveToCentre\",\"MoveToCentre\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AbilityFinished",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2000.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "b5252cd0-db7e-43cd-83ac-0f6071c85e11",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1500.0,
+                            "y": -160.0
+                        },
+                        "Guid": "5f94c405-be40-442e-a868-8fac73513608",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableMoveToCentre",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_MoveToArenaCentre\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1500.0,
+                            "y": -500.0
+                        },
+                        "Guid": "0b9f7573-26bf-490f-a69d-472f0d9c6fa6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableMoveToCentre",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_MoveToArenaCentre\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1500.0,
+                            "y": -380.0
+                        },
+                        "Guid": "9646cb29-05bb-4ec0-9c11-d2b3f9481410",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveToCentre",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-2065398103}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1500.0,
+                            "y": -260.0
+                        },
+                        "Guid": "3fe76b09-ba38-4b74-8c0c-43019a84796e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnLeave",
+                    "Name": "RecoveryEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":1184055252}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -820.0
+                        },
+                        "Guid": "913df378-9c85-403c-91c9-5963442f1468",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_SetInactiveUIControls",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Start",
+                    "CtorArgs": "{\"States\":[\"ToggleGameHUD\",\"ToggleOnScreenControls\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -200.0
+                        },
+                        "Guid": "95f428ec-00aa-4528-9ea6-cb843fca7a38",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateSetActiveUIContainer",
+                    "Name": "ToggleGameHUD",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_game_hud\",\"Active\":false,\"CreateIfDoesNotExist\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -40.0
+                        },
+                        "Guid": "04a897b0-f6ed-4e22-904c-1fd80856eaa3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateSetActiveUIContainer",
+                    "Name": "ToggleOnScreenControls",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_on_screen_controls\",\"Active\":false,\"CreateIfDoesNotExist\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": 100.0
+                        },
+                        "Guid": "5d8de5ee-f2d3-4686-b5ce-f53268d51f59",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "3dc98285-2e8f-4748-bacb-2d8b65fcb8ad",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

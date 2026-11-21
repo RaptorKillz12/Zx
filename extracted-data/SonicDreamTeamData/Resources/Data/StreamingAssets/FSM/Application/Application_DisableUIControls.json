@@ -1,0 +1,103 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_DisableUIControls",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Start",
+                    "CtorArgs": "{\"States\":[\"DisableGameHUD\",\"DisableOnScreenControls\",\"ClosePauseContainer\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -260.0
+                        },
+                        "Guid": "7633961b-7250-4347-a95e-166ed3e346d6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateEnableUIContainer",
+                    "Name": "DisableGameHUD",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_game_hud\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -60.0
+                        },
+                        "Guid": "eca20e5a-dd06-41bd-bb67-a9e4d48a325e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateEnableUIContainer",
+                    "Name": "DisableOnScreenControls",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_on_screen_controls\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": 60.0
+                        },
+                        "Guid": "a9fd5ba1-5c8e-48ab-b989-8193414f637c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateCloseUIContainer",
+                    "Name": "ClosePauseContainer",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_pause\",\"DoNotCloseIfOpen\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": 180.0
+                        },
+                        "Guid": "a57b3167-2156-4077-8cb7-174eb67bc1f0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "b1b8e665-5615-4f06-b2c1-886e9688c000",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

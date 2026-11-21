@@ -1,0 +1,1075 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_Rail",
+            "DefaultState": "Group_RailEnter",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "CharacterTransition_RailAttach",
+                    "Name": "RailAttach",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1160.0,
+                            "y": 20.0
+                        },
+                        "Guid": "ced7cf17-4ae6-43e3-9093-d6b068b5cac2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_RailSwitch",
+                    "Name": "ToRailSwitch",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 0.0,
+                            "y": 20.0
+                        },
+                        "Guid": "6771ef6f-f919-4e64-9ba0-1a202fec7604",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_RailSwitchExit",
+                    "Name": "RailSwitchExit",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 880.0,
+                            "y": 20.0
+                        },
+                        "Guid": "ae7d5d00-df85-4642-8598-db347d3f1aeb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "Triggered_RailsProximityAir",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityRailsProximityAir\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2080.0,
+                            "y": -240.0
+                        },
+                        "Guid": "9af9cb83-7cc4-4faf-9895-d33eb835eb20",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "Triggered_RailsProximityGround",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityRailsProximityGround\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2080.0,
+                            "y": 20.0
+                        },
+                        "Guid": "275bc836-9943-41fc-bc45-ae7595c84ca4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "Triggered_RailsTargeting",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityRailsTargeting\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2080.0,
+                            "y": 280.0
+                        },
+                        "Guid": "2c9297b9-10d7-4776-b037-2bb1ce576f97",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BoostEnter",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementRailBoost\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1000.0,
+                            "y": 320.0
+                        },
+                        "Guid": "79bfaf4a-9a9d-408e-850d-baece84ca3b9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BoostExit",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementRailBoost\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 0.0,
+                            "y": 320.0
+                        },
+                        "Guid": "d2ae92ea-6888-4147-8c7a-2a91ef0c499c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "Timeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":0.10000000149011612,\"VariableName\":\"RailErrorTimeout\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2080.0,
+                            "y": 580.0
+                        },
+                        "Guid": "93f583a5-fadb-4762-b1d1-81d44d2f59ad",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BoostOneShotEnter",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementRailBoost_OneShot\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1000.0,
+                            "y": 520.0
+                        },
+                        "Guid": "495684f1-2195-4cb0-a24e-34c7299a49ff",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BoostOneShotExit",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementRailBoost_OneShot\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 0.0,
+                            "y": 520.0
+                        },
+                        "Guid": "a2b6e4d3-545e-46e6-b034-75ad42688609",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "CharacterState_TriggerResetAirAbilities",
+                    "Name": "TriggerResetAirAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": -820.0
+                        },
+                        "Guid": "5b15f07e-5039-46d0-8680-b3dbae37f919",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_RailMovementStanding",
+                    "Name": "RailMovementStanding",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterRailStateAnimation\",\"AbilityType\":-142545831}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BoostOneShotEnter",
+                            "ToState": "Group_RailBoostOneShot",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1000.0,
+                                    "y": 520.0
+                                },
+                                "Guid": "495684f1-2195-4cb0-a24e-34c7299a49ff",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -140.0,
+                                            "y": 190.0
+                                        },
+                                        "Guid": "0e1cf851-72fb-412e-a2a5-cf381462e9a8",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1000.0,
+                                            "y": 190.0
+                                        },
+                                        "Guid": "7ab82019-ebaa-48fc-82f6-be42b439a7cc",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToRailSwitch",
+                            "ToState": "SubState_RailSwitch",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 0.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "6771ef6f-f919-4e64-9ba0-1a202fec7604",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "BoostEnter",
+                            "ToState": "Group_RailBoost",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1000.0,
+                                    "y": 320.0
+                                },
+                                "Guid": "79bfaf4a-9a9d-408e-850d-baece84ca3b9",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -140.0,
+                                            "y": 140.0
+                                        },
+                                        "Guid": "24bd35e6-c1e2-4deb-b878-ebaa3d7dc22e",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1000.0,
+                                            "y": 140.0
+                                        },
+                                        "Guid": "b6419fd1-a34d-47ad-834b-4faada88db8c",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -520.0,
+                            "y": 20.0
+                        },
+                        "Guid": "a57ae4d5-6d22-469d-ad03-ac3de7af8ce2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RailTriggers",
+                    "CtorArgs": "{\"States\":[\"TriggerGamePlayControl\",\"TriggerDisableAbilities\",\"TriggerResetAirAbilities\",\"TriggerAbilityRailStand\",\"TriggerAbilityJump\",\"TriggerAbilityJumpOneShot\",\"TriggerAbilityRailSwitch\",\"TriggerAbilityRailBoost\",\"TriggerAbilityRailBoostOneShot\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1100.0,
+                            "y": -940.0
+                        },
+                        "Guid": "8c4704db-ac59-4442-a357-3c9169c1247f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerGamePlayControl",
+                    "Name": "TriggerGamePlayControl",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ControlLockTime\":0.0,\"TimeCategory\":1739680676}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": -940.0
+                        },
+                        "Guid": "578bfd4b-d226-4ff9-89bc-6bbced9f8403",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerDisableAbilities",
+                    "Name": "TriggerDisableAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ExceptionList\":[\"AbilityKnockback\",\"AbilityMovementJump\",\"AbilityRailSwitch\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": -740.0
+                        },
+                        "Guid": "59023c23-28bb-4f30-85d6-2622ce66027b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailStand",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementRailStanding\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2040.0,
+                            "y": -940.0
+                        },
+                        "Guid": "98504dbe-0c4d-40fc-b058-971b7da2da4c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailSwitch",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityRailSwitch\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2040.0,
+                            "y": -820.0
+                        },
+                        "Guid": "bafceb44-e953-4c01-a3dd-810ec7b93d5f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityJump",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementJump\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1580.0,
+                            "y": -940.0
+                        },
+                        "Guid": "136eb415-ee5a-4781-8988-aeef2569c433",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_RailHomingProximityAir",
+                    "Name": "State_RailsProximityAir",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":1067871007}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1620.0,
+                            "y": -80.0
+                        },
+                        "Guid": "da5f16b4-010e-4c01-bb14-50edc5d38446",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_RailHomingProximityGround",
+                    "Name": "State_RailsProximityGround",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-1193242282}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1620.0,
+                            "y": 180.0
+                        },
+                        "Guid": "c2f840ef-db04-45cd-9286-07e772bd5a97",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_RailHomingTargeting",
+                    "Name": "State_RailsTargeting",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterRailHomingStateAnimation\",\"AbilityType\":2017546024}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1620.0,
+                            "y": 440.0
+                        },
+                        "Guid": "b2715b06-bcee-40fd-ad6a-4f4fe39f3876",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RailsProximityGround",
+                    "CtorArgs": "{\"States\":[\"State_RailsProximityGround\",\"Group_RailTriggers\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "RailAttach",
+                            "ToState": "RailMovementStanding",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1160.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "ced7cf17-4ae6-43e3-9093-d6b068b5cac2",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1620.0,
+                            "y": 20.0
+                        },
+                        "Guid": "aa0f991f-2c1f-4fe1-b649-1649c1c71758",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RailsProximityAir",
+                    "CtorArgs": "{\"States\":[\"State_RailsProximityAir\",\"Group_RailTriggers\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "RailAttach",
+                            "ToState": "RailMovementStanding",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1160.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "ced7cf17-4ae6-43e3-9093-d6b068b5cac2",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1620.0,
+                            "y": -240.0
+                        },
+                        "Guid": "376ab5be-7666-43b0-9166-d16eea66d35c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RailsTargeting",
+                    "CtorArgs": "{\"States\":[\"State_RailsTargeting\",\"Group_RailTriggers\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "RailAttach",
+                            "ToState": "RailMovementStanding",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1160.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "ced7cf17-4ae6-43e3-9093-d6b068b5cac2",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1620.0,
+                            "y": 280.0
+                        },
+                        "Guid": "df756abc-f9a0-49cc-93ca-035d8b94148d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "RailEnter",
+                    "CtorArgs": "{\"Name\":\"RailActive\",\"Node\":\"\",\"FSM\":\"\",\"Value\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2560.0,
+                            "y": 160.0
+                        },
+                        "Guid": "751924f3-d112-4d09-8c7f-3fe83fa8b174",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RailEnter",
+                    "CtorArgs": "{\"States\":[\"RailEnter\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Triggered_RailsProximityGround",
+                            "ToState": "Group_RailsProximityGround",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -2080.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "275bc836-9943-41fc-bc45-ae7595c84ca4",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "Triggered_RailsTargeting",
+                            "ToState": "Group_RailsTargeting",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -2080.0,
+                                    "y": 280.0
+                                },
+                                "Guid": "2c9297b9-10d7-4776-b037-2bb1ce576f97",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "Timeout",
+                            "ToState": "Group_RailForceExit",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -2080.0,
+                                    "y": 580.0
+                                },
+                                "Guid": "93f583a5-fadb-4762-b1d1-81d44d2f59ad",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "Triggered_RailsProximityAir",
+                            "ToState": "Group_RailsProximityAir",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -2080.0,
+                                    "y": -240.0
+                                },
+                                "Guid": "9af9cb83-7cc4-4faf-9895-d33eb835eb20",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2560.0,
+                            "y": 20.0
+                        },
+                        "Guid": "3031ab43-777d-48ad-bb55-b3dc3b620547",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RailBoost",
+                    "CtorArgs": "{\"States\":[\"TriggerResetAirAbilities\",\"TriggerResetAirBuffers\",\"RailMovementBoost\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BoostExit",
+                            "ToState": "RailMovementStanding",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 0.0,
+                                    "y": 320.0
+                                },
+                                "Guid": "d2ae92ea-6888-4147-8c7a-2a91ef0c499c",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 350.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "2561bfb4-57d9-47ff-b6d8-508246c97bc3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -510.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "2af62746-a48a-4ce9-8b4d-ad75610c1d82",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -500.0,
+                            "y": 320.0
+                        },
+                        "Guid": "8998fff3-498b-4e07-a563-355805edadea",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_RailMovementBoost",
+                    "Name": "RailMovementBoost",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterRailBoostStateAnimation\",\"AbilityType\":-84364267}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -500.0,
+                            "y": 220.0
+                        },
+                        "Guid": "dba9da4b-54ce-4e63-9981-cc6b9bcbd9f4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailBoost",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementRailBoost\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2040.0,
+                            "y": -700.0
+                        },
+                        "Guid": "9f80ac4d-be51-46c1-9ed0-d37ee3837032",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerVelocityImpulse",
+                    "Name": "TriggerVelocityImpulse",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ImpulseForce\":5.0,\"OptionalVariableName\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": -460.0
+                        },
+                        "Guid": "2e7a95af-7d2e-4dc1-b83e-bd44c9fb7466",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerResetAirBuffers",
+                    "Name": "TriggerResetAirBuffers",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": -540.0
+                        },
+                        "Guid": "e777a381-b0de-4735-b48d-51ad7020f3a8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "RailForceExit",
+                    "CtorArgs": "{\"Name\":\"RailActive\",\"Node\":\"\",\"FSM\":\"\",\"Value\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1620.0,
+                            "y": 780.0
+                        },
+                        "Guid": "ec934ddc-1347-4848-82e9-f30ff4d88a8f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RailForceExit",
+                    "CtorArgs": "{\"States\":[\"RailForceExit\",\"RailForceExitError\",\"TriggerClearHomingTarget \"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1620.0,
+                            "y": 580.0
+                        },
+                        "Guid": "cf96f87f-fe18-4e33-a554-802fac6d9640",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_Error",
+                    "Name": "RailForceExitError",
+                    "CtorArgs": "{\"ErrorMessage\":\"Rail was active but no rail ability was triggered.\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1620.0,
+                            "y": 920.0
+                        },
+                        "Guid": "ca67eab1-69ca-49f1-8b60-7cf64b7cdbaa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerClearHomingTarget",
+                    "Name": "TriggerClearHomingTarget ",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"StartGracePeriod\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1620.0,
+                            "y": 1020.0
+                        },
+                        "Guid": "b3b12550-7fdb-47b1-98c2-d875d3248b90",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "SubState_RailSwitch",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMCharacter_RailSwitch\",\"ResetStateOnEnter\":true,\"DefaultState\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "RailSwitchExit",
+                            "ToState": "RailMovementStanding",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 880.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "ae7d5d00-df85-4642-8598-db347d3f1aeb",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1340.0,
+                                            "y": 40.0
+                                        },
+                                        "Guid": "6a15bfb4-bd2b-4251-a7bc-023826f7d4ef",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1340.0,
+                                            "y": 260.0
+                                        },
+                                        "Guid": "9b7e8cf9-0bbd-45c9-9ddc-b0ee1b3a3d84",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -540.0,
+                                            "y": 260.0
+                                        },
+                                        "Guid": "069d11d4-8170-47db-bfb7-ec853552cdff",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 440.0,
+                            "y": 20.0
+                        },
+                        "Guid": "e310e1b9-4206-4fb3-b281-fbf049565b55",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RailSwitchEnter",
+                    "CtorArgs": "{\"States\":[\"RailEnter\",\"Group_RailSwitchTriggers\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToRailSwitch",
+                            "ToState": "SubState_RailSwitch",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 0.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "6771ef6f-f919-4e64-9ba0-1a202fec7604",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -520.0,
+                            "y": -160.0
+                        },
+                        "Guid": "46b845de-7933-4760-8d6c-4fcdfa145487",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RailSwitchTriggers",
+                    "CtorArgs": "{\"States\":[\"TriggerGamePlayControl\",\"TriggerDisableAbilities\",\"TriggerResetAirAbilities\",\"TriggerAbilityRailStand\",\"TriggerAbilityJump\",\"TriggerAbilityJumpOneShot\",\"TriggerAbilityRailBoost\",\"TriggerAbilityRailBoostOneShot\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1100.0,
+                            "y": -600.0
+                        },
+                        "Guid": "cc6e1c75-1f76-430a-b062-10d812867774",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RailBoostOneShot",
+                    "CtorArgs": "{\"States\":[\"TriggerResetAirAbilities\",\"TriggerResetAirBuffers\",\"RailMovementBoostOneShot\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BoostOneShotExit",
+                            "ToState": "RailMovementStanding",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 0.0,
+                                    "y": 520.0
+                                },
+                                "Guid": "a2b6e4d3-545e-46e6-b034-75ad42688609",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 490.0,
+                                            "y": 360.0
+                                        },
+                                        "Guid": "7f024afd-02e2-472d-ab80-d8432b1a2ff6",
+                                        "InDirection": 4,
+                                        "OutDirection": 3,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 350.0,
+                                            "y": 170.0
+                                        },
+                                        "Guid": "d8599714-8946-4983-a565-e7a2f9bd3c2b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -510.0,
+                                            "y": 170.0
+                                        },
+                                        "Guid": "4e909a7c-9bc0-47c1-b01f-15dec33a8c54",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -500.0,
+                            "y": 520.0
+                        },
+                        "Guid": "41748bf5-bd1b-4bfd-a29a-18a405f3324c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_RailMovementBoostOneShot",
+                    "Name": "RailMovementBoostOneShot",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterRailBoostStateAnimation\",\"AbilityType\":-1896477453}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -500.0,
+                            "y": 700.0
+                        },
+                        "Guid": "68fd6cdb-7b01-48fc-a98b-0031c54f7f3e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailBoostOneShot",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementRailBoost_OneShot\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2040.0,
+                            "y": -580.0
+                        },
+                        "Guid": "ad1f4f05-75b6-4b2c-b7cb-fd57c1b7c556",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityJumpOneShot",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementJump_OneShot\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1580.0,
+                            "y": -820.0
+                        },
+                        "Guid": "9e1e06eb-bb42-432d-b6d0-529a7b90d37c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -160.0,
+                    "y": -40.0
+                },
+                "Guid": "d3133b3f-7c1c-4eb2-95ad-94c7b318a3fe",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 1626.0,
+                    "y": -98.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

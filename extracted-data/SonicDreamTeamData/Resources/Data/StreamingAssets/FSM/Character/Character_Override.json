@@ -1,0 +1,2014 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_Override",
+            "DefaultState": "Group_Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "AbilityTriggeredKnockback",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityKnockback\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -140.0
+                        },
+                        "Guid": "a29b827f-d106-4b2d-b39e-c875f06db9de",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "AbilityEndedKnockback",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityKnockback\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": 20.0
+                        },
+                        "Guid": "9c3ed687-fd12-41bc-bd75-559be80097fd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "AlwaysToMain",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": 220.0
+                        },
+                        "Guid": "6049ed62-4ebd-4ed7-a19a-4498e4f136aa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_ShouldRespawn",
+                    "Name": "ShouldRespawn",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 160.0
+                        },
+                        "Guid": "67efb064-1e59-43ac-a1dd-2abc3b51504e",
+                        "InDirection": 1,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_RespawnComplete",
+                    "Name": "RespawnComplete",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 400.0
+                        },
+                        "Guid": "84cb7518-0670-4ced-b12b-47408e2c29c8",
+                        "InDirection": 3,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "CheckDying",
+                    "CtorArgs": "{\"Name\":\"TriggerDyingState\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 700.0
+                        },
+                        "Guid": "0aed6cef-03df-438a-af90-eaa98bc78fec",
+                        "InDirection": 1,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "CheckCollectingOrb",
+                    "CtorArgs": "{\"Name\":\"IsCollectingOrb\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -820.0,
+                            "y": 1360.0
+                        },
+                        "Guid": "c9774cf7-e42c-4303-a65f-9dd7baeb12db",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "CheckNotCollectingOrb",
+                    "CtorArgs": "{\"Name\":\"IsCollectingOrb\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"FalseCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": 1360.0
+                        },
+                        "Guid": "000f4f17-4b2f-4c02-9ee7-364fe1745928",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "CheckIsLockedInPlace",
+                    "CtorArgs": "{\"Name\":\"IsLockedInPlace\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -820.0,
+                            "y": 1620.0
+                        },
+                        "Guid": "4719e945-2b68-438c-9f37-cf32a85b485e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "CheckIsNotLockedInPlace",
+                    "CtorArgs": "{\"Name\":\"IsLockedInPlace\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"FalseCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": 1620.0
+                        },
+                        "Guid": "5442171d-48ac-4e42-b428-835969f26766",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "CheckIsEnteringLevel",
+                    "CtorArgs": "{\"Name\":\"IsEnteringLevel\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 1080.0
+                        },
+                        "Guid": "bf95e6dd-cd53-4a67-af30-7713e627c78a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "CheckIsNotEnteringLevel",
+                    "CtorArgs": "{\"Name\":\"IsEnteringLevel\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"FalseCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": 1080.0
+                        },
+                        "Guid": "0ae0e16b-95a5-4f3f-ae80-bb5fd7d29726",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "CheckSkipLevelEnter",
+                    "CtorArgs": "{\"Name\":\"SkipLevelEnter\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2200.0,
+                            "y": 220.0
+                        },
+                        "Guid": "f248865b-7193-4e3c-9525-3daaf0d4c954",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_KnockbackMinDurationExceeded",
+                    "Name": "KnockbackMinDurationExceeded",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -240.0
+                        },
+                        "Guid": "e7579d57-eb2b-4877-824d-5b7e7b97f8b5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_Ground",
+                    "Name": "ToGround",
+                    "CtorArgs": "{\"TrackingType\":1142539387}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -340.0
+                        },
+                        "Guid": "6f75244d-9781-470e-bd62-070269ffc9fc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicOp",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"ToGround\",\"KnockbackMinDurationExceeded\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -160.0
+                        },
+                        "Guid": "ee3085d8-2638-45fd-8e4d-8a5fd26cd7ec",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "NotDying",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"CheckDying\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -280.0
+                        },
+                        "Guid": "4f38ab3a-3e89-4705-82c7-899aba7385f1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "TriggerKnockbackNotDying",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"AbilityTriggeredKnockback\",\"NotDying\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -40.0
+                        },
+                        "Guid": "46bfd09c-bb51-4353-af46-f6f752ac4b75",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "TriggeredKnockbackDying",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"AbilityTriggeredKnockback\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 920.0
+                        },
+                        "Guid": "10ba7692-8032-49e1-8ca4-efa0fbe91ac9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "DyingNoKnockback",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"AbilityTriggeredKnockback\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 700.0
+                        },
+                        "Guid": "81d12121-19bb-4c69-ad5f-b20b81408d43",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_KnockbackMinDurationExceeded",
+                    "Name": "KnockbackMinDurationExceeded2",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 920.0
+                        },
+                        "Guid": "929ae285-b083-44f3-ae7b-7f2cc6ef5dc7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "ToDying",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 700.0
+                        },
+                        "Guid": "02b83938-70cd-41d0-9346-8515c4f6886e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "SkipLevelEnterAndNotSwapIn",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"CheckSkipLevelEnter\",\"NotSwapInIsInProgress\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2200.0,
+                            "y": 20.0
+                        },
+                        "Guid": "f9f44e20-31de-4646-ae72-e94483752483",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "CheckSwapInIsInProgress",
+                    "CtorArgs": "{\"Name\":\"SwapInIsInProgress\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2200.0,
+                            "y": 380.0
+                        },
+                        "Guid": "b5d9ee10-a0f1-48b1-92cb-d5411795cf2a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "NotSwapInIsInProgress",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"CheckSwapInIsInProgress\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2200.0,
+                            "y": 540.0
+                        },
+                        "Guid": "b16ebc0c-a95c-4a22-91b2-8866d22154ad",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "SkipLevelEnterAndSwapIn",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"CheckSkipLevelEnter\",\"CheckSwapInIsInProgress\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2200.0,
+                            "y": 800.0
+                        },
+                        "Guid": "95e48e1d-e99e-47c1-a37a-270f7414fc24",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1700.0,
+                            "y": 560.0
+                        },
+                        "Guid": "d376003b-cb1e-4262-95df-e8d623f861ed",
+                        "InDirection": 4,
+                        "OutDirection": 3,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "CheckSwapOutIsInProgress",
+                    "CtorArgs": "{\"Name\":\"SwapOutIsInProgress\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -820.0,
+                            "y": 1820.0
+                        },
+                        "Guid": "66ccd3f3-ae0c-4dd4-b426-eb6f33db3443",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "SwapOutTimeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":0.75,\"VariableName\":\"SwapOutTimeout\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 1820.0
+                        },
+                        "Guid": "b712975f-ad20-45dc-b665-871752a06a13",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "RespawnTimeoutToMain",
+                    "CtorArgs": "{\"TimeoutSeconds\":0.75,\"VariableName\":\"RespawnTimeoutToMain\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 220.0
+                        },
+                        "Guid": "86ab5581-88f5-4aba-a687-4c942b3d78aa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "InterruptDyingState",
+                    "CtorArgs": "{\"Name\":\"InterruptDyingState\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": 520.0
+                        },
+                        "Guid": "c0b3fc46-b9f6-49fa-bda8-1749b69bc682",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "SubFSM_CharacterMain",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMCharacter\",\"ResetStateOnEnter\":true,\"DefaultState\":\"CharacterInAir\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1660.0,
+                            "y": -180.0
+                        },
+                        "Guid": "b738d0bb-3fe3-4558-8cbb-357a326d89a2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_Knockback",
+                    "Name": "Knockback",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterKnockbackAnimation\",\"AbilityType\":-1159119419}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ShouldRespawn",
+                            "ToState": "Group_Respawn",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": 160.0
+                                },
+                                "Guid": "67efb064-1e59-43ac-a1dd-2abc3b51504e",
+                                "InDirection": 1,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 60.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "86b0c88d-bee5-420b-bdb0-7ef31af597b0",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -800.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "f61ca4ad-3e9d-42a4-a49b-061a41fd3fcb",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "AbilityEndedKnockback",
+                            "ToState": "Group_CharacterMain",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1200.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "9c3ed687-fd12-41bc-bd75-559be80097fd",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 580.0,
+                                            "y": -20.0
+                                        },
+                                        "Guid": "d6b592f1-a69d-45fa-b848-47e897e1ff42",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1580.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "123cd549-4e41-4806-a66b-19e0801bd0a3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1100.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "5d432dce-d8a9-4d12-8edd-7a3d6a9eecaa",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1660.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "dba81169-9ee9-41f4-b484-144758f5a06f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "LogicOp",
+                            "ToState": "KnockbackRecovery",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "ee3085d8-2638-45fd-8e4d-8a5fd26cd7ec",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 580.0,
+                                            "y": -20.0
+                                        },
+                                        "Guid": "d6b592f1-a69d-45fa-b848-47e897e1ff42",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -320.0,
+                            "y": -40.0
+                        },
+                        "Guid": "256fc463-787c-475c-813f-41cf4fb12fe0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_CharacterMain",
+                    "CtorArgs": "{\"States\":[\"SubFSM_CharacterMain\",\"TriggerAbilityKnockback\",\"ResetScreenControls\",\"ResetCamera\",\"TriggerDisableAbilities\",\"ResetAllAnimParameters\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CheckDying",
+                            "ToState": "DyingBegin",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": 700.0
+                                },
+                                "Guid": "0aed6cef-03df-438a-af90-eaa98bc78fec",
+                                "InDirection": 1,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "TriggerKnockbackNotDying",
+                            "ToState": "Knockback",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": -40.0
+                                },
+                                "Guid": "46bfd09c-bb51-4353-af46-f6f752ac4b75",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "CheckIsLockedInPlace",
+                            "ToState": "NoVelocityOnEnterAndNoControls",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -820.0,
+                                    "y": 1620.0
+                                },
+                                "Guid": "4719e945-2b68-438c-9f37-cf32a85b485e",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "CheckSwapOutIsInProgress",
+                            "ToState": "SwapOutGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -820.0,
+                                    "y": 1820.0
+                                },
+                                "Guid": "66ccd3f3-ae0c-4dd4-b426-eb6f33db3443",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ShouldRespawn",
+                            "ToState": "Group_Respawn",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": 160.0
+                                },
+                                "Guid": "67efb064-1e59-43ac-a1dd-2abc3b51504e",
+                                "InDirection": 1,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "CheckIsEnteringLevel",
+                            "ToState": "Group_EnteringLevel",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": 1080.0
+                                },
+                                "Guid": "bf95e6dd-cd53-4a67-af30-7713e627c78a",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "CheckCollectingOrb",
+                            "ToState": "Group_OrbCollect",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -820.0,
+                                    "y": 1360.0
+                                },
+                                "Guid": "c9774cf7-e42c-4303-a65f-9dd7baeb12db",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1660.0,
+                            "y": 20.0
+                        },
+                        "Guid": "057ddcb4-77c6-4b35-9f0e-a6f283c85fa3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityKnockback",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityKnockback\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1660.0,
+                            "y": -300.0
+                        },
+                        "Guid": "1263a60b-1002-4a35-97cc-dd1528f64da8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "ResetCamera",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"CameraTypeOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1660.0,
+                            "y": -400.0
+                        },
+                        "Guid": "1789b2ed-4ce5-4989-a3c3-254521541d0d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerScreenControls",
+                    "Name": "ResetScreenControls",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ScreenControlsGroupOverride\":602145082}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1660.0,
+                            "y": -500.0
+                        },
+                        "Guid": "5a60a0ba-47ec-4dcf-bd33-b70b8841dddf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerDisableAbilities",
+                    "Name": "TriggerDisableAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"ExceptionList\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1660.0,
+                            "y": -620.0
+                        },
+                        "Guid": "3f9e6e70-7410-40e3-8c34-2f62f8326d2a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerRespawn",
+                    "Name": "TriggerRespawn",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterRespawnAnimation\",\"SecondsInvulnerableAfterOutOfBounds\":5.0,\"TransitionOverrideContainer\":\"\",\"DoFullscreenTransition\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -320.0,
+                            "y": -340.0
+                        },
+                        "Guid": "d0fd97f8-3b7f-4482-b532-1fc8006a07fc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerDying",
+                    "Name": "TriggerDying",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterDyingStateAnimation\",\"DyingTime\":2.0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": 840.0
+                        },
+                        "Guid": "e63a18e8-457c-4ee0-8463-a6365fecd2bf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_Respawn",
+                    "CtorArgs": "{\"States\":[\"TriggerClearHomingTarget \",\"ResetScreenControls\",\"TriggerRespawn\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "RespawnComplete",
+                            "ToState": "Group_RespawnAnim",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": 400.0
+                                },
+                                "Guid": "84cb7518-0670-4ced-b12b-47408e2c29c8",
+                                "InDirection": 3,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 240.0
+                        },
+                        "Guid": "638970bd-d539-4194-a247-8f146ba998ec",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCharacterCameraDeath",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"CameraTypeOverride\":-269686687}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": 940.0
+                        },
+                        "Guid": "15c2c7b0-6491-484e-9c4d-56d574c73d20",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_Dying",
+                    "CtorArgs": "{\"States\":[\"TriggerDying\",\"TriggerCharacterCameraDeath\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ShouldRespawn",
+                            "ToState": "Group_Respawn",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": 160.0
+                                },
+                                "Guid": "67efb064-1e59-43ac-a1dd-2abc3b51504e",
+                                "InDirection": 1,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1580.0,
+                                            "y": 660.0
+                                        },
+                                        "Guid": "c4c5eaf9-c0e7-4795-8a4e-0f20289b5767",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -800.0,
+                                            "y": 660.0
+                                        },
+                                        "Guid": "156e33e0-1cf0-480c-ab37-a57574533383",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "InterruptDyingState",
+                            "ToState": "Group_CharacterMain",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1200.0,
+                                    "y": 520.0
+                                },
+                                "Guid": "c0b3fc46-b9f6-49fa-bda8-1749b69bc682",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1100.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "5d432dce-d8a9-4d12-8edd-7a3d6a9eecaa",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1660.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "dba81169-9ee9-41f4-b484-144758f5a06f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": 700.0
+                        },
+                        "Guid": "92812bbe-1700-4c04-95e3-3cdfe334353e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_ZeroVelocity",
+                    "Name": "ZeroVelocity_OrbCollect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"MaintainZeroVelocityInUpdate\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2300.0,
+                            "y": 1440.0
+                        },
+                        "Guid": "eac61a10-cc47-4087-bcbf-62668a74488b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_ZeroVelocity",
+                    "Name": "ZeroVelocityEnterOnly",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"MaintainZeroVelocityInUpdate\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2300.0,
+                            "y": 1160.0
+                        },
+                        "Guid": "9ca6c8e6-1072-476b-9d0e-cdb84066a086",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "NoVelocityOnEnterAndNoControls",
+                    "CtorArgs": "{\"States\":[\"ZeroVelocityEnterOnly\",\"OverrideGamePlayControl\",\"TriggerDefaultForm\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CheckIsNotLockedInPlace",
+                            "ToState": "Group_CharacterMain",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1200.0,
+                                    "y": 1620.0
+                                },
+                                "Guid": "5442171d-48ac-4e42-b428-835969f26766",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1580.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "123cd549-4e41-4806-a66b-19e0801bd0a3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1100.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "5d432dce-d8a9-4d12-8edd-7a3d6a9eecaa",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1660.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "dba81169-9ee9-41f4-b484-144758f5a06f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 1620.0
+                        },
+                        "Guid": "f2720576-703d-4dd4-9d34-b14b246118e7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_OverrideGamePlayControl",
+                    "Name": "OverrideGamePlayControl",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2300.0,
+                            "y": 1260.0
+                        },
+                        "Guid": "4d201aed-48ed-4d9a-a289-77a58ffd177d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerSetForm",
+                    "Name": "TriggerDefaultForm",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"FormType\":602145082}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2300.0,
+                            "y": 1340.0
+                        },
+                        "Guid": "23454f3d-f8ab-4d34-9063-993b9a13dd7e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_OrbCollect",
+                    "CtorArgs": "{\"States\":[\"ZeroVelocity_OrbCollect\",\"TriggerDefaultForm\",\"TriggerOrbCollectCameraProxySettings\",\"OrbCollect\",\"DisableGravityOnEnter\",\"EnableGravityOnExit\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CheckNotCollectingOrb",
+                            "ToState": "Group_CharacterMain",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1200.0,
+                                    "y": 1360.0
+                                },
+                                "Guid": "000f4f17-4b2f-4c02-9ee7-364fe1745928",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1580.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "123cd549-4e41-4806-a66b-19e0801bd0a3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1100.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "5d432dce-d8a9-4d12-8edd-7a3d6a9eecaa",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1660.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "dba81169-9ee9-41f4-b484-144758f5a06f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 1360.0
+                        },
+                        "Guid": "d8adf278-e08f-4253-99c3-d2c651107c15",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_ClearCameraProxySettings",
+                    "Name": "ClearCameraProxySettings",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1800.0,
+                            "y": 1460.0
+                        },
+                        "Guid": "46a6268e-6452-49b6-a3ac-6bfe8145701c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_OrbCollect",
+                    "Name": "OrbCollect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterOrbCollectionAnimation\",\"GhostedOrbCollectionAnimationDefinition\":\"CharacterGhostedOrbCollectionAnimation\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1800.0,
+                            "y": 1360.0
+                        },
+                        "Guid": "5345aa42-710e-4dbe-8ee1-45144d29e350",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerGravity",
+                    "Name": "DisableGravityOnEnter",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"GravityEnabled\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1800.0,
+                            "y": 1260.0
+                        },
+                        "Guid": "3a9a5e74-7d42-400b-a686-007051fa725f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerGravity",
+                    "Name": "EnableGravityOnExit",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"GravityEnabled\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1800.0,
+                            "y": 1160.0
+                        },
+                        "Guid": "78b84153-addd-49bb-bc1f-a264e32dd29e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerClearHomingTarget",
+                    "Name": "TriggerClearHomingTarget ",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"StartGracePeriod\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -320.0,
+                            "y": -440.0
+                        },
+                        "Guid": "9d81e200-632b-4627-b4e9-9c850ce22af3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_ResetAllAnimParameters",
+                    "Name": "ResetAllAnimParameters",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1660.0,
+                            "y": -700.0
+                        },
+                        "Guid": "dfae9f99-068c-4777-bb79-c8b0699ddee4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_EnteringLevel",
+                    "CtorArgs": "{\"States\":[\"ZeroVelocity_OrbCollect\",\"TriggerDefaultForm\",\"ClearCameraProxySettings\",\"IsEnteringLevelAnimation\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CheckIsNotEnteringLevel",
+                            "ToState": "Group_CharacterMain",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1200.0,
+                                    "y": 1080.0
+                                },
+                                "Guid": "0ae0e16b-95a5-4f3f-ae80-bb5fd7d29726",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1580.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "123cd549-4e41-4806-a66b-19e0801bd0a3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1100.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "5d432dce-d8a9-4d12-8edd-7a3d6a9eecaa",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1660.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "dba81169-9ee9-41f4-b484-144758f5a06f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 1080.0
+                        },
+                        "Guid": "2cf94740-be87-457a-bec7-f5587b98297b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "IsEnteringLevelAnimation",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterIsEnteringLevelAnimation\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 1260.0
+                        },
+                        "Guid": "3ae9e523-19fe-466e-a95a-c4a4bdcc3df1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerSetCameraProxySettings",
+                    "Name": "TriggerOrbCollectCameraProxySettings",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"TargetSettingsData\":\"OrbCollectCameraProxySettings\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2300.0,
+                            "y": 1560.0
+                        },
+                        "Guid": "1579f98f-ae17-464a-b4f4-353b2ab65264",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_Start",
+                    "CtorArgs": "{\"States\":[\"DisableGravityOnEnter\",\"EnableGravityOnExit\",\"ZeroVelocity_OrbCollect\",\"TriggerEnableRenderers\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "SkipLevelEnterAndSwapIn",
+                            "ToState": "SetSwapInIsInProgressFalse",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -2200.0,
+                                    "y": 800.0
+                                },
+                                "Guid": "95e48e1d-e99e-47c1-a37a-270f7414fc24",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "CheckIsEnteringLevel",
+                            "ToState": "Group_EnteringLevel",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": 1080.0
+                                },
+                                "Guid": "bf95e6dd-cd53-4a67-af30-7713e627c78a",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "SkipLevelEnterAndNotSwapIn",
+                            "ToState": "Group_CharacterMain",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -2200.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "f9f44e20-31de-4646-ae72-e94483752483",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2800.0,
+                            "y": 1080.0
+                        },
+                        "Guid": "35719da5-a929-41da-aef3-cd76bddcaf24",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_KnockbackRecovery",
+                    "Name": "KnockbackRecovery",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-1159119419}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ShouldRespawn",
+                            "ToState": "Group_Respawn",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -800.0,
+                                    "y": 160.0
+                                },
+                                "Guid": "67efb064-1e59-43ac-a1dd-2abc3b51504e",
+                                "InDirection": 1,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1200.0,
+                                            "y": -20.0
+                                        },
+                                        "Guid": "0fb05f3d-7cc5-45b7-b353-bedab0e6b5ac",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 580.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "ef44e49a-eaf1-4361-b7ed-d48bf6d7b4c4",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 60.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "86b0c88d-bee5-420b-bdb0-7ef31af597b0",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -800.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "f61ca4ad-3e9d-42a4-a49b-061a41fd3fcb",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "AbilityEndedKnockback",
+                            "ToState": "Group_CharacterMain",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1200.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "9c3ed687-fd12-41bc-bd75-559be80097fd",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1200.0,
+                                            "y": -20.0
+                                        },
+                                        "Guid": "0fb05f3d-7cc5-45b7-b353-bedab0e6b5ac",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1580.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "123cd549-4e41-4806-a66b-19e0801bd0a3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1100.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "5d432dce-d8a9-4d12-8edd-7a3d6a9eecaa",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1660.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "dba81169-9ee9-41f4-b484-144758f5a06f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": -160.0
+                        },
+                        "Guid": "3f479a6b-a36c-4f46-8d1b-3f10fd77b597",
+                        "InDirection": 1,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "DyingBegin",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "TriggeredKnockbackDying",
+                            "ToState": "KnockbackDying",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": 920.0
+                                },
+                                "Guid": "10ba7692-8032-49e1-8ca4-efa0fbe91ac9",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "DyingNoKnockback",
+                            "ToState": "StateGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": 700.0
+                                },
+                                "Guid": "81d12121-19bb-4c69-ad5f-b20b81408d43",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 920.0
+                        },
+                        "Guid": "703a86fb-d0f5-4a5a-8298-35dfb6ec843e",
+                        "InDirection": 3,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_Knockback",
+                    "Name": "KnockbackDying",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterKnockbackDyingAnimation\",\"AbilityType\":-1159119419}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "KnockbackMinDurationExceeded2",
+                            "ToState": "Group_Dying",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": 920.0
+                                },
+                                "Guid": "929ae285-b083-44f3-ae7b-7f2cc6ef5dc7",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 920.0
+                        },
+                        "Guid": "1fecf21f-4e65-40bd-acbd-df5aaeabfb65",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "EnterDyingNoKnockback",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterEnterDyingNoKnockbackAnimation\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 840.0
+                        },
+                        "Guid": "322bdeb4-4a6a-456e-a081-fa83c8a8f5e1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup",
+                    "CtorArgs": "{\"States\":[\"TriggerDefaultForm\",\"EnterDyingNoKnockback\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToDying",
+                            "ToState": "Group_Dying",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": 700.0
+                                },
+                                "Guid": "02b83938-70cd-41d0-9346-8515c4f6886e",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 700.0
+                        },
+                        "Guid": "11409df2-3658-4d50-b139-96e1c15436e4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "SetSwapInIsInProgressFalse",
+                    "CtorArgs": "{\"Name\":\"SwapInIsInProgress\",\"Node\":\"\",\"FSM\":\"\",\"Value\":false}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "Group_CharacterMain",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1700.0,
+                                    "y": 560.0
+                                },
+                                "Guid": "d376003b-cb1e-4262-95df-e8d623f861ed",
+                                "InDirection": 4,
+                                "OutDirection": 3,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -1660.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "dba81169-9ee9-41f4-b484-144758f5a06f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1700.0,
+                            "y": 660.0
+                        },
+                        "Guid": "4992521e-8f7a-4c3f-8fca-8aaf867cb5f3",
+                        "InDirection": 4,
+                        "OutDirection": 3,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "SwapOutGroup",
+                    "CtorArgs": "{\"States\":[\"SwapOutEffect\",\"DisableGravityOnEnter\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "SwapOutTimeout",
+                            "ToState": "FSMStateSetBool",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 200.0,
+                                    "y": 1820.0
+                                },
+                                "Guid": "b712975f-ad20-45dc-b665-871752a06a13",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 1820.0
+                        },
+                        "Guid": "8ff3c377-0568-4fe7-9821-6262f741dd61",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "SwapOutEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterTeleportOutAnimation\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 1960.0
+                        },
+                        "Guid": "c4df8b8d-121b-4932-ab8b-b262677aa915",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "FSMStateSetBool",
+                    "CtorArgs": "{\"Name\":\"SwapOutIsInProgress\",\"Node\":\"\",\"FSM\":\"\",\"Value\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 1820.0
+                        },
+                        "Guid": "efe27d62-e263-4fb6-bc1e-4a71a1e02938",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RespawnAnim",
+                    "CtorArgs": "{\"States\":[\"PostRespawnEffect\",\"DisableGravityOnEnter\",\"EnableGravityOnExit\",\"SetRespawnAnimPlayingTrue\",\"ClearCameraProxySettings\",\"ResetAllAnimParameters\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "RespawnTimeoutToMain",
+                            "ToState": "SetRespawnAnimPlayingFalse",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 200.0,
+                                    "y": 220.0
+                                },
+                                "Guid": "86ab5581-88f5-4aba-a687-4c942b3d78aa",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 220.0
+                        },
+                        "Guid": "a3c99e1b-addf-4c57-aaef-54d18cf3ac1e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "SetRespawnAnimPlayingTrue",
+                    "CtorArgs": "{\"Name\":\"RespawnAnimationPlaying\",\"Node\":\"\",\"FSM\":\"\",\"Value\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1800.0,
+                            "y": 1560.0
+                        },
+                        "Guid": "89d4b093-84a1-446d-a4ad-bdf66e1fc4ff",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "SetRespawnAnimPlayingFalse",
+                    "CtorArgs": "{\"Name\":\"RespawnAnimationPlaying\",\"Node\":\"\",\"FSM\":\"\",\"Value\":false}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AlwaysToMain",
+                            "ToState": "Group_CharacterMain",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1200.0,
+                                    "y": 220.0
+                                },
+                                "Guid": "6049ed62-4ebd-4ed7-a19a-4498e4f136aa",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1580.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "123cd549-4e41-4806-a66b-19e0801bd0a3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1100.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "5d432dce-d8a9-4d12-8edd-7a3d6a9eecaa",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1660.0,
+                                            "y": 500.0
+                                        },
+                                        "Guid": "dba81169-9ee9-41f4-b484-144758f5a06f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 220.0
+                        },
+                        "Guid": "53717738-722a-485e-a86a-036eab0e6e11",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "PostRespawnEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterTeleportInPostRespawnAnimation\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -320.0,
+                            "y": 560.0
+                        },
+                        "Guid": "10aa75f1-2ffa-43c2-b8e3-0237fbb976fe",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerEnableRenderers",
+                    "Name": "TriggerEnableRenderers",
+                    "CtorArgs": "{\"ActiveEventType\":2,\"RenderersEnabled\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2800.0,
+                            "y": 1280.0
+                        },
+                        "Guid": "56fa0fcc-5888-4645-b447-5ec6362d3996",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -240.0,
+                    "y": -440.0
+                },
+                "Guid": "6d67b75e-5269-4cf7-a114-b32b296538d2",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": [
+                {
+                    "Position": {
+                        "x": 660.0,
+                        "y": 1780.0
+                    },
+                    "Guid": "046f7746-49d2-4b61-af5c-f29d73ccac54",
+                    "InDirection": 0,
+                    "OutDirection": 0,
+                    "Flipped": false,
+                    "Title": "Character expected to be closed after this, so no further FSM transitions.",
+                    "Size": {
+                        "x": 480.0,
+                        "y": 200.0
+                    },
+                    "Colour": {
+                        "r": 0.3072962760925293,
+                        "g": 0.37735849618911745,
+                        "b": 0.28657886385917666,
+                        "a": 1.0
+                    },
+                    "MoveOverlaidNodes": true
+                }
+            ]
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

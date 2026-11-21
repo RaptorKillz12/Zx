@@ -1,0 +1,626 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_Rolling",
+            "DefaultState": "Group_EnterRolling",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "AlwaysToRolling",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1460.0,
+                            "y": -60.0
+                        },
+                        "Guid": "0da4bf55-8c99-4af4-a22b-a8d13820343b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BrakeRollingEnter",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityBrakingRolling\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2540.0,
+                            "y": -60.0
+                        },
+                        "Guid": "45283fac-2ead-4354-8172-a9625cd84302",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BrakeRollingExit",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityBrakingRolling\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3520.0,
+                            "y": 60.0
+                        },
+                        "Guid": "ff3eb239-605d-48be-831e-0277aa9b3889",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "GroundSpinDashCharge",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilitySpinDashCharge\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2540.0,
+                            "y": 300.0
+                        },
+                        "Guid": "e2a74a23-7082-4e93-8331-d7ec04e86dd0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckFloat",
+                    "Name": "CheckSpinDashChargeTime",
+                    "CtorArgs": "{\"Name\":\"SpinDashChargeTime\",\"Node\":\"\",\"FSM\":\"\",\"TriggerPoint\":0.0,\"Tolerance\":0.0,\"Compare\":\"GreaterThan\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2540.0,
+                            "y": 100.0
+                        },
+                        "Guid": "588b9c62-1237-4df9-ac10-e0bdc03c3ae4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionHasFinished",
+                    "Name": "SpinDashHasFinished",
+                    "CtorArgs": "{\"State\":\"SubFSM_GroundSpinDash\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3520.0,
+                            "y": 340.0
+                        },
+                        "Guid": "08fe71f7-794a-40e4-86f8-6d8c40377486",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "HomingAttackGroundRollingTriggered",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityHomingAttackGroundRolling\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3520.0,
+                            "y": 420.0
+                        },
+                        "Guid": "80025637-1468-4bd3-bd57-225b23722b0a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "HomingAttackGroundRollingEnter",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"SpinDashHasFinished\",\"HomingAttackGroundRollingTriggered\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3520.0,
+                            "y": 520.0
+                        },
+                        "Guid": "9c540e84-c91b-4bb7-b24d-508d2ee508cd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "HomingAttackGroundRollingExit",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"HomingAttackGroundRollingTriggered\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4460.0,
+                            "y": 520.0
+                        },
+                        "Guid": "062bf196-9b4b-4a7f-9fea-0beb228e8e94",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "SpinDashExit",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"SpinDashHasFinished\",\"HomingAttackGroundRollingExit\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3520.0,
+                            "y": 160.0
+                        },
+                        "Guid": "a276c258-7130-42be-82da-19516a10a8d5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "CharacterState_GroundRollingMovement",
+                    "Name": "GroundRolling",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterGroundStateAnimation\",\"AbilityType\":1948590319}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BrakeRollingEnter",
+                            "ToState": "Group_BrakingRolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2540.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "45283fac-2ead-4354-8172-a9625cd84302",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "CheckSpinDashChargeTime",
+                            "ToState": "Group_GroundSpinDash",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2540.0,
+                                    "y": 100.0
+                                },
+                                "Guid": "588b9c62-1237-4df9-ac10-e0bdc03c3ae4",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "GroundSpinDashCharge",
+                            "ToState": "Group_GroundSpinDash",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2540.0,
+                                    "y": 300.0
+                                },
+                                "Guid": "e2a74a23-7082-4e93-8331-d7ec04e86dd0",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1900.0,
+                            "y": -60.0
+                        },
+                        "Guid": "bc471c41-13f1-4ad2-b7f0-4983ec2ada2a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_EnterRolling",
+                    "CtorArgs": "{\"States\":[\"TriggerAbilityClimbGroundDisable\",\"TriggerAbilityBrakingRolling\",\"TriggerAbilitySpinDashCharge\",\"DisableHomingAttackGroundRolling\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AlwaysToRolling",
+                            "ToState": "GroundRolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1460.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "0da4bf55-8c99-4af4-a22b-a8d13820343b",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -60.0
+                        },
+                        "Guid": "31ba9df3-a25a-4986-9993-4a57a9ea9db5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityClimbGroundDisable",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityClimbingGroundKnuckles\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 180.0
+                        },
+                        "Guid": "f6e61c29-d47a-43f3-9187-11c07f2fbef9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityBrakingRolling",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityBrakingRolling\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 300.0
+                        },
+                        "Guid": "f7ae5629-5521-41ab-868f-7b2d53875e71",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCameraGroundedLeave",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"CameraTypeOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3020.0,
+                            "y": -260.0
+                        },
+                        "Guid": "8e812485-ce35-4c45-945c-55a050f967b0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_BrakingRolling",
+                    "CtorArgs": "{\"States\":[\"GroundBrakingRolling\",\"TriggerCameraBraking\",\"TriggerCameraGroundedLeave\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BrakeRollingExit",
+                            "ToState": "Group_EnterRolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3520.0,
+                                    "y": 60.0
+                                },
+                                "Guid": "ff3eb239-605d-48be-831e-0277aa9b3889",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3880.0,
+                                            "y": -100.0
+                                        },
+                                        "Guid": "427d292a-8479-4d4a-ad26-c94f880639d2",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1020.0,
+                                            "y": -100.0
+                                        },
+                                        "Guid": "4ea3504c-7c46-4727-8d73-3e6da1bf587c",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3020.0,
+                            "y": 60.0
+                        },
+                        "Guid": "40f59494-4b1a-4fa5-8acf-f3c462229551",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCameraBraking",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"CameraTypeOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3020.0,
+                            "y": -360.0
+                        },
+                        "Guid": "e5170f80-1a58-4220-81d5-c40fad351e18",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_GroundBraking",
+                    "Name": "GroundBrakingRolling",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-2081778424}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3020.0,
+                            "y": -40.0
+                        },
+                        "Guid": "7a9bfc93-1932-44da-b0f6-32a05f5e7989",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilitySpinDashCharge",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilitySpinDashCharge\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 420.0
+                        },
+                        "Guid": "f2493572-cde7-4fc3-be7a-5cb57fb373c3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_GroundSpinDash",
+                    "CtorArgs": "{\"States\":[\"SubFSM_GroundSpinDash\",\"DisableHomingAttackGroundRunning\",\"TriggerHomingAttackGroundRolling\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HomingAttackGroundRollingEnter",
+                            "ToState": "HomingAttackGroundRolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3520.0,
+                                    "y": 520.0
+                                },
+                                "Guid": "9c540e84-c91b-4bb7-b24d-508d2ee508cd",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "SpinDashExit",
+                            "ToState": "Group_EnterRolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3520.0,
+                                    "y": 160.0
+                                },
+                                "Guid": "a276c258-7130-42be-82da-19516a10a8d5",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3880.0,
+                                            "y": -100.0
+                                        },
+                                        "Guid": "427d292a-8479-4d4a-ad26-c94f880639d2",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1020.0,
+                                            "y": -100.0
+                                        },
+                                        "Guid": "4ea3504c-7c46-4727-8d73-3e6da1bf587c",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3020.0,
+                            "y": 300.0
+                        },
+                        "Guid": "2ab1a469-9063-451c-b9ad-8fb14c986add",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "SubFSM_GroundSpinDash",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMCharacter_GroundSpinDash\",\"ResetStateOnEnter\":true,\"DefaultState\":\"Group_GroundSpinDash\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3020.0,
+                            "y": 500.0
+                        },
+                        "Guid": "72c9a01a-0619-4042-a69f-045faaad96df",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_HomingAttackGroundRolling",
+                    "Name": "HomingAttackGroundRolling",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterRollStateAnimation\",\"AbilityType\":1767124746}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HomingAttackGroundRollingExit",
+                            "ToState": "Group_EnterRolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 4460.0,
+                                    "y": 520.0
+                                },
+                                "Guid": "062bf196-9b4b-4a7f-9fea-0beb228e8e94",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3880.0,
+                                            "y": -100.0
+                                        },
+                                        "Guid": "427d292a-8479-4d4a-ad26-c94f880639d2",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1020.0,
+                                            "y": -100.0
+                                        },
+                                        "Guid": "4ea3504c-7c46-4727-8d73-3e6da1bf587c",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4000.0,
+                            "y": 520.0
+                        },
+                        "Guid": "f97e03c4-19ac-4328-9a3c-612d2cf59c87",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerHomingAttackGroundRolling",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackGroundRolling\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 180.0
+                        },
+                        "Guid": "a93f7d62-0b7a-4869-8d5c-cc93f55ad22b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableHomingAttackGroundRunning",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackGroundRunning\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 420.0
+                        },
+                        "Guid": "32b386d0-ab4d-478e-9821-dc89c0718574",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableHomingAttackGroundRolling",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackGroundRolling\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 300.0
+                        },
+                        "Guid": "00e313c7-3d80-4065-b19b-3f3d1ab79d1c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -160.0,
+                    "y": -100.0
+                },
+                "Guid": "b5171738-dfc7-4690-b819-8412ae7e2837",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

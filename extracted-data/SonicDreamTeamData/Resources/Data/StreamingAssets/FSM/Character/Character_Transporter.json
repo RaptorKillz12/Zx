@@ -1,0 +1,264 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_Transporter",
+            "DefaultState": "Group_TransporterEnter",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "Triggered_TransporterProximity",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityTransporterProximity\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2100.0,
+                            "y": 20.0
+                        },
+                        "Guid": "9af9cb83-7cc4-4faf-9895-d33eb835eb20",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_TransporterAttach",
+                    "Name": "TransporterAttach",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1180.0,
+                            "y": 20.0
+                        },
+                        "Guid": "a4d73f28-16d8-4539-9741-139c98d8dfd4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "CharacterState_TriggerResetAirAbilities",
+                    "Name": "TriggerResetAirAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1640.0,
+                            "y": -420.0
+                        },
+                        "Guid": "5b15f07e-5039-46d0-8680-b3dbae37f919",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_TransporterTriggers",
+                    "CtorArgs": "{\"States\":[\"TriggerGamePlayControl\",\"TriggerDisableAbilities\",\"TriggerResetAirAbilities\",\"TriggerAbilityTransporter\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1640.0,
+                            "y": -180.0
+                        },
+                        "Guid": "8c4704db-ac59-4442-a357-3c9169c1247f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerGamePlayControl",
+                    "Name": "TriggerGamePlayControl",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ControlLockTime\":0.0,\"TimeCategory\":1739680676}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1640.0,
+                            "y": -520.0
+                        },
+                        "Guid": "578bfd4b-d226-4ff9-89bc-6bbced9f8403",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerDisableAbilities",
+                    "Name": "TriggerDisableAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ExceptionList\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1640.0,
+                            "y": -320.0
+                        },
+                        "Guid": "59023c23-28bb-4f30-85d6-2622ce66027b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_TransporterProximity",
+                    "CtorArgs": "{\"States\":[\"TransporterHomingProximity\",\"Group_TransporterTriggers\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "TransporterAttach",
+                            "ToState": "TransporterMovement",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1180.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "a4d73f28-16d8-4539-9741-139c98d8dfd4",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1640.0,
+                            "y": 20.0
+                        },
+                        "Guid": "376ab5be-7666-43b0-9166-d16eea66d35c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "TransporterEnter",
+                    "CtorArgs": "{\"Name\":\"TransporterActive\",\"Node\":\"\",\"FSM\":\"\",\"Value\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2560.0,
+                            "y": 160.0
+                        },
+                        "Guid": "751924f3-d112-4d09-8c7f-3fe83fa8b174",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_TransporterEnter",
+                    "CtorArgs": "{\"States\":[\"TransporterEnter\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Triggered_TransporterProximity",
+                            "ToState": "Group_TransporterProximity",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -2100.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "9af9cb83-7cc4-4faf-9895-d33eb835eb20",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2560.0,
+                            "y": 20.0
+                        },
+                        "Guid": "3031ab43-777d-48ad-bb55-b3dc3b620547",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TransporterHomingProximity",
+                    "Name": "TransporterHomingProximity",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-4176318}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1640.0,
+                            "y": 160.0
+                        },
+                        "Guid": "a858749c-6490-4627-8e7b-b221822dd4f0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TransporterMovement",
+                    "Name": "TransporterMovement",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterTransporterStateAnimation\",\"AbilityType\":-1516833411}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -720.0,
+                            "y": 20.0
+                        },
+                        "Guid": "1caeb7e2-1bf5-4ec4-9a1a-62bac85255e7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityTransporter",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementTransporter\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1180.0,
+                            "y": -520.0
+                        },
+                        "Guid": "c8667d7a-416a-41e3-8b17-2294026c6682",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -160.0,
+                    "y": -40.0
+                },
+                "Guid": "d3133b3f-7c1c-4eb2-95ad-94c7b318a3fe",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 1626.0,
+                    "y": -98.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,184 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossCrab_Phase3",
+            "DefaultState": "StateGroup_IntroAnimation",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "Timeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":3.0,\"VariableName\":\"\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1040.0,
+                            "y": -160.0
+                        },
+                        "Guid": "24897f0e-4ce1-4443-9569-0ad3baf1cf11",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "Movement",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossCrab_CalculateMovement_Phase3\",\"ResetStateOnEnter\":true,\"DefaultState\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -520.0,
+                            "y": 340.0
+                        },
+                        "Guid": "fe7b35b5-b4db-48b5-93e5-6f9bbfceaef8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableScuttle",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_Scuttle_Phase3\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -520.0,
+                            "y": 60.0
+                        },
+                        "Guid": "f73542ab-b59a-4452-aba4-91dd9bd6adda",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableScuttle",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_Scuttle_Phase3\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -520.0,
+                            "y": 200.0
+                        },
+                        "Guid": "ccd8ca7e-07f7-4b0c-9343-a8aad484fa6f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "MovementAndAbilities",
+                    "CtorArgs": "{\"States\":[\"EnableScuttle\",\"DisableScuttle\",\"Movement\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -520.0,
+                            "y": -120.0
+                        },
+                        "Guid": "7301c84f-aa92-4b00-a5d2-9f5a5d660b56",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "IntroAnimation",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossRunaway\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1540.0,
+                            "y": -60.0
+                        },
+                        "Guid": "8e920664-0c33-45b7-aa95-bb51a91d81cf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_IntroAnimation",
+                    "CtorArgs": "{\"States\":[\"IntroAnimation\",\"TriggerBossEffect\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Timeout",
+                            "ToState": "MovementAndAbilities",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1040.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "24897f0e-4ce1-4443-9569-0ad3baf1cf11",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1540.0,
+                            "y": -220.0
+                        },
+                        "Guid": "452257d0-af6f-43d1-833f-e92ebee5b5bf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerBossEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-315201363}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1540.0,
+                            "y": 200.0
+                        },
+                        "Guid": "ce55a4a3-574e-4e16-83f2-41c795a4cb0a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

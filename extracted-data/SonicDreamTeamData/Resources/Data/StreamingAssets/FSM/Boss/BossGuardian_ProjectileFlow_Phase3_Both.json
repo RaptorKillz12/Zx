@@ -1,0 +1,860 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossGuardian_ProjectileFlow_Phase3_Both",
+            "DefaultState": "ResetGuardianProjectileCount",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -780.0,
+                            "y": -60.0
+                        },
+                        "Guid": "fe05c6b9-2efc-4505-a38c-84f58b311739",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "AbilityFinished",
+                    "CtorArgs": "{\"AbilityType\":-1384046022}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2020.0,
+                            "y": -60.0
+                        },
+                        "Guid": "6279a076-b24a-420d-85c8-9b52db78fc5b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always2",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 220.0,
+                            "y": -240.0
+                        },
+                        "Guid": "b725a069-8d71-4564-b677-4bf1c23b5b5e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "Timeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":1.0,\"VariableName\":\"FireProjectileWindingUpRow\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 180.0,
+                            "y": -60.0
+                        },
+                        "Guid": "89b16cec-10dd-4f8c-8c55-f694415d59b3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always3",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1080.0,
+                            "y": -60.0
+                        },
+                        "Guid": "624aa102-38d3-4be8-8f90-f1dbf6263e10",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always4",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1720.0,
+                            "y": -60.0
+                        },
+                        "Guid": "f316adb8-dec8-4980-906e-20dbbb7d7828",
+                        "InDirection": 3,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always5",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -780.0,
+                            "y": 440.0
+                        },
+                        "Guid": "add5e6ed-88a0-4675-8c36-b0b75c53a6ac",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always6",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 220.0,
+                            "y": 260.0
+                        },
+                        "Guid": "d971019f-740e-4c0f-b951-5d8408868a5b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "Timeout2",
+                    "CtorArgs": "{\"TimeoutSeconds\":1.0,\"VariableName\":\"FireProjectileWindingUpCircle\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 180.0,
+                            "y": 440.0
+                        },
+                        "Guid": "80529025-d778-4af1-8c79-45b5d075c981",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always7",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1080.0,
+                            "y": 440.0
+                        },
+                        "Guid": "867809d9-124b-41cb-8dcb-230017056c12",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "AbilityFinished2",
+                    "CtorArgs": "{\"AbilityType\":-815540141}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2020.0,
+                            "y": 440.0
+                        },
+                        "Guid": "e7b0c8df-b041-4fb9-9f1c-2196adcb178b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always8",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1700.0,
+                            "y": 440.0
+                        },
+                        "Guid": "dabd4f9e-971f-47ba-bdb1-6dbdf02a5cc6",
+                        "InDirection": 3,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_WindUpAttack",
+                    "Name": "WindingUpAttack",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-1384046022}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Timeout",
+                            "ToState": "SetAttackIsWoundUp",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 180.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "89b16cec-10dd-4f8c-8c55-f694415d59b3",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -260.0,
+                            "y": -60.0
+                        },
+                        "Guid": "af30a990-9837-4514-9e28-7a9c4c893037",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "Attacking",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1560.0,
+                            "y": -240.0
+                        },
+                        "Guid": "b0d1464f-b317-4893-a932-4185db3974b5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetAttackFlow",
+                    "Name": "SetAttackFlowStateRow",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-1384046022}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1240.0,
+                            "y": -180.0
+                        },
+                        "Guid": "8cca82a9-6bff-4319-9504-a798a6b15853",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetAttackIsWindingUp",
+                    "Name": "SetAttackIsWindingUpRow",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-1384046022}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always2",
+                            "ToState": "WindingUpAttack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 220.0,
+                                    "y": -240.0
+                                },
+                                "Guid": "b725a069-8d71-4564-b677-4bf1c23b5b5e",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 600.0,
+                                            "y": -120.0
+                                        },
+                                        "Guid": "f7fc1285-06b7-48fb-9c18-a9c792c877f2",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -260.0,
+                                            "y": -120.0
+                                        },
+                                        "Guid": "21c08b15-8a5e-476f-ab4f-529c4767d477",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -260.0,
+                            "y": -240.0
+                        },
+                        "Guid": "22b03851-e8e5-4d02-b56b-aa673dd59227",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetAttackIsWoundUp",
+                    "Name": "SetAttackIsWoundUp",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossGHEnableSummonAnimation\",\"AbilityType\":-1384046022}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always3",
+                            "ToState": "AttackRow",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1080.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "624aa102-38d3-4be8-8f90-f1dbf6263e10",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 620.0,
+                            "y": -60.0
+                        },
+                        "Guid": "f1269c9e-04c3-43b6-8365-6de369403aca",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetAttackAnimationStarted",
+                    "Name": "SetAttackAnimationStartedRow",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossGHEnableDisableThrowAnimation\",\"AbilityType\":-1384046022}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1560.0,
+                            "y": -360.0
+                        },
+                        "Guid": "889db045-2989-436d-8661-dd74fdeabc3f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "AttackRow",
+                    "CtorArgs": "{\"States\":[\"Attacking\",\"SetAttackAnimationStartedRow\",\"DisableFireProjectilesRow\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AbilityFinished",
+                            "ToState": "SetAttackFlowGroupRow",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2020.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "6279a076-b24a-420d-85c8-9b52db78fc5b",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2400.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "62611876-ef43-4c6c-a055-e7ca1a9dca3c",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1240.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "8cfb2837-bbab-4086-9b75-663c10cd560a",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1560.0,
+                            "y": -60.0
+                        },
+                        "Guid": "474e7e22-b7f8-4d9b-997c-dca6e86cb7d1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableFireProjectilesRow",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_FireProjectiles_Phase3_Rows\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1240.0,
+                            "y": -320.0
+                        },
+                        "Guid": "1fa29434-17e4-417b-b58b-a14a6ea1cfc0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableFireProjectilesRow",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_FireProjectiles_Phase3_Rows\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1560.0,
+                            "y": -500.0
+                        },
+                        "Guid": "93ee7582-7efe-4229-8b4e-38f11d1b5cf3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "SetAttackFlowGroupRow",
+                    "CtorArgs": "{\"States\":[\"SetAttackFlowStateRow\",\"EnableFireProjectilesRow\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "SetAttackIsWindingUpRow",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -780.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "fe05c6b9-2efc-4505-a38c-84f58b311739",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1240.0,
+                            "y": -60.0
+                        },
+                        "Guid": "1f5e7ee6-597f-48b9-b115-69ce1faa08db",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_ResetGuardianProjectileCount",
+                    "Name": "ResetGuardianProjectileCount",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-1384046022}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always4",
+                            "ToState": "SetAttackFlowGroupRow",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1720.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "f316adb8-dec8-4980-906e-20dbbb7d7828",
+                                "InDirection": 3,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1720.0,
+                            "y": -180.0
+                        },
+                        "Guid": "2cb18738-d096-416f-b956-9132a621105c",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "SetAttackFlowGroupCircle",
+                    "CtorArgs": "{\"States\":[\"EnableFireProjectilesCircle\",\"SetAttackFlowStateCircle\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always5",
+                            "ToState": "SetAttackIsWindingUpCircle",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -780.0,
+                                    "y": 440.0
+                                },
+                                "Guid": "add5e6ed-88a0-4675-8c36-b0b75c53a6ac",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1240.0,
+                            "y": 440.0
+                        },
+                        "Guid": "b34c14b3-d35a-4928-9cd2-c1dbbb09f72a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetAttackFlow",
+                    "Name": "SetAttackFlowStateCircle",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-815540141}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1240.0,
+                            "y": 320.0
+                        },
+                        "Guid": "de746b29-4100-490b-9183-e0d8bda0eac8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableFireProjectilesCircle",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_FireProjectiles\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1240.0,
+                            "y": 200.0
+                        },
+                        "Guid": "4d450eb8-e39f-4315-b460-aa8a5ab6bd4c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetAttackIsWindingUp",
+                    "Name": "SetAttackIsWindingUpCircle",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-815540141}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always6",
+                            "ToState": "WindingUpAttack2",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 220.0,
+                                    "y": 260.0
+                                },
+                                "Guid": "d971019f-740e-4c0f-b951-5d8408868a5b",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 600.0,
+                                            "y": 380.0
+                                        },
+                                        "Guid": "c61f8111-7e2a-45d9-8c0b-334594e0591d",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -260.0,
+                                            "y": 380.0
+                                        },
+                                        "Guid": "e82c0406-c94d-4674-8ef9-c2d67da2c879",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -260.0,
+                            "y": 260.0
+                        },
+                        "Guid": "d1956f8b-b579-4abe-81dc-7ebd675a5b68",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_WindUpAttack",
+                    "Name": "WindingUpAttack2",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-815540141}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Timeout2",
+                            "ToState": "SetAttackIsWoundUp2",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 180.0,
+                                    "y": 440.0
+                                },
+                                "Guid": "80529025-d778-4af1-8c79-45b5d075c981",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -260.0,
+                            "y": 440.0
+                        },
+                        "Guid": "21f8889d-8fff-4dfb-b792-f36b7d9d3066",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetAttackIsWoundUp",
+                    "Name": "SetAttackIsWoundUp2",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossGHEnableSummonAnimation\",\"AbilityType\":-815540141}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always7",
+                            "ToState": "AttackCircle",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1080.0,
+                                    "y": 440.0
+                                },
+                                "Guid": "867809d9-124b-41cb-8dcb-230017056c12",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 620.0,
+                            "y": 440.0
+                        },
+                        "Guid": "173aab13-51a8-425a-98bc-ca83852d7e3d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "AttackCircle",
+                    "CtorArgs": "{\"States\":[\"Attacking\",\"SetAttackAnimationStartedCircle\",\"DisableFireProjectilesCircle\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AbilityFinished2",
+                            "ToState": "SetAttackFlowGroupRow",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2020.0,
+                                    "y": 440.0
+                                },
+                                "Guid": "e7b0c8df-b041-4fb9-9f1c-2196adcb178b",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2400.0,
+                                            "y": 180.0
+                                        },
+                                        "Guid": "a9b85e65-9700-4655-aaeb-79f4296936d1",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -1240.0,
+                                            "y": 180.0
+                                        },
+                                        "Guid": "d9e6c54c-9883-4368-a8f9-98f0a3786cd0",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1560.0,
+                            "y": 440.0
+                        },
+                        "Guid": "8ea660a2-deb8-4419-8e11-7d5ce63c8ac1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableFireProjectilesCircle",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_FireProjectiles\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1560.0,
+                            "y": 320.0
+                        },
+                        "Guid": "a855b4d6-bc73-4259-8b65-383d3cda989f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetAttackAnimationStarted",
+                    "Name": "SetAttackAnimationStartedCircle",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossGHEnableDisableThrowAnimation\",\"AbilityType\":-815540141}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1560.0,
+                            "y": 220.0
+                        },
+                        "Guid": "10b3b39f-1378-43bb-b088-a8c204431103",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "ResetGroup",
+                    "CtorArgs": "{\"States\":[\"ResetGuardianProjectileCount\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2140.0,
+                            "y": -180.0
+                        },
+                        "Guid": "df864438-6b03-4d23-a246-d6a789065d0a",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_ResetGuardianProjectileCount",
+                    "Name": "ResetGuardianProjectileCount2",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-815540141}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always8",
+                            "ToState": "SetAttackFlowGroupCircle",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1700.0,
+                                    "y": 440.0
+                                },
+                                "Guid": "dabd4f9e-971f-47ba-bdb1-6dbdf02a5cc6",
+                                "InDirection": 3,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1700.0,
+                            "y": 320.0
+                        },
+                        "Guid": "2b8f6ce6-5a8b-424d-ab11-306d3f30bd03",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_EnableUIControls",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Start",
+                    "CtorArgs": "{\"States\":[\"EnableGameHUD\",\"EnableOnScreenControls\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -260.0
+                        },
+                        "Guid": "7633961b-7250-4347-a95e-166ed3e346d6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateEnableUIContainer",
+                    "Name": "EnableGameHUD",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_game_hud\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -100.0
+                        },
+                        "Guid": "37859e33-9b64-4999-b5c5-e9ae1a8b1a0a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateEnableUIContainer",
+                    "Name": "EnableOnScreenControls",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_on_screen_controls\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": 0.0
+                        },
+                        "Guid": "96943293-f9e5-4235-b932-9b70dcbff688",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "b1b8e665-5615-4f06-b2c1-886e9688c000",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

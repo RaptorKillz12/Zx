@@ -1,0 +1,157 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_FadeTransition",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionHasFadeParameters",
+                    "Name": "HasFadeParameters",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -200.0
+                        },
+                        "Guid": "f8295620-e498-4c86-a34b-458d1fa80f01",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionStateMessage",
+                    "Name": "FadeTransitionComplete",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventFadeTransitionComplete\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -200.0
+                        },
+                        "Guid": "0d9c7d31-78b8-41d7-a4a0-9b2e6c45bb8e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMState",
+                    "Name": "Start",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HasFadeParameters",
+                            "ToState": "FadeTransition",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "f8295620-e498-4c86-a34b-458d1fa80f01",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -200.0
+                        },
+                        "Guid": "e55fd41c-e5aa-4e72-949b-41a7cf79c692",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateFadeTransition",
+                    "Name": "FadeTransition",
+                    "CtorArgs": "{\"EventOnMidpoint\":\"ApplicationStateEventFadeTransitionComplete\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "FadeTransitionComplete",
+                            "ToState": "Start",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "0d9c7d31-78b8-41d7-a4a0-9b2e6c45bb8e",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1080.0,
+                                            "y": -240.0
+                                        },
+                                        "Guid": "b8354f61-aaad-4354-8c7f-9f3c402c6432",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -800.0,
+                                            "y": -240.0
+                                        },
+                                        "Guid": "e74cc441-ffe7-450e-b5db-2a8ef17d5a77",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -200.0
+                        },
+                        "Guid": "0b55172f-f1fe-417f-b64a-53fe0302b940",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "39f3bfc3-0518-4a08-a0e2-58cbdd6255cd",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

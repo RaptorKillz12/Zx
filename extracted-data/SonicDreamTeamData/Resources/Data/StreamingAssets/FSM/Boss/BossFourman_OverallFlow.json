@@ -1,0 +1,280 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourman_OverallFlow",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "BossTransition_HealthCheck",
+                    "Name": "0HP",
+                    "CtorArgs": "{\"Value\":0,\"Evaluation\":4}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 500.0,
+                            "y": -60.0
+                        },
+                        "Guid": "c418d5f7-b9ca-4308-b118-92165b331dc3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionStateMessage",
+                    "Name": "FSMTransitionStateMessage",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventCutsceneDone\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -420.0,
+                            "y": -60.0
+                        },
+                        "Guid": "2ed66f34-551d-4620-98ed-4a4632668fed",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckCutscenePlaying",
+                    "Name": "WaitForCutsceneLoad",
+                    "CtorArgs": "{\"Compare\":\"EitherCausesTransition\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1340.0,
+                            "y": -60.0
+                        },
+                        "Guid": "cabfe1b6-2d56-4508-9d1b-e314ab2921e3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "Phase1FSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossFourman_Phase1\",\"ResetStateOnEnter\":true,\"DefaultState\":\"Entry\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 40.0,
+                            "y": 100.0
+                        },
+                        "Guid": "fe7b35b5-b4db-48b5-93e5-6f9bbfceaef8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Phase1",
+                    "CtorArgs": "{\"States\":[\"Phase1FSM\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "0HP",
+                            "ToState": "StateGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 500.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "c418d5f7-b9ca-4308-b118-92165b331dc3",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 40.0,
+                            "y": -60.0
+                        },
+                        "Guid": "61f440ab-9804-468c-9b40-b3a1e4d4eb94",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup",
+                    "CtorArgs": "{\"States\":[\"Dead\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 960.0,
+                            "y": -60.0
+                        },
+                        "Guid": "a965e996-6277-4411-882e-49efb30a0d50",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "CutsceneFSM",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_LevelCutscene\",\"ResetStateOnEnter\":true,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -880.0,
+                            "y": 220.0
+                        },
+                        "Guid": "5a615d6d-fb8a-4b3d-9576-7cca26270897",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCutscene",
+                    "Name": "Start",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"CutsceneTriggerType\":\"OnBossPhaseChanged\",\"PreloadOnly\":false}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "WaitForCutsceneLoad",
+                            "ToState": "Cutscene",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1340.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "cabfe1b6-2d56-4508-9d1b-e314ab2921e3",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1800.0,
+                            "y": -60.0
+                        },
+                        "Guid": "08dd8315-363a-4e5b-a1b3-024019cf5efc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "Dead",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmanDeathAnimation\",\"TriggerEffect\":609180527}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 960.0,
+                            "y": 100.0
+                        },
+                        "Guid": "aec76bf4-364d-4dfb-8938-71098d7cd8b6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Cutscene",
+                    "CtorArgs": "{\"States\":[\"CutsceneFSM\",\"TurnOffLittleBots\",\"ArenaTranstion\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "FSMTransitionStateMessage",
+                            "ToState": "Phase1",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -420.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "2ed66f34-551d-4620-98ed-4a4632668fed",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -880.0,
+                            "y": -60.0
+                        },
+                        "Guid": "81d76f0c-2a2f-4755-9afd-4846b05ab9d1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TurnOffLittleBots",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-1997165201}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -880.0,
+                            "y": 120.0
+                        },
+                        "Guid": "c43bd5bc-ed83-4815-b735-b3d849936964",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnLeave",
+                    "Name": "ArenaTranstion",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-1542752738}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -880.0,
+                            "y": 400.0
+                        },
+                        "Guid": "a8599ab8-6d16-42f9-8f0a-9ff61ad8faed",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

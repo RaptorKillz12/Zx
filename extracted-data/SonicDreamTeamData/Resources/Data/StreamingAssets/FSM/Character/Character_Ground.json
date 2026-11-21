@@ -1,0 +1,2662 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_Ground_Split",
+            "DefaultState": "GroundEnterGroup",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BrakeRunningEnter",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityBrakingRunning\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 580.0,
+                            "y": -580.0
+                        },
+                        "Guid": "14e1c688-ca85-4865-a1da-a214ab1bb285",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BrakeRunningExit",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityBrakingRunning\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": -580.0
+                        },
+                        "Guid": "939a44bc-5a03-4cee-9a2b-131400480bc9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "IdleExit",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityIdle\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 580.0
+                        },
+                        "Guid": "2168f33f-157e-4760-b0cd-bfbff07fd2db",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "EnterIdle",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityIdle\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": 580.0
+                        },
+                        "Guid": "17bd074d-9379-4115-aa68-71c98b626d22",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BoostEnter",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementGroundBoost\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -60.0,
+                            "y": -140.0
+                        },
+                        "Guid": "2b20d04d-25ff-41aa-801e-582bc099b815",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BoostExit",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementGroundBoost\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": -60.0
+                        },
+                        "Guid": "1ce99b59-6c34-42b1-934a-f5cd7f246c4d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "RollingEnter",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementGroundRolling\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": 460.0
+                        },
+                        "Guid": "cf43cb71-d720-4046-9a5a-34f015eb874d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "RollingExit",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementGroundRolling\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 280.0
+                        },
+                        "Guid": "d4be2315-ff79-4fa1-bb95-261759339721",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "EnterBurstAttackGround",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityBurstAttackGround\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": 980.0
+                        },
+                        "Guid": "9fa19273-5286-4d76-9882-8e6e6dec80c1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_ExitBurstAttack",
+                    "Name": "ExitBurstAttackGround",
+                    "CtorArgs": "{\"AbilityType\":-6991946}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 980.0
+                        },
+                        "Guid": "0b5471ad-5390-4af5-95e1-25a9297f47bb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "EnterHomingAttackGroundRunning",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityHomingAttackGroundRunning\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": 160.0
+                        },
+                        "Guid": "de42d801-f8f1-43a3-9d42-4ac3a0053336",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "HomingAttackGroundRunningExit",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityHomingAttackGroundRunning\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 160.0
+                        },
+                        "Guid": "48973f49-42f8-4b46-bf78-8bc60a9a1bc9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "NotHomingAttackTarget",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"EnterHomingAttackGroundRunning\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -40.0,
+                            "y": 300.0
+                        },
+                        "Guid": "865caa27-b796-4004-99c5-bddeffecf0c5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckFloat",
+                    "Name": "CheckGroundBoostRestoreTimer",
+                    "CtorArgs": "{\"Name\":\"GroundBoostRestoreTimer\",\"Node\":\"\",\"FSM\":\"\",\"TriggerPoint\":0.0,\"Tolerance\":0.0010000000474974514,\"Compare\":\"Equal\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -60.0,
+                            "y": 80.0
+                        },
+                        "Guid": "7e1ffe16-89e2-42ce-843a-591c4d19feb3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "ToBoost",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"BoostEnter\",\"CheckGroundBoostRestoreTimer\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": -60.0
+                        },
+                        "Guid": "de4491b1-39c2-4949-a6e9-ae6d5902f8a7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "EnterBurstAttackAir",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityBurstAttackAir\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": 1420.0
+                        },
+                        "Guid": "72f9e562-3a4d-48fc-ad08-8596f75cec8f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_ExitBurstAttack",
+                    "Name": "ExitBurstAttackAir",
+                    "CtorArgs": "{\"AbilityType\":69575205}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 1340.0
+                        },
+                        "Guid": "70928d28-9f7d-44f4-bece-54c180450925",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "EnterBurstAttackChaosGround",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityBurstAttackChaosGround\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": 1100.0
+                        },
+                        "Guid": "d69d442d-4014-46de-8418-eb515898997d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_ExitBurstAttack",
+                    "Name": "ExitBurstAttackChaosGround",
+                    "CtorArgs": "{\"AbilityType\":-437914019}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 1100.0
+                        },
+                        "Guid": "f196284c-a5c9-4cbb-ae88-aa04730e5b82",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "ToBoostOneShot",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"BoostOneShotEnter\",\"CheckGroundBoostRestoreTimer\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": -360.0
+                        },
+                        "Guid": "68444d0e-f0a1-43a0-b7ff-e7d2ab6bc466",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BoostOneShotEnter",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementGroundBoost_OneShot\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -60.0,
+                            "y": -40.0
+                        },
+                        "Guid": "0bc3582d-77b9-477e-a334-5a30af6cccc8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "BoostOneShotExit",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementGroundBoost_OneShot\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": -360.0
+                        },
+                        "Guid": "c38e8d22-6be3-4caa-a52c-e49c4f7ab54e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "EnterBurstAttackChaosAir",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityBurstAttackChaosAir\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -80.0,
+                            "y": 1200.0
+                        },
+                        "Guid": "030f3b51-81dd-4861-93b7-78da6cbaae00",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_ExitBurstAttack",
+                    "Name": "ExitBurstAttackChaosAir",
+                    "CtorArgs": "{\"AbilityType\":52691134}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 1220.0
+                        },
+                        "Guid": "96ad8dc7-d45a-41e6-87a5-2e67ef22ff3b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "RunningEnter",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"RollingAndNoBurstAttacks\",\"BurstAttackChaosAirExclusive\",\"EnterBurstAttackAir\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -580.0,
+                            "y": -280.0
+                        },
+                        "Guid": "12cc3b28-bbf9-4dd3-a31c-2f289c745cc8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "AbilityTriggered",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilitySpinDashCharge\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": -220.0
+                        },
+                        "Guid": "d8012f88-ca24-4b18-a28d-89d9d0c63b52",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2440.0,
+                            "y": -220.0
+                        },
+                        "Guid": "0f956cd5-9da7-4718-bc2d-be8803808a7c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "NotBurstAttackChaosGroundTriggered",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"EnterBurstAttackChaosGround\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -80.0,
+                            "y": 1320.0
+                        },
+                        "Guid": "d5d6d661-e0c0-4964-8489-d24f3b0e7c6f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "BurstAttackChaosAirExclusive",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"NotBurstAttackChaosGroundTriggered\",\"EnterBurstAttackChaosAir\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": 1220.0
+                        },
+                        "Guid": "1a5dd12d-9d36-44d9-a9b7-b5994bf6f1a6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "NoBurstAttackTriggered",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"EnterBurstAttackAir\",\"EnterBurstAttackChaosAir\",\"EnterBurstAttackChaosGround\",\"EnterBurstAttackGround\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": 700.0
+                        },
+                        "Guid": "3849446e-e4fa-4623-8011-8ade03e485b6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "RollingAndNoBurstAttacks",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"RollingEnter\",\"NoBurstAttackTriggered\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": 280.0
+                        },
+                        "Guid": "f8545ae0-c181-4240-8c67-7fd4be4be465",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicOp",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"RollingEnter\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2440.0,
+                            "y": 380.0
+                        },
+                        "Guid": "44b6fff8-2b24-4980-af14-564c9dab5e33",
+                        "InDirection": 4,
+                        "OutDirection": 3,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "CharacterState_TriggerResetAirAbilities",
+                    "Name": "TriggerResetAirAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -580.0,
+                            "y": 140.0
+                        },
+                        "Guid": "3df494af-10ab-4c25-9339-b320f8c527b1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_GroundRunning",
+                    "Name": "GroundRunning",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterGroundStateAnimation\",\"AbilityType\":111254265}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -60.0,
+                            "y": -460.0
+                        },
+                        "Guid": "9b6e2090-27c2-4ab7-a6d5-3830da321cd5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "GroundEnterGroup",
+                    "CtorArgs": "{\"States\":[\"TriggerDisableAbilities\",\"TriggerResetAirAbilities\",\"TriggerAbilityRailsProximityGround\",\"TriggerAbilityRunning\",\"TriggerAbilityRolling\",\"TriggerAbilityJump\",\"TriggerAbilityJumpOneShot\",\"TriggerAbilityClimbGroundEnable\",\"TriggerAbilityBrakingRunning\",\"TriggerGravityEnabled\",\"TriggerAbilityClimbingDirectionOverride\",\"TriggerAbilityIdle\",\"TriggerAbilityBoost\",\"TriggerAbilityBoostOneShot\",\"TriggerAbilityTransporterProximity\",\"ClearAirAbilitiesReset\",\"TriggerAbilityHomingAttackGroundRunning\",\"TriggerAbilityBurstAttackAir\",\"TriggerAbilityBurstAttackGround\",\"TriggerAbilityBurstAttackChaosGround\",\"TriggerAbilityBurstAttackChaosAir\",\"TriggerAbilitySpinDashCharge\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "RunningEnter",
+                            "ToState": "GroundRunningGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -580.0,
+                                    "y": -280.0
+                                },
+                                "Guid": "12cc3b28-bbf9-4dd3-a31c-2f289c745cc8",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "BurstAttackChaosAirExclusive",
+                            "ToState": "BurstAttackChaosAir",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 1220.0
+                                },
+                                "Guid": "1a5dd12d-9d36-44d9-a9b7-b5994bf6f1a6",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -160.0,
+                                            "y": 550.0
+                                        },
+                                        "Guid": "87cef073-9ee0-473b-82ca-f8a5b866714f",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "EnterBurstAttackAir",
+                            "ToState": "GroupBurstAttackAir",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 1420.0
+                                },
+                                "Guid": "72f9e562-3a4d-48fc-ad08-8596f75cec8f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -160.0,
+                                            "y": 550.0
+                                        },
+                                        "Guid": "87cef073-9ee0-473b-82ca-f8a5b866714f",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "RollingAndNoBurstAttacks",
+                            "ToState": "SubFSM_Rolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 280.0
+                                },
+                                "Guid": "f8545ae0-c181-4240-8c67-7fd4be4be465",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -160.0,
+                                            "y": 550.0
+                                        },
+                                        "Guid": "87cef073-9ee0-473b-82ca-f8a5b866714f",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1400.0,
+                            "y": -400.0
+                        },
+                        "Guid": "187bbe32-cdad-4a68-9588-00bf9732a1d3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRolling",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementGroundRolling\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -940.0,
+                            "y": 240.0
+                        },
+                        "Guid": "48bd9ec0-a92a-4a65-b3bd-c4ccc6746adc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerDisableAbilities",
+                    "Name": "TriggerDisableAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ExceptionList\":[\"AbilityKnockback\",\"AbilitySpinDashCharge\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -580.0,
+                            "y": -60.0
+                        },
+                        "Guid": "8c62e06e-4bed-4fd4-934a-c01a6b52815b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRunning",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementGroundRunning\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1400.0,
+                            "y": 240.0
+                        },
+                        "Guid": "85354687-9e20-4731-9032-ea59826c427b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityJump",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementJump\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -940.0,
+                            "y": 360.0
+                        },
+                        "Guid": "92e0959e-ddc2-4486-a97c-0e324fbc9977",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailsProximityGround",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityRailsProximityGround\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -940.0,
+                            "y": 480.0
+                        },
+                        "Guid": "89c3c843-67e4-4558-9e77-43e95881a613",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityClimbGroundEnable",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityClimbingGroundKnuckles\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -940.0,
+                            "y": 600.0
+                        },
+                        "Guid": "9d31b335-093a-4d87-90fe-7405d90bcad8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityBrakingRunning",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityBrakingRunning\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1400.0,
+                            "y": 360.0
+                        },
+                        "Guid": "914deb67-0ae6-46dc-a3b8-05f3b2b91bfe",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerGravity",
+                    "Name": "TriggerGravityEnabled",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"GravityEnabled\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -480.0,
+                            "y": 240.0
+                        },
+                        "Guid": "2b1fa021-afe6-47f4-a93b-feadff0224c9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCameraGroundedLeave",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"CameraTypeOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1920.0,
+                            "y": -900.0
+                        },
+                        "Guid": "8e812485-ce35-4c45-945c-55a050f967b0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_BrakingRunning",
+                    "CtorArgs": "{\"States\":[\"GroundBrakingRunning\",\"TriggerCameraBraking\",\"TriggerCameraGroundedLeave\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BrakeRunningExit",
+                            "ToState": "GroundRunningGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": -580.0
+                                },
+                                "Guid": "939a44bc-5a03-4cee-9a2b-131400480bc9",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1860.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "5d8b0f9b-9910-4008-ae16-0f6584172a6f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -60.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "b547f24e-f06f-4dac-953c-fcccd8aa1309",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "ToBoost",
+                            "ToState": "Group_GroundBoost",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "de4491b1-39c2-4949-a6e9-ae6d5902f8a7",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1400.0,
+                                            "y": -400.0
+                                        },
+                                        "Guid": "20e01651-32e1-4fde-a4e9-7fb7204f88d1",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 580.0,
+                                            "y": -400.0
+                                        },
+                                        "Guid": "1da1f490-ee73-431b-9fc8-aa022fdec257",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -580.0
+                        },
+                        "Guid": "d52a8b4b-9fca-4ce6-891b-4507a8374ee9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityClimbingDirectionOverride",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityClimbingDirectionOverrideKnuckles\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1400.0,
+                            "y": 480.0
+                        },
+                        "Guid": "329c3721-1a41-4aae-8bf6-1f02091fee39",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_GroundBraking",
+                    "Name": "GroundBrakingRunning",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterBrakingStateAnimation\",\"AbilityType\":-244437218}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -680.0
+                        },
+                        "Guid": "a3bb7878-5577-414c-b5b2-b45e02010c90",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCameraBraking",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"CameraTypeOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1920.0,
+                            "y": -1000.0
+                        },
+                        "Guid": "e5170f80-1a58-4220-81d5-c40fad351e18",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityBrakingRolling",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"AbilityBrakingRolling\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 400.0
+                        },
+                        "Guid": "35b57445-e371-4eab-b3ea-0de18b495bc3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "SubFSM_Rolling",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMCharacter_Rolling\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"Group_EnterRolling\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BurstAttackChaosAirExclusive",
+                            "ToState": "BurstAttackChaosAir",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 1220.0
+                                },
+                                "Guid": "1a5dd12d-9d36-44d9-a9b7-b5994bf6f1a6",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1400.0,
+                                            "y": 510.0
+                                        },
+                                        "Guid": "be0903f2-8c11-41a4-a7a5-33e621226081",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 480.0,
+                                            "y": 510.0
+                                        },
+                                        "Guid": "e5131244-9997-4f8a-b930-6229a6f89c5b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 410.0,
+                                            "y": 620.0
+                                        },
+                                        "Guid": "52b5ef93-291d-4f11-8b34-01050ab120a3",
+                                        "InDirection": 3,
+                                        "OutDirection": 4,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "EnterBurstAttackAir",
+                            "ToState": "GroupBurstAttackAir",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 1420.0
+                                },
+                                "Guid": "72f9e562-3a4d-48fc-ad08-8596f75cec8f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1400.0,
+                                            "y": 510.0
+                                        },
+                                        "Guid": "be0903f2-8c11-41a4-a7a5-33e621226081",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 480.0,
+                                            "y": 510.0
+                                        },
+                                        "Guid": "e5131244-9997-4f8a-b930-6229a6f89c5b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 410.0,
+                                            "y": 620.0
+                                        },
+                                        "Guid": "52b5ef93-291d-4f11-8b34-01050ab120a3",
+                                        "InDirection": 3,
+                                        "OutDirection": 4,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "EnterBurstAttackGround",
+                            "ToState": "BurstAttackGround",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 980.0
+                                },
+                                "Guid": "9fa19273-5286-4d76-9882-8e6e6dec80c1",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1400.0,
+                                            "y": 510.0
+                                        },
+                                        "Guid": "be0903f2-8c11-41a4-a7a5-33e621226081",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 480.0,
+                                            "y": 510.0
+                                        },
+                                        "Guid": "e5131244-9997-4f8a-b930-6229a6f89c5b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 410.0,
+                                            "y": 620.0
+                                        },
+                                        "Guid": "52b5ef93-291d-4f11-8b34-01050ab120a3",
+                                        "InDirection": 3,
+                                        "OutDirection": 4,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "RollingExit",
+                            "ToState": "GroundRunningGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": 280.0
+                                },
+                                "Guid": "d4be2315-ff79-4fa1-bb95-261759339721",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2780.0,
+                                            "y": -40.0
+                                        },
+                                        "Guid": "df6c5717-679c-40ba-9da0-a9625eda31fb",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2740.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "7434de55-ea44-42a5-9aa0-a3f5ae3b19b7",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1860.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "5d8b0f9b-9910-4008-ae16-0f6584172a6f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -60.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "b547f24e-f06f-4dac-953c-fcccd8aa1309",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "EnterBurstAttackChaosGround",
+                            "ToState": "BurstAttackChaosGround",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 1100.0
+                                },
+                                "Guid": "d69d442d-4014-46de-8418-eb515898997d",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1400.0,
+                                            "y": 510.0
+                                        },
+                                        "Guid": "be0903f2-8c11-41a4-a7a5-33e621226081",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 480.0,
+                                            "y": 510.0
+                                        },
+                                        "Guid": "e5131244-9997-4f8a-b930-6229a6f89c5b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 410.0,
+                                            "y": 620.0
+                                        },
+                                        "Guid": "52b5ef93-291d-4f11-8b34-01050ab120a3",
+                                        "InDirection": 3,
+                                        "OutDirection": 4,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToBoost",
+                            "ToState": "Group_GroundBoost",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "de4491b1-39c2-4949-a6e9-ae6d5902f8a7",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1450.0,
+                                            "y": 100.0
+                                        },
+                                        "Guid": "a0d6c797-be22-4e83-821b-68854445e9c1",
+                                        "InDirection": 4,
+                                        "OutDirection": 3,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1370.0,
+                                            "y": -110.0
+                                        },
+                                        "Guid": "b7755ba2-36dd-499b-a47b-0ace9a05f00a",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 560.0,
+                                            "y": -110.0
+                                        },
+                                        "Guid": "018f310e-4a3c-49ab-b2d5-4328bae0f3f0",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 280.0
+                        },
+                        "Guid": "09c24653-1390-4bf0-ab41-da1101b23ee0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_GroundBoost",
+                    "CtorArgs": "{\"States\":[\"TriggerResetAirBuffers\",\"GroundBoost\",\"TriggerVelocityImpulse\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BoostExit",
+                            "ToState": "GroundRunningGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "1ce99b59-6c34-42b1-934a-f5cd7f246c4d",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2780.0,
+                                            "y": -40.0
+                                        },
+                                        "Guid": "df6c5717-679c-40ba-9da0-a9625eda31fb",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2740.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "7434de55-ea44-42a5-9aa0-a3f5ae3b19b7",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1860.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "5d8b0f9b-9910-4008-ae16-0f6584172a6f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -60.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "b547f24e-f06f-4dac-953c-fcccd8aa1309",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "AbilityTriggered",
+                            "ToState": "DisableReenableBoosts",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": -220.0
+                                },
+                                "Guid": "d8012f88-ca24-4b18-a28d-89d9d0c63b52",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "EnterHomingAttackGroundRunning",
+                            "ToState": "HomingAttackGroundRunning",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 160.0
+                                },
+                                "Guid": "de42d801-f8f1-43a3-9d42-4ac3a0053336",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -60.0
+                        },
+                        "Guid": "11d09355-7223-4e75-9c00-1b792bb6c90b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityIdle",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityIdle\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -940.0,
+                            "y": 720.0
+                        },
+                        "Guid": "e5062dcb-5e58-411e-9247-89ee1be25024",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_Idle",
+                    "Name": "Idle",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterIdleStateAnimation\",\"AbilityType\":516819787}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 720.0
+                        },
+                        "Guid": "7c148b05-165f-4b0e-b317-c5804df7ced2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "GroupIdle",
+                    "CtorArgs": "{\"States\":[\"Idle\",\"SetDefaultForm\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IdleExit",
+                            "ToState": "GroundRunningGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": 580.0
+                                },
+                                "Guid": "2168f33f-157e-4760-b0cd-bfbff07fd2db",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2780.0,
+                                            "y": -40.0
+                                        },
+                                        "Guid": "df6c5717-679c-40ba-9da0-a9625eda31fb",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2740.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "7434de55-ea44-42a5-9aa0-a3f5ae3b19b7",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1860.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "5d8b0f9b-9910-4008-ae16-0f6584172a6f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -60.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "b547f24e-f06f-4dac-953c-fcccd8aa1309",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "EnterBurstAttackGround",
+                            "ToState": "BurstAttackGround",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 980.0
+                                },
+                                "Guid": "9fa19273-5286-4d76-9882-8e6e6dec80c1",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1420.0,
+                                            "y": 950.0
+                                        },
+                                        "Guid": "9f3d04d7-865a-4aa5-b07b-c0f8829325b3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 560.0,
+                                            "y": 950.0
+                                        },
+                                        "Guid": "9789d112-8a44-43b1-92b2-ea5a3782063b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "EnterBurstAttackChaosGround",
+                            "ToState": "BurstAttackChaosGround",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 1100.0
+                                },
+                                "Guid": "d69d442d-4014-46de-8418-eb515898997d",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1420.0,
+                                            "y": 950.0
+                                        },
+                                        "Guid": "9f3d04d7-865a-4aa5-b07b-c0f8829325b3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 560.0,
+                                            "y": 950.0
+                                        },
+                                        "Guid": "9789d112-8a44-43b1-92b2-ea5a3782063b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "RollingAndNoBurstAttacks",
+                            "ToState": "SubFSM_Rolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 280.0
+                                },
+                                "Guid": "f8545ae0-c181-4240-8c67-7fd4be4be465",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1420.0,
+                                            "y": 920.0
+                                        },
+                                        "Guid": "ea8aea98-6ccf-4130-8d1c-59cd60e305f7",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 560.0,
+                                            "y": 920.0
+                                        },
+                                        "Guid": "56430bbe-f61f-4028-8684-90e4b4eb80b3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 580.0
+                        },
+                        "Guid": "bbf6d49b-9bb3-4ede-b02c-51cabc19c5d9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerSetForm",
+                    "Name": "SetDefaultForm",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"FormType\":602145082,\"FormIsLocked\":false,\"FormClearsLock\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 820.0
+                        },
+                        "Guid": "ff24a408-050c-49b9-825e-431a99cbe309",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_GroundBoost",
+                    "Name": "GroundBoost",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterGroundBoostStateAnimation\",\"AbilityType\":1521748827}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -900.0
+                        },
+                        "Guid": "408bf476-7913-4fca-8000-eda99215b1f5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityBoost",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementGroundBoost\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1400.0,
+                            "y": 720.0
+                        },
+                        "Guid": "a4991b5a-0cf6-4380-b047-ba1fe8c7b83b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerResetAirBuffers",
+                    "Name": "TriggerResetAirBuffers",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": -440.0
+                        },
+                        "Guid": "fb27c054-a75b-4790-8324-e7ccbdf0fdcf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerVelocityImpulse",
+                    "Name": "TriggerVelocityImpulse",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ImpulseForce\":5.0,\"OptionalVariableName\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 40.0
+                        },
+                        "Guid": "e165c9b4-810e-4491-9fc2-c9d26b561677",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityTransporterProximity",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityTransporterProximity\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1400.0,
+                            "y": 600.0
+                        },
+                        "Guid": "7088fd82-21ec-45f3-9de3-641b351eade7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "ClearAirAbilitiesReset",
+                    "CtorArgs": "{\"Name\":\"AirAbilitiesReset\",\"Node\":\"\",\"FSM\":\"\",\"Value\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -480.0,
+                            "y": 360.0
+                        },
+                        "Guid": "453ab4c3-ecf2-41ed-aa46-a12bfc520016",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityBurstAttackGround",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityBurstAttackGround\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1400.0,
+                            "y": 840.0
+                        },
+                        "Guid": "3df1c254-6e44-498e-9726-73fc45bbf529",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_BurstAttackGround",
+                    "Name": "BurstAttackGround",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterBurstAttackAnimation\",\"AbilityType\":-6991946,\"MaxTargets\":10}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ExitBurstAttackGround",
+                            "ToState": "GroundRunningGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": 980.0
+                                },
+                                "Guid": "0b5471ad-5390-4af5-95e1-25a9297f47bb",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2780.0,
+                                            "y": -40.0
+                                        },
+                                        "Guid": "df6c5717-679c-40ba-9da0-a9625eda31fb",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2740.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "7434de55-ea44-42a5-9aa0-a3f5ae3b19b7",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1860.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "5d8b0f9b-9910-4008-ae16-0f6584172a6f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -60.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "b547f24e-f06f-4dac-953c-fcccd8aa1309",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 980.0
+                        },
+                        "Guid": "dd1b7eef-f1f5-4ee3-9a24-604b3989de8d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHomingAttackGroundRunning",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackGroundRunning\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -480.0,
+                            "y": 720.0
+                        },
+                        "Guid": "e172b8c6-ce2b-49b5-8968-d26276f78c1b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_HomingAttackGroundRunning",
+                    "Name": "HomingAttackGroundRunning",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterGroundBoostStateAnimation\",\"AbilityType\":466654492}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HomingAttackGroundRunningExit",
+                            "ToState": "Group_GroundBoost",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": 160.0
+                                },
+                                "Guid": "48973f49-42f8-4b46-bf78-8bc60a9a1bc9",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 160.0
+                        },
+                        "Guid": "cc01b5f8-af3b-42c6-b41e-bff3ad9e0185",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_BurstAttackAir",
+                    "Name": "BurstAttackAir",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterBurstAttackAnimation\",\"AbilityType\":69575205,\"MaxTargets\":10}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 1560.0
+                        },
+                        "Guid": "514398b4-6039-4700-813e-360543d852b6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityBurstAttackAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityBurstAttackAir\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1400.0,
+                            "y": 960.0
+                        },
+                        "Guid": "d258d909-d2ac-4ff7-8e21-610173eadef2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityBurstAttackChaosGround",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityBurstAttackChaosGround\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -940.0,
+                            "y": 840.0
+                        },
+                        "Guid": "08c69660-a155-4194-a033-e0236695d418",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityJumpOneShot",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementJump_OneShot\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -480.0,
+                            "y": 840.0
+                        },
+                        "Guid": "988c9eca-0641-491d-9a55-da2dd7655aee",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_GroundBoostOneShot",
+                    "CtorArgs": "{\"States\":[\"TriggerResetAirBuffers\",\"GroundBoostOneShot\",\"TriggerVelocityImpulse\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BoostOneShotExit",
+                            "ToState": "GroundRunningGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": -360.0
+                                },
+                                "Guid": "c38e8d22-6be3-4caa-a52c-e49c4f7ab54e",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1860.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "5d8b0f9b-9910-4008-ae16-0f6584172a6f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -60.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "b547f24e-f06f-4dac-953c-fcccd8aa1309",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "AbilityTriggered",
+                            "ToState": "DisableReenableBoosts",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": -220.0
+                                },
+                                "Guid": "d8012f88-ca24-4b18-a28d-89d9d0c63b52",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -360.0
+                        },
+                        "Guid": "73400583-6d52-4a51-b2e5-138634f73067",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_GroundBoostOneShot",
+                    "Name": "GroundBoostOneShot",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterGroundBoostOneShotStateAnimation\",\"AbilityType\":-1590292678}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -1000.0
+                        },
+                        "Guid": "b07115d6-aeab-4f5a-b6d8-452140065084",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityBoostOneShot",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementGroundBoost_OneShot\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -480.0,
+                            "y": 960.0
+                        },
+                        "Guid": "deebceff-0ed0-4c93-a119-bcc58b696f09",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityBurstAttackChaosAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityBurstAttackChaosAir\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -940.0,
+                            "y": 960.0
+                        },
+                        "Guid": "cdd2179f-c7fb-42de-affa-5e6bd43e4127",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_BurstAttackChaosGround",
+                    "Name": "BurstAttackChaosGround",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterChaosBurstAnimation\",\"AbilityType\":-437914019,\"MaxTargets\":10}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ExitBurstAttackChaosGround",
+                            "ToState": "GroundRunningGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": 1100.0
+                                },
+                                "Guid": "f196284c-a5c9-4cbb-ae88-aa04730e5b82",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2780.0,
+                                            "y": -40.0
+                                        },
+                                        "Guid": "df6c5717-679c-40ba-9da0-a9625eda31fb",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2740.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "7434de55-ea44-42a5-9aa0-a3f5ae3b19b7",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1860.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "5d8b0f9b-9910-4008-ae16-0f6584172a6f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -60.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "b547f24e-f06f-4dac-953c-fcccd8aa1309",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 1100.0
+                        },
+                        "Guid": "0965d4c7-4324-4bc2-b926-8d2931a56278",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_BurstAttackChaosAir",
+                    "Name": "BurstAttackChaosAir",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterChaosBurstAnimation\",\"AbilityType\":52691134,\"MaxTargets\":10}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ExitBurstAttackChaosAir",
+                            "ToState": "BranchRollOrRun",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": 1220.0
+                                },
+                                "Guid": "96ad8dc7-d45a-41e6-87a5-2e67ef22ff3b",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 1220.0
+                        },
+                        "Guid": "5b095ed0-05ad-4a43-aadb-9ef185c4847c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityJump",
+                    "CtorArgs": "{\"ActiveEventType\":2,\"AbilityDefinitionName\":\"AbilityMovementJump\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 1440.0
+                        },
+                        "Guid": "3cf95d05-ae3e-44c5-bfd9-d8c5231987fc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityJumpOneShot",
+                    "CtorArgs": "{\"ActiveEventType\":2,\"AbilityDefinitionName\":\"AbilityMovementJump_OneShot\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1480.0,
+                            "y": 1560.0
+                        },
+                        "Guid": "50a1ca2d-2808-4e8d-836e-d781a90570b6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "GroupBurstAttackAir",
+                    "CtorArgs": "{\"States\":[\"DisableAbilityJump\",\"DisableAbilityJumpOneShot\",\"BurstAttackAir\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ExitBurstAttackAir",
+                            "ToState": "BranchRollOrRun",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1480.0,
+                                    "y": 1340.0
+                                },
+                                "Guid": "70928d28-9f7d-44f4-bece-54c180450925",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 1340.0
+                        },
+                        "Guid": "a968d2b4-8cca-42af-aa8a-5f8282e6314e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilitySpinDashCharge",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilitySpinDashCharge\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -480.0,
+                            "y": 600.0
+                        },
+                        "Guid": "ac844c18-a719-4a8f-be19-b49774490b8c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableReenableGroundBoost",
+                    "CtorArgs": "{\"ActiveEventType\":2,\"AbilityDefinitionName\":\"AbilityMovementGroundBoost\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2000.0,
+                            "y": -460.0
+                        },
+                        "Guid": "15bb7777-a7c7-45ba-9ded-506da51effe8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableReenableGroundBoostOneShot",
+                    "CtorArgs": "{\"ActiveEventType\":2,\"AbilityDefinitionName\":\"AbilityMovementGroundBoost_OneShot\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2000.0,
+                            "y": -340.0
+                        },
+                        "Guid": "f9b34f57-d1b6-4155-9e8a-6907969d347a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "DisableReenableBoosts",
+                    "CtorArgs": "{\"States\":[\"DisableReenableGroundBoost\",\"DisableReenableGroundBoostOneShot\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "GroundRunningGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2440.0,
+                                    "y": -220.0
+                                },
+                                "Guid": "0f956cd5-9da7-4718-bc2d-be8803808a7c",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2740.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "7434de55-ea44-42a5-9aa0-a3f5ae3b19b7",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1860.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "5d8b0f9b-9910-4008-ae16-0f6584172a6f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -60.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "b547f24e-f06f-4dac-953c-fcccd8aa1309",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2000.0,
+                            "y": -220.0
+                        },
+                        "Guid": "43705f2b-97c0-421d-b407-96cbaeff4780",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "BranchRollOrRun",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "LogicOp",
+                            "ToState": "GroundRunningGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2440.0,
+                                    "y": 380.0
+                                },
+                                "Guid": "44b6fff8-2b24-4980-af14-564c9dab5e33",
+                                "InDirection": 4,
+                                "OutDirection": 3,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2780.0,
+                                            "y": -40.0
+                                        },
+                                        "Guid": "df6c5717-679c-40ba-9da0-a9625eda31fb",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2740.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "7434de55-ea44-42a5-9aa0-a3f5ae3b19b7",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1860.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "5d8b0f9b-9910-4008-ae16-0f6584172a6f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -60.0,
+                                            "y": -760.0
+                                        },
+                                        "Guid": "b547f24e-f06f-4dac-953c-fcccd8aa1309",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "RollingEnter",
+                            "ToState": "SubFSM_Rolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 460.0
+                                },
+                                "Guid": "cf43cb71-d720-4046-9a5a-34f015eb874d",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2380.0,
+                                            "y": 560.0
+                                        },
+                                        "Guid": "bd60a3a4-ea1f-470b-82a4-8cd9f148291c",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 560.0,
+                                            "y": 560.0
+                                        },
+                                        "Guid": "ab203363-d238-4a6d-9e8e-512409b98e6c",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2000.0,
+                            "y": 1280.0
+                        },
+                        "Guid": "b52ab32b-0a66-47f7-938e-429df1fe5ef8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityBurstAttackAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityBurstAttackAir\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -60.0,
+                            "y": -580.0
+                        },
+                        "Guid": "d8f54bf3-324d-43e2-ae1d-a4a91256b52f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityBurstAttackChaosAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityBurstAttackChaosAir\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -60.0,
+                            "y": -700.0
+                        },
+                        "Guid": "1e1ccbb2-10c8-41df-b074-efc1e960cfb0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "GroundRunningGroup",
+                    "CtorArgs": "{\"States\":[\"GroundRunning\",\"DisableAbilityBurstAttackAir\",\"DisableAbilityBurstAttackChaosAir\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BrakeRunningEnter",
+                            "ToState": "Group_BrakingRunning",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 580.0,
+                                    "y": -580.0
+                                },
+                                "Guid": "14e1c688-ca85-4865-a1da-a214ab1bb285",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "EnterIdle",
+                            "ToState": "GroupIdle",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 580.0
+                                },
+                                "Guid": "17bd074d-9379-4115-aa68-71c98b626d22",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "BurstAttackChaosAirExclusive",
+                            "ToState": "BurstAttackChaosAir",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 1220.0
+                                },
+                                "Guid": "1a5dd12d-9d36-44d9-a9b7-b5994bf6f1a6",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 410.0,
+                                            "y": 620.0
+                                        },
+                                        "Guid": "52b5ef93-291d-4f11-8b34-01050ab120a3",
+                                        "InDirection": 3,
+                                        "OutDirection": 4,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToBoostOneShot",
+                            "ToState": "Group_GroundBoostOneShot",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": -360.0
+                                },
+                                "Guid": "68444d0e-f0a1-43a0-b7ff-e7d2ab6bc466",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "EnterBurstAttackAir",
+                            "ToState": "GroupBurstAttackAir",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 1420.0
+                                },
+                                "Guid": "72f9e562-3a4d-48fc-ad08-8596f75cec8f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 410.0,
+                                            "y": 620.0
+                                        },
+                                        "Guid": "52b5ef93-291d-4f11-8b34-01050ab120a3",
+                                        "InDirection": 3,
+                                        "OutDirection": 4,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "EnterBurstAttackGround",
+                            "ToState": "BurstAttackGround",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 980.0
+                                },
+                                "Guid": "9fa19273-5286-4d76-9882-8e6e6dec80c1",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 410.0,
+                                            "y": 620.0
+                                        },
+                                        "Guid": "52b5ef93-291d-4f11-8b34-01050ab120a3",
+                                        "InDirection": 3,
+                                        "OutDirection": 4,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "EnterBurstAttackChaosGround",
+                            "ToState": "BurstAttackChaosGround",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 1100.0
+                                },
+                                "Guid": "d69d442d-4014-46de-8418-eb515898997d",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 410.0,
+                                            "y": 620.0
+                                        },
+                                        "Guid": "52b5ef93-291d-4f11-8b34-01050ab120a3",
+                                        "InDirection": 3,
+                                        "OutDirection": 4,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToBoost",
+                            "ToState": "Group_GroundBoost",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "de4491b1-39c2-4949-a6e9-ae6d5902f8a7",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "RollingAndNoBurstAttacks",
+                            "ToState": "SubFSM_Rolling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 560.0,
+                                    "y": 280.0
+                                },
+                                "Guid": "f8545ae0-c181-4240-8c67-7fd4be4be465",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -60.0,
+                            "y": -340.0
+                        },
+                        "Guid": "ff0e81ae-d44e-4bc0-ade1-d8e6108580ad",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -160.0,
+                    "y": -100.0
+                },
+                "Guid": "b5171738-dfc7-4690-b819-8412ae7e2837",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,377 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourmen_Phase1_BeVulnerable3Bosses",
+            "DefaultState": "VulnerableWithEffects",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "BossTransition_WasHit",
+                    "Name": "WasHit",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 980.0,
+                            "y": 420.0
+                        },
+                        "Guid": "6cc73a4a-1301-4e69-a6d6-7243dc54d3d7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_BossesCount",
+                    "Name": "NumberOfBosses",
+                    "CtorArgs": "{\"BossesForTransition\":2}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 980.0,
+                            "y": 820.0
+                        },
+                        "Guid": "e8c39f17-a9f8-4cf9-a874-a1d8dc52623d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_HealthCheck",
+                    "Name": "Alive",
+                    "CtorArgs": "{\"Value\":0,\"Evaluation\":0}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 980.0,
+                            "y": 720.0
+                        },
+                        "Guid": "072ad303-8650-4871-ab44-9383be563332",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "2BossesRemainAndImAlive",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"Alive\",\"NumberOfBosses\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 980.0,
+                            "y": 520.0
+                        },
+                        "Guid": "d248c190-b706-44f9-9180-140118bde4a8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckInt",
+                    "Name": "CheckInt",
+                    "CtorArgs": "{\"Name\":\"ThisBossHitsTaken\",\"Node\":\"\",\"FSM\":\"\",\"TriggerPoint\":1,\"Compare\":\"Equal\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1920.0,
+                            "y": 340.0
+                        },
+                        "Guid": "38668a71-9edd-43b8-90a5-b00139559166",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicOp",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"CheckInt\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1920.0,
+                            "y": 500.0
+                        },
+                        "Guid": "b761aa2d-56fc-42a2-8a0f-2ae2f7810252",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_Vulnerable_Target",
+                    "Name": "Vulnerable",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"VulnerableTime\":5.5,\"VulnerableTarget\":231103943,\"TargetActivateDelaySeconds\":0.75}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 440.0,
+                            "y": 700.0
+                        },
+                        "Guid": "4f505261-4978-4646-b0c4-49eb4fc665cb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerInjured",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-79364008}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2400.0,
+                            "y": 300.0
+                        },
+                        "Guid": "ea5fac15-65c4-40bb-af39-62b194c0b5d8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerVulnerableEffects",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenVulnerable\",\"TriggerEffect\":-315201363}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 440.0,
+                            "y": 600.0
+                        },
+                        "Guid": "157aec6c-425e-4bb3-a63e-6f6fccf72e27",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "VulnerableWithEffects",
+                    "CtorArgs": "{\"States\":[\"TriggerVulnerableEffects\",\"Vulnerable\",\"TriggerToggleSSOA\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "WasHit",
+                            "ToState": "IncrementHits",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 980.0,
+                                    "y": 420.0
+                                },
+                                "Guid": "6cc73a4a-1301-4e69-a6d6-7243dc54d3d7",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "2BossesRemainAndImAlive",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 980.0,
+                                    "y": 520.0
+                                },
+                                "Guid": "d248c190-b706-44f9-9180-140118bde4a8",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 440.0,
+                            "y": 420.0
+                        },
+                        "Guid": "1084b629-9696-4456-bba9-fa0e8aea1609",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_ActiveBossReset",
+                    "Name": "ActiveReset",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2400.0,
+                            "y": 200.0
+                        },
+                        "Guid": "8cb526ef-3a4e-4ad5-9f22-789e65a0130e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "TriggerEffectResetActiveBoss",
+                    "CtorArgs": "{\"States\":[\"ActiveReset\",\"TriggerInjured\",\"TriggerDead\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2400.0,
+                            "y": 420.0
+                        },
+                        "Guid": "09a9dc25-d237-4e97-a287-422d71588ab8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "Finished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1440.0,
+                            "y": 620.0
+                        },
+                        "Guid": "87f3abfa-c65a-4074-887f-600069212eb7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerToggleSSOA",
+                    "Name": "TriggerToggleSSOA",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 440.0,
+                            "y": 840.0
+                        },
+                        "Guid": "91631588-f88a-463b-ac9e-ef14ef89b144",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnLeave",
+                    "Name": "TriggerDead",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenDead\",\"TriggerEffect\":609180527}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2400.0,
+                            "y": 100.0
+                        },
+                        "Guid": "92434a18-b2ee-40a9-ae36-e8ebfac700ba",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetInt",
+                    "Name": "IncrementHits",
+                    "CtorArgs": "{\"Name\":\"ThisBossHitsTaken\",\"Node\":\"\",\"FSM\":\"\",\"Value\":1,\"Operation\":1}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CheckInt",
+                            "ToState": "TriggerEffectResetActiveBoss",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1920.0,
+                                    "y": 340.0
+                                },
+                                "Guid": "38668a71-9edd-43b8-90a5-b00139559166",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "LogicOp",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1920.0,
+                                    "y": 500.0
+                                },
+                                "Guid": "b761aa2d-56fc-42a2-8a0f-2ae2f7810252",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2300.0,
+                                            "y": 580.0
+                                        },
+                                        "Guid": "18d1cf4b-5505-4c92-abb4-fa1350071103",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 1440.0,
+                                            "y": 580.0
+                                        },
+                                        "Guid": "e6c31dc8-898c-4b70-a29f-e9305fd1b901",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1440.0,
+                            "y": 420.0
+                        },
+                        "Guid": "88b2f002-1406-4c11-8573-28e7fe941b72",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

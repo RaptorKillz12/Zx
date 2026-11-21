@@ -1,0 +1,423 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourmen_Phase1_2FenceAttack",
+            "DefaultState": "MoveToBigCircle",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "BossTransition_BossesInMotion",
+                    "Name": "BossesInMotion",
+                    "CtorArgs": "{\"NoneInMotionCausesTransition\":true,\"AdditionalPauseSeconds\":0.5}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1980.0,
+                            "y": -80.0
+                        },
+                        "Guid": "b083b000-24ec-40c2-a6bf-f3caa06d5faf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "StillLasersTimeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":0.75,\"VariableName\":\"StillLasersTimeout\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1060.0,
+                            "y": -80.0
+                        },
+                        "Guid": "dc70cc40-a8df-4f7b-80dd-0e9d515c44c1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "LaserFenceTimeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":100.0,\"VariableName\":\"LaserFenceTimeout\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -100.0,
+                            "y": -260.0
+                        },
+                        "Guid": "65cd3ab2-b986-4c35-b5b2-23bf86230322",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_HasCompletedActiveLoop",
+                    "Name": "HasCompletedActiveLoop",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -100.0,
+                            "y": -160.0
+                        },
+                        "Guid": "366939cb-734a-4e4c-9458-e0e0f4e8564a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_TurnToBossManagerTarget",
+                    "Name": "Turn Towards Boss Manager Target",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-2132521585}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2440.0,
+                            "y": 440.0
+                        },
+                        "Guid": "23da2c40-3e1d-4948-8fb5-718d215b2721",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Entry",
+                    "CtorArgs": "{\"States\":[\"EnableMoveToBigCircle\",\"MoveToBigCircle\",\"Has2LaseredTrue\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BossesInMotion",
+                            "ToState": "PauseWithLasers",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1980.0,
+                                    "y": -80.0
+                                },
+                                "Guid": "b083b000-24ec-40c2-a6bf-f3caa06d5faf",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2440.0,
+                            "y": -80.0
+                        },
+                        "Guid": "2bb8f242-1857-44a0-a0e1-db4352ce63be",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableMoveToBigCircle",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_MoveToBigCircleWithCounterSpin\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2440.0,
+                            "y": 80.0
+                        },
+                        "Guid": "43cfc6de-29a6-4c96-8bd3-43c037dc8f29",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "PauseWithLasers",
+                    "CtorArgs": "{\"States\":[\"EnableLasers\",\"ShootLasers\",\"DisableMoveToBigCircle\",\"ChargingLasers\",\"Turn Towards Boss Manager Target\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "StillLasersTimeout",
+                            "ToState": "StateGroup_MoveAndCycleVulnerable",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1060.0,
+                                    "y": -80.0
+                                },
+                                "Guid": "dc70cc40-a8df-4f7b-80dd-0e9d515c44c1",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1520.0,
+                            "y": -80.0
+                        },
+                        "Guid": "aa2032ba-4768-48e9-9fad-8c60f8360625",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableLasers",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_LaserFence\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1520.0,
+                            "y": 120.0
+                        },
+                        "Guid": "5dd62ff6-02e1-41a3-9778-a7d8b38d036f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_ShootLasers",
+                    "Name": "ShootLasers",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenLaserLoopSFX\",\"AbilityType\":1421046986}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1520.0,
+                            "y": 460.0
+                        },
+                        "Guid": "fca95a0f-ebb7-410c-85eb-bb07b2798b68",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableMoveToBigCircle",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_MoveToBigCircleWithCounterSpin\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1520.0,
+                            "y": 240.0
+                        },
+                        "Guid": "14f4faa4-037e-453c-a98e-20e4fed11bd2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveToBigCircle",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":455497605}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2440.0,
+                            "y": 200.0
+                        },
+                        "Guid": "ae844a23-5acf-4e4a-9e96-4d9bbb43e0ad",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "Has2LaseredTrue",
+                    "CtorArgs": "{\"Name\":\"Has2Lasered\",\"Node\":\"\",\"FSM\":\"\",\"Value\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2440.0,
+                            "y": 300.0
+                        },
+                        "Guid": "ddb49739-dec2-44c8-8cc7-58bd203f9d4d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerBossEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-1431654692}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -580.0,
+                            "y": 60.0
+                        },
+                        "Guid": "9b59d101-9097-4afc-ad36-694396d64796",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnLeave",
+                    "Name": "EndBossEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenLaserLoopSFX\",\"TriggerEffect\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -580.0,
+                            "y": 160.0
+                        },
+                        "Guid": "8cca7a55-d3fc-4037-ad0d-73da0cc6dcbf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "ChargingLasers",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":1797805171}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1520.0,
+                            "y": 360.0
+                        },
+                        "Guid": "42f5b86f-9afb-4582-9739-37550d416ccb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "2FenceMove",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossFourmen_Phase1_2FenceMove\",\"ResetStateOnEnter\":true,\"DefaultState\":\"StateGroup_Move\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -580.0,
+                            "y": -480.0
+                        },
+                        "Guid": "00c6ea60-cbe2-44c4-8469-771b3a297d64",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "Finished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 380.0,
+                            "y": -260.0
+                        },
+                        "Guid": "5df171e8-9776-4314-9c95-9c6a1ab3ca3d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_MoveAndCycleVulnerable",
+                    "CtorArgs": "{\"States\":[\"2FenceMove\",\"CycleVulnerable\",\"EndBossEffect\",\"TriggerBossEffect\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HasCompletedActiveLoop",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -100.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "366939cb-734a-4e4c-9458-e0e0f4e8564a",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "LaserFenceTimeout",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -100.0,
+                                    "y": -260.0
+                                },
+                                "Guid": "65cd3ab2-b986-4c35-b5b2-23bf86230322",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -580.0,
+                            "y": -260.0
+                        },
+                        "Guid": "d9c13933-7ee1-49aa-ae9c-1d16aa76d03c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "CycleVulnerable",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossFourmen_Phase1_CycleVulnerable\",\"ResetStateOnEnter\":true,\"DefaultState\":\"Set_HasBeenHit_False\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -580.0,
+                            "y": -660.0
+                        },
+                        "Guid": "a9c77404-e6b0-46dd-b470-828e8498814f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

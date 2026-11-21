@@ -1,0 +1,216 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourmen_Phase1_StaggerVulnerable",
+            "DefaultState": "StateGroup_Vulnerable",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "BossTransition_WasHit",
+                    "Name": "WasHit",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": -200.0
+                        },
+                        "Guid": "b4bb7a0c-cae0-4dc6-a2a6-c937225c6daa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_Vulnerable",
+                    "CtorArgs": "{\"States\":[\"Vulnerable\",\"VulnerableEffect\",\"InvulnerableEffect\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "WasHit",
+                            "ToState": "StateGroup_Stagger",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "b4bb7a0c-cae0-4dc6-a2a6-c937225c6daa",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -200.0
+                        },
+                        "Guid": "79bed5ba-c1d6-4c77-97a2-2e4de4e49e78",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_Vulnerable_Target",
+                    "Name": "Vulnerable",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"VulnerableTime\":4.0,\"VulnerableTarget\":1387901083,\"TargetActivateDelaySeconds\":0.5}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -340.0
+                        },
+                        "Guid": "f8499534-cda2-4401-b32a-e647309b5250",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "VulnerableEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenLidOpenSFX\",\"TriggerEffect\":-996958514}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -440.0
+                        },
+                        "Guid": "e3faded2-20b5-46e9-a2aa-6accb036ec5e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnLeave",
+                    "Name": "InvulnerableEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenLidCloseSFX\",\"TriggerEffect\":1184055252}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -540.0
+                        },
+                        "Guid": "d4b73ae5-7195-47ec-8fd5-3717579adde2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_ActiveBossChange",
+                    "Name": "ActiveBossChange",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": -400.0
+                        },
+                        "Guid": "983f1b95-8dc5-4a83-a083-1dd511c5e183",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "Set_HasBeenHit_True",
+                    "CtorArgs": "{\"Name\":\"HasBeenHit\",\"Node\":\"\",\"FSM\":\"\",\"Value\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": -540.0
+                        },
+                        "Guid": "d9137508-05c5-4c8f-8d2c-41abfb0e92fa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_Stagger",
+                    "CtorArgs": "{\"States\":[\"ActiveBossChange\",\"Set_HasBeenHit_True\",\"DisableMoveRandom\",\"EnableMoveRandom\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": -200.0
+                        },
+                        "Guid": "8670676b-5807-409a-b42d-f47daf8200aa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableMoveRandom",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_MoveRandomFast\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": -660.0
+                        },
+                        "Guid": "6a3a4e08-a172-4d22-816e-cd2a9230edce",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableMoveRandom",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_MoveRandomFast\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": -780.0
+                        },
+                        "Guid": "baf0aa68-5e22-4309-afd6-50e80fa12052",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

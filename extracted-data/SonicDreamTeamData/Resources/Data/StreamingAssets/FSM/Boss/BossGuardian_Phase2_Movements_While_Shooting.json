@@ -1,0 +1,332 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossGuardian_Phase2_Movements_While_Shooting",
+            "DefaultState": "EntryState",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "BossTransition_GuardianMaxRange",
+                    "Name": "GuardianAtMaxRangeNear",
+                    "CtorArgs": "{\"AbilityType\":-1399289584}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1120.0,
+                            "y": -60.0
+                        },
+                        "Guid": "8be739c3-3fad-4074-bd52-b1a29952b94b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_GuardianWIthinRange",
+                    "Name": "GuardianWithinRangeNear",
+                    "CtorArgs": "{\"AbilityType\":-1399289584}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -320.0,
+                            "y": 180.0
+                        },
+                        "Guid": "2fadf7cb-dbb2-432d-8de9-0f3b2539476c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "NotNear",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"GuardianWithinRangeNear\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -760.0,
+                            "y": -60.0
+                        },
+                        "Guid": "3e7f9a35-2ce2-420f-bce1-77c43cc66177",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveFar",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossGHMovingAnimation\",\"AbilityType\":-894335717}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -380.0
+                        },
+                        "Guid": "e55d8989-7eb2-4b6f-833a-87ad8066dbc1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableStayAheadFar",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_StayAheadOfPlayer_Phase2_Far\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -280.0
+                        },
+                        "Guid": "5419816d-71bc-43d9-a66e-f972437542e9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableStayAheadFar",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_StayAheadOfPlayer_Phase2_Far\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -600.0
+                        },
+                        "Guid": "900c217e-e4f7-4594-9c5a-3ca4142621d5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "FarMovement",
+                    "CtorArgs": "{\"States\":[\"EnableStayAheadFar\",\"DisableStayAheadFar\",\"MoveFar\",\"TurnAwayFromTargetFar\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -60.0
+                        },
+                        "Guid": "c18ee26f-0611-4e83-9bab-4a3b190dccef",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "NearMovement",
+                    "CtorArgs": "{\"States\":[\"EnableStayAheadNear\",\"DisableStayAheadNear\",\"MoveNear\",\"TurnNear\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "GuardianAtMaxRangeNear",
+                            "ToState": "FarMovement",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1120.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "8be739c3-3fad-4074-bd52-b1a29952b94b",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1500.0,
+                                            "y": -100.0
+                                        },
+                                        "Guid": "c344dbbe-acbe-4074-984f-5243c0c66484",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -300.0,
+                                            "y": -100.0
+                                        },
+                                        "Guid": "899b103b-beb4-407b-9c43-bf3b24294337",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 540.0,
+                            "y": -60.0
+                        },
+                        "Guid": "97944c95-9ecd-45e6-bb30-b79fe651c0b8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableStayAheadNear",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_StayAheadOfPlayer_Phase2_Near\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 540.0,
+                            "y": -260.0
+                        },
+                        "Guid": "072a64a4-386f-41e8-a497-6a6bcb6be429",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableStayAheadNear",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_StayAheadOfPlayer_Phase2_Near\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 540.0,
+                            "y": -660.0
+                        },
+                        "Guid": "57f191ee-c9e6-4fcd-850d-890cee2f8f3b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveNear",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossGHMovingAnimation\",\"AbilityType\":-1399289584}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 540.0,
+                            "y": -380.0
+                        },
+                        "Guid": "72dd2f9c-7d49-44e2-85ac-dd109834ffc8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TurnAwayFromTarget",
+                    "Name": "TurnNear",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-1399289584}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 540.0,
+                            "y": -520.0
+                        },
+                        "Guid": "d572b4d1-1479-4879-9aa1-ce4ea095f8c8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TurnAwayFromTarget",
+                    "Name": "TurnAwayFromTargetFar",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-894335717}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -480.0
+                        },
+                        "Guid": "88da41bc-7771-4371-975a-194a5d2444d5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "EntryState",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "GuardianWithinRangeNear",
+                            "ToState": "NearMovement",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -320.0,
+                                    "y": 180.0
+                                },
+                                "Guid": "2fadf7cb-dbb2-432d-8de9-0f3b2539476c",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "NotNear",
+                            "ToState": "FarMovement",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -760.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "3e7f9a35-2ce2-420f-bce1-77c43cc66177",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": 180.0
+                        },
+                        "Guid": "42b6a145-1498-49ad-a025-69eed2ca9db5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

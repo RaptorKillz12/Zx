@@ -1,0 +1,136 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourman_Phase1_CycleVulnerable",
+            "DefaultState": "Entry",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "PreMovingVulnerableTimeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":2.0,\"VariableName\":\"PreMovingVulnerableTimeout\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -120.0
+                        },
+                        "Guid": "968b7668-001d-4f72-8bf2-ed90a4dd0499",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMState",
+                    "Name": "Entry",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "PreMovingVulnerableTimeout",
+                            "ToState": "StateGroup_MovingVulnerable",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -120.0
+                                },
+                                "Guid": "968b7668-001d-4f72-8bf2-ed90a4dd0499",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -120.0
+                        },
+                        "Guid": "d9ade473-16db-41ec-8f2b-10d6d71f98a5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_Vulnerable_Target",
+                    "Name": "Vulnerable",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"VulnerableTime\":99.0,\"VulnerableTarget\":1387901083,\"TargetActivateDelaySeconds\":0.20000000298023225}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -260.0
+                        },
+                        "Guid": "c0545f33-2f0c-4506-9e69-7a9f14998d88",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_MovingVulnerable",
+                    "CtorArgs": "{\"States\":[\"Vulnerable\",\"TriggerVulnerableEffect\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -120.0
+                        },
+                        "Guid": "f9a9820e-b3cc-41a8-a54d-17a07b563346",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerVulnerableEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmanHatOpenCloseNotCharging\",\"TriggerEffect\":-996958514}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -360.0
+                        },
+                        "Guid": "c6e7fa87-f83b-451a-b110-c58fbd1995be",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,1195 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMShaderVariantGenerator",
+            "DefaultState": "ClearExistingVariants",
+            "DoMultipleTransitions": false,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMShaderTransitionCompilationComplete",
+                    "Name": "CompilationComplete2",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1600.0,
+                            "y": 0.0
+                        },
+                        "Guid": "753dc61e-c513-4f5d-b22a-e58def7d9a59",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionCompilationComplete",
+                    "Name": "CompilationComplete3",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4800.0,
+                            "y": 320.0
+                        },
+                        "Guid": "1d90ac01-2099-4dad-ac1c-9035abd1e2d5",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionQualityIsMax",
+                    "Name": "IsMaxQuality",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4300.0,
+                            "y": 200.0
+                        },
+                        "Guid": "e179717a-90f7-4f6f-81aa-d828230e25c3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "NotMaxQuality",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"IsMaxQuality\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 900.0
+                        },
+                        "Guid": "9574ede0-c00a-4e17-a697-a782b2bd7127",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionCompilationComplete",
+                    "Name": "CompilationComplete4",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": 200.0
+                        },
+                        "Guid": "1fbd78ff-ba24-4cfc-91b1-af80f9703c6c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionCanToggleMoreComponents",
+                    "Name": "CanToggleMoreComponents",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 660.0
+                        },
+                        "Guid": "103b0c77-7cf9-4c0a-960c-59149897b343",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "NoMoreObjectsToToggle",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"CanToggleMoreComponents\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3300.0,
+                            "y": 200.0
+                        },
+                        "Guid": "fc43f9f9-c287-4358-920f-f82f21c5ffa8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionCompilationComplete",
+                    "Name": "CompilationComplete5",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 200.0
+                        },
+                        "Guid": "2e6a2bdb-4318-41fa-b16d-4d12a8620aa9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionCompilationComplete",
+                    "Name": "CompilationComplete6",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 200.0
+                        },
+                        "Guid": "c5307327-d9db-4c74-9b08-77ede02c80a4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionCanToggleMoreRenderFeatures",
+                    "Name": "CanToggleMoreRenderFeatures",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 400.0
+                        },
+                        "Guid": "72a124f7-f573-4d36-a344-66256ba56a47",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "NoMoreRendererFeatures",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"CanToggleMoreRenderFeatures\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": 200.0
+                        },
+                        "Guid": "20e22fb7-994a-4d6a-8050-14ad8bff3634",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1100.0,
+                            "y": -1100.0
+                        },
+                        "Guid": "44099b0a-9aaa-44a6-b551-8d1eecc85383",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionCompilationComplete",
+                    "Name": "FSMShaderTransitionCompilationComplete2",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -100.0,
+                            "y": -1100.0
+                        },
+                        "Guid": "e727dc28-13b2-41f3-8945-c653d7914aec",
+                        "InDirection": 1,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionCheckAllLevelsSeen",
+                    "Name": "CheckAllLevelsSeen",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3400.0,
+                            "y": -300.0
+                        },
+                        "Guid": "dfea0d6b-9a6f-4eac-a043-977195635e84",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "MoreLevelsToBeSeen",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"CheckAllLevelsSeen\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": -1300.0
+                        },
+                        "Guid": "00ecad96-6846-4b0c-af6a-43d5b0da0c71",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionQualityIsMax",
+                    "Name": "LevelIsMaxQuality",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1900.0,
+                            "y": -460.0
+                        },
+                        "Guid": "3f720131-1523-4d4b-9a1a-6973fe960db4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionCompilationComplete",
+                    "Name": "FSMShaderTransitionCompilationComplete3",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 900.0,
+                            "y": -460.0
+                        },
+                        "Guid": "0835753b-bcc3-41bb-b8ab-bbe13357b8e4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "MoreQualityLevels",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"LevelIsMaxQuality\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 900.0,
+                            "y": -680.0
+                        },
+                        "Guid": "bc72f94e-c258-4dc6-8f01-031aaf0f2002",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionCompilationComplete",
+                    "Name": "FSMShaderTransitionCompilationComplete",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -100.0,
+                            "y": -800.0
+                        },
+                        "Guid": "026b4d1d-d151-4cac-b729-257aa9b39204",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionCompilationComplete",
+                    "Name": "FSMShaderTransitionCompilationComplete4",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -100.0,
+                            "y": -600.0
+                        },
+                        "Guid": "2be885dd-0fd8-4e7e-9982-ddc49e10fd0d",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderTransitionAllLocationsSeen",
+                    "Name": "AllLocationsSeen",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2900.0,
+                            "y": -460.0
+                        },
+                        "Guid": "2926334e-22cb-4d60-940f-cc1c877e25b5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "MoreSpawnPoints",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"AllLocationsSeen\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 400.0,
+                            "y": -1020.0
+                        },
+                        "Guid": "ae9cbd40-2986-4ac3-ba99-e96a262b11c2",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMShaderStateClearExistingVariants",
+                    "Name": "ClearExistingVariants",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "FSMShaderStateLoadGameLevel",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1100.0,
+                                    "y": -1100.0
+                                },
+                                "Guid": "44099b0a-9aaa-44a6-b551-8d1eecc85383",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1600.0,
+                            "y": -1100.0
+                        },
+                        "Guid": "841320ca-6042-4791-b97e-78dc05ac5854",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateGenerateMaterials",
+                    "Name": "GenerateMaterials",
+                    "CtorArgs": "{\"SceneName\":\"s_material_renderer\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CompilationComplete2",
+                            "ToState": "InitialiseAtQualitySetting",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1600.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "753dc61e-c513-4f5d-b22a-e58def7d9a59",
+                                "InDirection": 3,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1600.0,
+                            "y": -140.0
+                        },
+                        "Guid": "bc0e4ca0-a1f3-468a-b430-9796e409e4c0",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateProcessComplete",
+                    "Name": "ProcessComplete",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4800.0,
+                            "y": 480.0
+                        },
+                        "Guid": "c7ee7aa5-3336-4375-ad12-62b24045faff",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateSaveVariantCollection",
+                    "Name": "FSMShaderStateSaveVariantCollection",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CompilationComplete3",
+                            "ToState": "ProcessComplete",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 4800.0,
+                                    "y": 320.0
+                                },
+                                "Guid": "1d90ac01-2099-4dad-ac1c-9035abd1e2d5",
+                                "InDirection": 3,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4800.0,
+                            "y": 200.0
+                        },
+                        "Guid": "9719c02a-9ec6-466f-bb40-618b7b092ce5",
+                        "InDirection": 1,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateIncreaseQualityLevel",
+                    "Name": "IncreaseQualityLevel",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1200.0,
+                            "y": 580.0
+                        },
+                        "Guid": "f637e652-87fd-4157-8f51-05ab985a33c5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "CheckQuality",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "NotMaxQuality",
+                            "ToState": "InitialiseAtQualitySetting",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": 900.0
+                                },
+                                "Guid": "9574ede0-c00a-4e17-a697-a782b2bd7127",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 4180.0,
+                                            "y": 930.0
+                                        },
+                                        "Guid": "796faf06-2c45-4b9c-9306-a690c1a9b774",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -1200.0,
+                                            "y": 920.0
+                                        },
+                                        "Guid": "66b4ebf0-0ed9-488d-8c28-fcf84e06a0da",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "IsMaxQuality",
+                            "ToState": "FSMShaderStateSaveVariantCollection",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 4300.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "e179717a-90f7-4f6f-81aa-d828230e25c3",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3800.0,
+                            "y": 200.0
+                        },
+                        "Guid": "486cd595-7334-4415-80bf-8fd223b1e794",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateResetSceneComponents",
+                    "Name": "ResetSceneComponents",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1200.0,
+                            "y": 480.0
+                        },
+                        "Guid": "e41eb276-4c18-48fd-9d74-7cdc6a0be09d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "InitialiseAtQualitySetting",
+                    "CtorArgs": "{\"States\":[\"IncreaseQualityLevel\",\"ResetSceneComponents\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CompilationComplete4",
+                            "ToState": "ToggleObjectsAndResetRenderers",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -700.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "1fbd78ff-ba24-4cfc-91b1-af80f9703c6c",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1200.0,
+                            "y": 200.0
+                        },
+                        "Guid": "5c7db150-8f11-466f-8a71-68392058b0ee",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateToggleObjectState",
+                    "Name": "ToggleObjectState",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": 500.0
+                        },
+                        "Guid": "49f36a32-26a9-42ea-9b98-ee0087788725",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "CheckObjectToggles",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CanToggleMoreComponents",
+                            "ToState": "ToggleObjectsAndResetRenderers",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": 660.0
+                                },
+                                "Guid": "103b0c77-7cf9-4c0a-960c-59149897b343",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3210.0,
+                                            "y": 680.0
+                                        },
+                                        "Guid": "2f61c763-8c5f-423f-8815-0651dc24b220",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -200.0,
+                                            "y": 680.0
+                                        },
+                                        "Guid": "fc254018-0800-46c9-a528-feedf6acf456",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "NoMoreObjectsToToggle",
+                            "ToState": "CheckQuality",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3300.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "fc43f9f9-c287-4358-920f-f82f21c5ffa8",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2800.0,
+                            "y": 200.0
+                        },
+                        "Guid": "b5883231-5c85-47d9-bc3e-0277a4eb0da8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateToggleRenderFeatures",
+                    "Name": "ToggleRenderFeatures",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CompilationComplete6",
+                            "ToState": "CheckRenderFeatures",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "c5307327-d9db-4c74-9b08-77ede02c80a4",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 200.0
+                        },
+                        "Guid": "746a69de-ec98-44a9-9490-d2086b71567d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "CheckRenderFeatures",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "NoMoreRendererFeatures",
+                            "ToState": "CheckObjectToggles",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2300.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "20e22fb7-994a-4d6a-8050-14ad8bff3634",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "CanToggleMoreRenderFeatures",
+                            "ToState": "ToggleRenderFeatures",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": 400.0
+                                },
+                                "Guid": "72a124f7-f573-4d36-a344-66256ba56a47",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2180.0,
+                                            "y": 420.0
+                                        },
+                                        "Guid": "7552eee1-4f72-46d1-8674-c4ef7d2652a9",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 800.0,
+                                            "y": 420.0
+                                        },
+                                        "Guid": "0e965383-249d-49a5-a3db-77ab70b10aaf",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 200.0
+                        },
+                        "Guid": "e2800b3e-bc02-4a5b-8a69-645690fa151c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "ToggleObjectsAndResetRenderers",
+                    "CtorArgs": "{\"States\":[\"ResetRenderFeatures\",\"ToggleObjectState\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CompilationComplete5",
+                            "ToState": "ToggleRenderFeatures",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "2e6a2bdb-4318-41fa-b16d-4d12a8620aa9",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": 200.0
+                        },
+                        "Guid": "2b241ad4-dd72-43e6-ac87-246a72560284",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateResetRenderFeatures",
+                    "Name": "ResetRenderFeatures",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": 400.0
+                        },
+                        "Guid": "11d76483-6694-4eb7-becc-a287876664c3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateLoadGameLevel",
+                    "Name": "FSMShaderStateLoadGameLevel",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "FSMShaderTransitionCompilationComplete2",
+                            "ToState": "ResetQualityLevel",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -100.0,
+                                    "y": -1100.0
+                                },
+                                "Guid": "e727dc28-13b2-41f3-8945-c653d7914aec",
+                                "InDirection": 1,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": -1100.0
+                        },
+                        "Guid": "e4f167cf-5904-44d5-8866-98a4479c7ccf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "CheckRespawns",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AllLocationsSeen",
+                            "ToState": "CheckLevels",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2900.0,
+                                    "y": -460.0
+                                },
+                                "Guid": "2926334e-22cb-4d60-940f-cc1c877e25b5",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "MoreSpawnPoints",
+                            "ToState": "ResetQualityLevel",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 400.0,
+                                    "y": -1020.0
+                                },
+                                "Guid": "ae9cbd40-2986-4ac3-ba99-e96a262b11c2",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2780.0,
+                                            "y": -990.0
+                                        },
+                                        "Guid": "48a423cb-6cd5-41e6-8356-76aba39c0ef3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2400.0,
+                            "y": -460.0
+                        },
+                        "Guid": "28aff0e9-13e0-4e85-9cde-7605e8b099f3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateIncreaseQualityLevel",
+                    "Name": "IncreaseQualityLevel2",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "FSMShaderTransitionCompilationComplete3",
+                            "ToState": "CheckQuality2",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 900.0,
+                                    "y": -460.0
+                                },
+                                "Guid": "0835753b-bcc3-41bb-b8ab-bbe13357b8e4",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 400.0,
+                            "y": -460.0
+                        },
+                        "Guid": "ae042742-fd3d-43f0-8bf0-8956bc454403",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "CheckQuality2",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "LevelIsMaxQuality",
+                            "ToState": "CheckRespawns",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1900.0,
+                                    "y": -460.0
+                                },
+                                "Guid": "3f720131-1523-4d4b-9a1a-6973fe960db4",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "MoreQualityLevels",
+                            "ToState": "IncreaseQualityLevel2",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 900.0,
+                                    "y": -680.0
+                                },
+                                "Guid": "bc72f94e-c258-4dc6-8f01-031aaf0f2002",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1770.0,
+                                            "y": -660.0
+                                        },
+                                        "Guid": "d5f6b220-49ea-4959-98c8-b8cbe3657942",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 400.0,
+                                            "y": -660.0
+                                        },
+                                        "Guid": "216b2f62-1f51-401b-8f63-30bd6cab84f9",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1400.0,
+                            "y": -460.0
+                        },
+                        "Guid": "9b832a94-0cce-43bd-8580-2cb9b1ca7069",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateResetQualityLevel",
+                    "Name": "ResetQualityLevel",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "FSMShaderTransitionCompilationComplete",
+                            "ToState": "FSMShaderStateLoadNextRespawn",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -100.0,
+                                    "y": -800.0
+                                },
+                                "Guid": "026b4d1d-d151-4cac-b729-257aa9b39204",
+                                "InDirection": 3,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -100.0,
+                            "y": -900.0
+                        },
+                        "Guid": "58000a78-acdb-4792-b269-fd21091b7ceb",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMShaderStateLoadNextRespawn",
+                    "Name": "FSMShaderStateLoadNextRespawn",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "FSMShaderTransitionCompilationComplete4",
+                            "ToState": "IncreaseQualityLevel2",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -100.0,
+                                    "y": -600.0
+                                },
+                                "Guid": "2be885dd-0fd8-4e7e-9982-ddc49e10fd0d",
+                                "InDirection": 3,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -100.0,
+                            "y": -700.0
+                        },
+                        "Guid": "9391ffea-985c-48ca-b731-46a62c54e467",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "CheckLevels",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "MoreLevelsToBeSeen",
+                            "ToState": "FSMShaderStateLoadGameLevel",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -600.0,
+                                    "y": -1300.0
+                                },
+                                "Guid": "00ecad96-6846-4b0c-af6a-43d5b0da0c71",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 3780.0,
+                                            "y": -1260.0
+                                        },
+                                        "Guid": "6a511cbc-dd79-4056-9d07-01b931fa2af1",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "CheckAllLevelsSeen",
+                            "ToState": "GenerateMaterials",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3400.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "dfea0d6b-9a6f-4eac-a043-977195635e84",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -1200.0,
+                                            "y": -290.0
+                                        },
+                                        "Guid": "70831adc-54b4-461c-b1f1-9c9a21ba0a82",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3400.0,
+                            "y": -460.0
+                        },
+                        "Guid": "537a7369-9c71-4b63-bdc2-d9042022b336",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -160.0,
+                    "y": -60.0
+                },
+                "Guid": "5503d131-cb8e-4b3f-b758-20b553dcbb52",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

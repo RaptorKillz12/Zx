@@ -1,0 +1,136 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_ResetCameraAndControls",
+            "DefaultState": "FSMState_TriggerCharacterCamera",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -720.0,
+                            "y": 120.0
+                        },
+                        "Guid": "ae4ac7bc-071e-46a2-bd53-ca7873d9fff5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "FSMState_TriggerCharacterCamera",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"CameraTypeOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1200.0,
+                            "y": -40.0
+                        },
+                        "Guid": "e930dca3-a614-4d24-8d28-cdf53c578fcb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerScreenControls",
+                    "Name": "FSMState_TriggerScreenControls",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ScreenControlsGroupOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1200.0,
+                            "y": 40.0
+                        },
+                        "Guid": "6a5ea107-a88b-4aa8-97a3-084907d0858d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_Reset",
+                    "CtorArgs": "{\"States\":[\"FSMState_TriggerCharacterCamera\",\"FSMState_TriggerScreenControls\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -720.0,
+                                    "y": 120.0
+                                },
+                                "Guid": "ae4ac7bc-071e-46a2-bd53-ca7873d9fff5",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1200.0,
+                            "y": 120.0
+                        },
+                        "Guid": "a0723d3f-5e51-4000-9538-b4d2713e213d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "Finished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -240.0,
+                            "y": 120.0
+                        },
+                        "Guid": "34d6efcd-3f61-4166-b41b-364141b83749",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": 40.0,
+                    "y": -140.0
+                },
+                "Guid": "31d0b0cf-0b2b-4ca9-9695-05d19cacd3d4",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

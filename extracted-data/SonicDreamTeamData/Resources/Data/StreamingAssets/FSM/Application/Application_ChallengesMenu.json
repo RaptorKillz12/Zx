@@ -1,0 +1,131 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_ChallengesMenu",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "OnChallengesOpen",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventChallengesOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -200.0
+                        },
+                        "Guid": "f5ff16ff-b244-4e7e-a7f9-a70292866569"
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainer",
+                    "Name": "ApplicationTransitionUIMessageCloseUIContainer",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventChallengesClose\",\"Container\":\"uicontaineridentifier_challenges\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -200.0
+                        },
+                        "Guid": "78431347-57a0-41f2-bceb-b8bd671031d9"
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMState",
+                    "Name": "Start",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OnChallengesOpen",
+                            "ToState": "ApplicationStateOpenUIContainer",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "f5ff16ff-b244-4e7e-a7f9-a70292866569",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": -200.0
+                        },
+                        "Guid": "1d904847-9c25-438f-903d-9a93db0b08e9"
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "ApplicationStateOpenUIContainer",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_challenges\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ApplicationTransitionUIMessageCloseUIContainer",
+                            "ToState": "Start",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "78431347-57a0-41f2-bceb-b8bd671031d9",
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1080.0,
+                                            "y": -240.0
+                                        },
+                                        "Guid": "b4a6e6bb-7400-4b55-ab78-71d89e96baec",
+                                        "Flipped": true
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -800.0,
+                                            "y": -240.0
+                                        },
+                                        "Guid": "decf4333-349f-4f45-ae07-279ed719d4b4",
+                                        "Flipped": true
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -200.0
+                        },
+                        "Guid": "11335cf0-bcb8-45eb-82ba-fc3e99a57455"
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "60f68040-d65e-4bb5-b082-8f9140b80534"
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            }
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

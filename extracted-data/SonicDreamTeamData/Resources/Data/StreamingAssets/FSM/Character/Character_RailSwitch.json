@@ -1,0 +1,119 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_RailSwitch",
+            "DefaultState": "Group_RailSwitch",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [],
+            "States": [
+                {
+                    "Class": "CharacterState_RailSwitch",
+                    "Name": "RailSwitch",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterAirStateAnimation\",\"AbilityType\":-199785173}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": -260.0
+                        },
+                        "Guid": "632b3499-5f67-4706-93bd-483b2eac269c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_RailSwitch",
+                    "CtorArgs": "{\"States\":[\"RailSwitch\",\"TriggerAbilityRailSwitchOffOnEnter\",\"TriggerAbilityRailSwitchOnOnLeave\",\"RailSwitchSFX\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": 0.0
+                        },
+                        "Guid": "2d3cb140-b4bf-48a3-88ab-146772fcab71",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailSwitchOffOnEnter",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityRailSwitch\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": -400.0
+                        },
+                        "Guid": "facd4ef0-34da-4275-b92c-992cc67dc5a2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityRailSwitchOnOnLeave",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"AbilityRailSwitch\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": -140.0
+                        },
+                        "Guid": "b54b126b-7dcc-4df1-83d5-baf2fb3076f5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "RailSwitchSFX",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterRailSwitchSFX\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1940.0,
+                            "y": -220.0
+                        },
+                        "Guid": "43ce36cc-6cdd-49ce-a46f-d95116b7761c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -160.0,
+                    "y": -40.0
+                },
+                "Guid": "d3133b3f-7c1c-4eb2-95ad-94c7b318a3fe",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 1626.0,
+                    "y": -98.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,200 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_AirChaosControl",
+            "DefaultState": "Group_AirChaosAim",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "CharacterTransition_AirAbility",
+                    "Name": "ToAirChaosDash",
+                    "CtorArgs": "{\"AbilityType\":270625489}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -180.0,
+                            "y": -20.0
+                        },
+                        "Guid": "4d9183a0-9b0c-47fb-9e8e-29666573482a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_AirChaosAim",
+                    "CtorArgs": "{\"States\":[\"TriggerDisableAbilities\",\"AirChaosAim\",\"CameraChaosAim\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToAirChaosDash",
+                            "ToState": "Group_AirChaosDash",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -180.0,
+                                    "y": -20.0
+                                },
+                                "Guid": "4d9183a0-9b0c-47fb-9e8e-29666573482a",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -20.0
+                        },
+                        "Guid": "0a64c057-9423-4a6b-a24c-29b41c6231fc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_AirChaosAim",
+                    "Name": "AirChaosAim",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterChaosAimAnimation\",\"AbilityType\":-821166510}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -260.0
+                        },
+                        "Guid": "f7f7795f-9359-4377-9c6d-19d183106059",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "CameraChaosAim",
+                    "CtorArgs": "{\"ActiveEventType\":2,\"CameraTypeOverride\":-709212659}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -140.0
+                        },
+                        "Guid": "5ea36708-a91d-4f0e-9f05-f708c0214fcc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_AirChaosDash",
+                    "CtorArgs": "{\"States\":[\"DisableAirChaosAim\",\"EnableAirChaosDash\",\"AirChaosDash\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": -20.0
+                        },
+                        "Guid": "4fdd6fee-0c6b-4e74-a5ca-72f046438ee1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableAirChaosDash",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityAirChaosDash\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": -400.0
+                        },
+                        "Guid": "6bc32aa5-72a1-4242-a39e-13ba77427c3c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAirChaosAim",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityAirChaosAim\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": -540.0
+                        },
+                        "Guid": "e86c7945-5aa6-4100-bc43-684d7591bf71",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_AirChaosDash",
+                    "Name": "AirChaosDash",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterChaosDashAnimation\",\"AbilityType\":270625489}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": -260.0
+                        },
+                        "Guid": "2952cf2c-09c2-4e52-a4de-8cde901a490b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerDisableAbilities",
+                    "Name": "TriggerDisableAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ExceptionList\":[\"AbilityAirChaosAim\",\"AbilityAirChaosDash\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -460.0
+                        },
+                        "Guid": "31c5e3ef-8920-4550-a8a3-c971f8937309",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -20.0,
+                    "y": -140.0
+                },
+                "Guid": "383e6722-86b1-4e2a-ae48-d8222c1ec92a",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

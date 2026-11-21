@@ -1,0 +1,551 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossCrab_Attack_Claw",
+            "DefaultState": "EntryState",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "BossTransition_UsedClawCheck",
+                    "Name": "ClawLeft",
+                    "CtorArgs": "{\"Claw\":-1144350659,\"Deflated\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1040.0,
+                            "y": -140.0
+                        },
+                        "Guid": "909ccd3f-086b-4ee3-84e3-a54006b7c90a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_UsedClawCheck",
+                    "Name": "ClawRight",
+                    "CtorArgs": "{\"Claw\":-755926426,\"Deflated\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1040.0,
+                            "y": 20.0
+                        },
+                        "Guid": "bdf86232-c184-4fae-8c27-d2220ed2c2e8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_UsedClawCheck",
+                    "Name": "ClawLeftDeflated",
+                    "CtorArgs": "{\"Claw\":-1144350659,\"Deflated\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1040.0,
+                            "y": -300.0
+                        },
+                        "Guid": "a01f2451-db86-4993-8070-1d08a216f6e9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_UsedClawCheck",
+                    "Name": "ClawRightDeflated",
+                    "CtorArgs": "{\"Claw\":-755926426,\"Deflated\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1040.0,
+                            "y": 160.0
+                        },
+                        "Guid": "f9a16c0d-a202-45e8-9d86-37a35a099813",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_AttackWindUpComplete",
+                    "Name": "WindUpComplete",
+                    "CtorArgs": "{\"AbilityType\":108086788}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2320.0,
+                            "y": -140.0
+                        },
+                        "Guid": "c1d2f385-6a29-4547-b310-6eed37adc016",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "ClawAttackTriggered",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"BossAbility_CrabClawSlam\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3400.0,
+                            "y": -140.0
+                        },
+                        "Guid": "28dfaa6b-7975-4bc0-bbe9-472fc524c1ab",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_AttackWindUpComplete",
+                    "Name": "StartWindUp",
+                    "CtorArgs": "{\"AbilityType\":108086788}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2320.0,
+                            "y": 20.0
+                        },
+                        "Guid": "5ece7e48-d7ab-4195-9a14-dd04f6686c77",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "ClawAttackTriggered2",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"BossAbility_CrabClawSlam\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3400.0,
+                            "y": 20.0
+                        },
+                        "Guid": "fc40f98d-f6b0-493c-b252-26db2eb84501",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "WindUpLeft",
+                    "CtorArgs": "{\"States\":[\"TriggerWindUpLeft\",\"TriggerWindUpEffects\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "WindUpComplete",
+                            "ToState": "WaitForAbilityTrigger",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2320.0,
+                                    "y": -140.0
+                                },
+                                "Guid": "c1d2f385-6a29-4547-b310-6eed37adc016",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": -140.0
+                        },
+                        "Guid": "d3e48a60-ea0a-471e-b54b-e52de82ed05d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "WindUpRight",
+                    "CtorArgs": "{\"States\":[\"TriggerWindUpRight\",\"TriggerWindUpEffects\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "StartWindUp",
+                            "ToState": "WaitForAbilityTrigger2",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2320.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "5ece7e48-d7ab-4195-9a14-dd04f6686c77",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": 20.0
+                        },
+                        "Guid": "c4a97800-826a-470e-b63f-6fc6c4dbb8d1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "TriggerWindUpLeft",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossWindUpAttackAnimationLeft\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": 440.0
+                        },
+                        "Guid": "2fb4f742-ab21-4c3b-82a2-e5ff9a1db2e4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "TriggerWindUpRight",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossWindUpAttackAnimationRight\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": 340.0
+                        },
+                        "Guid": "356f8c3f-a0ff-49d5-bae4-e0afad9e8df6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "TriggerFlailLeft",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossTriggerFlailAnimationLeft\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": 560.0
+                        },
+                        "Guid": "ce963727-a9cd-40c5-af32-0c97bcee8061",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "TriggerFlailRight",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossTriggerFlailAnimationRight\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": 660.0
+                        },
+                        "Guid": "4d55258c-2e53-4240-b418-dd48fcc668b8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Flailleft",
+                    "CtorArgs": "{\"States\":[\"TriggerWindUpLeft\",\"TriggerWindUpEffects\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "WindUpComplete",
+                            "ToState": "WaitForAbilityTrigger",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2320.0,
+                                    "y": -140.0
+                                },
+                                "Guid": "c1d2f385-6a29-4547-b310-6eed37adc016",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": -300.0
+                        },
+                        "Guid": "250c7538-4c7f-4910-ac2b-cee217e88ddd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "FlailRight",
+                    "CtorArgs": "{\"States\":[\"TriggerWindUpRight\",\"TriggerWindUpEffects\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "StartWindUp",
+                            "ToState": "WaitForAbilityTrigger2",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2320.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "5ece7e48-d7ab-4195-9a14-dd04f6686c77",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": 160.0
+                        },
+                        "Guid": "6fb58da9-6b5d-47ff-8147-c6552f68c82a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "EntryState",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ClawLeft",
+                            "ToState": "WindUpLeft",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1040.0,
+                                    "y": -140.0
+                                },
+                                "Guid": "909ccd3f-086b-4ee3-84e3-a54006b7c90a",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ClawLeftDeflated",
+                            "ToState": "Flailleft",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1040.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "a01f2451-db86-4993-8070-1d08a216f6e9",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ClawRight",
+                            "ToState": "WindUpRight",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1040.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "bdf86232-c184-4fae-8c27-d2220ed2c2e8",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ClawRightDeflated",
+                            "ToState": "FlailRight",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1040.0,
+                                    "y": 160.0
+                                },
+                                "Guid": "f9a16c0d-a202-45e8-9d86-37a35a099813",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 480.0,
+                            "y": -100.0
+                        },
+                        "Guid": "98b3a35c-9acc-4ab0-887f-d070c8cf60b5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "WaitForAbilityTrigger",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ClawAttackTriggered",
+                            "ToState": "SetAttackOverride2",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3400.0,
+                                    "y": -140.0
+                                },
+                                "Guid": "28dfaa6b-7975-4bc0-bbe9-472fc524c1ab",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2840.0,
+                            "y": -140.0
+                        },
+                        "Guid": "7d681ee7-e848-475e-a7e2-705f6bfb9db8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerWindUpEffects",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-1431654692}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1600.0,
+                            "y": 760.0
+                        },
+                        "Guid": "a0b3a386-339b-4dc9-8b3b-23c02d9cdbf3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "WaitForAbilityTrigger2",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ClawAttackTriggered2",
+                            "ToState": "SetAttackOverrideLeft",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3400.0,
+                                    "y": 20.0
+                                },
+                                "Guid": "fc40f98d-f6b0-493c-b252-26db2eb84501",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2840.0,
+                            "y": 20.0
+                        },
+                        "Guid": "a9509495-f050-437c-b079-df84a17f7ae1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetAttackOverride",
+                    "Name": "SetAttackOverrideLeft",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossTriggerAttackAnimation\",\"AttackTypeToSet\":-1144350659}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3920.0,
+                            "y": 20.0
+                        },
+                        "Guid": "2f563798-b354-4bd8-946d-eaa87172b98b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_SetAttackOverride",
+                    "Name": "SetAttackOverride2",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossTriggerAttackAnimation\",\"AttackTypeToSet\":-755926426}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3920.0,
+                            "y": -140.0
+                        },
+                        "Guid": "86607afc-7142-4c89-8f78-eb1667bb552a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

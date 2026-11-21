@@ -1,0 +1,318 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourmen_Phase1_CycleVulnerable",
+            "DefaultState": "Set_HasBeenHit_False",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "LaserTimeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":6.0,\"VariableName\":\"LaserTimeout\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": -200.0
+                        },
+                        "Guid": "c3cdbb3c-2e50-46de-a833-c01f92292195",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "Check_HasBeenHit_True",
+                    "CtorArgs": "{\"Name\":\"HasBeenHit\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": -20.0
+                        },
+                        "Guid": "b725ec9e-b1e2-4dad-86a3-0a859a46d794",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "Check_HasBeenHit_False",
+                    "CtorArgs": "{\"Name\":\"HasBeenHit\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"FalseCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": -200.0
+                        },
+                        "Guid": "e9fda0e8-e9ed-43da-ac9f-d572c8c2fc33",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always2",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -200.0
+                        },
+                        "Guid": "782681cf-3d63-4a7c-b41f-b933de62db9d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "StaggerVulnerableTmeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":4.0,\"VariableName\":\"StaggerVulnerableTimeout\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 120.0
+                        },
+                        "Guid": "cf586e86-182b-42e0-a0de-a6992e5d7045",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_ShootLasers",
+                    "Name": "ShootLasers",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenLaserLoopSFX\",\"AbilityType\":1421046986}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "LaserTimeout",
+                            "ToState": "EvaluateHasBeenHit",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "c3cdbb3c-2e50-46de-a833-c01f92292195",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": -200.0
+                        },
+                        "Guid": "31cfc695-0757-45e8-b1e2-e3e0af4c176c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "Set_HasBeenHit_False",
+                    "CtorArgs": "{\"Name\":\"HasBeenHit\",\"Node\":\"\",\"FSM\":\"\",\"Value\":false}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always2",
+                            "ToState": "ShootLasers",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -700.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "782681cf-3d63-4a7c-b41f-b933de62db9d",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1200.0,
+                            "y": -200.0
+                        },
+                        "Guid": "806e7366-be3e-4b79-89f1-b3112703205f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "StaggerVulnerable",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossFourmen_Phase1_StaggerVulnerable\",\"ResetStateOnEnter\":true,\"DefaultState\":\"StateGroup_Vulnerable\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "StaggerVulnerableTmeout",
+                            "ToState": "ShootLasers",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1800.0,
+                                    "y": 120.0
+                                },
+                                "Guid": "cf586e86-182b-42e0-a0de-a6992e5d7045",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -200.0,
+                                            "y": 140.0
+                                        },
+                                        "Guid": "4fd1854a-208e-4413-8e1c-4eedbf7aa768",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": -200.0
+                        },
+                        "Guid": "2f2d9f8e-39bc-4f55-b10d-6b3e4be0a26c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "EvaluateHasBeenHit",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Check_HasBeenHit_True",
+                            "ToState": "WaitForStaggerVulnerableTimeout",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": -20.0
+                                },
+                                "Guid": "b725ec9e-b1e2-4dad-86a3-0a859a46d794",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "Check_HasBeenHit_False",
+                            "ToState": "StaggerVulnerable",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "e9fda0e8-e9ed-43da-ac9f-d572c8c2fc33",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -200.0
+                        },
+                        "Guid": "e52a9381-c8c4-4ecd-b815-0a32b5ef7b66",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "WaitForStaggerVulnerableTimeout",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenLaserLoopInterruptSFX\",\"TriggerEffect\":0}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "StaggerVulnerableTmeout",
+                            "ToState": "ShootLasers",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1800.0,
+                                    "y": 120.0
+                                },
+                                "Guid": "cf586e86-182b-42e0-a0de-a6992e5d7045",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -200.0,
+                                            "y": 140.0
+                                        },
+                                        "Guid": "4fd1854a-208e-4413-8e1c-4eedbf7aa768",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": -20.0
+                        },
+                        "Guid": "bd81bba7-0784-4ca3-a597-cfdea8577b08",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

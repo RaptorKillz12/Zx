@@ -1,0 +1,136 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_HalfPipeSpinDash",
+            "DefaultState": "NotChargingSpinDash",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionCheckFloat",
+                    "Name": "IsSpinDashCharging",
+                    "CtorArgs": "{\"Name\":\"SpinDashChargeTime\",\"Node\":\"\",\"FSM\":\"\",\"TriggerPoint\":0.0,\"Tolerance\":0.0,\"Compare\":\"GreaterThan\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": -20.0
+                        },
+                        "Guid": "a427618f-1e19-4ea3-91ee-4d834d73efb2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMState",
+                    "Name": "NotChargingSpinDash",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IsSpinDashCharging",
+                            "ToState": "SpinDashCharge",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": -20.0
+                                },
+                                "Guid": "a427618f-1e19-4ea3-91ee-4d834d73efb2",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": -20.0
+                        },
+                        "Guid": "a1c2799c-fff8-4614-8bb0-89dba7f72d12",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "SpinDashCharge",
+                    "CtorArgs": "{\"States\":[\"SetFormBall\",\"SpinDashEffect\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": -20.0
+                        },
+                        "Guid": "fb45f4a1-85db-4c24-a1bc-55f5e363ec93",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerSetForm",
+                    "Name": "SetFormBall",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"FormType\":-1118283248,\"FormIsLocked\":false,\"FormClearsLock\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 140.0
+                        },
+                        "Guid": "430947c2-7b6b-44d6-b826-cc1e959e512e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "SpinDashEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterAirSpinDashChargeStateAnimation\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 800.0,
+                            "y": 280.0
+                        },
+                        "Guid": "250fa697-02cf-49ce-8843-39f25a94bbf2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -160.0,
+                    "y": -100.0
+                },
+                "Guid": "4e9dd8ed-7bfe-405b-9cc3-f82e1615aafe",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

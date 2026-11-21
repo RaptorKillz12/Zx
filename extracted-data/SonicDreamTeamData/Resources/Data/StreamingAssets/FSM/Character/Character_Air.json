@@ -1,0 +1,1222 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_Air_Split",
+            "DefaultState": "StateGroup_AirAbility",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "CharacterTransition_AirAbility",
+                    "Name": "ToAirDash",
+                    "CtorArgs": "{\"AbilityType\":-1825347650}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -300.0
+                        },
+                        "Guid": "793dead7-10c5-4e1b-8f0d-3d1027f66774",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_AirAbility",
+                    "Name": "ToAirFlight",
+                    "CtorArgs": "{\"AbilityType\":2090213730}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -120.0
+                        },
+                        "Guid": "ddbb3ac8-d989-497b-8bf0-ad7e4f442a58",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_AirAbility",
+                    "Name": "ToAirGlide",
+                    "CtorArgs": "{\"AbilityType\":573756244}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 480.0
+                        },
+                        "Guid": "0ceef1f6-70e5-4c28-8ab8-68003d815116",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_AirAbility",
+                    "Name": "ToAirFall",
+                    "CtorArgs": "{\"AbilityType\":-217225806}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -680.0
+                        },
+                        "Guid": "411a7de6-b0c1-47d9-a971-c59a9017b4fa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_AirAbility",
+                    "Name": "ToAirFlightTired",
+                    "CtorArgs": "{\"AbilityType\":962634853}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -460.0
+                        },
+                        "Guid": "44ecfc4a-98eb-47a5-b6e2-a4db4d1528e1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicOp_NotAirFlightTired",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"ToAirFlightTired\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -600.0
+                        },
+                        "Guid": "ccc28497-a17b-401f-bf4b-1b01e3a2fded",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicOp_ToAirFall",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"ToAirFall\",\"LogicOp_NotAirFlightTired\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 40.0
+                        },
+                        "Guid": "b9c18811-05c2-4797-bda7-ff1278321c69",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "SettingHomingAttackPrimary",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"SettingHomingAttackSecondary\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1500.0,
+                            "y": -340.0
+                        },
+                        "Guid": "06993338-4c83-41e6-b9d0-fa72ba97c902",
+                        "InDirection": 1,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_SettingHomingAttack",
+                    "Name": "SettingHomingAttackSecondary",
+                    "CtorArgs": "{\"ButtonMapping\":-1603365627}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1500.0,
+                            "y": 260.0
+                        },
+                        "Guid": "39fd50ba-e17e-4ce8-a741-9179a78a4620",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "AlwaysToAirAbility",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1500.0,
+                            "y": -20.0
+                        },
+                        "Guid": "38499675-dbe5-4e7f-892c-d090b53680c6",
+                        "InDirection": 3,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "AirFlightSettingHomingAttackPrimary",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"AirFlightSettingHomingAttackSecondary\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -160.0
+                        },
+                        "Guid": "a1227bde-fa8b-494d-9ba2-0590d472ad72",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "AlwaysToAirFlight",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": -20.0
+                        },
+                        "Guid": "8c3afa63-49f7-423a-9e1c-aecdf5d97368",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_SettingHomingAttack",
+                    "Name": "AirFlightSettingHomingAttackSecondary",
+                    "CtorArgs": "{\"ButtonMapping\":-1603365627}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 0.0
+                        },
+                        "Guid": "2392f575-7366-4bd6-9cfc-fb77cd0e115f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_AirAbility",
+                    "Name": "ToAirStompAttack",
+                    "CtorArgs": "{\"AbilityType\":1304297807}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -900.0,
+                            "y": -300.0
+                        },
+                        "Guid": "ff5ff404-ed61-4e2c-ad1d-01f130a1a8bd",
+                        "InDirection": 1,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterTransition_AirAbility",
+                    "Name": "ToAirChaosControl",
+                    "CtorArgs": "{\"AbilityType\":-821166510}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 260.0
+                        },
+                        "Guid": "fd6949dc-830d-4f97-a270-24a4411cbdee",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "CharacterState_AirAbility",
+                    "Name": "AirDash",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterAirDashStateAnimation\",\"AbilityType\":-1825347650}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -560.0
+                        },
+                        "Guid": "47b8d965-12ed-4fcb-9635-a70494cd69d2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_AirAbility",
+                    "Name": "AirGlide",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterAirGlideStateAnimation\",\"AbilityType\":573756244}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 640.0
+                        },
+                        "Guid": "4c321b28-51f9-433b-9f7e-b1b273ed1c3c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_AirAbility",
+                    "Name": "AirFall",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterAirStateAnimation\",\"AbilityType\":-217225806}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 260.0
+                        },
+                        "Guid": "cfba010c-7fc8-473d-bfbc-9b4a39f3e52b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_AirAbility",
+                    "CtorArgs": "{\"States\":[\"StateGroup_TriggerAbilitiesSecondary\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "SettingHomingAttackPrimary",
+                            "ToState": "DisablePrimaryAbilities",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1500.0,
+                                    "y": -340.0
+                                },
+                                "Guid": "06993338-4c83-41e6-b9d0-fa72ba97c902",
+                                "InDirection": 1,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "SettingHomingAttackSecondary",
+                            "ToState": "ToAirAbility",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1500.0,
+                                    "y": 260.0
+                                },
+                                "Guid": "39fd50ba-e17e-4ce8-a741-9179a78a4620",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2100.0,
+                            "y": 120.0
+                        },
+                        "Guid": "0a64c057-9423-4a6b-a24c-29b41c6231fc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityAirFall",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityAirFall\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2100.0,
+                            "y": 560.0
+                        },
+                        "Guid": "1c830766-49dd-4852-91c5-a2c9109bdd52",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_TriggerAbilitiesSecondary",
+                    "CtorArgs": "{\"States\":[\"TriggerAbilityAirFall\",\"TriggerAbilityAirFlightTired\",\"DisableAbilityGroundBoost\",\"DisableAbilityGroundBoostOneShot\",\"DisableAbilityJump\",\"DisableAbilityJumpOneShot\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2100.0,
+                            "y": 260.0
+                        },
+                        "Guid": "40b52082-3989-4f73-ae95-e9a4611d7af6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_AirGlide",
+                    "CtorArgs": "{\"States\":[\"TriggerSetFormDefault\",\"AirGlide\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 480.0
+                        },
+                        "Guid": "ebc7ab1c-b27c-435c-9c28-dcb2733312e5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCharacterCameraLeaveResetGliding",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"CameraTypeOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 940.0
+                        },
+                        "Guid": "e52f1ab7-5e18-4c85-9863-602be942570f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCharacterCameraEnterGliding",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"CameraTypeOverride\":590959812}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 740.0
+                        },
+                        "Guid": "dcfb71ed-961f-4d21-a3c8-bc6c71bdd988",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerSetForm",
+                    "Name": "TriggerSetFormDefault",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"FormType\":602145082,\"FormIsLocked\":false,\"FormClearsLock\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 840.0
+                        },
+                        "Guid": "1e1f2e70-cef0-40ab-9581-4e6bf32ca47f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_AirDash",
+                    "CtorArgs": "{\"States\":[\"AirDash\",\"TriggerRestoreStoredVelocity\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToAirStompAttack",
+                            "ToState": "Group_AirStompAttack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -900.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "ff5ff404-ed61-4e2c-ad1d-01f130a1a8bd",
+                                "InDirection": 1,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1080.0,
+                                            "y": -340.0
+                                        },
+                                        "Guid": "7bbac9dd-44ff-4d24-848f-40980fb8009d",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -900.0,
+                                            "y": -340.0
+                                        },
+                                        "Guid": "9a41cd2d-4b3c-4458-805f-6eb66857ab1a",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -300.0
+                        },
+                        "Guid": "928da6ad-d3cf-40b9-970b-4c3bc27b8514",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerRestoreStoredVelocity",
+                    "Name": "TriggerRestoreStoredVelocity",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityType\":-1825347650,\"TimeSinceAbilityActiveSeconds\":0.20000000298023225}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -460.0
+                        },
+                        "Guid": "23038a2c-3a8d-4dff-ba1d-1a1da950c62d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "SubFSM_AirFlight",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMCharacter_Flight\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"AirFlight\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -460.0
+                        },
+                        "Guid": "8a0269b6-76a2-4616-b887-fe464eb4b5d8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityAirFlightTired",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityAirFlightTired\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2100.0,
+                            "y": 680.0
+                        },
+                        "Guid": "640beb0a-1929-49ba-b3cc-11a84ab9e3c4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_SubFSM_AirFlight",
+                    "CtorArgs": "{\"States\":[\"SubFSM_AirFlight\",\"TriggerCharacterCameraEnterFlight\",\"TriggerCharacterCameraLeaveResetFlight\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "LogicOp_ToAirFall",
+                            "ToState": "Group_AirFall",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": 40.0
+                                },
+                                "Guid": "b9c18811-05c2-4797-bda7-ff1278321c69",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 580.0,
+                                            "y": -20.0
+                                        },
+                                        "Guid": "f8e162fa-799d-4114-895f-6bbfb5295d6b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -300.0,
+                                            "y": -20.0
+                                        },
+                                        "Guid": "22beaed3-3437-41f2-abd5-3c90186e9c57",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 100.0
+                        },
+                        "Guid": "ced26434-f31e-4d24-a653-5b5c8d9f8b35",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCharacterCameraLeaveResetFlight",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"CameraTypeOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -560.0
+                        },
+                        "Guid": "7e2ae840-0829-4c80-acb3-c2d115ff558e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCharacterCameraEnterFlight",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"CameraTypeOverride\":986857158}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -680.0
+                        },
+                        "Guid": "280f6e30-2a63-4110-8299-52a4913618ef",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityAirTarget",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackAirTarget\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1500.0,
+                            "y": -600.0
+                        },
+                        "Guid": "733c80e2-b0aa-4463-84cf-b6ce7536d87b",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "ToAirAbility",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToAirGlide",
+                            "ToState": "Group_AirGlide",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": 480.0
+                                },
+                                "Guid": "0ceef1f6-70e5-4c28-8ab8-68003d815116",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToAirDash",
+                            "ToState": "Group_AirDash",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "793dead7-10c5-4e1b-8f0d-3d1027f66774",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToAirFlight",
+                            "ToState": "ToAirFlight",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -120.0
+                                },
+                                "Guid": "ddbb3ac8-d989-497b-8bf0-ad7e4f442a58",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToAirChaosControl",
+                            "ToState": "SubFSM_AirChaosControl",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": 260.0
+                                },
+                                "Guid": "fd6949dc-830d-4f97-a270-24a4411cbdee",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToAirStompAttack",
+                            "ToState": "Group_AirStompAttack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -900.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "ff5ff404-ed61-4e2c-ad1d-01f130a1a8bd",
+                                "InDirection": 1,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -510.0,
+                                            "y": -10.0
+                                        },
+                                        "Guid": "950e05c1-cb0f-4399-a110-3d11b640a53c",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -900.0,
+                                            "y": -10.0
+                                        },
+                                        "Guid": "0ac8481a-e162-47d6-82d9-f7a496005b1b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -900.0,
+                            "y": 260.0
+                        },
+                        "Guid": "a534272f-9229-448f-93dc-59990ca62e62",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityAirLightspeedDash",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackAirLightspeedDash\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1500.0,
+                            "y": -460.0
+                        },
+                        "Guid": "e2e6096e-e3d8-460e-be1f-f67e885ec3bd",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "DisablePrimaryAbilities",
+                    "CtorArgs": "{\"States\":[\"DisableAbilityAirTarget\",\"DisableAbilityAirLightspeedDash\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AlwaysToAirAbility",
+                            "ToState": "ToAirAbility",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1500.0,
+                                    "y": -20.0
+                                },
+                                "Guid": "38499675-dbe5-4e7f-892c-d090b53680c6",
+                                "InDirection": 3,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1500.0,
+                            "y": -180.0
+                        },
+                        "Guid": "0256bb57-60a5-48b7-9c78-30d00972c732",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_AirFall",
+                    "CtorArgs": "{\"States\":[\"AirFall\",\"TriggerAbilityAirTarget\",\"TriggerAbilityAirLightspeedDash\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToAirFlight",
+                            "ToState": "ToAirFlight",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -120.0
+                                },
+                                "Guid": "ddbb3ac8-d989-497b-8bf0-ad7e4f442a58",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 580.0,
+                                            "y": 220.0
+                                        },
+                                        "Guid": "0b0d4dca-3cf0-4c21-9b05-4bae8b7b0ac1",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -300.0,
+                                            "y": 220.0
+                                        },
+                                        "Guid": "593086b6-b33d-4e90-9d08-f9b76ee1bd3b",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 40.0
+                        },
+                        "Guid": "c94b8346-a17f-49c5-9cb7-a9280f1059bf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityAirTarget",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackAirTarget\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2020.0,
+                            "y": -600.0
+                        },
+                        "Guid": "ca7ea9eb-ac0a-42fe-ae80-4edf54d23693",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityAirLightspeedDash",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackAirLightspeedDash\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2020.0,
+                            "y": -460.0
+                        },
+                        "Guid": "83481cf7-652a-4b6a-ac2b-9bed320c2529",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "DisablePrimaryAirAbilities",
+                    "CtorArgs": "{\"States\":[\"DisableAbilityAirTarget\",\"DisableAbilityAirLightspeedDash\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AlwaysToAirFlight",
+                            "ToState": "Group_SubFSM_AirFlight",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1200.0,
+                                    "y": -20.0
+                                },
+                                "Guid": "8c3afa63-49f7-423a-9e1c-aecdf5d97368",
+                                "InDirection": 3,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1200.0,
+                            "y": -160.0
+                        },
+                        "Guid": "641569ba-eeb2-4bd9-bc19-bbebfad6a0e8",
+                        "InDirection": 1,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "ToAirFlight",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AirFlightSettingHomingAttackSecondary",
+                            "ToState": "Group_SubFSM_AirFlight",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "2392f575-7366-4bd6-9cfc-fb77cd0e115f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "AirFlightSettingHomingAttackPrimary",
+                            "ToState": "DisablePrimaryAirAbilities",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 700.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "a1227bde-fa8b-494d-9ba2-0590d472ad72",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -120.0
+                        },
+                        "Guid": "fc42b6dc-ca30-42fe-929d-181df8d84f39",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_AirStompAttack",
+                    "CtorArgs": "{\"States\":[\"AirStompAttack\",\"TriggerRestoreStoredVelocityStomp\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToAirGlide",
+                            "ToState": "Group_AirGlide",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": 480.0
+                                },
+                                "Guid": "0ceef1f6-70e5-4c28-8ab8-68003d815116",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToAirDash",
+                            "ToState": "Group_AirDash",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -300.0
+                                },
+                                "Guid": "793dead7-10c5-4e1b-8f0d-3d1027f66774",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToAirFlight",
+                            "ToState": "ToAirFlight",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": -120.0
+                                },
+                                "Guid": "ddbb3ac8-d989-497b-8bf0-ad7e4f442a58",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToAirChaosControl",
+                            "ToState": "SubFSM_AirChaosControl",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -300.0,
+                                    "y": 260.0
+                                },
+                                "Guid": "fd6949dc-830d-4f97-a270-24a4411cbdee",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -900.0,
+                            "y": -200.0
+                        },
+                        "Guid": "dd173c80-4de6-42aa-bfcc-cce1a16b584e",
+                        "InDirection": 3,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_AirAbility",
+                    "Name": "AirStompAttack",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterAirStompAttackAnimation\",\"AbilityType\":1304297807}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 620.0
+                        },
+                        "Guid": "7285b43d-8660-4398-b673-c3fc07713158",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerRestoreStoredVelocity",
+                    "Name": "TriggerRestoreStoredVelocityStomp",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityType\":1304297807,\"TimeSinceAbilityActiveSeconds\":0.10000000149011612}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 720.0
+                        },
+                        "Guid": "487d62b5-0f5c-4e45-9efa-a3a0dfd4361e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCharacterCameraEnterStomp",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"CameraTypeOverride\":-1875445302}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 840.0
+                        },
+                        "Guid": "ba189d0a-87e3-485e-8f33-4d22aa05e384",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCharacterCameraLeaveResetStomp",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"CameraTypeOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 940.0
+                        },
+                        "Guid": "923f0ba5-45bf-4916-8951-0f32161aeff8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "SubFSM_AirChaosControl",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMCharacter_AirChaosControl\",\"ResetStateOnEnter\":true,\"HasFinishedOnEndStateOnly\":false,\"DefaultState\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": 260.0
+                        },
+                        "Guid": "43a88812-312f-421c-947f-2664f6a88082",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityGroundBoost",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementGroundBoost\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1660.0,
+                            "y": 560.0
+                        },
+                        "Guid": "8f533326-0691-41a2-aa63-c92d895e169b",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityGroundBoostOneShot",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementGroundBoost_OneShot\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1660.0,
+                            "y": 680.0
+                        },
+                        "Guid": "a5806e69-0e1b-4423-92f7-267cef574df4",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityJump",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementJump\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1220.0,
+                            "y": 560.0
+                        },
+                        "Guid": "6a921f93-7cc1-4a10-8a59-8fdfa4f10e86",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityJumpOneShot",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementJump_OneShot\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1220.0,
+                            "y": 680.0
+                        },
+                        "Guid": "aa7ca5e2-8d23-42ba-b93b-07d3d2e036e4",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -20.0,
+                    "y": -140.0
+                },
+                "Guid": "383e6722-86b1-4e2a-ae48-d8222c1ec92a",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

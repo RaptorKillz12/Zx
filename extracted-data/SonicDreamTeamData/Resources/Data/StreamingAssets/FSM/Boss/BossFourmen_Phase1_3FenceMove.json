@@ -1,0 +1,173 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourmen_Phase1_3FenceMove",
+            "DefaultState": "StateGroup_Move",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "AbilityFinished",
+                    "CtorArgs": "{\"AbilityType\":-19733847}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2000.0,
+                            "y": -160.0
+                        },
+                        "Guid": "a1ff8adf-5123-4628-9ba6-7fabf2e65bb3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveToTarget",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenMovmentSFX\",\"AbilityType\":-19733847}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": 120.0
+                        },
+                        "Guid": "233ee8ea-1d74-4207-a20d-88a7c14a7337",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_Move",
+                    "CtorArgs": "{\"States\":[\"MoveToTarget\",\"Turn Towards Boss Manager Target\",\"EnableMoveRandom\",\"DisableMoveRandom\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AbilityFinished",
+                            "ToState": "StateGroup_Move",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -2000.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "a1ff8adf-5123-4628-9ba6-7fabf2e65bb3",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -1620.0,
+                                            "y": 80.0
+                                        },
+                                        "Guid": "fee4c271-0572-4cac-959f-301b267f2d86",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -2500.0,
+                                            "y": 80.0
+                                        },
+                                        "Guid": "6b22114b-2bae-4d23-95f7-1d4733182aef",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": -160.0
+                        },
+                        "Guid": "87c31ef8-6d25-4cf0-a408-d855f7533188",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableMoveRandom",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_MoveRandomFast\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": 320.0
+                        },
+                        "Guid": "0642352e-fe22-40d7-822b-c27d831e0b39",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableMoveRandom",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_MoveRandomFast\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": 440.0
+                        },
+                        "Guid": "6cad39ef-4268-4456-9148-336ef1a36ae4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TurnToBossManagerTarget",
+                    "Name": "Turn Towards Boss Manager Target",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-19733847}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -2500.0,
+                            "y": 220.0
+                        },
+                        "Guid": "f2451b5c-e44e-4002-9559-32a6c36beab8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

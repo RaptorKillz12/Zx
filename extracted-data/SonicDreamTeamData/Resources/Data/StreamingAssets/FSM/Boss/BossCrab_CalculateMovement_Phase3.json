@@ -1,0 +1,251 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossCrab_CalculateMovement_Phase3",
+            "DefaultState": "DecideMovement",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "ToScuttle",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"BossAbility_Scuttle_Phase3\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 340.0,
+                            "y": 0.0
+                        },
+                        "Guid": "abcb7af7-fd9a-4949-b95f-72f47261d8ba",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "ScuttleFinished",
+                    "CtorArgs": "{\"AbilityType\":1646168450}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 60.0
+                        },
+                        "Guid": "6f622fe3-9342-4aa4-adbd-ae6899deafd8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "Timeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":1.0,\"VariableName\":\"\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2260.0,
+                            "y": -100.0
+                        },
+                        "Guid": "788a8cde-b6c4-48a2-a95b-3c847dda5ab3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "ToWait",
+                    "CtorArgs": "{\"LogicOp\":\"LogicOR\",\"ChildTransitionNames\":[\"ScuttleFinished\",\"ScuttleTimeout\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": -100.0
+                        },
+                        "Guid": "0e6669c3-4ad2-413e-ad73-29b99eab3b33",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "ScuttleTimeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":5.0,\"VariableName\":\"\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 140.0
+                        },
+                        "Guid": "4feb3d43-b085-4955-b205-cf5d9bc505e3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_Scuttle",
+                    "Name": "Scuttling",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossMovementToggle\",\"AbilityType\":1646168450}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 820.0,
+                            "y": 40.0
+                        },
+                        "Guid": "fbf6c3a8-a2eb-46ee-aeb1-b524ad4f3ddd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "BossState_Scuttle",
+                    "CtorArgs": "{\"States\":[\"Scuttling\",\"DecideMovement\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToWait",
+                            "ToState": "WaitPlaceholder",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": -100.0
+                                },
+                                "Guid": "0e6669c3-4ad2-413e-ad73-29b99eab3b33",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 820.0,
+                            "y": -100.0
+                        },
+                        "Guid": "40d03622-2c28-4c37-bfd3-885f25521bd9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_DecideMovement",
+                    "Name": "DecideMovement",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"BossMovementRange\":69.0}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToScuttle",
+                            "ToState": "BossState_Scuttle",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 340.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "abcb7af7-fd9a-4949-b95f-72f47261d8ba",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -120.0,
+                            "y": 0.0
+                        },
+                        "Guid": "9116e1ed-eee7-471f-9cd4-12f4344dd2db",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "WaitPlaceholder",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Timeout",
+                            "ToState": "DecideMovement",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2260.0,
+                                    "y": -100.0
+                                },
+                                "Guid": "788a8cde-b6c4-48a2-a95b-3c847dda5ab3",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2640.0,
+                                            "y": -180.0
+                                        },
+                                        "Guid": "3ff3c236-b32b-4015-a0cc-70208f0a294a",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -120.0,
+                                            "y": -180.0
+                                        },
+                                        "Guid": "f476228a-0127-484b-be71-9f09a86b5137",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1780.0,
+                            "y": -100.0
+                        },
+                        "Guid": "5dc696cd-5a0f-425c-bed5-20760c6ded03",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -900.0,
+                    "y": -300.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

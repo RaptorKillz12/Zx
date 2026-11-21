@@ -1,0 +1,312 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourman_Phase1_Decaying_Spiral",
+            "DefaultState": "Entry",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "Timeout3",
+                    "CtorArgs": "{\"TimeoutSeconds\":0.0,\"VariableName\":\"WaitForSpinning\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1340.0,
+                            "y": -160.0
+                        },
+                        "Guid": "1d9d9d6f-0931-48d9-8fc2-f0e5752fff06",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionHasFinished",
+                    "Name": "HasFinished",
+                    "CtorArgs": "{\"State\":\"CycleVulnerable\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -140.0,
+                            "y": -160.0
+                        },
+                        "Guid": "ac443184-c144-42f1-8e25-502de7eb604d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "AbilityFinished",
+                    "CtorArgs": "{\"AbilityType\":-2065398103}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 820.0,
+                            "y": -160.0
+                        },
+                        "Guid": "60a2b620-478e-4dfd-b6f2-3875c6f7fcf1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Spiral",
+                    "CtorArgs": "{\"States\":[\"EnableBigCircleWithDecayingRadius\",\"DisableBigCircleWithDecayingRadius\",\"MoveToTarget\",\"CycleVulnerable\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "HasFinished",
+                            "ToState": "MoveToCharge",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -140.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "ac443184-c144-42f1-8e25-502de7eb604d",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -620.0,
+                            "y": -160.0
+                        },
+                        "Guid": "a951d550-af30-4acc-95a9-dc926e55c41c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "Entry",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Timeout3",
+                            "ToState": "Spiral",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1340.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "1d9d9d6f-0931-48d9-8fc2-f0e5752fff06",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1800.0,
+                            "y": -160.0
+                        },
+                        "Guid": "e85001cb-c502-4d95-92d5-0596eb50d8f1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableBigCircleWithDecayingRadius",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_MoveBigCircleWithDecayingRadius\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -620.0,
+                            "y": -800.0
+                        },
+                        "Guid": "08800174-e9c5-4b75-bae5-ddcfb9f62b6a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableBigCircleWithDecayingRadius",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_MoveBigCircleWithDecayingRadius\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -620.0,
+                            "y": -660.0
+                        },
+                        "Guid": "0ca243e2-bb7d-474d-a811-7990a034a752",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveToTarget",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-734410101}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -620.0,
+                            "y": 120.0
+                        },
+                        "Guid": "9ffd0b27-082f-40fd-a80e-4e4bdc319847",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "MoveToCharge",
+                    "CtorArgs": "{\"States\":[\"EnableMoveToCharge\",\"DisableChargeMove\",\"MoveToChargeState\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AbilityFinished",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 820.0,
+                                    "y": -160.0
+                                },
+                                "Guid": "60a2b620-478e-4dfd-b6f2-3875c6f7fcf1",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 340.0,
+                            "y": -160.0
+                        },
+                        "Guid": "7f8da7d6-ee50-4bd2-8ad0-5de1cf33ad23",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableChargeMove",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_MoveToArenaCentre\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 340.0,
+                            "y": -400.0
+                        },
+                        "Guid": "4c87219d-ade7-4f87-af59-e1d8b16a82e0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableMoveToCharge",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_MoveToArenaCentre\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 340.0,
+                            "y": -540.0
+                        },
+                        "Guid": "843e819b-93f4-4cd7-9cb5-0ac121e70d5b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveToChargeState",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-2065398103}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 340.0,
+                            "y": 40.0
+                        },
+                        "Guid": "90d9e4e2-3d22-42d6-adf5-69d037f4c451",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "CycleVulnerable",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossFourman_Phase1_CycleVulnerable\",\"ResetStateOnEnter\":true,\"DefaultState\":\"Entry\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -620.0,
+                            "y": 260.0
+                        },
+                        "Guid": "1c2dad5c-9cc1-48f3-ab4a-3b7e3165de28",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "Finished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": -160.0
+                        },
+                        "Guid": "db1bdba7-0b92-411c-b02d-4059ec26a8f8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

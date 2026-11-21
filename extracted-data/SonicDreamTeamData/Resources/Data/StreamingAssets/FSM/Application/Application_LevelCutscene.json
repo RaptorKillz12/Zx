@@ -1,0 +1,232 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_LevelCutscene",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionCheckCutscenePlaying",
+                    "Name": "CutsceneFinished",
+                    "CtorArgs": "{\"Compare\":\"FalseCausesTransition\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -400.0,
+                            "y": -120.0
+                        },
+                        "Guid": "b27e9414-d50e-4ae2-9ba3-03593cb1948c",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckCutscenePlaying",
+                    "Name": "CutsceneBegun",
+                    "CtorArgs": "{\"Compare\":\"TrueCausesTransition\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -400.0,
+                            "y": -420.0
+                        },
+                        "Guid": "610e298c-5075-4df5-8605-2d057c973807",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -400.0,
+                            "y": 180.0
+                        },
+                        "Guid": "3852a7e0-d74a-4f00-9f12-9afae638f8b7",
+                        "InDirection": 3,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "ShowUIPublishDone",
+                    "CtorArgs": "{\"States\":[\"ToggleOn\",\"PublishComplete\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "Start",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -400.0,
+                                    "y": 180.0
+                                },
+                                "Guid": "3852a7e0-d74a-4f00-9f12-9afae638f8b7",
+                                "InDirection": 3,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -400.0,
+                            "y": 0.0
+                        },
+                        "Guid": "960e0866-bc8c-4217-ab84-945b53f6f62f",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_PublishStateMessage",
+                    "Name": "PublishComplete",
+                    "CtorArgs": "{\"EventId\":\"ApplicationStateEventCutsceneDone\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 100.0,
+                            "y": 0.0
+                        },
+                        "Guid": "c618bf54-a23b-4dce-a259-89363b7bdef5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "HideUIAndTransition",
+                    "CtorArgs": "{\"States\":[\"ToggleOff\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CutsceneFinished",
+                            "ToState": "ShowUIPublishDone",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -400.0,
+                                    "y": -120.0
+                                },
+                                "Guid": "b27e9414-d50e-4ae2-9ba3-03593cb1948c",
+                                "InDirection": 3,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -400.0,
+                            "y": -300.0
+                        },
+                        "Guid": "cb04f4a5-8c2e-4774-ad9e-6b05bc3b1dec",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "Start",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CutsceneBegun",
+                            "ToState": "HideUIAndTransition",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -400.0,
+                                    "y": -420.0
+                                },
+                                "Guid": "610e298c-5075-4df5-8605-2d057c973807",
+                                "InDirection": 3,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -400.0,
+                            "y": -520.0
+                        },
+                        "Guid": "f3134939-ecc0-4e02-b110-7493efb82fad",
+                        "InDirection": 1,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "ToggleOff",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_SetInactiveUIControls\",\"ResetStateOnEnter\":false,\"DefaultState\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 100.0,
+                            "y": -300.0
+                        },
+                        "Guid": "23137b74-b999-4428-9c0b-408e6ee09a98",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "ToggleOn",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_SetActiveUIControls\",\"ResetStateOnEnter\":false,\"DefaultState\":\"\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 100.0,
+                            "y": 80.0
+                        },
+                        "Guid": "704bd9a0-2600-4aa0-a09d-887b6da51eea",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "3dc98285-2e8f-4748-bacb-2d8b65fcb8ad",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 563.0,
+                    "y": -362.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,457 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_Climb",
+            "DefaultState": "StateGroup_Climb_Triggers",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -160.0,
+                            "y": 200.0
+                        },
+                        "Guid": "878c6cbb-4015-4ea2-bff7-fc04200f9d3f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "ClimbingBoostTriggered",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementClimbingBoostKnuckles\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 720.0,
+                            "y": 200.0
+                        },
+                        "Guid": "5e97b095-907f-40de-ab8c-1186c92e1412",
+                        "InDirection": 1,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "ClimbingBoostExit",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"AbilityMovementClimbingBoostKnuckles\",\"IsTriggered\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 720.0,
+                            "y": 500.0
+                        },
+                        "Guid": "b01d662e-904c-4f00-8239-ebd3a45e53bc",
+                        "InDirection": 3,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "CharacterState_TriggerGravity",
+                    "Name": "TriggerGravityDisabled",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"GravityEnabled\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1040.0,
+                            "y": 320.0
+                        },
+                        "Guid": "750f61da-c9a1-42e7-8e0a-24dd168c98bc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_MovementClimbing",
+                    "Name": "MovementClimbing",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterClimbAnimation\",\"AbilityType\":476288513}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 280.0,
+                            "y": 600.0
+                        },
+                        "Guid": "f9aa97f3-b0a0-4bd5-b53a-f93a20688908",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityJumpEnabled",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementJump\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 600.0
+                        },
+                        "Guid": "409e706b-1fed-41cc-8058-c5d9a64a1146",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityClimbingMovementEnabled",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementClimbingKnuckles\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -160.0,
+                            "y": 720.0
+                        },
+                        "Guid": "d17d10fd-8f9b-478e-ab31-3347df1c21e7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityGroundRollEnabled",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementGroundRolling\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 720.0
+                        },
+                        "Guid": "060c4f61-344a-4148-bdf7-d4d9df7031b2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerGravity",
+                    "Name": "TriggerGravityEnabled",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"GravityEnabled\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 280.0,
+                            "y": 720.0
+                        },
+                        "Guid": "80980684-d3b6-4962-8ce0-9eeadcee777e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCharacterCameraClimbingEnter",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"CameraTypeOverride\":-29053560}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1040.0,
+                            "y": 420.0
+                        },
+                        "Guid": "714d2bd1-db07-4e9e-8796-1d9ee2a35141",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCharacterCamera",
+                    "Name": "TriggerCharacterCameraNoneLeave",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"CameraTypeOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 280.0,
+                            "y": 840.0
+                        },
+                        "Guid": "ec0692c8-79c7-4c2c-a780-3a24b3c3d687",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityLedgeMountEnabled",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityLedgeMountKnuckles\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -160.0,
+                            "y": 840.0
+                        },
+                        "Guid": "670e5ae9-9f97-4c5b-a593-dc2e13019932",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_Climb",
+                    "CtorArgs": "{\"States\":[\"MovementClimbing\",\"TriggerGravityEnabled\",\"TriggerCharacterCameraNoneLeave\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ClimbingBoostTriggered",
+                            "ToState": "StateGroup_ClimbingBoost",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 720.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "5e97b095-907f-40de-ab8c-1186c92e1412",
+                                "InDirection": 1,
+                                "OutDirection": 4,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 280.0,
+                            "y": 200.0
+                        },
+                        "Guid": "c21132cf-b234-4980-80c7-55a3900ac8d7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_Climb_Triggers",
+                    "CtorArgs": "{\"States\":[\"TriggerDisableAbilities\",\"TriggerGravityDisabled\",\"TriggerAbilityJumpEnabled\",\"TriggerAbilityClimbingMovementEnabled\",\"TriggerAbilityGroundRollEnabled\",\"TriggerAbilityLedgeMountEnabled\",\"TriggerCharacterCameraClimbingEnter\",\"TriggerResetAirAbilities\",\"TriggerAbilityLedgeMountGroundEnabled\",\"TriggerAbilityTransporterProximity\",\"TriggerAbilityClimbingBoostEnabled\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "StateGroup_Climb",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -160.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "878c6cbb-4015-4ea2-bff7-fc04200f9d3f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 200.0
+                        },
+                        "Guid": "a87ce13e-45fe-4d4e-820b-a2acee8ccc53",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerDisableAbilities",
+                    "Name": "TriggerDisableAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ExceptionList\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1040.0,
+                            "y": 200.0
+                        },
+                        "Guid": "4beb1701-08e9-4629-bcb9-652157fa7b1a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerResetAirAbilities",
+                    "Name": "TriggerResetAirAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1040.0,
+                            "y": 520.0
+                        },
+                        "Guid": "e68cdef5-9a72-448a-ad3d-4e09985388a4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityLedgeMountGroundEnabled",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityLedgeMountGroundKnuckles\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -160.0,
+                            "y": 960.0
+                        },
+                        "Guid": "08f2e95b-74cb-43b6-8832-b98e9d47dafa",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityTransporterProximity",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityTransporterProximity\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -600.0,
+                            "y": 840.0
+                        },
+                        "Guid": "6f887ed2-d835-4598-9513-44f49956fb51",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityClimbingBoostEnabled",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementClimbingBoostKnuckles\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -160.0,
+                            "y": 600.0
+                        },
+                        "Guid": "089fe88b-573a-4383-a4db-18492d1f62b2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_ClimbingBoost",
+                    "Name": "ClimbingBoost",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterClimbingBoostStateAnimation\",\"AbilityType\":1858055465}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1160.0,
+                            "y": 320.0
+                        },
+                        "Guid": "e2c53f27-ba00-4c5c-ba7a-0d913c35947d",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "SetClimbingMaintainCurrentVelocity",
+                    "CtorArgs": "{\"Name\":\"ClimbingMaintainCurrentVelocityOnEnter\",\"Node\":\"\",\"FSM\":\"\",\"Value\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "StateGroup_Climb",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -160.0,
+                                    "y": 200.0
+                                },
+                                "Guid": "878c6cbb-4015-4ea2-bff7-fc04200f9d3f",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 280.0,
+                            "y": 420.0
+                        },
+                        "Guid": "3ad337fe-3c10-42db-b92a-339fe3d65a65",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_ClimbingBoost",
+                    "CtorArgs": "{\"States\":[\"SetClimbingMaintainCurrentVelocity\",\"ClimbingBoost\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ClimbingBoostExit",
+                            "ToState": "SetClimbingMaintainCurrentVelocity",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 720.0,
+                                    "y": 500.0
+                                },
+                                "Guid": "b01d662e-904c-4f00-8239-ebd3a45e53bc",
+                                "InDirection": 3,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 720.0,
+                            "y": 320.0
+                        },
+                        "Guid": "40aa9201-acee-4dd1-a0c5-77bfffa55380",
+                        "InDirection": 3,
+                        "OutDirection": 4,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -160.0,
+                    "y": -40.0
+                },
+                "Guid": "0e56c25b-0096-4012-bb2d-b6e317f4b8b6",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 686.0,
+                    "y": 70.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

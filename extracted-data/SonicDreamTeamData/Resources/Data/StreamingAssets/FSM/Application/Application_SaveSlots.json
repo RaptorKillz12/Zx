@@ -1,0 +1,333 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_SaveSlots",
+            "DefaultState": "Start",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "OpenUIMessage",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventSaveSlotsOpen\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": -100.0
+                        },
+                        "Guid": "bfd84146-050c-472d-a3cf-71066f931c70",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessageCloseUIContainer",
+                    "Name": "CloseTransitionUIMessage",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventSaveSlotsClose\",\"Container\":\"uicontaineridentifier_saved_slots\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 100.0
+                        },
+                        "Guid": "44179df6-f360-41b8-8c7c-4d611fb458f8",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionUIMessage",
+                    "Name": "SelectSaveUITransition",
+                    "CtorArgs": "{\"EventId\":\"UIModernEventSaveSlotsSelect\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 300.0
+                        },
+                        "Guid": "7fda622e-a0d9-4b27-b85b-03f79189cde5",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionGameSaveLoaded",
+                    "Name": "SaveLoaded",
+                    "CtorArgs": "{\"Inverse\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": 300.0
+                        },
+                        "Guid": "da072565-6fa3-4c37-bbae-b2f63fbaacb3",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "StartIsReady",
+                    "CtorArgs": "{\"Name\":\"StartIsReady\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": 400.0
+                        },
+                        "Guid": "bdbe72e4-d712-4786-89e5-a4dc9f4b1466",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "AlwaysAfterClosing",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 600.0
+                        },
+                        "Guid": "b780c80f-09ea-4694-92e1-98b0d7aa39d7",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "OpenDialog",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_saved_slots\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CloseTransitionUIMessage",
+                            "ToState": "Start",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": 100.0
+                                },
+                                "Guid": "44179df6-f360-41b8-8c7c-4d611fb458f8",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -700.0,
+                                            "y": 120.0
+                                        },
+                                        "Guid": "258e1a8f-6c72-4f97-8001-cf36c6ed4503",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "SelectSaveUITransition",
+                            "ToState": "LoadSelectedSave",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": 300.0
+                                },
+                                "Guid": "7fda622e-a0d9-4b27-b85b-03f79189cde5",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": -100.0
+                        },
+                        "Guid": "04a897b0-f6ed-4e22-904c-1fd80856eaa3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "Start",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "OpenUIMessage",
+                            "ToState": "OpenDialog",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -200.0,
+                                    "y": -100.0
+                                },
+                                "Guid": "bfd84146-050c-472d-a3cf-71066f931c70",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": -100.0
+                        },
+                        "Guid": "69941971-61c5-4768-ba13-f8be761eefbf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateLoadGameSave",
+                    "Name": "LoadSelectedSave",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "SaveLoaded",
+                            "ToState": "WaitForStartScreenToBeReady",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -700.0,
+                                    "y": 300.0
+                                },
+                                "Guid": "da072565-6fa3-4c37-bbae-b2f63fbaacb3",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -200.0,
+                            "y": 300.0
+                        },
+                        "Guid": "5d163c4c-116a-4f2a-9ef4-df42d3377d23",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateCloseUIContainer",
+                    "Name": "CloseSaveSlots",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_saved_slots\",\"DoNotCloseIfOpen\":[]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "AlwaysAfterClosing",
+                            "ToState": "Start",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 300.0,
+                                    "y": 600.0
+                                },
+                                "Guid": "b780c80f-09ea-4694-92e1-98b0d7aa39d7",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": -700.0,
+                                            "y": 620.0
+                                        },
+                                        "Guid": "770bbb2b-5c14-4d01-bae5-418395dab949",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 300.0,
+                            "y": 400.0
+                        },
+                        "Guid": "6e8540c6-49df-41f9-9e30-7944818412e1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "WaitForStartScreenToBeReady",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "StartIsReady",
+                            "ToState": "CloseSaveSlots",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -200.0,
+                                    "y": 400.0
+                                },
+                                "Guid": "bdbe72e4-d712-4786-89e5-a4dc9f4b1466",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -700.0,
+                            "y": 400.0
+                        },
+                        "Guid": "991ed235-d355-49c6-a3dd-612d3ca7dab1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "3dc98285-2e8f-4748-bacb-2d8b65fcb8ad",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": -39.719970703125,
+                    "y": -299.1879577636719
+                },
+                "Zoom": 0.9424822330474854
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,367 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossCrab_CalculateMovement_Phase1",
+            "DefaultState": "DecideMovemtAndTurnOrAttack",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "ToScuttle",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"BossAbility_Scuttle\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 460.0,
+                            "y": 0.0
+                        },
+                        "Guid": "abcb7af7-fd9a-4949-b95f-72f47261d8ba",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityTriggered",
+                    "Name": "ToJump",
+                    "CtorArgs": "{\"AbilityDefinitionName\":\"BossAbility_RetreatingJump_Phase1\",\"IsTriggered\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 460.0,
+                            "y": 260.0
+                        },
+                        "Guid": "18938a0d-7ff1-4067-97b2-527405039d45",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "RetreatingJumpFinished",
+                    "CtorArgs": "{\"AbilityType\":-709226074}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1460.0,
+                            "y": 100.0
+                        },
+                        "Guid": "4e17e9ba-2693-4c71-b962-fa8fc2e569f6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "ScuttleFinished",
+                    "CtorArgs": "{\"AbilityType\":-1768276840}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1460.0,
+                            "y": 0.0
+                        },
+                        "Guid": "c0614c55-10a2-4803-8b53-6da183acfe46",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "JumpTimeout",
+                    "CtorArgs": "{\"TimeoutSeconds\":5.0,\"VariableName\":\"\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 460.0,
+                            "y": 360.0
+                        },
+                        "Guid": "ca67df3c-a955-471a-b54f-8fd9695f17b7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicOp",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"ToJump\",\"JumpTimeout\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 460.0,
+                            "y": 100.0
+                        },
+                        "Guid": "628f5df8-d358-4d72-bdff-40db2097d562",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_Scuttle",
+                    "Name": "Scuttling",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossMovementToggle\",\"AbilityType\":-1768276840}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 940.0,
+                            "y": -160.0
+                        },
+                        "Guid": "fbf6c3a8-a2eb-46ee-aeb1-b524ad4f3ddd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_RetreatingJump",
+                    "Name": "RetreatingJump",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossJumpingSetBool\",\"AbilityType\":-709226074}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 940.0,
+                            "y": 280.0
+                        },
+                        "Guid": "21da7dca-beff-4a3d-b41c-dafef62df50c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_Scuttling",
+                    "CtorArgs": "{\"States\":[\"Scuttling\",\"DecideMovementOrAttack\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ScuttleFinished",
+                            "ToState": "DecideMovemtAndTurnOrAttack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1460.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "c0614c55-10a2-4803-8b53-6da183acfe46",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1840.0,
+                                            "y": -200.0
+                                        },
+                                        "Guid": "f24ef136-34cd-40a2-a72c-a783a01655fc",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -120.0,
+                                            "y": -200.0
+                                        },
+                                        "Guid": "066fa6ac-4410-42eb-80c1-2fd7b48f2e48",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 940.0,
+                            "y": -60.0
+                        },
+                        "Guid": "40d03622-2c28-4c37-bfd3-885f25521bd9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_DecideMovementOrAttack",
+                    "Name": "DecideMovementOrAttack",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossCrabAttackSetup\",\"BossMovementRange\":30.0,\"AttackAbilityDefinitionName\":\"BossAbility_CrabClawSlam\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -120.0,
+                            "y": 0.0
+                        },
+                        "Guid": "a4bf7e77-7fd1-4c06-aeb2-9adba6d95505",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_RetreatingJump",
+                    "CtorArgs": "{\"States\":[\"RetreatingJump\",\"SetJumpingTrueOnEnter\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "RetreatingJumpFinished",
+                            "ToState": "DecideMovemtAndTurnOrAttack",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1460.0,
+                                    "y": 100.0
+                                },
+                                "Guid": "4e17e9ba-2693-4c71-b962-fa8fc2e569f6",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1840.0,
+                                            "y": -220.0
+                                        },
+                                        "Guid": "e3ea2d4a-db8f-47bb-a729-b4a93a418e9f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": -120.0,
+                                            "y": -220.0
+                                        },
+                                        "Guid": "f744196e-9305-4169-871f-1f464b9d5971",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 940.0,
+                            "y": 100.0
+                        },
+                        "Guid": "aa4abd3d-a15b-4410-8e11-b746d45acbdb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TurnToTarget",
+                    "Name": "Turn Towards Target",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":-2145489068}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -120.0,
+                            "y": 280.0
+                        },
+                        "Guid": "e8510362-5b2c-4ceb-817c-05ec95a0990f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "DecideMovemtAndTurnOrAttack",
+                    "CtorArgs": "{\"States\":[\"DecideMovementOrAttack\",\"Turn Towards Target\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToJump",
+                            "ToState": "StateGroup_RetreatingJump",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 460.0,
+                                    "y": 260.0
+                                },
+                                "Guid": "18938a0d-7ff1-4067-97b2-527405039d45",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "ToScuttle",
+                            "ToState": "StateGroup_Scuttling",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 460.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "abcb7af7-fd9a-4949-b95f-72f47261d8ba",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -120.0,
+                            "y": 120.0
+                        },
+                        "Guid": "8a4b2220-c225-4cc2-a413-a0ed16fabe47",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "SetJumpingTrueOnEnter",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossJumpingTrueEnter\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 940.0,
+                            "y": 420.0
+                        },
+                        "Guid": "59503f4e-6767-4818-8bf0-006fdc3169dc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

@@ -1,0 +1,521 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMApplication_BootFlow",
+            "DefaultState": "WaitForGUI",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "BootComplete",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"DataLoadComplete\",\"SaveLoadOrNewVersionRequired\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2800.0,
+                            "y": 100.0
+                        },
+                        "Guid": "decba498-880d-4a3f-a9df-0bff843af1cb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionDataProgress",
+                    "Name": "DataLoadComplete",
+                    "CtorArgs": "{\"Threshold\":1.0}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2800.0,
+                            "y": 0.0
+                        },
+                        "Guid": "24087c76-b656-4b8f-a469-2c0c9ba7c543",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionGameSaveLoaded",
+                    "Name": "SaveGameLoadComplete",
+                    "CtorArgs": "{\"Inverse\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": 400.0
+                        },
+                        "Guid": "7858acf9-9370-412a-b876-4ad482ae1976",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionIsGuiReady",
+                    "Name": "IsGuiReady",
+                    "CtorArgs": "{\"UseAppStorage\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 100.0
+                        },
+                        "Guid": "71affc1f-cdce-4e9b-8dcc-1342bbeaefbd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionIsSceneLoaded",
+                    "Name": "IsIntroVideoLoaded",
+                    "CtorArgs": "{\"SceneName\":\"s_intro_video\",\"UseAppStorage\":false,\"IsAddressable\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 900.0
+                        },
+                        "Guid": "5edc85c6-f740-452f-a510-77dc24cb1d7a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionIsSceneUnloaded",
+                    "Name": "IsIntroVideoUnloaded",
+                    "CtorArgs": "{\"SceneName\":\"s_intro_video\",\"UseAppStorage\":false,\"IsAddressable\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": 1100.0
+                        },
+                        "Guid": "333833ee-9067-453c-9810-df09c82d993d",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationTransitionIsUnityEditor",
+                    "Name": "IsUnityEditor",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 400.0
+                        },
+                        "Guid": "1f79843d-f948-4001-969a-d397f91e7816",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "IsNotUnityEditor",
+                    "CtorArgs": "{\"LogicOp\":\"LogicNOT\",\"ChildTransitionNames\":[\"IsUnityEditor\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 500.0
+                        },
+                        "Guid": "751c3a0a-1065-48d7-b00e-57cd333c82cf",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "NewAppVersionRequired",
+                    "CtorArgs": "{\"Name\":\"NewAppVersionRequired\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false,\"OnlyIfExists\":false,\"RemoveValueOnFire\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": 580.0
+                        },
+                        "Guid": "722ccecb-7571-4092-ae82-baa2d84b9daf",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "SaveLoadOrNewVersionRequired",
+                    "CtorArgs": "{\"LogicOp\":\"LogicOR\",\"ChildTransitionNames\":[\"SaveGameLoadComplete\",\"NewAppVersionRequired\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2800.0,
+                            "y": -200.0
+                        },
+                        "Guid": "71aa1b8a-dfe8-458c-90bd-1c72da2cbbd1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "ApplicationStateLoadAssets",
+                    "Name": "LoadAssets",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": -140.0
+                        },
+                        "Guid": "efde97ca-60bb-4f30-a25a-231775ab7669",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateLoading",
+                    "Name": "Loading",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": 20.0
+                        },
+                        "Guid": "b49753eb-d344-4245-9f6e-108ff8771e9f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateInitialiseHLCrashReport",
+                    "Name": "InitialiseHLCrashReport",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": -60.0
+                        },
+                        "Guid": "184771d6-18c0-42a8-98b5-5435b893edcf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "Finished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 1100.0
+                        },
+                        "Guid": "e60709a9-1999-442f-b2cf-ad9ef3822a81",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "WaitForGUI",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IsGuiReady",
+                            "ToState": "LoadingGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1800.0,
+                                    "y": 100.0
+                                },
+                                "Guid": "71affc1f-cdce-4e9b-8dcc-1342bbeaefbd",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 100.0
+                        },
+                        "Guid": "a0cbade3-3649-4aeb-96ae-4c87f68cc570",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "WaitForIntroVideoLoaded",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IsIntroVideoLoaded",
+                            "ToState": "WaitForIntroVideoUnloaded",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1800.0,
+                                    "y": 900.0
+                                },
+                                "Guid": "5edc85c6-f740-452f-a510-77dc24cb1d7a",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1300.0,
+                            "y": 900.0
+                        },
+                        "Guid": "cdb3e507-3e45-42eb-a1ca-35fa234d875a",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "WaitForIntroVideoUnloaded",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IsIntroVideoUnloaded",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2300.0,
+                                    "y": 1100.0
+                                },
+                                "Guid": "333833ee-9067-453c-9810-df09c82d993d",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": 900.0
+                        },
+                        "Guid": "d5332e57-2fc8-4e42-89a0-274ccc73dd98",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "LoadingGroup",
+                    "CtorArgs": "{\"States\":[\"Loading\",\"InitialiseHLCrashReport\",\"LoadAssets\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "BootComplete",
+                            "ToState": "FSMState",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2800.0,
+                                    "y": 100.0
+                                },
+                                "Guid": "decba498-880d-4a3f-a9df-0bff843af1cb",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2300.0,
+                            "y": 100.0
+                        },
+                        "Guid": "3beb8ec2-6b74-42c5-8824-391bc970bfb8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateCutsceneSaveMaintenance",
+                    "Name": "CutsceneSaveMaintenance",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IsUnityEditor",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": 400.0
+                                },
+                                "Guid": "1f79843d-f948-4001-969a-d397f91e7816",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 1300.0,
+                                            "y": 1040.0
+                                        },
+                                        "Guid": "de106dd5-2367-46ae-b02a-10e99b9f7b90",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2180.0,
+                                            "y": 1040.0
+                                        },
+                                        "Guid": "5f04961b-6e69-48b6-916f-d603e8a41e4d",
+                                        "InDirection": 1,
+                                        "OutDirection": 2,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "Transition": "IsNotUnityEditor",
+                            "ToState": "WaitForIntroVideoLoaded",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1300.0,
+                                    "y": 500.0
+                                },
+                                "Guid": "751c3a0a-1065-48d7-b00e-57cd333c82cf",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 400.0
+                        },
+                        "Guid": "648aa2c5-e87d-43ec-8105-53d00d19ec7e",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState",
+                    "Name": "FSMState",
+                    "CtorArgs": "",
+                    "StateTransitions": [
+                        {
+                            "Transition": "NewAppVersionRequired",
+                            "ToState": "ApplicationStateOpenUIContainer",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2300.0,
+                                    "y": 580.0
+                                },
+                                "Guid": "722ccecb-7571-4092-ae82-baa2d84b9daf",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "SaveGameLoadComplete",
+                            "ToState": "CutsceneSaveMaintenance",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2300.0,
+                                    "y": 400.0
+                                },
+                                "Guid": "7858acf9-9370-412a-b876-4ad482ae1976",
+                                "InDirection": 2,
+                                "OutDirection": 1,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2800.0,
+                            "y": 400.0
+                        },
+                        "Guid": "ca65d8f9-6493-462b-a28d-40e5707d1f2d",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ApplicationStateOpenUIContainer",
+                    "Name": "ApplicationStateOpenUIContainer",
+                    "CtorArgs": "{\"Container\":\"uicontaineridentifier_save_new_app_version_required\",\"PlayScreenTransition\":false,\"TransitionOverrideContainer\":\"\",\"QueueScreenTransitionIfAlreadyActive\":true,\"CloseContainers\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1800.0,
+                            "y": 580.0
+                        },
+                        "Guid": "4fa3f571-1951-49e4-b9ec-d185a6226178",
+                        "InDirection": 2,
+                        "OutDirection": 1,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -800.0,
+                    "y": -300.0
+                },
+                "Guid": "aba97c6c-a563-40c6-beda-76fa73b8bc4b",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": -2054.0,
+                    "y": -493.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": -8.0,
+            "y": 43.0
+        },
+        "Zoom": 1.0
+    }
+}

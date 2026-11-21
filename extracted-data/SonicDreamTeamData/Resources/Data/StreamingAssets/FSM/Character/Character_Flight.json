@@ -1,0 +1,152 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_Flight",
+            "DefaultState": "AirFlight",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "CharacterTransition_AirAbility",
+                    "Name": "ToAirFlightTired",
+                    "CtorArgs": "{\"AbilityType\":962634853}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 200.0,
+                            "y": -320.0
+                        },
+                        "Guid": "849bf06b-0f2e-47a6-8578-2bfbdce0b738",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "CharacterState_AirAbility",
+                    "Name": "AirFlight",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterAirFlyStateAnimation\",\"AbilityType\":2090213730}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ToAirFlightTired",
+                            "ToState": "Group_AirFlightTired",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 200.0,
+                                    "y": -320.0
+                                },
+                                "Guid": "849bf06b-0f2e-47a6-8578-2bfbdce0b738",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": -320.0
+                        },
+                        "Guid": "a2c289e3-b7d2-4e08-a11e-88a3f54e8add",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_AirAbility",
+                    "Name": "AirFlightTired",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterAirFlyStateAnimation\",\"AbilityType\":962634853}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -140.0
+                        },
+                        "Guid": "7eb4d81d-1657-4992-9782-7df3ed2b1374",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_AirFlightTired",
+                    "CtorArgs": "{\"States\":[\"AirFlightTired\",\"DisableAbility_AirFlight\",\"DisableAbility_AirFlightTired\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -320.0
+                        },
+                        "Guid": "29032369-d4c6-49b4-a3e3-660197ea8667",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbility_AirFlightTired",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"AbilityAirFlightTired\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": -40.0
+                        },
+                        "Guid": "1661c18d-a05b-43f8-87d1-5c60fb4c9ae1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbility_AirFlight",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityAirFlight\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 700.0,
+                            "y": 60.0
+                        },
+                        "Guid": "be830b6d-5e8d-4004-8f1c-5a6d67c2081b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -160.0,
+                    "y": -80.0
+                },
+                "Guid": "ca582dd1-c4fa-4ae5-b97d-e0739ce08bb5",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

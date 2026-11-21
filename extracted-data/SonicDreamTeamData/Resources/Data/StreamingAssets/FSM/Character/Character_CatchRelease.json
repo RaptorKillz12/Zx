@@ -1,0 +1,247 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "FSMCharacter_CatchRelease",
+            "DefaultState": "Group_EnterCatchPoint",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [],
+            "States": [
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityJump",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementJump\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": 320.0
+                        },
+                        "Guid": "c9f69c65-b749-4088-aea3-af774148c9e7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityAirMovement",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityMovementAir\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": 200.0
+                        },
+                        "Guid": "64627564-11a1-4719-88ad-14c2e87d93a7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Group_EnterCatchPoint",
+                    "CtorArgs": "{\"States\":[\"TriggerDisableAbilities\",\"TriggerAbilityAirMovement\",\"TriggerAbilityJump\",\"TriggerClearHomingTarget\",\"DisableAbilityHomingAttackGround\",\"DisableAbilityHomingAttackAir\",\"DisableAbilityHomingAttackAirLightspeedDash\",\"ToCatchRelease\",\"TriggerAbilityHomingAttackGround\",\"TriggerAbilityHomingAttackAir\",\"TriggerAbilityHomingAttackAirLightspeedDash\",\"TriggerClearHomingTargetGracePeriod\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": 540.0
+                        },
+                        "Guid": "b9de19f8-2c8a-485f-aa2b-344203bf4e11",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_CatchRelease",
+                    "Name": "ToCatchRelease",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"CharacterCatchReleaseBallFormAnimation\",\"AbilityType\":-1730683918}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": 440.0
+                        },
+                        "Guid": "f28a6747-0718-464e-9e4d-921e9a0e9afb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHomingAttackGround",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"AbilityHomingAttackGroundRunning\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 200.0
+                        },
+                        "Guid": "1c80ae9e-b084-49e2-a364-3dc7c46113c0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHomingAttackAir",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"AbilityHomingAttackAirTarget\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 320.0
+                        },
+                        "Guid": "e7eed309-c29d-403d-9237-58755d0f03a5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerAbilityHomingAttackAirLightspeedDash",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"AbilityHomingAttackAirLightspeedDash\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 440.0
+                        },
+                        "Guid": "a462e132-7309-4b44-9fe4-86ea28173fa7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityHomingAttackGround",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackGroundRunning\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 200.0
+                        },
+                        "Guid": "837b99d7-992c-486f-bdec-1cbd5c80d15c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityHomingAttackAir",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackAirTarget\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 320.0
+                        },
+                        "Guid": "ee1cc872-a48d-4192-a84b-6f6c2d7451bb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableAbilityHomingAttackAirLightspeedDash",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"AbilityHomingAttackAirLightspeedDash\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 440.0
+                        },
+                        "Guid": "0be3aabc-3767-4f32-86fa-b300712b8487",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerClearHomingTarget",
+                    "Name": "TriggerClearHomingTarget",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"StartGracePeriod\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -800.0,
+                            "y": 560.0
+                        },
+                        "Guid": "0526e10e-4f13-4eea-bc2b-719b54a8eecf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "CharacterState_TriggerClearHomingTarget",
+                    "Name": "TriggerClearHomingTargetGracePeriod",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"StartGracePeriod\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -300.0,
+                            "y": 560.0
+                        },
+                        "Guid": "fe7968a4-d0a5-46fc-a63d-9eca4136c362",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerDisableAbilities",
+                    "Name": "TriggerDisableAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"ExceptionList\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1300.0,
+                            "y": 40.0
+                        },
+                        "Guid": "4bb83bfc-6ca3-45e4-9481-ef40b89fe1b6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": 40.0,
+                    "y": -140.0
+                },
+                "Guid": "6d67b75e-5269-4cf7-a114-b32b296538d2",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

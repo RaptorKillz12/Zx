@@ -1,0 +1,230 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourmen_Phase1_MoveToCharge",
+            "DefaultState": "MoveToCharge",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "ActorTransition_AbilityFinished",
+                    "Name": "AbilityFinished",
+                    "CtorArgs": "{\"AbilityType\":1518580477}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1520.0,
+                            "y": -180.0
+                        },
+                        "Guid": "f5e2a533-a06a-4e6f-a399-3dd3785237cd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_BossesInMotion",
+                    "Name": "BossTransition_BossesInMotion",
+                    "CtorArgs": "{\"NoneInMotionCausesTransition\":true,\"AdditionalPauseSeconds\":0.10000000149011612}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1520.0,
+                            "y": -100.0
+                        },
+                        "Guid": "8e43febf-86ba-4ecd-bb77-78e507ef3d75",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicOp",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"BossTransition_BossesInMotion\",\"AbilityFinished\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1520.0,
+                            "y": 0.0
+                        },
+                        "Guid": "4cd93668-6e9f-4be0-b786-a04a71c485f9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_MoveToTarget",
+                    "Name": "MoveToTarget",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":1518580477}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -360.0
+                        },
+                        "Guid": "57f09d6e-db6d-4292-9019-71a2135607f4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "MoveToCharge",
+                    "CtorArgs": "{\"States\":[\"MoveToTarget\",\"EnableMoveToCharge\",\"DisableMoveToCharge\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "LogicOp",
+                            "ToState": "Finished",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1520.0,
+                                    "y": 0.0
+                                },
+                                "Guid": "4cd93668-6e9f-4be0-b786-a04a71c485f9",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 0.0
+                        },
+                        "Guid": "aed83730-83de-48ef-96e7-7af8c69317f7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "DisableMoveToCharge",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"AbilityDefinitionName\":\"BossAbility_MoveToChargePoint\",\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -140.0
+                        },
+                        "Guid": "623cf878-b42b-44ff-8b28-a74239bae1e2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "EnableMoveToCharge",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_MoveToChargePoint\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -260.0
+                        },
+                        "Guid": "e6455b72-6b4d-4301-a839-798c4450681d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateFinished",
+                    "Name": "Finished",
+                    "CtorArgs": "",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2020.0,
+                            "y": 0.0
+                        },
+                        "Guid": "2e228bdb-651b-4ba3-b74c-7564a8654d2e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TurnToBossManagerTarget",
+                    "Name": "Turn Towards Boss Manager Target",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":1518580477}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -480.0
+                        },
+                        "Guid": "ef933934-cf9f-4338-b5cf-0e942affb1a7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TurnToTarget",
+                    "Name": "Turn Towards Target",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":1518580477}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -580.0
+                        },
+                        "Guid": "71824bfe-f28a-47b0-a329-e6add7687280",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_ForcedRotation",
+                    "Name": "ForceRotation",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":1518580477}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": -680.0
+                        },
+                        "Guid": "13481748-7f2b-4adc-afcc-f4c0569f63b4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

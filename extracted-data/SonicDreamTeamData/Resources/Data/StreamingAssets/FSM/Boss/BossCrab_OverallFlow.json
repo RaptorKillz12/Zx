@@ -1,0 +1,951 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossCrab_OverallFlow",
+            "DefaultState": "IntroAnimation",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "IntroTimer",
+                    "CtorArgs": "{\"TimeoutSeconds\":1.0,\"VariableName\":\"IntroTimer\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1000.0,
+                            "y": -60.0
+                        },
+                        "Guid": "d05e33a5-6678-4cba-ba62-47c245501c22",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "PhaseChangeTimerToPhase2",
+                    "CtorArgs": "{\"TimeoutSeconds\":2.0,\"VariableName\":\"PhaseChangeTimerToPhase2\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1120.0,
+                            "y": -60.0
+                        },
+                        "Guid": "00cf300d-f98e-4b39-a789-0895a2a35a99",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_BothClawsBroken",
+                    "Name": "BothClawsBroken",
+                    "CtorArgs": "{\"DelayTransitionFiringTime\":2.0}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 100.0,
+                            "y": -60.0
+                        },
+                        "Guid": "8bb30175-44d9-4b6b-9900-834c5a54ff40",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_BodyBroken",
+                    "Name": "BodyBroken",
+                    "CtorArgs": "{\"DelayTransitionFiringTime\":0.0}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2120.0,
+                            "y": -140.0
+                        },
+                        "Guid": "bfe20c33-e248-4563-a16d-bb1eb351c8f3",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossTransition_HealthCheck",
+                    "Name": "CheckHealthIs",
+                    "CtorArgs": "{\"Value\":0,\"Evaluation\":3}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3560.0,
+                            "y": -60.0
+                        },
+                        "Guid": "adbb816f-b6aa-41e7-ac7b-4e40609536a9",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "PhaseChangeTimerToPhase3",
+                    "CtorArgs": "{\"TimeoutSeconds\":3.0,\"VariableName\":\"PhaseChangeTimerToPhase3\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2120.0,
+                            "y": 400.0
+                        },
+                        "Guid": "6098a3a5-1cc2-48a0-be24-cbaed20d5969",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "ForcePhase2",
+                    "CtorArgs": "{\"Name\":\"ForceNextPhaseTrigger\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":false}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 100.0,
+                            "y": -440.0
+                        },
+                        "Guid": "275d2aef-607e-403a-b843-690335af3fb2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 100.0,
+                            "y": -200.0
+                        },
+                        "Guid": "f3678407-2865-477f-9020-5b77975ff4b0",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionCheckBool",
+                    "Name": "ForcePhase3",
+                    "CtorArgs": "{\"Name\":\"ForceNextPhaseTrigger\",\"Node\":\"\",\"FSM\":\"\",\"Compare\":\"TrueCausesTransition\",\"RemoveValueOnLeave\":true}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2120.0,
+                            "y": -420.0
+                        },
+                        "Guid": "867091a2-5198-43b0-a8a7-b2aaf95ce671",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionTimeout",
+                    "Name": "ForcePhase3Delay",
+                    "CtorArgs": "{\"TimeoutSeconds\":1.0,\"VariableName\":\"\"}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2120.0,
+                            "y": -240.0
+                        },
+                        "Guid": "258ba2b9-192b-4e89-943d-26e543472b07",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionLogicOp",
+                    "Name": "LogicOp",
+                    "CtorArgs": "{\"LogicOp\":\"LogicAND\",\"ChildTransitionNames\":[\"ForcePhase3\",\"ForcePhase3Delay\"]}",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2120.0,
+                            "y": -600.0
+                        },
+                        "Guid": "79e9e914-ac41-4efa-bb61-a753c89b6b74",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMTransitionAlways",
+                    "Name": "Always2",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2600.0,
+                            "y": -460.0
+                        },
+                        "Guid": "ce4a361f-460a-4a12-b9e9-5c7de9e0e889",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "Phase1",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossCrab_Phase1\",\"ResetStateOnEnter\":true,\"DefaultState\":\"IntroAnimation\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -440.0,
+                            "y": 360.0
+                        },
+                        "Guid": "fe7b35b5-b4db-48b5-93e5-6f9bbfceaef8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "IntroAnimation",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "IntroTimer",
+                            "ToState": "StateGroup",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": -1000.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "d05e33a5-6678-4cba-ba62-47c245501c22",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -1540.0,
+                            "y": -60.0
+                        },
+                        "Guid": "8e920664-0c33-45b7-aa95-bb51a91d81cf",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "Phase2",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossCrab_Phase2\",\"ResetStateOnEnter\":false,\"DefaultState\":\"StateGroup_IntroAnimation\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "LogicOp",
+                            "ToState": "ActorState_Effect",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2120.0,
+                                    "y": -600.0
+                                },
+                                "Guid": "79e9e914-ac41-4efa-bb61-a753c89b6b74",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "BodyBroken",
+                            "ToState": "StateGroup3",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2120.0,
+                                    "y": -140.0
+                                },
+                                "Guid": "bfe20c33-e248-4563-a16d-bb1eb351c8f3",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2500.0,
+                                            "y": -20.0
+                                        },
+                                        "Guid": "35889627-979f-444e-aa9d-8aa301b64a18",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2120.0,
+                                            "y": -20.0
+                                        },
+                                        "Guid": "a238a9f9-bb57-4bc3-a6f7-faeedb68dba3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1620.0,
+                            "y": -60.0
+                        },
+                        "Guid": "337befcc-54f7-4713-859c-55b00175fb7c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup",
+                    "CtorArgs": "{\"States\":[\"Phase1\",\"ResetAnimOnExit\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "ForcePhase2",
+                            "ToState": "StateGroup2",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 100.0,
+                                    "y": -440.0
+                                },
+                                "Guid": "275d2aef-607e-403a-b843-690335af3fb2",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        },
+                        {
+                            "Transition": "BothClawsBroken",
+                            "ToState": "ResetBossPauseCharacter",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 100.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "8bb30175-44d9-4b6b-9900-834c5a54ff40",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -440.0,
+                            "y": -60.0
+                        },
+                        "Guid": "61f440ab-9804-468c-9b40-b3a1e4d4eb94",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "Phase3",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"BossCrab_Phase3\",\"ResetStateOnEnter\":false,\"DefaultState\":\"StateGroup_IntroAnimation\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3040.0,
+                            "y": 160.0
+                        },
+                        "Guid": "1b699af1-1e17-41cc-a111-46d0a58ebd7b",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_Vulnerable_Target",
+                    "Name": "Vulnerable",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"VulnerableTime\":99999.0,\"VulnerableTarget\":-648715501,\"TargetActivateDelaySeconds\":0.0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3040.0,
+                            "y": 340.0
+                        },
+                        "Guid": "24dc8cf7-a963-46b4-ab47-1f2d5fec0b04",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "Phase3AlwaysVulnerable",
+                    "CtorArgs": "{\"States\":[\"Vulnerable\",\"DisableAllAbilities\",\"Phase3\",\"RestoreControls\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "CheckHealthIs",
+                            "ToState": "StateGroup_Dead",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 3560.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "adbb816f-b6aa-41e7-ac7b-4e40609536a9",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3040.0,
+                            "y": -40.0
+                        },
+                        "Guid": "b178d3bb-0c4f-435c-bb94-7a177342c43d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCamera",
+                    "Name": "TriggerCameraGroupTargetEnter",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"CameraTypeOverride\":-293108464}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 600.0,
+                            "y": 600.0
+                        },
+                        "Guid": "b61a416d-25fe-46b8-859c-b4b4b9151cb7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMState_TriggerCamera",
+                    "Name": "TriggerCameraNoneLeave",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"CameraTypeOverride\":0}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 600.0,
+                            "y": 140.0
+                        },
+                        "Guid": "703d915d-cf63-48bf-81a5-93ec41a7c662",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "ResetBossPauseCharacter",
+                    "CtorArgs": "{\"States\":[\"ResetAnims\",\"OverrideCharacterControls\",\"InactiveUIControls\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "PhaseChangeTimerToPhase2",
+                            "ToState": "Phase2",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1120.0,
+                                    "y": -60.0
+                                },
+                                "Guid": "00cf300d-f98e-4b39-a789-0895a2a35a99",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 600.0,
+                            "y": -60.0
+                        },
+                        "Guid": "423bf2a9-1c3a-443e-acd5-ef235b8af90d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup3",
+                    "CtorArgs": "{\"States\":[\"TriggerShrink\",\"OverrideGamePlayControl\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "PhaseChangeTimerToPhase3",
+                            "ToState": "Phase3AlwaysVulnerable",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2120.0,
+                                    "y": 400.0
+                                },
+                                "Guid": "6098a3a5-1cc2-48a0-be24-cbaed20d5969",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2500.0,
+                                            "y": 380.0
+                                        },
+                                        "Guid": "6921fd56-e183-4fc7-ab1a-1e3848cbce12",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2120.0,
+                                            "y": 380.0
+                                        },
+                                        "Guid": "2604036b-74b4-427a-83eb-c4006ac86b87",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2120.0,
+                            "y": 40.0
+                        },
+                        "Guid": "4ac6b05e-2b15-42e5-aacf-5d2482a5f69d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup_Dead",
+                    "CtorArgs": "{\"States\":[\"DeathFlight\",\"TriggerInjuredEffect3\",\"TriggerDeathAbility\"]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4040.0,
+                            "y": -100.0
+                        },
+                        "Guid": "e93d136f-2b4f-4e14-b562-e05b62c99cd5",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "ResetAnimOnExit",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFullAnimReset\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": -440.0,
+                            "y": 540.0
+                        },
+                        "Guid": "f6a4135a-06b0-4100-8a6c-15bf1d98fd32",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerInjuredEffect3",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-79364008}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4040.0,
+                            "y": 80.0
+                        },
+                        "Guid": "273204ad-f375-405f-9341-7a381bd5893c",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerShrink",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFlinchPhase2\",\"TriggerEffect\":-79364008}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2120.0,
+                            "y": 280.0
+                        },
+                        "Guid": "b9475fc7-26c6-4083-bc86-dfd8ebffe4b4",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerInjuredEffect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-79364008}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 600.0,
+                            "y": 240.0
+                        },
+                        "Guid": "53844b26-9d01-4e0d-97c5-01e2177c3f8e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "ResetAnims",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFullAnimReset\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 600.0,
+                            "y": 340.0
+                        },
+                        "Guid": "96969ca8-d9d3-4597-9072-7f8961c7cffd",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_DeathFlight",
+                    "Name": "DeathFlight",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"AbilityType\":1701630316}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4040.0,
+                            "y": 200.0
+                        },
+                        "Guid": "6213f133-9535-41da-a2d7-63e27a50d988",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerAbility",
+                    "Name": "TriggerDeathAbility",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"AbilityDefinitionName\":\"BossAbility_DeathFlight\",\"Enable\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 4040.0,
+                            "y": 320.0
+                        },
+                        "Guid": "4148c62b-82f2-4922-8c79-f2e7c49143c1",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerDisableAbilities",
+                    "Name": "DisableAllAbilities",
+                    "CtorArgs": "{\"ActiveEventType\":1,\"ExceptionList\":[]}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3040.0,
+                            "y": 480.0
+                        },
+                        "Guid": "b8fffd4b-8280-41b5-b00e-0d183417c120",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "ForceMovePhase2",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossForcePhase2\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": -360.0
+                        },
+                        "Guid": "0126a2b5-673e-45a6-b64f-9bf8e014afcc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_Effect",
+                    "Name": "ActorState_Effect",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossForcePhase3\"}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always2",
+                            "ToState": "StateGroup3",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 2600.0,
+                                    "y": -460.0
+                                },
+                                "Guid": "ce4a361f-460a-4a12-b9e9-5c7de9e0e889",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2960.0,
+                                            "y": -500.0
+                                        },
+                                        "Guid": "4856d275-3789-4abd-9d9b-b8c06119f20f",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2600.0,
+                                            "y": -500.0
+                                        },
+                                        "Guid": "6abd82bf-0eb2-4f58-9ab6-a2c1e5b4a7c2",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 2980.0,
+                                            "y": -80.0
+                                        },
+                                        "Guid": "aef45cc9-be28-4599-841f-67ff32d1e20c",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2500.0,
+                                            "y": -20.0
+                                        },
+                                        "Guid": "35889627-979f-444e-aa9d-8aa301b64a18",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 2120.0,
+                                            "y": -20.0
+                                        },
+                                        "Guid": "a238a9f9-bb57-4bc3-a6f7-faeedb68dba3",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ]
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2580.0,
+                            "y": -600.0
+                        },
+                        "Guid": "cee26d9c-2000-4c8c-bf20-141c1ff9e8e6",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSetBool",
+                    "Name": "ClearWasHitBool",
+                    "CtorArgs": "{\"Name\":\"WasHit\",\"Node\":\"\",\"FSM\":\"\",\"Value\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": -520.0
+                        },
+                        "Guid": "f4ba38bc-ebef-4440-9522-56fed399e25f",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "StateGroup2",
+                    "CtorArgs": "{\"States\":[\"ClearWasHitBool\",\"ForceMovePhase2\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "Always",
+                            "ToState": "ResetBossPauseCharacter",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 100.0,
+                                    "y": -200.0
+                                },
+                                "Guid": "f3678407-2865-477f-9020-5b77975ff4b0",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [
+                                    {
+                                        "Position": {
+                                            "x": 940.0,
+                                            "y": -260.0
+                                        },
+                                        "Guid": "80433d4e-f647-4479-babe-a8d69469536a",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    },
+                                    {
+                                        "Position": {
+                                            "x": 100.0,
+                                            "y": -260.0
+                                        },
+                                        "Guid": "3cb465d9-4c65-4e2f-8f1f-61f91571dabd",
+                                        "InDirection": 2,
+                                        "OutDirection": 1,
+                                        "Flipped": false
+                                    }
+                                ],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 560.0,
+                            "y": -660.0
+                        },
+                        "Guid": "f0a2ecbc-acb3-461f-a169-adf499c736fc",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateSubFSM",
+                    "Name": "InactiveUIControls",
+                    "CtorArgs": "{\"ManualNameEntry\":false,\"SubFSMName\":\"FSMApplication_SetInactiveUIControls\",\"ResetStateOnEnter\":true,\"DefaultState\":\"Start\"}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 600.0,
+                            "y": 420.0
+                        },
+                        "Guid": "d33cb377-03fe-4d72-9bca-57080b3fb9c2",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateOverrideGamePlayControl",
+                    "Name": "OverrideCharacterControls",
+                    "CtorArgs": "{\"Override\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 600.0,
+                            "y": 720.0
+                        },
+                        "Guid": "e675ef8c-e29f-433a-a5ef-e02dcd5b0952",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateOverrideGamePlayControl",
+                    "Name": "OverrideGamePlayControl",
+                    "CtorArgs": "{\"Override\":true}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 2120.0,
+                            "y": 200.0
+                        },
+                        "Guid": "a6254c85-28f3-4fa5-9ac5-83c4596b8540",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateOverrideGamePlayControl",
+                    "Name": "RestoreControls",
+                    "CtorArgs": "{\"Override\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 3040.0,
+                            "y": 600.0
+                        },
+                        "Guid": "99a60205-90f8-41ed-b93e-0738aacb7f89",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}

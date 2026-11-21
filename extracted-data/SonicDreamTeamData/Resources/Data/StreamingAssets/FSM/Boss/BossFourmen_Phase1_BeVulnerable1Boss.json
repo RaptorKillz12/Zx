@@ -1,0 +1,168 @@
+{
+    "Includes": [],
+    "FSMs": [
+        {
+            "Name": "BossFourmen_Phase1_BeVulnerable1Boss",
+            "DefaultState": "VulnerableWithEffects",
+            "DoMultipleTransitions": true,
+            "UpdateTransientStates": false,
+            "Transitions": [
+                {
+                    "Class": "BossTransition_WasHit",
+                    "Name": "WasHit",
+                    "CtorArgs": "",
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1020.0,
+                            "y": 420.0
+                        },
+                        "Guid": "6cc73a4a-1301-4e69-a6d6-7243dc54d3d7",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "States": [
+                {
+                    "Class": "BossState_Vulnerable_Target",
+                    "Name": "Vulnerable",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"VulnerableTime\":5.75,\"VulnerableTarget\":231103943,\"TargetActivateDelaySeconds\":0.75}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 440.0,
+                            "y": 700.0
+                        },
+                        "Guid": "4f505261-4978-4646-b0c4-49eb4fc665cb",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggeInjured",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"\",\"TriggerEffect\":-79364008}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1580.0,
+                            "y": 420.0
+                        },
+                        "Guid": "ea5fac15-65c4-40bb-af39-62b194c0b5d8",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnEntry",
+                    "Name": "TriggerVulnerableEffects",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenVulnerable\",\"TriggerEffect\":-315201363}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 440.0,
+                            "y": 600.0
+                        },
+                        "Guid": "157aec6c-425e-4bb3-a63e-6f6fccf72e27",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "FSMStateGroup",
+                    "Name": "VulnerableWithEffects",
+                    "CtorArgs": "{\"States\":[\"TriggerVulnerableEffects\",\"Vulnerable\",\"TriggerToggleSSOA\"]}",
+                    "StateTransitions": [
+                        {
+                            "Transition": "WasHit",
+                            "ToState": "TriggeInjured",
+                            "NodeMetadata": {
+                                "Position": {
+                                    "x": 1020.0,
+                                    "y": 420.0
+                                },
+                                "Guid": "6cc73a4a-1301-4e69-a6d6-7243dc54d3d7",
+                                "InDirection": 1,
+                                "OutDirection": 2,
+                                "Flipped": false,
+                                "StateRoutingMetadata": [],
+                                "TransitionRoutingMetadata": []
+                            }
+                        }
+                    ],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 440.0,
+                            "y": 420.0
+                        },
+                        "Guid": "1084b629-9696-4456-bba9-fa0e8aea1609",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "ActorState_TriggerToggleSSOA",
+                    "Name": "TriggerToggleSSOA",
+                    "CtorArgs": "{\"ActiveEventType\":0,\"Enable\":false}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 440.0,
+                            "y": 840.0
+                        },
+                        "Guid": "8a8e76d0-6564-481c-9265-ae84524a7e7d",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                },
+                {
+                    "Class": "BossState_TriggerEffectOnLeave",
+                    "Name": "TriggerDead",
+                    "CtorArgs": "{\"StateAnimationDefinitionName\":\"BossFourmenDead\",\"TriggerEffect\":609180527}",
+                    "StateTransitions": [],
+                    "NodeMetadata": {
+                        "Position": {
+                            "x": 1580.0,
+                            "y": 300.0
+                        },
+                        "Guid": "df3cc78a-433e-4e1b-837e-61dc8c28b35e",
+                        "InDirection": 1,
+                        "OutDirection": 2,
+                        "Flipped": false
+                    }
+                }
+            ],
+            "NodeMetadata": {
+                "Position": {
+                    "x": -220.0,
+                    "y": -200.0
+                },
+                "Guid": "59128b9e-eb64-4710-a8c5-8a4c82bb9553",
+                "InDirection": 1,
+                "OutDirection": 2,
+                "Flipped": false
+            },
+            "ViewMetadata": {
+                "Translation": {
+                    "x": 0.0,
+                    "y": 0.0
+                },
+                "Zoom": 1.0
+            },
+            "BackgroundMetadata": []
+        }
+    ],
+    "ViewMetadata": {
+        "Translation": {
+            "x": 0.0,
+            "y": 0.0
+        },
+        "Zoom": 1.0
+    }
+}
