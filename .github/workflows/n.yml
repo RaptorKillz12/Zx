@@ -1,4 +1,3 @@
-
 name: Extract Artifact to Branch
 
 on:
@@ -9,13 +8,13 @@ on:
         required: true
         type: string
       artifact_name:
-        description: "Name of the artifact to download"
+        description: "Exact artifact name to download"
         required: true
         type: string
       target_branch:
-        description: "Branch to move the files into"
+        description: "Branch to receive the extracted files"
         required: true
-        default: "extracted-data"
+        default: "dream-team-data"
         type: string
 
 permissions:
@@ -25,8 +24,15 @@ permissions:
 jobs:
   extract-and-move:
     runs-on: ubuntu-latest
-
     steps:
+      # Checkout first because checkout can clean the workspace.
+      - name: Checkout Target Branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.target_branch }}
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Download Artifact
         uses: actions/download-artifact@v4
         with:
@@ -34,39 +40,35 @@ jobs:
           path: downloaded-artifact
           run-id: ${{ inputs.run_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
 
-      - name: Extract ZIP files
+      - name: Verify and Move Artifact Files
         shell: bash
         run: |
-          set -e
+          set -euo pipefail
 
-          mkdir -p extracted
+          if [ ! -d downloaded-artifact ]; then
+            echo "ERROR: downloaded-artifact folder was not created."
+            exit 1
+          fi
 
-          find downloaded-artifact -type f -name "*.zip" \
-            -exec unzip -o {} -d extracted \;
-
-          find downloaded-artifact -type f ! -name "*.zip" \
-            -exec cp --parents {} extracted/ \;
-
-      - name: Checkout Target Branch
-        uses: actions/checkout@v4
-        with:
-          ref: ${{ inputs.target_branch }}
-          fetch-depth: 0
-
-      - name: Move Extracted Files
-        shell: bash
-        run: |
-          set -e
+          if [ -z "$(find downloaded-artifact -type f -print -quit)" ]; then
+            echo "ERROR: The selected artifact contains no files."
+            exit 1
+          fi
 
           mkdir -p extracted-data
+          cp -a downloaded-artifact/. extracted-data/
 
-          cp -a extracted/. extracted-data/
+          echo "Files copied to extracted-data:"
+          find extracted-data -type f -printf '%P (%s bytes)\\n'
 
       - name: Commit and Push
         shell: bash
+        env:
+          TARGET_BRANCH: ${{ inputs.target_branch }}
         run: |
-          set -e
+          set -euo pipefail
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -77,5 +79,5 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Extract and move artifact"
-            git push origin HEAD:${{ inputs.target_branch }}
+            git push origin "HEAD:$TARGET_BRANCH"
           fi
