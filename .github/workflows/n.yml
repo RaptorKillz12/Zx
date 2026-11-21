@@ -28,7 +28,7 @@ jobs:
       - name: Checkout Target Branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.target_branch }}
+          ref: main
           fetch-depth: 0
           lfs: true
           token: ${{ secrets.GITHUB_TOKEN }}
@@ -91,12 +91,21 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
+          # Switch to the requested branch, creating it if it does not exist.
+          git fetch origin "$TARGET_BRANCH" 2>/dev/null || true
+          if git show-ref --verify --quiet "refs/remotes/origin/$TARGET_BRANCH"; then
+            git checkout -B "$TARGET_BRANCH" "origin/$TARGET_BRANCH"
+          else
+            git checkout -B "$TARGET_BRANCH"
+          fi
+
           git add .gitattributes extracted-data/
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
             git commit -m "Extract game data using Git LFS for large files"
-            git lfs push origin "HEAD:$TARGET_BRANCH"
-            git push origin "HEAD:$TARGET_BRANCH"
+            # Use the branch name directly; HEAD:branch is not a valid LFS ref.
+            git lfs push origin "$TARGET_BRANCH"
+            git push origin "$TARGET_BRANCH"
           fi
