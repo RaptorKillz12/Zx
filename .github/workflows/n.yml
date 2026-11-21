@@ -25,12 +25,12 @@ jobs:
   extract-and-move:
     runs-on: ubuntu-latest
     steps:
-      # Checkout first because checkout can clean the workspace.
       - name: Checkout Target Branch
         uses: actions/checkout@v4
         with:
           ref: ${{ inputs.target_branch }}
           fetch-depth: 0
+          lfs: true
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Download Artifact
@@ -60,8 +60,26 @@ jobs:
           mkdir -p extracted-data
           cp -a downloaded-artifact/. extracted-data/
 
-          echo "Files copied to extracted-data:"
-          find extracted-data -type f -printf '%P (%s bytes)\\n'
+          echo "Artifact files copied successfully."
+          du -sh extracted-data
+
+      - name: Install Git LFS and Track Large Files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          sudo apt-get update
+          sudo apt-get install -y git-lfs
+          git lfs install
+
+          # GitHub rejects ordinary Git files larger than 100 MB.
+          # Store files larger than 90 MB using Git LFS instead.
+          while IFS= read -r -d '' file; do
+            git lfs track "$file"
+          done < <(find extracted-data -type f -size +90M -print0)
+
+          echo "Git LFS tracking rules:"
+          cat .gitattributes 2>/dev/null || true
 
       - name: Commit and Push
         shell: bash
@@ -73,11 +91,12 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add extracted-data/
+          git add .gitattributes extracted-data/
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "Extract and move artifact"
+            git commit -m "Extract game data using Git LFS for large files"
+            git lfs push origin "HEAD:$TARGET_BRANCH"
             git push origin "HEAD:$TARGET_BRANCH"
           fi
